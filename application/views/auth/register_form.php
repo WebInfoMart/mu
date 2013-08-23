@@ -50,18 +50,19 @@ $captcha = array(
 );
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
+<?php echo validation_errors();?>
 <table>
 	<?php if ($use_username) { ?>
 	<!--<tr>
 		<td><?php echo form_label('Fullname', $username['id']); ?></td>
 		<td><?php echo form_input($username); ?></td>
-		<td style="color: red;"><?php echo form_error($username['name']); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?></td>
+		<td style="color: red;"><?php echo form_error('fullname'); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?></td>
 	</tr>-->
 	<?php } ?>
 	<tr>
 		<td><?php echo form_label('Full Name', $fullname['id']); ?></td>
 		<td><?php echo form_input($fullname); ?></td>
-		<td style="color: red;"><?php echo form_error($fullname['name']); ?><?php echo isset($errors[$fullname['name']])?$errors[$fullname['name']]:''; ?></td>
+		<td style="color: red;"><?php echo form_error('fullname'); ?><?php echo isset($errors[$fullname['name']])?$errors[$fullname['name']]:''; ?></td>
 	</tr>
 	<tr>
 		<td><?php echo form_label('Email Address', $email['id']); ?></td>

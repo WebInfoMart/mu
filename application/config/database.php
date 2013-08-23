@@ -48,9 +48,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'webinfomart.netfirmsmysql.com';
-$db['default']['username'] = 'mu_beta';
-$db['default']['password'] = 'mubeta2013!';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
 $db['default']['database'] = 'mu_beta';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
