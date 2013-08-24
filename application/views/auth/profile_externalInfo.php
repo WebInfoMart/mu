@@ -1,4 +1,4 @@
-<?
+<?php
 $sat_math=array('name'	=>	'sat_math','id'	=>	'sat_math','value'	=>	set_value('sat_math'));
 $sat_reading=array('name'	=>	'sat_reading','id'	=>	'sat_reading','value'	=>	set_value('sat_reading'));
 $sat_writing=array('name'	=>	'sat_writing','id'	=>	'sat_writing','value'	=>	set_value('sat_writing'));

@@ -52,15 +52,13 @@ Match your profile
 <input type="submit" value="next" name="save_profile_match">
 </form>-->
 
-<?
+<?php
 $school=array(
 		'name'	=>	'school',
 		'id'	=>	'school',
 		'value'	=>	set_value('school'),
 		'size'	=>	30
 );
-
-
 
 ?>
 

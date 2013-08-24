@@ -26,14 +26,22 @@
                   <li><a href="blog.html">Articles </a></li>
                </ul>
             </nav>
+			<?php if(isset($userId)){?>
 			<div class="btn-group pull-right" style="margin-top:13px">
-				<button class="btn btn-small"><a href="/sign-in">LOG IN</a></button>
+				<button class="btn btn-small" style="background: #0073d1;color: white;"><?php echo($userData['fullname'])?></button>
+				<button class="btn btn-small"><a href="<?php echo base_url('auth/logout')?>">LOG OUT</a></button>	
+       		</div>
+			<?php }else{?>
+			<div class="btn-group pull-right" style="margin-top:13px">
+				<button class="btn btn-small"><a href="<?php echo base_url('login')?>">LOG IN</a></button>
 				<button class="btn btn-small"><a href="<?php echo base_url('register')?>">SIGN UP</a></button>	
        		</div>
+			<?php }?>
             <!--<aside id="login"  class="btn-group">
                <button class="btn" onclick="location.href='<?php echo base_url('register')?>'">SignUp</button>
                <button class="btn btn-small dropdown-toggle" >SignIn <i class="icon-chevron-down icon-white"></i></button>
             </aside>-->
+			
          </div>
       </header>
       <!--end header-->
