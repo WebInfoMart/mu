@@ -50,7 +50,6 @@ $captcha = array(
 );
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
-<?php echo validation_errors();?>
 <table>
 	<?php if ($use_username) { ?>
 	<!--<tr>

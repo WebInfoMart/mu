@@ -47,6 +47,14 @@ class Users extends CI_Model
 		if ($query->num_rows() == 1) return $query->row();
 		return NULL;
 	}
+	function getUserDetails($userId)
+	{
+		$this->db->select('fullname,email,mobile');
+		$this->db->from('users');
+		$this->db->where('id',$userId);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 
 	/**
 	 * Get user record by login (username or email)

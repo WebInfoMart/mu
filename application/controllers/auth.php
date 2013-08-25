@@ -69,7 +69,7 @@ class Auth extends CI_Controller
 
 						unset($data['password']); // Clear password (just for any case)
 
-						$this->_show_message($this->lang->line('auth_message_registration_completed_1'));
+						$this->_show_message($this->lang->line('auth_message_registration_completed_1'),'register');
 
 					} else {
 						if ($this->config->item('email_account_details', 'tank_auth')) {	// send "welcome" email
@@ -104,7 +104,7 @@ class Auth extends CI_Controller
 		
 		$data["username"]=$this->tank_auth->get_user_id();
 		$data["id"]=$this->tank_auth->get_user_id();
-		$this->load->view('home',$data);
+		$this->layout->view('home',$data);
 	}
 	/**
 	 * Login user on the site
@@ -112,6 +112,87 @@ class Auth extends CI_Controller
 	 * @return void
 	 */
 	function login()
+	{
+		if ($this->tank_auth->is_logged_in()) {									// logged in
+			redirect('home');
+
+		} 
+		else
+		{
+			if ($this->tank_auth->is_logged_in(FALSE)) 
+			{
+			$data['notActivated']=TRUE;
+			}
+			$data['login_by_username'] = ($this->config->item('login_by_username', 'tank_auth') AND
+					$this->config->item('use_username', 'tank_auth'));
+			$data['login_by_email'] = $this->config->item('login_by_email', 'tank_auth');
+
+			$this->form_validation->set_rules('login', 'Login', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('remember', 'Remember me', 'integer');
+
+			// Get login for counting attempts to login
+			if ($this->config->item('login_count_attempts', 'tank_auth') AND
+					($login = $this->input->post('login'))) {
+				$login = $this->security->xss_clean($login);
+			} else {
+				$login = '';
+			}
+
+			$data['use_recaptcha'] = $this->config->item('use_recaptcha', 'tank_auth');
+			if ($this->tank_auth->is_max_login_attempts_exceeded($login)) {
+				if ($data['use_recaptcha'])
+					$this->form_validation->set_rules('recaptcha_response_field', 'Confirmation Code', 'trim|xss_clean|required|callback__check_recaptcha');
+				else
+					$this->form_validation->set_rules('captcha', 'Confirmation Code', 'trim|xss_clean|required|callback__check_captcha');
+			}
+			$data['errors'] = array();
+
+			if ($this->form_validation->run()) {								// validation ok
+				if ($this->tank_auth->login(
+						$this->form_validation->set_value('login'),
+						$this->form_validation->set_value('password'),
+						$this->form_validation->set_value('remember'),
+						$data['login_by_username'],
+						$data['login_by_email'])) {								// success
+					
+					/*checking profile*/
+					$data["id"]=$this->tank_auth->get_user_id();
+					$profile_detail=$this->users->check_profile_detail($data['id']);
+				
+					if(count($profile_detail)==0)
+					{
+					redirect('profile');
+					}
+					else
+					{redirect('home');}
+
+				} else {
+					$errors = $this->tank_auth->get_error_message();
+					if (isset($errors['banned'])) {								// banned user
+						$this->_show_message($this->lang->line('auth_message_banned').' '.$errors['banned']);
+
+					} elseif (isset($errors['not_activated'])) {				// not activated user
+						$data['notActivated']=TRUE;
+
+					} else {													// fail
+						foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
+					}
+				}
+			}
+			$data['show_captcha'] = FALSE;
+			if ($this->tank_auth->is_max_login_attempts_exceeded($login)) {
+				$data['show_captcha'] = TRUE;
+				if ($data['use_recaptcha']) {
+					$data['recaptcha_html'] = $this->_create_recaptcha();
+				} else {
+					$data['captcha_html'] = $this->_create_captcha();
+				}
+			}
+			$this->layout->view('auth/login', $data);
+		}
+	}
+	function loginNew()
 	{
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('home');
@@ -220,24 +301,15 @@ class Auth extends CI_Controller
 
 		} else {
 			$use_username = $this->config->item('use_username', 'tank_auth');
-			/*if ($use_username) {
+			if ($use_username) {
 				$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|min_length['.$this->config->item('username_min_length', 'tank_auth').']|max_length['.$this->config->item('username_max_length', 'tank_auth').']|alpha_dash');
 			}
 			$this->form_validation->set_rules('fullname', 'Fullname', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
 			$this->form_validation->set_rules('mobile', 'Mobile', 'trim|integer|required|xss_clean');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|min_length['.$this->config->item('password_min_length', 'tank_auth').']|max_length['.$this->config->item('password_max_length', 'tank_auth').']|alpha_dash');
-			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|xss_clean|matches[password]');*/
-			$this->form_validation->set_rules('fullname', 'Fullname', 'required');
-			echo "sdfdsf";
-			if ($this->form_validation->run()) 
-			{
-				echo "sdfasf";
-			}
-			else
-			{
-				echo validation_errors();
-			}
+			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|xss_clean|matches[password]');
+			
 			/* $captcha_registration	= $this->config->item('captcha_registration', 'tank_auth');
 			$use_recaptcha			= $this->config->item('use_recaptcha', 'tank_auth');
 			if ($captcha_registration) {
@@ -322,7 +394,7 @@ class Auth extends CI_Controller
 
 					$this->_send_email('activate', $data['email'], $data);
 
-					$this->_show_message(sprintf($this->lang->line('auth_message_activation_email_sent'), $data['email']));
+					$this->_show_message(sprintf($this->lang->line('auth_message_activation_email_sent'), $data['email']),'login');
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
@@ -353,7 +425,7 @@ class Auth extends CI_Controller
 			$this->_send_email('welcome', $data['email'], $data);
 			
 			
-			$this->_show_message($this->lang->line('auth_message_activation_completed').' '.anchor('/auth/login/', 'Login'));
+			$this->_show_message($this->lang->line('auth_message_activation_completed').' '.anchor('/auth/login/', 'Login'),'login');
 			
 		} else {																// fail
 			$this->_show_message($this->lang->line('auth_message_activation_failed'));
@@ -569,10 +641,10 @@ class Auth extends CI_Controller
 	 * @param	string
 	 * @return	void
 	 */
-	function _show_message($message)
+	function _show_message($message,$page='')
 	{
 		$this->session->set_flashdata('message', $message);
-		redirect('/auth/');
+		redirect('/auth/'.$page);
 	}
 
 	/**
@@ -747,7 +819,7 @@ class Auth extends CI_Controller
 		echo "SUCCESS";
 	
 	}
-	function profile()
+	function profileNew()
 	{
 		$upload_result["error"]='';
 		if ($this->tank_auth->is_logged_in()) {					// logged in or activated	
@@ -767,6 +839,32 @@ class Auth extends CI_Controller
 				}
 			}
 			$this->load->view('auth/profile',$upload_result);
+		}
+		else													// not logged in or non activated	
+		{
+		redirect('/auth/login/');
+		}
+	}
+	function profile()
+	{
+		$upload_result["error"]='';
+		if ($this->tank_auth->is_logged_in()) {					// logged in or activated	
+			if($this->input->post('save_profile'))
+			{
+				$this->form_validation->set_rules('dob','Date Of Birth','trim|required');
+				$this->form_validation->set_rules('city','City','trim|required');
+				$this->form_validation->set_rules('country','Country','trim|required');
+				if($this->form_validation->run())
+				{
+				$this->users->save_profile();
+				$upload_result["error"]=$this->users->upload_profile_pic();
+				if($upload_result["error"]=='' || $upload_result["error"]=='SUCCESS')
+				{
+					redirect('auth/profileMatch');
+				}
+				}
+			}
+			$this->layout->view('auth/profileNew',$upload_result);
 		}
 		else													// not logged in or non activated	
 		{
@@ -793,7 +891,27 @@ class Auth extends CI_Controller
 			redirect('login');
 		}
 	}
-	function profile_externalInfo()
+	function profileMatch()								//function of profile  match of user
+	{
+		if($this->tank_auth->is_logged_in())
+		{
+			if($this->input->post('save_profile_match'))
+			{
+				$this->form_validation->set_rules('school', 'School Name', 'trim|required|xss_clean|min_length[3]');
+				if($this->form_validation->run())
+				{
+				$this->users->save_profile_match();
+				redirect('auth/profileStep3');
+				}
+			}
+			$this->layout->view('auth/profileMatch');
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+	function profile_externalInfo() //temprary
 	{
 		if($this->tank_auth->is_logged_in())
 		{
@@ -804,6 +922,34 @@ class Auth extends CI_Controller
 				echo "data save";
 			}
 			$this->load->view('auth/profile_externalInfo');
+		}
+		else
+		{
+			redirect('login');
+		}
+	}
+	function profileDashboard()
+	{
+		if($this->tank_auth->is_logged_in())
+		{
+			$this->layout->view('auth/profileDashboard');
+		}
+		else
+		{
+			redirct('login');
+		}
+	}
+	function profileStep3()
+	{
+		if($this->tank_auth->is_logged_in())
+		{
+			//$this->form_validation->set_rules('sat_math', 'SAT Math', 'trim|required|xss_clean|min_length[3]');
+			if($this->input->post('save_external_info'))
+			{
+				$this->users->save_external_info();  //update process is remaining if there is already record present
+				redirect('auth/profileDashboard');
+			}
+			$this->layout->view('auth/profileStep3');
 		}
 		else
 		{

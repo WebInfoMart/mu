@@ -1,9 +1,42 @@
+
+<?php $email = array(
+	'name'	=> 'email',
+	'id'	=> 'email',
+	'value'	=> '',
+	'maxlength'	=> 80,
+	'size'	=> 30,
+	'type'	=> 'hidden'
+	
+);
+if(isset($userData))
+{
+	$email['value']=$userData['email'];
+}
+?>
+
 <!--main-->
       <div role="main" id="main">
          <div class="row container" id="register_page">
             <div class="well well-small">
-               <h2>Create a New Meet Univ’s Account <span>(it’s FREE)</span></h2>
+               <h2>Log In with Meet Univ’s Account </h2>
             </div>
+			<?php if(!$this->session->flashdata('message') && isset($notActivated)){?>
+			<?php echo form_open(base_url('auth/send_again')); ?>
+			<div class="alert alert-block alert-error fade in" style="font-size: 14px;">
+				<div class="span6">
+					<h4 class="alert-heading">Oops! Your Account not Activated Yet!</h4>
+				</div>
+				<div class="pull-right">
+					<!--<button type="button" class='btn btn-danger btn-small' data-toggle="modal" data-target="#sendEmail">Send Again</button>-->
+					
+					<?php echo form_input($email); ?>
+					<button type="submit" class='btn btn-danger btn-small'>Send Again</button>
+					
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<?php form_close(); ?>
+			<?php }?>
 			<?php if($this->session->flashdata('message')){?>
 			<div class="alert alert-success" style="font-size: 14px;">
 				<?php echo $this->session->flashdata('message');?>
@@ -11,105 +44,62 @@
 			<?php }?>
             <div class="border"></div>
             <article class="span6 l_col_sing">
-               <h3>Sign up <span>or  <a href="<?php echo base_url('login')?>">Login</a></span></h3>
+               <h3>Login <span>or  <a href="<?php echo base_url('register')?>">Sign up</a></span></h3>
                <h4>Student Details!</h4>
 			   <?php
-				if ($use_username) {
-					$username = array(
-						'name'	=> 'username',
-						'id'	=> 'username',
-						'value' => set_value('username'),
-						'maxlength'	=> $this->config->item('username_max_length', 'tank_auth'),
+					$login = array(
+						'name'	=> 'login',
+						'id'	=> 'login',
+						'value' => set_value('login'),
+						'maxlength'	=> 80,
 						'size'	=> 30,
+						'class'	=> 'span4',
+						'placeholder'=> 'Email'
 					);
-				}
-				$fullname = array (
-					'name'	=>	'fullname',
-					'id'	=>	'fullname',
-					'value'	=> set_value('fullname'),
-					'size' => 30,
-					'class'	=> 'span4',
-					'placeholder' => 'Full Name'
-				
-				);
-				$mobile = array(
-					'name'	=>	'mobile',
-					'id'	=>	'mobile',
-					'value'	=>	set_value('mobile'),
-					'maxlength'=> 10,
-					'size'	=> 30,
-					'class'	=> 'span4',
-					'placeholder' => 'Mobile'
-				);
-				$email = array(
-					'name'	=> 'email',
-					'id'	=> 'email',
-					'value'	=> set_value('email'),
-					'maxlength'	=> 80,
-					'size'	=> 30,
-					'class'	=> 'span4',
-					'placeholder' => 'Email'
-				);
-				$password = array(
-					'name'	=> 'password',
-					'id'	=> 'password',
-					'value' => set_value('password'),
-					'maxlength'	=> $this->config->item('password_max_length', 'tank_auth'),
-					'size'	=> 30,
-					'class'	=> 'span4',
-					'placeholder' => 'Password',
-					
-				);
-				$confirm_password = array(
-					'name'	=> 'confirm_password',
-					'id'	=> 'confirm_password',
-					'value' => set_value('confirm_password'),
-					'maxlength'	=> $this->config->item('password_max_length', 'tank_auth'),
-					'size'	=> 30,
-					'class'	=> 'span4',
-					'placeholder' => 'Confirm Password'
-				);
-				$captcha = array(
-					'name'	=> 'captcha',
-					'id'	=> 'captcha',
-					'maxlength'	=> 8,
-				);
-				$formAttr = array('id' => 'registerForm');
+					if ($login_by_username AND $login_by_email) {
+						$login_label = 'Email or login';
+					} else if ($login_by_username) {
+						$login_label = 'Login';
+					} else {
+						$login_label = 'Email';
+					}
+					$password = array(
+						'name'	=> 'password',
+						'id'	=> 'password',
+						'size'	=> 30,
+						'class'	=> 'span4',
+						'placeholder'=> 'Password'
+					);
+					$remember = array(
+						'name'	=> 'remember',
+						'id'	=> 'remember',
+						'value'	=> 1,
+						'checked'	=> set_value('remember'),
+						'style' => 'margin:0;padding:0',
+					);
+					$captcha = array(
+						'name'	=> 'captcha',
+						'id'	=> 'captcha',
+						'maxlength'	=> 8,
+					);
+					$formAttr=array('id'=>'loginForm');
 				?>
 				<?php echo form_open($this->uri->uri_string(),$formAttr); ?>
-				<div class="control-group">
-					<div class="controls">
-						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/student_name.png"></span>
-							<?php echo form_input($fullname); ?>
-						</div>
-						<span class="help-inline" style="color:red;"><?php echo form_error($fullname['name']); ?><?php echo isset($errors[$fullname['name']])?$errors[$fullname['name']]:''; ?></span>
-					</div>
-				</div>
+				
 						
 				<div class="control-group">
 					<div class="controls">		
 						<div class="input-prepend">
 							<span class="add-on"><img src="<?php echo base_url();?>assets/img/mail.png"></span>
-							<?php echo form_input($email); ?>
+							<?php echo form_input($login); ?>
 							
 						</div>
 						<span class="help-inline" style="color:red;">
-						<?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?>
+						<?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?>
 						</span>
 					</div>
 				</div>
-				<div class="control-group">
-					<div class="controls">	
-						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/Mobile.png"></span>
-							<?php echo form_input($mobile); ?>
-						</div>
-						<span class="help-inline" style="color:red;">
-						<?php echo form_error($mobile['name']); ?><?php echo isset($errors[$mobile['name']])?$errors[$mobile['name']]:''; ?>
-						</span>
-					</div>
-				</div>
+				
 				<div class="control-group">
 					<div class="controls">	
 						<div class="input-prepend">
@@ -117,23 +107,24 @@
 							<?php echo form_password($password); ?>
 						</div>
 						<span class="help-inline" style="color:red;">
-						<?php echo form_error($password['name']); ?>
+						<?php echo form_error($password['name']); ?><?php echo isset($errors[$password['name']])?$errors[$password['name']]:''; ?>
 						</span>
 					</div>
 				</div>
+				
 				<div class="control-group">
-					<div class="controls">
-						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/Confirm-Password.png"></span>
-							<?php echo form_password($confirm_password); ?>
+					<div class="controls">	
+						<div class="form_bu clearfix">
+							<input type="checkbox" class="styled" name="remember" id="remember" value="1">Remember Me
+							<?php //echo form_checkbox($remember); ?>
+							<?php //echo form_label('Remember me', $remember['id']); ?>
 						</div>
-						<span class="help-inline" style="color:red;">
-							<?php echo form_error($confirm_password['name']); ?>
-						</span>
+						
 					</div>
 				</div>
+				
 						<div class="form_bu clearfix">
-						<button class="btn btn-large" type="button" onclick="$('#registerForm').submit();">Create Account</button>
+						<input class="btn btn-large" type="submit" value="Let Me In">
 						<button class="btn btn-large" type="button">Cancel</button>
 					</div>
 				<?php echo form_close();?>
