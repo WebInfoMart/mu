@@ -1,15 +1,14 @@
-
 <!--main-->
       <div role="main" id="main">
          <div class="row container">
             <article id="college_listing" class="page">
                <ul class="breadcrumb univ_breadcrumb">
-                  <li><a href="#">Home</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
-                  <li><a href="#">College Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
+                  <li><a href="<?php echo base_url()?>">Home</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
+                  <li><a href="<?php echo base_url('college')?>">College Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
                   <li class="active">Search Result</li>
                </ul>
                <div class="clearfix"></div>
-               <h2 class="search_header pull-left">203 Colleges Founts</h2>
+               <h2 class="search_header pull-left"><?php echo $countResults;?> Colleges Found</h2>
                <div class="search_input  pull-right">
                   <form class="form-search">
                      <div class="input-append">
@@ -66,95 +65,44 @@
                      </div>
                   </section>
                   <article class="span3">
-                     <p class="text-right">Showing 12/233 <i class="icon-circle-arrow-right"></i></p>
+                     <p class="text-right">Showing 10/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
                      <section class="blog_style">
                         <article class="clearfix">
                            <div class="clearfix">
-                              <h4 class="pull-left">Steward Aeronautical College</h4>
-                              <div class="place pull-right">Tokyo, Japan</div>
-                           </div>
-                           <hr class="clearfix">
-                           <div class="content_blog pull-left clearfix">
-                              <p>New River Community College is a Public institution 
-                                 located in Dublin, Virginia in a Rural setting. The fall 
-                                 application deadlinefor freshman is . The application 
-                                 requirements include Transcript of high school ...
-                              </p>
-                              <p><a href="#"><i class="icon-plus-sign"></i> Add College</a></p>
-                           </div>
-                           <aside class="pull-right" >
-                              <button type="submit" class="btn btn-success  btn-mini">Mu Connect</button>
-                              <p><a href="#">Quick View</a></p>
-                              <p><a href="individual-college.html">View Full Profile</a></p>
-                           </aside>
-                        </article>
-                        <article class="clearfix">
-                           <div class="clearfix">
-                              <h4 class="pull-left">Steward Aeronautical College</h4>
-                              <div class="place pull-right">Tokyo, Japan</div>
-                           </div>
-                           <hr class="clearfix">
-                           <div class="content_blog pull-left clearfix">
-                              <p>New River Community College is a Public institution 
-                                 located in Dublin, Virginia in a Rural setting. The fall 
-                                 application deadlinefor freshman is . The application 
-                                 requirements include Transcript of high school ...
-                              </p>
-                              <p><a href="#"><i class="icon-plus-sign"></i> Add College</a></p>
-                           </div>
-                           <aside class="pull-right" >
-                              <button type="submit" class="btn btn-success  btn-mini">Mu Connect</button>
-                              <p><a href="#">Quick View</a></p>
-                              <p><a href="#">View Full Profile</a></p>
-                           </aside>
-                        </article>
-                        <article class="clearfix">
-                           <div class="clearfix">
-                              <h4 class="pull-left">Steward Aeronautical College</h4>
-                              <div class="place pull-right">Tokyo, Japan</div>
-                           </div>
-                           <hr class="clearfix">
-                           <div class="content_blog pull-left clearfix">
-                              <p>New River Community College is a Public institution 
-                                 located in Dublin, Virginia in a Rural setting. The fall 
-                                 application deadlinefor freshman is . The application 
-                                 requirements include Transcript of high school ...
-                              </p>
-                              <p><a href="#"><i class="icon-plus-sign"></i> Add College</a></p>
-                           </div>
-                           <aside class="pull-right" >
-                              <button type="submit" class="btn btn-success  btn-mini">Mu Connect</button>
-                              <p><a href="#">Quick View</a></p>
-                              <p><a href="#">View Full Profile</a></p>
-                           </aside>
-                        </article>
-                        <article class="clearfix">
-                           <div class="clearfix">
-                              <h4 class="pull-left">Steward Aeronautical College</h4>
-                              <div class="place pull-right">Tokyo, Japan</div>
-                           </div>
-                           <hr class="clearfix">
-                           <div class="content_blog pull-left clearfix">
-                              <p>New River Community College is a Public institution 
-                                 located in Dublin, Virginia in a Rural setting. The fall 
-                                 application deadlinefor freshman is . The application 
-                                 requirements include Transcript of high school ...
-                              </p>
-                              <p><a href="#"><i class="icon-plus-sign"></i> Add College</a></p>
-                           </div>
-                           <aside class="pull-right" >
-                              <button type="submit" class="btn btn-success  btn-mini">Mu Connect</button>
-                              <p><a href="#">Quick View</a></p>
-                              <p><a href="#">View Full Profile</a></p>
-                           </aside>
-                        </article>
+								<?php 
+									foreach ($results as $universities)
+									{?>
+									<h4 class='pull-left'><?php echo $universities->univName; ?></h4>
+									<div class='place pull-right'>Tokyo, Japan</div>
+									</div>
+									<hr class='clearfix'>
+									<div class='content_blog pull-left clearfix'>
+									<p>New River Community College is a Public institution 
+									 located in Dublin, Virginia in a Rural setting. The fall 
+									 application deadlinefor freshman is . The application 
+									 requirements include Transcript of high school ...
+										</p>
+										<p><a href='#'><i class='icon-plus-sign'></i> Add College</a></p>
+										</div>
+									 <aside class='pull-right' >
+									  <button type='submit' class='btn btn-success  btn-mini'>Mu Connect</button>
+									  <p><a href='#'>Quick View</a></p>
+									  <p><a href="<?php echo base_url().'college/individualCollege/'.$universities->id?>">View Full Profile</a></p>
+									   </aside>
+									   </article>
+									<article class='clearfix'>
+									   <div class='clearfix'>					
+								<?php
+								}
+								?>         
                      </section>
                      <div class="pagination pagination-small" id="my_pagi">
-                        <ul>
+					   <?php echo $links; ?>
+					 <!--  <ul>
                            <li><a href="#">&lt;</a></li>
                            <li class="disabled no_border"><a href="#">1/201</a></li>
                            <li ><a href="#">&gt;</a></li>
-                        </ul>
+                        </ul>-->
                      </div>
                   </article>
                   <aside class="span4">
@@ -174,4 +122,3 @@
          </div>
       </div>
       <!--end main-->
-	  <?php $this->load->view('layout/js');?>
