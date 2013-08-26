@@ -12,7 +12,7 @@
                </div>
                <div class="name">
                   <div  class="well well-small">
-                     <h2>Ryan Benston</h2>
+                     <h2><?php echo $userData['fullname'];?></h2>
                   </div>
                </div>
                <div id="l_more">
@@ -29,7 +29,7 @@
 							if($userProfile['profilePic'])
 							{
 						?>
-							<img src="<?php echo base_url();?>assets/img/<?php echo $userProfile['profilePic'];?>">
+							<img src="<?php echo base_url();?>uploads/user_pic/<?php echo $userProfile['profilePic'];?>">
 						<?php 
 							}
 							else
@@ -40,8 +40,8 @@
 							} 
 						?>
 						</div>
-                        <p>Ryan, male <br>
-                           17/0ct/1991 
+                        <p><?php echo $userData['fullname'];?>,<?php echo $userProfile['gender'];?> <br>
+                           <?php echo $userProfile['dob'];?> 
                         </p>
                         <p class="edit_profile_link"><a href="#">Edit Profile</a></p>
                      </div>
@@ -65,6 +65,9 @@
                            <h4>School Name</h4>
 						   <?php echo form_input($school);?>
                         </div>
+						<span class="help-inline" style="color:red;">
+							<?php echo form_error('school');?>
+						</span>
 					  </div>
 					</div>
 					<div class="control-group">
@@ -80,7 +83,7 @@
                         </div>
 					  </div>
 					</div>
-					<div class="control-group" id="XII">
+					<div class="control-group" id="XII" style="display:none;">
 					  <div class="controls">
 						<div class="input-prepend span8">
                            <h5>XII Details</h5>
@@ -90,7 +93,7 @@
                         </div>
 					  </div>
 					</div>
-					<div class="control-group" id="UG">
+					<div class="control-group" id="UG" style="display:none;">
 					  <div class="controls">
 						<div class="input-prepend span8">
                            <h5>UG Details</h5>
@@ -100,7 +103,7 @@
                         </div>
 					  </div>
 					</div>
-					<div class="control-group" id="PG">
+					<div class="control-group" id="PG" style="display:none;">
 					  <div class="controls">
 						<div class="input-prepend span8">
                            <h5>PG Details</h5>

@@ -8,11 +8,13 @@
             <section id="register_page_steps">
                <div class="well  well-small profile_steps ">
                   <h2 class="pull-left">Complete Your Profile Dashboard</h2>
-                  <aside class="pull-right" id="step"><img  src="<?php echo base_url();?>assets/img/s_3.png"></aside>
+                  <aside class="pull-right" id="step">
+				  <img  src="<?php echo base_url();?>assets/img/s_3.png">
+				  </aside>
                </div>
                <div class="name">
                   <div  class="well well-small">
-                     <h2>Ryan Benston</h2>
+                     <h2><?php echo $userData['fullname'];?></h2>
                   </div>
                </div>
                <div id="l_more">
@@ -24,14 +26,23 @@
                   <article class="span2 l_col_sing " style="background:none;">
                      <div  class="text-center" id="profile_2">
                         <div id="real_profile_pic">
-                           <img src="<?php echo base_url();?>assets/img/avatar.png">
+                           <?php 
+							if($userProfile['profilePic'])
+							{
+							?>
+								<img src="<?php echo base_url();?>uploads/user_pic/<?php echo $userProfile['profilePic'];?>">
+							<?php 
+								}
+								else
+								{
+							?>
+									<img src="<?php echo base_url();?>assets/img/avatar.png"> 
+							<?php
+								} 
+							?>
                         </div>
-                        <p>Ryan, male
-                           <br>17/0ct/1991
-                        </p>
-                        <p>St Georges
-                           BDS, <br>
-                           Year-2009
+                        <p><?php echo $userData['fullname'];?>,<?php echo $userProfile['gender'];?> <br>
+                           <?php echo $userProfile['dob'];?> 
                         </p>
                         <p class="edit_profile_link"><a href="#">Edit Profile</a></p>
                      </div>

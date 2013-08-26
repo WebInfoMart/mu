@@ -479,14 +479,33 @@ class Users extends CI_Model
 	function save_profile()
 	{
 		//print_r($this->input->post());
-		$data	=	array(
-						'userId'	=>	$this->tank_auth->get_user_id(),
-						'dob'		=>	$this->input->post('dob'),
-						'gender'	=>	$this->input->post('gender'),
-						'cityId'	=>	$this->input->post('city'),
-						'countryId'=>	$this->input->post('country')
-							);
-		$this->db->insert('userProfile',$data);
+		$userId = $this->tank_auth->get_user_id();
+		$this->db->select('userId');
+		$this->db->where('userId',$userId);
+		$this->db->from('userProfile');
+		$query=$this->db->get();
+		if($query->row())
+		{
+			$data	=	array(
+							'dob'		=>	$this->input->post('dob'),
+							'gender'	=>	$this->input->post('gender'),
+							'cityId'	=>	$this->input->post('city'),
+							'countryId'=>	$this->input->post('country')
+								);
+			$this->db->where('userId', $userId);
+			$this->db->update('userProfile',$data);
+		}
+		else
+		{
+			$data	=	array(
+							'userId'	=>	$userId,
+							'dob'		=>	$this->input->post('dob'),
+							'gender'	=>	$this->input->post('gender'),
+							'cityId'	=>	$this->input->post('city'),
+							'countryId'=>	$this->input->post('country')
+								);
+			$this->db->insert('userProfile',$data);
+		}
 							
 	}
 	function upload_profile_pic()
@@ -540,41 +559,92 @@ class Users extends CI_Model
 	function save_profile_match()
 	{
 	/*user_profile_matching*/
-		$data	=	array(
-						'userId'	=>	$this->tank_auth->get_user_id(),
-						'schoolName'	=>	$this->input->post('school'),
-						'lookingFor'	=>	$this->input->post('lookingfor'),
-						'percentageXII'	=>	$this->input->post('XIIpercentage'),
-						'percentageUG'	=>	$this->input->post('UGpercentage'),	 
-						'percentagePG'	=>	$this->input->post('PGpercentage'),
-						'fieldsXII'	 	=>	$this->input->post('XIIfields'),
-						'fieldsUG'		=>	$this->input->post('UGfields'),
-						'fieldsPG'		=>	$this->input->post('PGfields'),
-						'yearPassOutXII'=>	$this->input->post('XIIyearofpassout'),	 
-						'yearPassOutUG'	=>	$this->input->post('UGyearofpassout'),	 
-						'yearPassOutPG'	=>	$this->input->post('PGyearofpassout')
-						);
-		//print_r($data);
-		$this->db->insert('usersMatch',$data);
+		$userId = $this->tank_auth->get_user_id();
+		$this->db->select('userId');
+		$this->db->where('userId',$userId);
+		$this->db->from('userProfile');
+		$query=$this->db->get();
+		if($query->row())
+		{
+			$data	=	array(
+							'schoolName'	=>	$this->input->post('school'),
+							'lookingFor'	=>	$this->input->post('lookingfor'),
+							'percentageXII'	=>	$this->input->post('XIIpercentage'),
+							'percentageUG'	=>	$this->input->post('UGpercentage'),	 
+							'percentagePG'	=>	$this->input->post('PGpercentage'),
+							'fieldsXII'	 	=>	$this->input->post('XIIfields'),
+							'fieldsUG'		=>	$this->input->post('UGfields'),
+							'fieldsPG'		=>	$this->input->post('PGfields'),
+							'yearPassOutXII'=>	$this->input->post('XIIyearofpassout'),	 
+							'yearPassOutUG'	=>	$this->input->post('UGyearofpassout'),	 
+							'yearPassOutPG'	=>	$this->input->post('PGyearofpassout')
+							);
+			$this->db->where('userId', $userId);
+			$this->db->update('usersMatch',$data);
+		}
+		else
+		{
+			$data	=	array(
+							'userId'	=>	$userId,
+							'schoolName'	=>	$this->input->post('school'),
+							'lookingFor'	=>	$this->input->post('lookingfor'),
+							'percentageXII'	=>	$this->input->post('XIIpercentage'),
+							'percentageUG'	=>	$this->input->post('UGpercentage'),	 
+							'percentagePG'	=>	$this->input->post('PGpercentage'),
+							'fieldsXII'	 	=>	$this->input->post('XIIfields'),
+							'fieldsUG'		=>	$this->input->post('UGfields'),
+							'fieldsPG'		=>	$this->input->post('PGfields'),
+							'yearPassOutXII'=>	$this->input->post('XIIyearofpassout'),	 
+							'yearPassOutUG'	=>	$this->input->post('UGyearofpassout'),	 
+							'yearPassOutPG'	=>	$this->input->post('PGyearofpassout')
+							);
+			//print_r($data);
+			$this->db->insert('usersMatch',$data);
+		}
 	}
 	function save_external_info()
 	{
+		$userId = $this->tank_auth->get_user_id();
+		$this->db->select('userId');
+		$this->db->where('userId',$userId);
+		$this->db->from('userProfile');
+		$query=$this->db->get();
 		$sat=$this->input->post('sat_math').",".$this->input->post('sat_reading').",".$this->input->post('sat_writing').",".$this->input->post('sat_composite');
 		$act=$this->input->post('act_math').",".$this->input->post('act_reading').",".$this->input->post('act_writing').",".$this->input->post('act_composite');
-		$data	=	array(
-						'userId'	=>	$this->tank_auth->get_user_id(),
-						'SAT'		=>	$sat,
-						'ACT'		=>	$act,
-						'IELTS'		=>	$this->input->post('ielts'),
-						'PTE'		=>	$this->input->post('pte')
-						);
-		$this->db->insert('usersExt',$data);
+		if($query->row())
+		{
+			$data	=	array(
+							'SAT'		=>	$sat,
+							'ACT'		=>	$act,
+							'IELTS'		=>	$this->input->post('ielts'),
+							'PTE'		=>	$this->input->post('pte')
+							);
+			
+			$this->db->where('userId', $userId);
+			$this->db->update('usersExt',$data);
+		}
+		else
+		{
+			$data	=	array(
+							'userId'	=>	$userId,
+							'SAT'		=>	$sat,
+							'ACT'		=>	$act,
+							'IELTS'		=>	$this->input->post('ielts'),
+							'PTE'		=>	$this->input->post('pte')
+							);
+			$this->db->insert('usersExt',$data);
+		}
 	}
 	function getUserProfileDetails($userId)
 	{
 		$query=$this->db->query("select DATE_FORMAT(userProfile.dob, '%M %D, %Y') as dob,gender,profilePic from userprofile where userId=$userId limit 1");
 		return $query->row_array();
-	}	
+	}
+	function getUserProfileMatch($userId)
+	{
+		$query=$this->db->query("select * from userprofile where userId=$userId limit 1");
+		return $query->row_array();
+	}
 	
 }
 

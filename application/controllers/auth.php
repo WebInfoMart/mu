@@ -957,7 +957,9 @@ class Auth extends CI_Controller
 				$this->users->save_external_info();  //update process is remaining if there is already record present
 				redirect('auth/profileDashboard');
 			}
-			$this->layout->view('auth/profileStep3');
+			$data['userProfile'] = $this->users->getUserProfileDetails($this->tank_auth->get_user_id());
+			$data['userProfileMatch'] = $this->users->getUserProfileMatch($this->tank_auth->get_user_id());
+			$this->layout->view('auth/profileStep3',$data);
 		}
 		else
 		{
