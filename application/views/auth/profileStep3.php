@@ -44,7 +44,7 @@
                         <p><?php echo $userData['fullname'];?>,<?php echo $userProfile['gender'];?> <br>
                            <?php echo $userProfile['dob'];?> 
                         </p>
-                        <p class="edit_profile_link"><a href="#">Edit Profile</a></p>
+                        <!--<p class="edit_profile_link"><a href="#">Edit Profile</a></p>-->
                      </div>
                   </article>
                   <article class="span9 r_col_sing row">
@@ -58,43 +58,43 @@
 					$act_writing=array('name'	=>	'act_writing','id'	=>	'act_writing','value'	=>	set_value('act_writing'),'class'=>'span2','placeholder'=>'Writing');
 					$act_composite=array('name'	=>	'act_composite','id'	=>	'act_composite','value'	=>	set_value('act_composite'),'class'=>'span2','placeholder'=>'Composite');
 					
-					$ielts=array('name'=>'ielts','id'=>'ielts','value'=>set_value('ielts'));
-					$pte=array('name'=>'pte','id'=>'pte','value'=>set_value('pte'));
+					//$ielts=array('name'=>'ielts','id'=>'ielts','value'=>set_value('ielts'));
+					//$pte=array('name'=>'pte','id'=>'pte','value'=>set_value('pte'));
 					?>
-                     <?php echo form_open($this->uri->uri_string());?>
+                     <?php 
+					 $form_attr = array('class'=>'form-inline');
+					 echo form_open($this->uri->uri_string(),$form_attr);?>
                         <div class="sat span9" >
-                           <input type="radio" name="sat_or_act" class="styled"> 
-                           <h4>SAT</h4>
+						<label class="radio inline">
+                           <input type="radio" name="sat" id="sat"/> SAT</label>
+                           
                            <div class="clearfix"></div>
-                           <!--<input type="text" class="span2" placeholder="Marks">
-                           <input type="text" class="span2" placeholder="Heading">
-                           <input type="text" class="span2" placeholder="Writing">
-                           <input type="text" class="span2" placeholder="Combine">-->
-						   <?php echo form_input($sat_math);?>
-							<?php echo form_input($sat_reading);?>
-							<?php echo form_input($sat_writing);?>
-							<?php echo form_input($sat_composite);?>
+						    <div class="controls controls-row" id="sat-div" style="display:none;">
+								<?php echo form_input($sat_math);?>
+								<?php echo form_input($sat_reading);?>
+								<?php echo form_input($sat_writing);?>
+								<?php echo form_input($sat_composite);?>
+							</div>
                         </div>
                         <div class="act span9">
-                           <input type="radio" name="sat_or_act" class="styled"> 
-                           <h4>ACT</h4>
+						<label class="radio inline">
+                           <input type="radio" name="act" id="act"/> ACT</label>
                            <div class="clearfix"></div>
-							<?php echo form_input($act_math);?>
-							<?php echo form_input($act_reading);?>
-							<?php echo form_input($act_writing);?>
-							<?php echo form_input($act_composite);?>
-                           <div class="span2">
-                              <h4>IELTS</h4>
-                              <input type="text" class="span2" placeholder="IELTS">
-                           </div>
-                           <div class="span2">
-                              <h4>PTB</h4>
-                              <input type="text" class="span2" placeholder="PTB">
-                           </div>
+						    <div class="controls controls-row" id="act-div" style="display:none;">
+								<?php echo form_input($act_math);?>
+								<?php echo form_input($act_reading);?>
+								<?php echo form_input($act_writing);?>
+								<?php echo form_input($act_composite);?>
+							</div>
+						   
+                              <label>IELTS
+                              <input type="text" name="ielts" class="span2" placeholder="IELTS"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+                              <label>PTE
+                              <input type="text" name="pte" class="span2" placeholder="PTE"></label>
                         </div>
                         <div class="clearfix"></div>
                         <div id="bu_next" class="pull-right">
-                           <button class="btn " type="button">Back</button>
+                            <a href="<?php echo base_url('auth/profileMatch');?>"><button class="btn " type="button">Back</button></a>
                            <input class="btn " type="submit" onclick="" value="Finish" name="save_external_info">
                         </div>
                      <?php form_close();?>
@@ -104,3 +104,19 @@
          </div>
       </div>
       <!--end main-->
+	  
+	  <?php $this->load->view('layout/js')?>
+	  
+	  <script>
+	  $(document).ready(function(){
+	  
+		$("#sat").click(function(){
+			$("#sat-div").fadeIn();
+		});
+		$("#act").click(function(){
+			$("#act-div").fadeIn();
+		});
+		
+		});
+	  
+	  </script>

@@ -43,7 +43,7 @@
                         <p><?php echo $userData['fullname'];?>,<?php echo $userProfile['gender'];?> <br>
                            <?php echo $userProfile['dob'];?> 
                         </p>
-                        <p class="edit_profile_link"><a href="#">Edit Profile</a></p>
+                        <!--<p class="edit_profile_link"><a href="#">Edit Profile</a></p>-->
                      </div>
                   </article>
                   <article class="span9 r_col_sing">
@@ -61,57 +61,77 @@
                      <?php echo form_open($this->uri->uri_string());?>
                     <div class="control-group">
 					  <div class="controls">
-						<div class="input-prepend span8">
                            <h4>School Name</h4>
 						   <?php echo form_input($school);?>
-                        </div>
-						<span class="help-inline" style="color:red;">
+							<span class="help-inline" style="color:red;">
 							<?php echo form_error('school');?>
 						</span>
 					  </div>
 					</div>
 					<div class="control-group">
 					  <div class="controls">
-						<div class="input-prepend span8">
                            <h4>I Have Done</h4>
-						   <label class="inline">
-						    <input type="radio" value="XII" class="lookingfor" name="lookingfor">XII</label>
-							<label class="inline">
-							<input type="radio" value="UG" class="lookingfor" name="lookingfor">UG</label>
-							<label class="inline">
-							<input type="radio" value="PG" class="lookingfor" name="lookingfor">PG</label>
-                        </div>
+							<label class="radio inline">
+								<input type="radio" value="XII" class="lookingfor" name="lookingfor">XII&nbsp;&nbsp;
+							</label>
+							<label class="radio inline">
+								<input type="radio" value="UG" class="lookingfor" name="lookingfor">UG&nbsp;&nbsp;
+							</label>
+							<label class="radio inline">
+								<input type="radio" value="PG" class="lookingfor" name="lookingfor">PG&nbsp;&nbsp;
+							</label>
 					  </div>
 					</div>
-					<div class="control-group" id="XII" style="display:none;">
-					  <div class="controls">
-						<div class="input-prepend span8">
-                           <h5>XII Details</h5>
-						    <input class="span2" type="text" value="" name="XIIpercentage" placeholder="Percentage">
-							<input class="span2" type="text" value="" name="XIIyearofpassout" placeholder="Year of Passout">
-							<input class="span2" type="text" value="" name="XIIfields" placeholder="Field">
-                        </div>
-					  </div>
+					<div class="controls controls-row" id="XII" style="display:none;">
+                        <h5>XII Details</h5>
+							<!--<input class="span2" type="text" value="" name="XIIyearofpassout" placeholder="Year of Passout">-->
+						<select class="span2" name="XIIyearofpassout">
+							<option>Year of Passout</option>
+							<?php for($counter=2013;$counter>=1995;$counter--)
+							{?>
+							<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
+							<?php 
+							}?>
+						</select>
+						<input class="span2" type="text" value="" name="XIIfields" placeholder="Field">
+						<div class="input-append span2">
+						    <input class="span1" type="text" value="" name="XIIpercentage" placeholder="%%">
+							<span class="add-on">%</span>
+						</div>
 					</div>
-					<div class="control-group" id="UG" style="display:none;">
-					  <div class="controls">
-						<div class="input-prepend span8">
+					<div class="controls controls-row" id="UG" style="display:none;">
                            <h5>UG Details</h5>
-							<input class="span2" type="text" value="" name="UGpercentage" placeholder="Percentage">
-							<input class="span2" type="text" value="" name="UGyearofpassout" placeholder="Year of Passout">
+							<!--<input class="span2" type="text" value="" name="UGyearofpassout" placeholder="Year of Passout">-->
+							<select class="span2" name="UGyearofpassout">
+								<option>Year of Passout</option>
+								<?php for($counter=2013;$counter>=1995;$counter--)
+								{?>
+								<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
+								<?php 
+								}?>
+							</select>
 							<input class="span2" type="text" value="" name="UGfields" placeholder="Fields">
-                        </div>
-					  </div>
+							<div class="input-append span2">
+								<input class="span1" type="text" value="" name="UGpercentage" placeholder="%%">
+								<span class="add-on">%</span>
+							</div>
 					</div>
-					<div class="control-group" id="PG" style="display:none;">
-					  <div class="controls">
-						<div class="input-prepend span8">
+					<div class="controls controls-row" id="PG" style="display:none;">
                            <h5>PG Details</h5>
-							<input class="span2" type="text" value="" name="PGpercentage" placeholder="Percentage">
-							<input class="span2" type="text" value="" name="PGyearofpassout" placeholder="Year of Passout">
+							<!--<input class="span2" type="text" value="" name="PGyearofpassout" placeholder="Year of Passout">-->
+							<select class="span2" name="PGyearofpassout">
+								<option>Year of Passout</option>
+								<?php for($counter=2013;$counter>=1995;$counter--)
+								{?>
+								<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
+								<?php 
+								}?>
+							</select>
 							<input class="span2" type="text" value="" name="PGfields" placeholder="Fields" name="save_profile_match">
-                        </div>
-					  </div>
+							<div class="input-append span2">
+								<input class="span1" type="text" value="" name="PGpercentage" placeholder="%%">
+								<span class="add-on">%</span>
+							</div>
 					</div>
 					
                         <!--<div class="input-prepend span2">
@@ -136,7 +156,7 @@
                         </div>-->
                         <div class="clearfix"></div>
                         <div id="bu_next" class="pull-right">
-                           <button class="btn " type="button">Skip</button>
+                            <a href="<?php echo base_url('auth/profileStep3');?>"><button class="btn " type="button">Skip</button></a>
                            <input class="btn " type="submit" onclick=""  name="save_profile_match" value="Next">
                         </div>
                      <?php form_close();?>

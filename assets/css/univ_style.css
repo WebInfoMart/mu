@@ -135,14 +135,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4697c5', end
 	border-radius:0;
 	float:none;
 }
-.input-append input {
+/*.input-append input {
 	width:240px;
 	vertical-align:middle;
 	display:table-cell;
 	font-size:11px;
 	float:none;
 	color:#9f9f9f;
-}
+}*/
 .form-search {
 	vertical-align:middle;
 	display:table-cell;
@@ -1103,16 +1103,16 @@ select {
  src: url(../font/pala.ttf);
 }
 .checkbox, .radio {
-	width: 19px;
+	/*width: 19px;
 	height: 25px;
 	padding: 0 5px 0 0;
 	background: url(../img/checkbox.png) no-repeat;
 	display: block;
 	clear: left;
-	float: left;
+	float: left;*/
 }
 .radio {
-	background: url(../img/radio.png) no-repeat;
+	/*background: url(../img/radio.png) no-repeat;*/
 }
 .select {
 	position: absolute;

@@ -12,7 +12,7 @@
                </div>
                <div class="name">
                   <div  class="well well-small">
-                     <h2>Ryan Benston</h2>
+                     <h2><?php echo $userData['fullname']?></h2>
                   </div>
                </div>
                <div id="l_more">
@@ -33,13 +33,11 @@
 						0=>array(
 								'name'	=>	'gender',
 								'checked'=>	true,
-								'value'	=>	'male',
-								'class'	=>	'styled'
+								'value'	=>	'male'
 								),
 						1=>array(
 								'name'	=>	'gender',
-								'value'	=>	'female',
-								'class'	=>	'styled'
+								'value'	=>	'female'
 								)
 				);
 				$profile_pic=array(
@@ -52,92 +50,79 @@
 			   <?php echo form_open_multipart($this->uri->uri_string());?>
                <article class="span6 l_col_sing">
                   
-				<div class="control-group">
-					<div class="controls">
-					 <h4>D.O.B</h4>
-                     <div class="input-prepend">
-					 <?php echo form_input($dob);?>
-                        <select class="span1" id="birthDay" onchange="changeDob();">
-							<option value="0">Date</option>
-							<?php 
-							for($counter=1;$counter<=30;$counter++)
-							{
-							?>
-							<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
-							<?php
-							}
-							?>
-						</select>
-						<select class="span1" id="birthMonth" onchange="changeDob();">
-							<option value="0">Month</option>
-							<option value="1">Jan</option>
-							<option value="2">Feb</option>
-							<option value="3">Mar</option>
-							<option value="4">Apr</option>
-							<option value="5">May</option>
-							<option value="6">Jun</option>
-							<option value="7">Jul</option>
-							<option value="8">Aug</option>
-							<option value="9">Sep</option>
-							<option value="10">Oct</option>
-							<option value="11">Nov</option>
-							<option value="12">Dec</option>
-						</select>
-						<select class="span2" id="birthYear" onchange="changeDob();">
-							<option value="0">Year</option>
-							<?php for($counter=1980;$counter<=2005;$counter++)
-							{
-							?>
-							<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
-							<?php
-							}
-							?>
-						</select>
-                     </div>
-					 <span class="help-inline" style="color:red;"><?php echo form_error($dob['name'])?></span>
-					</div>
+				<div class="controls controls-row">
+					<h4>D.O.B</h4>
+                       <select class="span1" id="birthDay" onchange="changeDob();">
+						<option value="0">Date</option>
+						<?php 
+						for($counter=1;$counter<=30;$counter++)
+						{
+						?>
+						<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
+						<?php
+						}
+						?>
+					</select>
+					<select class="span1" id="birthMonth" onchange="changeDob();">
+						<option value="0">Month</option>
+						<option value="1">Jan</option>
+						<option value="2">Feb</option>
+						<option value="3">Mar</option>
+						<option value="4">Apr</option>
+						<option value="5">May</option>
+						<option value="6">Jun</option>
+						<option value="7">Jul</option>
+						<option value="8">Aug</option>
+						<option value="9">Sep</option>
+						<option value="10">Oct</option>
+						<option value="11">Nov</option>
+						<option value="12">Dec</option>
+					</select>
+					<select class="span2" id="birthYear" onchange="changeDob();">
+						<option value="0">Year</option>
+						<?php for($counter=1980;$counter<=2005;$counter++)
+						{
+						?>
+						<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
+						<?php
+						}
+						?>
+					</select>
+					<span class="help-inline" style="color:red;"><?php echo form_error($dob['name'])?></span>
+					<?php echo form_input($dob);?>
 				</div>
 				<div class="control-group">
+				<h4>Gender</h4>
 					<div class="controls">
-                     <h4>Gender</h4>
-                     <div class="input-prepend">
-                        <div class="span2 no_margin">
                            <!--<input type="radio" name="radio"  class="styled" selected>-->
+						   <label class="radio inline span1 no_margin">
 						   <?php echo form_radio($gender[0]);?>
                            <img src="<?php echo base_url();?>assets/img/man.png">
-                        </div>
-                        <div class="span2">
+						   </label>
                            <!--<input type="radio" name="radio"  class="styled">-->
+						   <label class="radio inline">
 						   <?php echo form_radio($gender[1]);?>
                            <img src="<?php echo base_url();?>assets/img/woman.png">
-                        </div>
-                     </div>
+						   </label>
 					</div>
 				</div>
-                     <br>
 				<div class="control-group">
-					<div class="controls">
-                     <h4>Location</h4>
-                     <div class="input-prepend">
-						<select name="city" class="span2">
-							<option value="">City</option>
-							<option value="1">Dehradun</option>
-						</select>
-                     </div>
-                     <div class="input-prepend">
-                        <select class="span2" name="country">
-							<option value="">Country</option>
-							<option value="1">India</option>
-                        </select>
-                     </div>
-					<span class="help-inline" style="color:red;">
-						<?php echo form_error('city');?>
-						<?php echo form_error('country');?>
-					</span>
+					<div class="controls controls-row">
+						<h4>Location</h4>
+							<select class="span2" name="country">
+								<option value="">Country</option>
+								<option value="1">India</option>
+							</select>
+							<select name="city" class="span2">
+								<option value="">City</option>
+								<option value="1">Dehradun</option>
+							</select>
+						<span class="help-inline" style="color:red;">
+							<?php echo form_error('city');?>
+							<?php echo form_error('country');?>
+						</span>
 					</div>
 				</div>
-                     <br>
-                  
                </article>
                <article class="span5 r_col_sing">
                   <h4> Update profile picture</h4>
@@ -165,7 +150,8 @@
                   </div>
                   <div class="clearfix"></div>
                   <div id="bu_next" class="pull-right">
-                     <button class="btn " type="button">Skip</button>
+                     
+					 <a href="<?php echo base_url('auth/profileMatch');?>"><button class="btn " type="button">Skip</button></a>
                      <input class="btn " type="submit" name="save_profile" onclick="" value="Next">
                   </div>
                </article>

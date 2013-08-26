@@ -637,12 +637,12 @@ class Users extends CI_Model
 	}
 	function getUserProfileDetails($userId)
 	{
-		$query=$this->db->query("select DATE_FORMAT(userProfile.dob, '%M %D, %Y') as dob,gender,profilePic from userprofile where userId=$userId limit 1");
+		$query=$this->db->query("select DATE_FORMAT(userProfile.dob, '%M %D, %Y') as dob,gender,profilePic from userProfile where userId=$userId limit 1");
 		return $query->row_array();
 	}
 	function getUserProfileMatch($userId)
 	{
-		$query=$this->db->query("select * from userprofile where userId=$userId limit 1");
+		$query=$this->db->query("select * from userProfile where userId=$userId limit 1");
 		return $query->row_array();
 	}
 	
