@@ -22,7 +22,7 @@
                   <section class="span2">
                      <h5 class="no_margin margin_b_10">Filter Your Search:</h5>
                      <div class="tab_spine clearfix">
-                        <h3>LOCATION</h3>
+                        <h3>Location</h3>
                         <ul class="unstyled">
                            <li><a href="#">50 miles of 24712</a></li>
                            <li><a href="#">West Virginia</a></li>
@@ -87,7 +87,11 @@
 									 <aside class='pull-right' >
 									  <button type='submit' class='btn btn-success  btn-mini'>Mu Connect</button>
 									  <p><a href='#'>Quick View</a></p>
-									  <p><a href="<?php echo base_url().'college/'.$universities->id?>">View Full Profile</a></p>
+									  <?php
+										$link = str_replace(' ','-',$universities->univName);
+										$link = preg_replace('/[^A-Za-z0-9\-]/', '',$link);
+									  ?>
+									  <p><a href="<?php echo base_url().'college/'.$link.'/'.$universities->id?>">View Full Profile</a></p>
 									   </aside>
 									   </article>
 									<article class='clearfix'>

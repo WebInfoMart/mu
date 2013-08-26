@@ -20,7 +20,11 @@
 									 <aside class='pull-right' >
 									  <button type='submit' class='btn btn-success  btn-mini'>Mu Connect</button>
 									  <p><a href='#'>Quick View</a></p>
-									  <p><a href="<?php echo base_url().'college/individualCollege/'.$universities->id?>">View Full Profile</a></p>
+									   <?php
+										$link = str_replace(' ','-',$universities->univName);
+										$link = preg_replace('/[^A-Za-z0-9\-]/', '',$link);
+									  ?>
+									  <p><a href="<?php echo base_url().'college/'.$link.'/'.$universities->id?>">View Full Profile</a></p>
 									   </aside>
 									   </article>
 									<article class='clearfix'>

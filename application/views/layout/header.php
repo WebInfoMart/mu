@@ -20,10 +20,10 @@
             <a href="<?php echo base_url()?>" id="logo"><img src="<?php echo base_url();?>assets/img/logo.png" alt="Meet Univ"></a>
             <nav role="navigation" id="top_menu">
                <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="college-listing.html">Colleges</a></li>
-                  <li><a href="connect_listing.html">Events</a></li>
-                  <li><a href="blog.html">Articles </a></li>
+                  <li><a href="<?php echo base_url();?>">Home</a></li>
+                  <li><a href="<?php echo base_url('college');?>">Colleges</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Articles </a></li>
                </ul>
             </nav>
 			<?php if(isset($userId)){?>

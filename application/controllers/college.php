@@ -24,7 +24,7 @@ public function index() {
 		$data["countResults"] = $this->collegeModel-> record_count();
         $this->layout->view("college/college", $data);
     }
-	public function individualCollege($collegeId)
+	public function individualCollege($college,$collegeId)
 	{
 	 $data["universityData"]=$this->collegeModel->getUniversityDetailById($collegeId);
 	 $this->layout->view("college/individualCollege",$data);
