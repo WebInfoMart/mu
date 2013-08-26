@@ -570,6 +570,12 @@ class Users extends CI_Model
 						);
 		$this->db->insert('usersExt',$data);
 	}
+	function getUserProfileDetails($userId)
+	{
+		$query=$this->db->query("select DATE_FORMAT(userProfile.dob, '%M %D, %Y') as dob,gender,profilePic from userprofile where userId=$userId limit 1");
+		return $query->row_array();
+	}	
+	
 }
 
 /* End of file users.php */

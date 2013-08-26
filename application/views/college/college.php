@@ -64,7 +64,7 @@
                         </ul>
                      </div>
                   </section>
-                  <article class="span3">
+                  <article class="span3"  id="collegeContent">
                      <p class="text-right">Showing 10/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
                      <section class="blog_style">
                         <article class="clearfix">
@@ -87,7 +87,7 @@
 									 <aside class='pull-right' >
 									  <button type='submit' class='btn btn-success  btn-mini'>Mu Connect</button>
 									  <p><a href='#'>Quick View</a></p>
-									  <p><a href="<?php echo base_url().'college/individualCollege/'.$universities->id?>">View Full Profile</a></p>
+									  <p><a href="<?php echo base_url().'college/'.$universities->id?>">View Full Profile</a></p>
 									   </aside>
 									   </article>
 									<article class='clearfix'>
@@ -104,6 +104,7 @@
                            <li ><a href="#">&gt;</a></li>
                         </ul>-->
                      </div>
+					 
                   </article>
                   <aside class="span4">
                      <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
@@ -122,3 +123,32 @@
          </div>
       </div>
       <!--end main-->
+	  <?php $this->load->view('layout/js'); ?>
+	  <script>
+					$(document).ready(function(){
+					
+						$("#pagination a").click(function(){
+							
+							var url = $(this).attr('href');
+							var temp = url.split('/');
+							
+							var data = {offset:temp[6]};
+							$.ajax({
+								type	:	'POST',
+								data	:	data,
+								url		:	url,
+								beforeSend: function(){
+									$("#collegeContent").css('opicity','0.4');
+								},
+								success: function(data){
+									$("#collegeContent").html(data);
+									$("#collegeContent").css('opicity','1');
+								},
+								
+							})
+							return false;
+						});
+					
+					});
+					
+					</script>

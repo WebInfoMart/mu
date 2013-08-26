@@ -911,7 +911,8 @@ class Auth extends CI_Controller
 				redirect('auth/profileStep3');
 				}
 			}
-			$this->layout->view('auth/profileMatch');
+			$data['userProfile'] = $this->users->getUserProfileDetails($this->tank_auth->get_user_id());
+			$this->layout->view('auth/profileMatch',$data);
 		}
 		else
 		{

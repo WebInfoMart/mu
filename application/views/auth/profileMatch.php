@@ -23,7 +23,23 @@
                <div class="row">
                   <article class="span2 l_col_sing " style="background:none;">
                      <div  class="text-center" id="profile_2">
-                        <div id="real_profile_pic"> <img src="<?php echo base_url();?>assets/img/avatar.png"> </div>
+                        <div id="real_profile_pic"> 
+						
+						<?php 
+							if($userProfile['profilePic'])
+							{
+						?>
+							<img src="<?php echo base_url();?>assets/img/<?php echo $userProfile['profilePic'];?>">
+						<?php 
+							}
+							else
+							{
+						?>
+								<img src="<?php echo base_url();?>assets/img/avatar.png"> 
+						<?php
+							} 
+						?>
+						</div>
                         <p>Ryan, male <br>
                            17/0ct/1991 
                         </p>

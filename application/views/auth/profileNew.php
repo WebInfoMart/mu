@@ -26,7 +26,8 @@
 						'id'	=>	'dob',
 						'value'	=>	set_value('dob'),
 						'class'	=> 	'span4',
-						'placeholder'=>"dd-mm-yy"
+						'placeholder'=>"dd-mm-yy",
+						'type'	=> "hidden"
 				);
 				$gender=array(
 						0=>array(
@@ -56,7 +57,42 @@
 					 <h4>D.O.B</h4>
                      <div class="input-prepend">
 					 <?php echo form_input($dob);?>
-                        <!--<input class="span4"  type="text" placeholder="dd-mm-yy">-->
+                        <select class="span1" id="birthDay" onchange="changeDob();">
+							<option value="0">Date</option>
+							<?php 
+							for($counter=1;$counter<=30;$counter++)
+							{
+							?>
+							<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
+							<?php
+							}
+							?>
+						</select>
+						<select class="span1" id="birthMonth" onchange="changeDob();">
+							<option value="0">Month</option>
+							<option value="1">Jan</option>
+							<option value="2">Feb</option>
+							<option value="3">Mar</option>
+							<option value="4">Apr</option>
+							<option value="5">May</option>
+							<option value="6">Jun</option>
+							<option value="7">Jul</option>
+							<option value="8">Aug</option>
+							<option value="9">Sep</option>
+							<option value="10">Oct</option>
+							<option value="11">Nov</option>
+							<option value="12">Dec</option>
+						</select>
+						<select class="span2" id="birthYear" onchange="changeDob();">
+							<option value="0">Year</option>
+							<?php for($counter=1980;$counter<=2005;$counter++)
+							{
+							?>
+							<option value="<?php echo $counter;?>"><?php echo $counter;?></option>
+							<?php
+							}
+							?>
+						</select>
                      </div>
 					 <span class="help-inline" style="color:red;"><?php echo form_error($dob['name'])?></span>
 					</div>
@@ -114,14 +150,18 @@
                         </p>
                      </div>
                      <div class="clearfix"></div>
-                     <div class="span2 no_margin">
+					 <div class="span2 no_margin">
+                        <input type="file" name="profile_pic" value="Choose File">
+                     </div>
+					 
+                     <!--<div class="span2 no_margin">
                         <input type="radio" name="a" class="styled" />
                         Fill Form 
                      </div>
                      <div class="span2 no_margin">
                         <input type="radio" name="a" class="styled" />
                         Click Camra 
-                     </div>
+                     </div>-->
                   </div>
                   <div class="clearfix"></div>
                   <div id="bu_next" class="pull-right">
@@ -136,38 +176,16 @@
       <!--end main-->
 	  
 	  
-	  <?php $this->load->view('layout/js');?>
+	<?php $this->load->view('layout/js');?>
 	  
+	<script>
+		function changeDob()
+		{
+			if($("#birthMonth").val()!=0 && $("#birthDay").val()!=0 && $("#birthYear").val()!=0 )
+			{
+			$("#dob").val($("#birthYear").val()+"/"+$("#birthMonth").val()+"/"+$("#birthDay").val());
+			}
+		}
+	</script>
+
 	  
-	  <script>
-         $(document).ready(function(){
-         
-         
-         
-         $('.carousel').carousel({
-         
-         interval: 5000,
-         
-         pause:"hover"
-         
-         })
-         
-         
-         							   $('.tab_spine  ul').slideUp();
-         							   
-         							    $('.tab_spine  ul:first').slideDown();
-         							   
-         							       $('.tab_spine h3').click(function (e) {
-             e.preventDefault();
-         	$('.tab_spine  ul').slideUp();
-             $(this).next().slideDown();
-         	return false;
-         	
-             })
-         								   
-         								   
-         							   
-         						   })
-         
-         
-      </script>

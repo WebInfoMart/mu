@@ -23,7 +23,7 @@ class Layout
 		$this->lt->load->view($this->header,$data);
 		//$this->load->view($this->sidebar,$data);
 		$this->lt->load->view($view, $data);
-		$this->lt->load->view($this->js, $data);
+		//$this->lt->load->view($this->js, $data);			//should be remove form here
 		$this->lt->load->view($this->footer,$data);
 	}
 }
