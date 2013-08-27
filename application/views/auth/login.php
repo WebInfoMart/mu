@@ -176,5 +176,10 @@ if(isset($userData))
       <!--end main-->
 	 
 	 <?php $this->load->view('layout/js');?>
-	  
-	 
+	 <script src="<?php echo base_url();?>assets/js/custom/client.js" type="text/javascript"></script>
+	 <script src="<?php echo base_url();?>assets/js/custom/login.js" type="text/javascript"></script> 
+	 <script>
+		$(document).ready(function () {
+			login.execute();									//code of JavaScript to be executed
+		})
+	</script>

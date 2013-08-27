@@ -105,7 +105,7 @@
                               <div class="tab-content">
                                  <div class="tab-pane active" id="home">
                                     <h5>Majors &amp; Degrees</h5>
-                                    <table class="table">
+                                    <!--<table class="table">
                                        <tr class="success">
                                           <td> Degrees Offered</td>
                                           <td class="text-success">Associate’s</td>
@@ -182,7 +182,40 @@
                                           <td></td>
                                           <td></td>
                                        </tr>
-                                    </table>
+                                    </table>-->
+									<?php
+									$ukprn=$universityData[0]['UKPRN'];
+									$service_url = "https://JY4PDF8DMA1SS2WE16KB@data.unistats.ac.uk/api/KIS/Institution/$ukprn/Courses.json";
+									// Initialize session and set URL.
+									$ch = curl_init();
+									curl_setopt($ch, CURLOPT_URL, $service_url);
+									
+									// Set so curl_exec returns the result instead of outputting it.
+									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+									curl_error($ch);
+									curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+									// Get the response and close the channel.
+									$response = curl_exec($ch);
+									curl_close($ch);
+									$output=json_decode($response);
+									//print_r($output);
+									?>
+									<table class="table">
+									 <tr class="success">
+                                          <td> Degrees Offered</td>
+                                          <td class="text-success">Associate’s<?php echo $universityData[0]['UKPRN'];?></td>
+                                          <td class="text-success">Bachelor’s</td>
+                                       </tr>
+									<?php
+									if($output)
+									{
+										foreach($output as $output)
+										{
+											echo "<tr><td>".$output->Title."</td></tr>";
+										}
+									}
+									?>
+									</table>
                                  </div>
                                  <div class="tab-pane " id="profile">
                                     <h5>Location</h5>

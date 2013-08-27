@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class CollegeModel extends CI_Model
+class Collegemodel extends CI_Model
 {
 	function __construct()
 	{

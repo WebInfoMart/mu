@@ -11,7 +11,7 @@
                   <p>Ivy Lague editors so Fraud Technique Your application essays in as new as 2 hrs</p>
                </div>
                <div class="create_profile span5"> Create a free profile to start saving schools !
-                  <button type="submit" class="btn btn-primary">SIGN UP NOW &raquo;</button>
+                  <a href="<?php echo base_url('register')?>"><button type="submit" class="btn btn-primary">SIGN UP NOW &raquo;</button></a>
                </div>
             </article>
          </section>

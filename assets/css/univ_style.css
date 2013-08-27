@@ -1111,6 +1111,15 @@ select {
 	clear: left;
 	float: left;*/
 }
+.checkbox {/*added by deepak manwal*/
+	width: 19px;
+	height: 25px;
+	padding: 0 5px 0 0;
+	background: url(../img/checkbox.png) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+}
 .radio {
 	/*background: url(../img/radio.png) no-repeat;*/
 }
@@ -1545,6 +1554,7 @@ ul#notification li span {
 	float: left;
 	margin-left: 10px;
 	width: 310px;
+	margin-top: -25px;
 }
 .filter_content h3 {
 	color:#01648b;
@@ -1593,6 +1603,7 @@ ul#notification li span {
 }
 #attending {
 	margin:20px;
+	margin-left: 71px;
 }
 #attending input, #attending .add-on {
 	line-height:10px;

@@ -22,19 +22,19 @@
                <ul>
                   <li><a href="<?php echo base_url();?>">Home</a></li>
                   <li><a href="<?php echo base_url('college');?>">Colleges</a></li>
-                  <li><a href="#">Events</a></li>
+                  <li><a href="<?php echo base_url('connect');?>">Events</a></li>
                   <li><a href="#">Articles </a></li>
                </ul>
             </nav>
 			<?php if(isset($userId)){?>
 			<div class="btn-group pull-right" style="margin-top:13px">
-				<button class="btn btn-small" style="background: #0073d1;color: white;"><?php echo($userData['fullname'])?></button>
-				<button class="btn btn-small"><a href="<?php echo base_url('auth/logout')?>">LOG OUT</a></button>	
+				<button class="btn btn-mini" style="background: #0073d1;color: white;"><?php echo($userData['fullname'])?></button>
+				<a class="btn btn-mini" href="<?php echo base_url('auth/logout')?>">LOG OUT</a>	
        		</div>
 			<?php }else{?>
 			<div class="btn-group pull-right" style="margin-top:13px">
-				<button class="btn btn-small"><a href="<?php echo base_url('login')?>">LOG IN</a></button>
-				<button class="btn btn-small"><a href="<?php echo base_url('register')?>">SIGN UP</a></button>	
+				<a class="btn btn-mini" href="<?php echo base_url('login')?>">LOG IN</a>
+				<a class="btn btn-mini" href="<?php echo base_url('register')?>">SIGN UP</a>	
        		</div>
 			<?php }?>
             <!--<aside id="login"  class="btn-group">
