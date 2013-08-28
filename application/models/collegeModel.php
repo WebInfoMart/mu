@@ -25,12 +25,20 @@ class Collegemodel extends CI_Model
         }
         return false;
 	}
-	public function getUniversityDetailById($id)
+	public function getUniversityDataById($id)
 	{
 		$this->db->select('*');
 		$this->db->from('university');
 		$this->db->where('id',$id);
 		$query=$this->db->get();
-		return $getUniversityDetailById = $query->result_array();
+		return $query->result_array();
+	}
+	public function getUniversityDetailById($id)
+	{
+		$this->db->select('*');
+		$this->db->from('univDetails');
+		$this->db->where('univId',$id);
+		$query = $this->db->get();
+		return $query->row_array();
 	}
 }

@@ -3,8 +3,8 @@
          <div class="row container">
             <article id="college_listing" class="page">
                <ul class="breadcrumb univ_breadcrumb">
-                  <li><a href="#">Home</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
-                  <li><a href="#">College Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
+                  <li><a href="<?php echo base_url()?>">Home</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
+                  <li><a href="<?php echo base_url('connect')?>">Connect Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
                   <li class="active">Search Result</li>
                </ul>
                <div class="clearfix"></div>

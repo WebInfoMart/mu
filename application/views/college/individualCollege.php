@@ -19,7 +19,7 @@
                            <section class="span2">
                               <article>
                                  <p><span>LOCATION</span> <br>
-                                    Los Angeles, CA 
+                                    <?php echo (isset($cityName))?$cityName:'N/A';?>
                                  </p>
                               </article>
                               <article>
@@ -36,12 +36,12 @@
                            <section class="span3">
                               <article>
                                  <p><span>Type</span> <br>
-                                    Public 
+                                    <?php echo (isset($universityDetail['type']))?$universityDetail['type']:'N/A';?> 
                                  </p>
                               </article>
                               <article>
                                  <p><span>TOTAL STUDENTS </span> <br>
-                                    6000
+                                    <?php echo (isset($universityDetail['students']))?$universityDetail['students']:'N/A';?> 
                                  </p>
                               </article>
                               <article>
@@ -52,8 +52,8 @@
                            </section>
                            <section class="span4">
                               <article>
-                                 <p><span>Setting</span> <br>
-                                    Urban
+                                 <p><span>Year Of Establishment</span> <br>
+                                    <?php echo (isset($universityDetail['yearOfEst']))?$universityDetail['yearOfEst']:'N/A';?> 
                                  </p>
                               </article>
                               <article>
@@ -121,7 +121,7 @@
                                        </tr>
                                        <tr class="error">
                                           <td>Business Management and adminstration</td>
-                                          <td><<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/check_opt.png"></td>
+                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
                                           <td></td>
                                        </tr>
                                        <tr  class="text-error">
@@ -136,7 +136,7 @@
                                        </tr>
                                        <tr>
                                           <td>Graphic Communications</td>
-                                          <td><<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/check_opt.png"></td>
+                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
                                           <td></td>
                                        </tr>
                                        <tr class="text-error">
@@ -149,7 +149,7 @@
                                        </tr>
                                        <tr class="error">
                                           <td>Network and System Administration</td>
-                                          <td><<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/check_opt.png"></td>
+                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
                                           <td></td>
                                        </tr>
                                        <tr class="text-error" >
@@ -164,17 +164,17 @@
                                           <td>Electrical, Electronic and Communications 
                                              Engineering Technology 
                                           </td>
-                                          <td><<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/check_opt.png"></td>
+                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
                                           <td></td>
                                        </tr>
                                        <tr class="error" >
                                           <td> Computer Software Technology </td>
-                                          <td><<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/check_opt.png"></td>
+                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
                                           <td></td>
                                        </tr>
                                        <tr class="error" >
                                           <td> Drafting and Design Technology </td>
-                                          <td><<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/check_opt.png"></td>
+                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
                                           <td></td>
                                        </tr>
                                        <tr >
@@ -221,7 +221,7 @@
                                     <h5>Location</h5>
                                     <div id="map">
                                        <!--map code here-->
-                                       <<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/map.png">
+                                       <img src="<?php echo base_url()?>assets/img/map.png">
                                     </div>
                                     <br>
                                     <h5>Contact</h5>
@@ -245,14 +245,14 @@
                            <span class="arrow_b"></span>
                            <ul class="unstyled">
                               <li>
-                                 <<?php echo base_url();?>assets/<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/The-los-angeles-school.png" alt="The los angeles school">
+                                 <img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="The los angeles school">
                                  <div class="list_content">
                                     <h4>The los angeles school</h4>
                                     <p class="city">Hollywood, CA</p>
                                  </div>
                               </li>
                               <li>
-                                 <<?php echo base_url();?>assets/<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/The-New-Common.png" alt="The New Common school">
+                                 <img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The New Common school">
                                  <div class="list_content">
                                     <h4>The New Common
                                        school
@@ -261,7 +261,7 @@
                                  </div>
                               </li>
                               <li>
-                                 <<?php echo base_url();?>assets/<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/<?php echo base_url();?>assets/img/The-New-Common.png" alt="The New Common school">
+                                 <img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The New Common school">
                                  <div class="list_content">
                                     <h4>The New Common
                                        school
@@ -270,7 +270,7 @@
                                  </div>
                               </li>
                               <li>
-                                 <<?php echo base_url();?>assets/<?php echo base_url();?>assets/img src="<?php echo base_url();?>assets/The-los-angeles-school.png" alt="The los angeles school">
+                                 <img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The New Common school">
                                  <div class="list_content">
                                     <h4>The los angeles school</h4>
                                     <p class="city">Hollywood, CA</p>

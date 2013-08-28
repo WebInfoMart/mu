@@ -3,12 +3,12 @@
          <section id="primary_footer">
             <article class ="row container">
                <div class="span3">
-                  <h4>Essay Edge </h4>
-                  <p>Ivy Lague editors so Fraud Technique Your application essays in as new as 2 hrs</p>
+                  <h4>MU Application Edge </h4>
+                  <p>Top Universtiy editor, help review your application Know <!--it from people who have been there - done that!--></p>
                </div>
                <div class="span3">
-                  <h4>Meet Universties’s </h4>
-                  <p>Ivy Lague editors so Fraud Technique Your application essays in as new as 2 hrs</p>
+                  <h4>Book Store </h4>
+                  <p>Need Higher Exam books, Get them at the best price here.</p>
                </div>
                <div class="create_profile span5"> Create a free profile to start saving schools !
                   <a href="<?php echo base_url('register')?>"><button type="submit" class="btn btn-primary">SIGN UP NOW &raquo;</button></a>

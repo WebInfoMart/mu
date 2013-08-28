@@ -180,39 +180,43 @@
                <article>
                   <img src="<?php echo base_url();?>assets/img/timeline.png">
                   <div class="wow">
-                     <h3>Step -by -Step timelines</h3>
-                     <p>Not sure your next steps ? click
-                        these timelines for some great tips
+                     <h3>Get Counseled</h3>
+                     <p>Not sure where to start from ?<br>
+                        Confused start your search here:
                      </p>
-                     <p><a href="#">Undergraduate admission timelines &rarr;</a></p>
+                     <p><a href="<?php echo base_url('college');?>">College search &rarr;</a></p>
                   </div>
                </article>
                <article>
                   <img src="<?php echo base_url();?>assets/img/get.png">
                   <div class="wow">
-                     <h3>Get Easy Step</h3>
-                     <p>Peterson's sister company, EssayEdge, <br>
-                        can help you get your essay noticed!
+                     <h3>Get Connected</h3>
+                     <p>Figure out the college <br>
+                        know your option to get<br> 
+						connected - Directly!
                      </p>
-                     <p><a href="#">Writing a graduate personal statement &rarr;</a></p>
+                     <p><a href="<?php echo base_url('connect');?>">MU Connect &rarr;</a></p>
                   </div>
                </article>
                <article>
                   <img src="<?php echo base_url();?>assets/img/distance.png">
                   <div class="wow">
-                     <h3>Distance Learning</h3>
-                     <p>Everything you need to know about <br>
-                        distance learning, right here!<br>
+                     <h3>Get Coached</h3>
+                     <p>Help in your application process <br>
+                        Free Courseware for Exams.<br>
                      </p>
-                     <p><a href="#">Find a distance learning program &rarr;</a></p>
+                     <p><a href="#">IELTS - Acedemic / English &rarr;</a></p>
                   </div>
                </article>
                <article>
                   <img src="<?php echo base_url();?>assets/img/check.png">
                   <div class="wow">
-                     <h3>Rolling admissions</h3>
-                     <p>Rolling admissions can be a great help in your application process. </p>
-                     <p><a href="#">Applying through rolling admissions! &rarr;</a></p>
+                     <h3>Gifted - Know what you excel at!</h3>
+                     <p>
+					 Don't know which stream to choose ?<br>
+					 Confused career Choices?
+					 </p>
+                     <p><a href="#">I am Gifted &rarr;</a></p>
                   </div>
                </article>
             </section>
@@ -235,12 +239,11 @@
          </section>
          <section class="row container">
             <article class="pull-left">
-               <h3 class="green_title">Don’t Leave your application essay to chance</h3>
+               <h3 class="green_title">Want to get into Havard or MIT ?</h3>
                <img src="<?php echo base_url();?>assets/img/feature_photo.png" class="pull-left">
                <div class="feature_block">
-                  <h4>Experience the EssayEdge difference and benefit from:</h4>
-                  <p>Experience the EssayEdge difference and benefit from:</p>
-                  <button class="btn btn-info" type="button">GET STARTED NOW</button>
+                  <h4>Let experts help you through the process.</h4>
+                  <button class="btn btn-info" type="button">GET EXPERT HELP NOW</button>
                </div>
             </article>
             <aside id="british_council">

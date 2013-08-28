@@ -26,10 +26,17 @@ public function index() {
     }
 	public function individualCollege($college,$collegeId)
 	{
-	 $data["universityData"]=$this->collegemodel->getUniversityDetailById($collegeId);
+	 $data["universityData"]=$this->collegemodel->getUniversityDataById($collegeId);
+	 $data["universityDetail"]=$this->collegemodel->getUniversityDetailById($collegeId);
+	 if($data['universityData'][0]['cityId']) //city details is present
+	 {
+		$city=$this->db->get_where('city',array('id'=>$data['universityData'][0]['cityId']));
+		$temp = $city->row();
+		$data['cityName'] = $temp->cityName;
+	 }
 	 $this->layout->view("college/individualCollege",$data);
 	}
-	public function collegePagination()
+	public function collegePagination($page='')
 	{
 		$config = array();
         $config["base_url"] = base_url() . "college/collegePagination";
@@ -39,7 +46,6 @@ public function index() {
 		$config['full_tag_open'] = '<div id="pagination">';
 		$config['full_tag_close'] = '</div>';
         $this->pagination->initialize($config);
-        $page = $this->input->post('offset');
         $data["results"] = $this->collegemodel-> getAllUniversities($config["per_page"], $page);
 		$data["links"] = $this->pagination->create_links();
 		$data["countResults"] = $this->collegemodel-> record_count();
