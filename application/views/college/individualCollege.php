@@ -28,8 +28,8 @@
                                  </p>
                               </article>
                               <article>
-                                 <p><span>APPLIATION DEADLINE </span> <br>
-                                    September 9 
+                                 <p><span>Intake </span> <br>
+                                    <?php echo (isset($universityDetail['intake']))?$universityDetail['intake']:'N/A';?> 
                                  </p>
                               </article>
                            </section>
@@ -45,8 +45,8 @@
                                  </p>
                               </article>
                               <article>
-                                 <p><span>ACCEPTANCE RATE </span> <br>
-                                    <em> NOT REPORTED</em> 
+                                 <p><span>Accomodation </span> <br>
+                                    <?php echo (isset($universityDetail['accomodation']))?$universityDetail['accomodation']:'N/A';?> 
                                  </p>
                               </article>
                            </section>
@@ -57,20 +57,18 @@
                                  </p>
                               </article>
                               <article>
-                                 <p><span>IN_STATE TUTION | OUT - OF STATE TUTION</span> <br>
-                                    $0  |  $5,370 
+                                 <p><span>Staff</span> <br>
+                                    <?php echo (isset($universityDetail['staff']))?$universityDetail['staff']:'N/A';?> 
                                  </p>
                               </article>
                               <article>
-                                 <p><span> ADMISSION DIFFICULTY</span> <br>
-                                    <em> NOT REPORTED </em>
+                                 <p><span>Student Satisfaction </span> <br>
+                                    <?php echo (isset($universityDetail['studentSatisfaction']))?$universityDetail['studentSatisfaction']:'N/A';?> 
                                  </p>
                               </article>
                            </section>
                            <section class="span2 ave_test">
-                              <p>Average test scores for all first-year 
-                                 students that were accepted and 
-                                 enrolled. 
+                              <p>Acceptance Criteria 
                               </p>
                            </section>
                            <section class="span5 student_report">

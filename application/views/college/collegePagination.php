@@ -18,7 +18,7 @@
 										<p><a href='#'><i class='icon-plus-sign'></i> Add College</a></p>
 										</div>
 									 <aside class='pull-right' >
-									  <button type='submit' class='btn btn-success  btn-mini'>Mu Connect</button>
+									  <button type='submit' class='btn btn-success  btn-mini'>MU Connect</button>
 									  <p><a href='#'>Quick View</a></p>
 									   <?php
 										$link = str_replace(' ','-',$universities->univName);
