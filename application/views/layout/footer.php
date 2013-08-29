@@ -29,61 +29,60 @@
             </article>
             <article id="category_links" class="row container">
                <ul class="nav nav-list">
-                  <h5>Undergraduate<br>
+                  <h5>College<br>
                      Search
                   </h5>
-                  <li><a href="#"> College Search</a></li>
-                  <li><a href="#"> Colleges by State</a></li>
+                  <li><a href="<?php echo base_url('college')?>"> College Search</a></li>
+                  <li><a href="#"> Colleges by Country</a></li>
                   <li><a href="#"> Popular College</a></li>
-                  <li><a href="#"> Majors </a></li>
+                  <li><a href="#"> Popular Countries </a></li>
                </ul>
                <ul class="nav nav-list">
-                  <h5> Types of Colleges /<br>
-                     Programs
-                  </h5>
-                  <li><a href="#"> College Search</a></li>
-                  <li><a href="#"> Colleges by State</a></li>
-                  <li><a href="#"> Popular College</a></li>
-                  <li><a href="#"> Majors </a></li>
-               </ul>
-               <ul class="nav nav-list">
-                  <h5>Graduate School<br>
+                  <h5> Country<br>
                      Search
                   </h5>
-                  <li><a href="#"> College Search</a></li>
-                  <li><a href="#"> Colleges by State</a></li>
-                  <li><a href="#"> Popular College</a></li>
-                  <li><a href="#"> Majors </a></li>
+                  <li><a href="#"> Study In UK</a></li>
+                  <li><a href="#"> Study In USA</a></li>
+                  <li><a href="#"> Study In Singapore</a></li>
+                  <li><a href="#"> Study In Dubai</a></li>
                </ul>
                <ul class="nav nav-list">
-                  <h5>Future Grades<br>
-                     Programmes
+                  <h5>College<br>
+                     Connect
                   </h5>
-                  <li><a href="#"> College Search</a></li>
-                  <li><a href="#"> Colleges by State</a></li>
-                  <li><a href="#"> Popular College</a></li>
-                  <li><a href="#"> Majors </a></li>
+                  <li><a href="#"> Meet UK Universities</a></li>
+                  <li><a href="#"> Meet USA Universities</a></li>
+                  <li><a href="#"> Meet Singapore</a></li>
+                  <li><a href="#"> Universities</a></li>
+                  <li><a href="#"> Majors</a></li>
                </ul>
                <ul class="nav nav-list">
-                  <h5>Admission <br>
-                     Assay
+                  <h5>College<br>
+                     Application
                   </h5>
-                  <li><a href="#"> College Search</a></li>
-                  <li><a href="#"> Colleges by State</a></li>
-                  <li><a href="#"> Popular College</a></li>
-                  <li><a href="#"> Majors </a></li>
+                  <li><a href="#"> Resume Writing</a></li>
+                  <li><a href="#"> Statement of Purpose</a></li>
+                  <li><a href="#"> Requirements</a></li>
+                  <li><a href="#"> Tips & Techniques </a></li>
+               </ul>
+               <ul class="nav nav-list">
+                  <h5>Coaching
+                  </h5>
+                  <li><a href="#"> IELTS Video Tutorials</a></li>
+                  <li><a href="#"> Career Stream Chooser</a></li>
+                  <li><a href="#"> Requirements</a></li>
+                  <li><a href="#"> Tips & Techniques </a></li>
                </ul>
                <ul class="nav nav-list" style="margin-right:0; padding-right:0; float:right;">
                   <h5>Other <br>
                      Resources
                   </h5>
-                  <li><a href="#"> collegeinfo.com</a></li>
-                  <li><a href="#"> topeducationdegrees.com</a></li>
-                  <li><a href="#"> criminaljusticemajors.com</a></li>
+                  <li><a href="#"> iamgifted.in</a></li>
+                  <li><a href="#"> myieltsguru.com</a></li>
+                  <li><a href="#"> mygreguru.com</a></li>
                   <li><a href="#"> psychologymajors.com</a></li>
                   <li><a href="#"> businessschoolsedge.com</a></li>
                   <li></li>
-                  <li><a href="#"> computermajors.com</a></li>
                   <li><a href="#"> topaccountingdegrees.com</a></li>
                </ul>
                <div class="clearfix"></div>

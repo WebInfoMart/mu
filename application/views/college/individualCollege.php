@@ -29,7 +29,7 @@
                               </article>
                               <article>
                                  <p><span>Intake </span> <br>
-                                    <?php echo (isset($universityDetail['intake']))?$universityDetail['intake']:'N/A';?> 
+                                    <?php echo (isset($universityDetail['intakes']))?$universityDetail['intakes']:'N/A';?> 
                                  </p>
                               </article>
                            </section>
@@ -209,7 +209,7 @@
 									{
 										foreach($output as $output)
 										{
-											echo "<tr><td>".$output->Title."</td></tr>";
+											echo "<tr><td>".ucfirst(strtolower($output->Title))."</td></tr>";
 										}
 									}
 									?>
