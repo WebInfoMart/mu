@@ -822,8 +822,9 @@ class Auth extends CI_Controller
 								'user_id'	=> $user_id,
 								'username'	=> "",
 								'status'	=> '1',
-						));
-		echo "SUCCESS";
+								'birthday'	=> $this->input->post('birthday'),
+						));		$profile_detail=$this->users->check_profile_detail($user_id);						if(count($profile_detail)==0)		{		echo "FIRSTSUCCESS";		}		else		{
+		echo "SUCCESS";		}
 	
 	}
 	function profileNew()

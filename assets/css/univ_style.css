@@ -8,7 +8,7 @@ body {
 	/* height:80px; */height:54px;
 }
 .container {
-	width:980px;
+	/*width:980px;*/
 	position:relative;
 }
 header[role="banner"] {
@@ -600,24 +600,130 @@ aside#british_council h4 {
 	opacity:0.3;
 }
 .page .well {
-	background:#c6c9b6;
-	border:solid 1px #989d7c;
+	background:#ffffff;
+	border: solid 1px #ccc;/*border:solid 1px #989d7c;*/
 	border-radius:0;
+	padding:0px;
 }
-.page .well h2 {
-	color:#fff;
+.page .well h3 {
+	color: #09508f;/*color:#fff;*/
 	margin:0;
-	text-shadow:0 0 2px #91947c;
+	/*text-shadow:0 0 2px #91947c;*/
 }
-.page .span4 {
-	width:280px;
+.page .well .bg
+{
+	position: absolute;
+	top:51px;/* for circle top: 44px;*/
+	left: 8px;/*for circle left: 10px;*/
 }
-.page .span8 {
-	width:666px;
+.page .well .logo
+{
+	position: absolute;
+	top: 57px;
+	left:28px;/* for circle left: 21px;*/
 }
+
+/*****************code added By Deepak Manwal***************/
+
 .box-shadow {
-	box-shadow:0 0 2px rgba(0, 0, 0, 0.2);
+	box-shadow:0 0 4px rgba(0, 0, 0, 0.2);
+	padding:15px;
 }
+.dashboard-data{
+	background:url(../img/dashboard-gb.png);
+	padding:15px 10px;
+}.dashboard-data p span{
+	font-size: 11px;
+}
+.dashboard-section p span{
+	color: #55a9bb;
+	text-transform: uppercase;
+}
+.dashboard-footer p span{
+	color: #55a9bb;
+	text-transform: uppercase;
+}
+.dashboard-data hr {
+margin: 27px 0px 13px 0px;
+opacity: 0.5;
+}
+.dashboard-footer p span.first{
+	color: #e86632;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.dashboard-data p{
+	font-size: 16px;
+	color:#005e72;
+}
+.dashboard-section article{
+	width: 176px;
+	float: left;
+	height: 30px;
+}
+.dashboard-footer .statistic{
+	width: 176px;
+	float: left;
+	height: 40px;
+}
+.dashboard-footer article{
+	width: 100px;
+	float: left;
+	height: 40px;
+}
+.add-school{
+	text-align: right;
+}
+.box-content {
+	background: url(../img/detail-bg.png);
+	position:relative;
+	padding: 15px 10px;
+}
+.box-shadow1 {
+	box-shadow:0 0 4px rgba(0, 0, 0, 0.2);
+}
+a.white{
+	text-decoration:none;
+	color:white;
+}
+.list_content h5 {
+	width:100%;
+	margin: 2px 55px 0px;
+	color:#005e72;
+}
+.list_content small.city{
+	background:url('../img/location-icon.png');
+	background-repeat:no-repeat;
+	padding-left: 23px;
+	background-position: 10%;
+}
+.list_content span.view-more{
+	font-size:8px;
+	font-weight: bold;
+}
+.college-list h4{
+	margin:10px 10px 11px;
+}
+.college-list ul li{
+	padding:10px;
+}
+.college-list ul li img{
+	float:left;
+}
+.college-list ul .colored{
+	background:#f9f9f9;
+}
+.blue{
+ color:#005e72;
+}
+.add_school_link {
+	font-size:15px;
+}
+
+.add_school_link i {
+	margin-top:3px;
+}
+/************* End of code added ************/
 .page .box_content {
 	background:#f8f9fa;
 	margin:4px;
@@ -640,19 +746,7 @@ aside#british_council h4 {
 .page .box_content p em {
 	font-size:14px;
 }
-.add_school_link {
-	font-size:15px;
-	float:right;
-	position:absolute;
-	right:10px;
-	top:10px;
-	color:#21aeef;
-	margin:10px 10px 0 0;
-}
-.add_school_link i {
-	opacity:0.6;
-	margin-top:3px;
-}
+
 .page #in_d0 .span2 {
 	width:207px;
 }

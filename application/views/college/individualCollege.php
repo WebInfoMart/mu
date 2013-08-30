@@ -8,179 +8,163 @@
                   <li><a href="<?php echo base_url('college')?>">College Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
                   <li class="active"><?php echo $universityData[0]['univName'];?></li>
                </ul>
-               <div class="well">
-                  <h2><?php echo $universityData[0]['univName'];?></h2>
+			   <div class="well">
+                  <div class="bg"><img src="<?php echo base_url()?>assets/img/college-bg-r.png"></img></div>
+                  <div class="logo"><img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png"></img></div>
+				  <div class="span10 offset1"><h3><?php echo $universityData[0]['univName'];?></h3></div>
+				  <span class=" clearfix"></span>
                </div>
-               <section class="clearfix row">
-                  <div class="pull-left">
-                     <article class="span8 box-shadow" id="in_d0">
-                        <div class="box_content row">
-                           <a href="#" class="add_school_link"><i class="icon-plus-sign"></i>Add This School</a> <br>
-                           <section class="span2">
-                              <article>
-                                 <p><span>LOCATION</span> <br>
-                                    <?php echo (isset($cityName))?$cityName:'N/A';?>
-                                 </p>
-                              </article>
-                              <article>
-                                 <p><span>STUDENT RATIO </span> <br>
-                                    <em> NOT REPORTED </em>
-                                 </p>
-                              </article>
-                              <article>
-                                 <p><span>Intake </span> <br>
-                                    <?php echo (isset($universityDetail['intakes']))?$universityDetail['intakes']:'N/A';?> 
-                                 </p>
-                              </article>
-                           </section>
-                           <section class="span3">
-                              <article>
-                                 <p><span>Type</span> <br>
-                                    <?php echo (isset($universityDetail['type']))?$universityDetail['type']:'N/A';?> 
-                                 </p>
-                              </article>
-                              <article>
-                                 <p><span>TOTAL STUDENTS </span> <br>
-                                    <?php echo (isset($universityDetail['students']))?$universityDetail['students']:'N/A';?> 
-                                 </p>
-                              </article>
-                              <article>
-                                 <p><span>Accomodation </span> <br>
-                                    <?php echo (isset($universityDetail['accomodation']))?$universityDetail['accomodation']:'N/A';?> 
-                                 </p>
-                              </article>
-                           </section>
-                           <section class="span4">
-                              <article>
-                                 <p><span>Year Of Establishment</span> <br>
-                                    <?php echo (isset($universityDetail['yearOfEst']))?$universityDetail['yearOfEst']:'N/A';?> 
-                                 </p>
-                              </article>
-                              <article>
-                                 <p><span>Staff</span> <br>
-                                    <?php echo (isset($universityDetail['staff']))?$universityDetail['staff']:'N/A';?> 
-                                 </p>
-                              </article>
-                              <article>
-                                 <p><span>Student Satisfaction </span> <br>
-                                    <?php echo (isset($universityDetail['studentSatisfaction']))?$universityDetail['studentSatisfaction']:'N/A';?> 
-                                 </p>
-                              </article>
-                           </section>
-                           <section class="span2 ave_test">
-                              <p>Acceptance Criteria 
-                              </p>
-                           </section>
-                           <section class="span5 student_report">
-                              <article class="span1">
-                                 <p>SAT MATH <br>
-                                    Not Reported
-                                 </p>
-                              </article>
-                              <article class="span1">
-                                 <p>SAT MATH <br>
-                                    Not Reported
-                                 </p>
-                              </article>
-                              <article class="span1">
-                                 <p>SAT MATH <br>
-                                    Not Reported
-                                 </p>
-                              </article>
-                              <article class="span1">
-                                 <p>SAT MATH <br>
-                                    Not Reported
-                                 </p>
-                              </article>
-                           </section>
-                        </div>
-                     </article>
-                     
+			<div class="row">
+				<div class="span8">
+					<div class="box-shadow">
+						<div class="box-content">
+							<div class="add-school">
+								<a href="#" class="add_school_link white"><i class="icon-plus-sign icon-white"></i>&nbsp;Add This School</a> <br>
+							</div>
+							<div class="dashboard-data">
+								<section class="dashboard-section">
+									<article>
+										<p><span >LOCATION</span> <br>
+											<i class="icon-compass icon-large blue"></i>&nbsp;
+											<?php echo (isset($cityName))?$cityName:'N/A';?>
+										</p>
+									</article>
+									<article>
+										<p><span>TYPE </span> <br>
+											<?php echo (isset($universityDetail['type']))?$universityDetail['type']:'N/A';?>
+										</p>
+									</article>
+									<article>
+										<p><span>YEAR OF ESTABLISHMENT </span> <br>
+											<i class="icon-calendar blue"></i>&nbsp;
+											<?php echo (isset($universityDetail['yearOfEst']))?$universityDetail['yearOfEst']:'N/A';?> 
+										</p>
+									</article>
+									<span class="clearfix"></span>
+								</section>
+								<hr>
+								<section class="dashboard-section">
+									<article>
+										<p><span>STUDENT RATIO</span> <br>
+											<em>N/A</em>
+										</p>
+									</article>
+									<article>
+										<p><span>  TOTAL STUDENTS </span> <br>
+											<?php echo (isset($universityDetail['students']))?$universityDetail['students']:'N/A';?> 
+										</p>
+									</article>
+									<article>
+										<p><span>STAFF </span> <br>
+											<?php echo (isset($universityDetail['staff']))?$universityDetail['staff']:'N/A';?> 
+										</p>
+									</article>
+									<span class="clearfix"></span>
+								</section>
+								<hr>
+								<section class="dashboard-section">
+									<article>
+										<p><span>INTAKE </span> <br>
+											<?php echo (isset($universityDetail['intakes']))?$universityDetail['intakes']:'N/A';?>  
+										</p>
+									</article>
+									<article>
+										<p><span>ACCOMODATION  </span> <br>
+											<?php echo (isset($universityDetail['accomodation']))?$universityDetail['accomodation']:'N/A';?> 
+										</p>
+									</article>
+									<article>
+										<p><span>STUDENT SATISFACTION </span> <br>
+											<?php echo (isset($universityDetail['studentSatisfaction']))?$universityDetail['studentSatisfaction']:'N/A';?> 
+										</p>
+									</article>
+									<span class="clearfix"></span>
+								</section>
+								<hr>
+								<section class="dashboard-footer">
+									<article class="statistic">
+										<p><span class="first">Acceptance Criteria</span>
+										</p>
+									</article>
+									<article>
+										<p><span>SAT MATH <br>
+											NOT REPORTED</span>
+										</p>
+									</article>
+									<article>
+										<p><span>SAT MATH <br>
+											NOT REPORTED</span>
+										</p>
+									</article>
+									<article>
+										<p><span>SAT MATH <br>
+											NOT REPORTED</span>
+										</p>
+									</article>
+									<span class="clearfix"></span>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span4 box-shadow1 college-list">
+						<h4 class="blue">More School Like Us...</h4>
+						<ul class="unstyled">
+							<li class="colored">
+								<img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="The los angeles school">
+								<div class="list_content">
+									<h5>The los angeles school</h5>
+									<small class="city">Hollywood, CA</small>
+									<span class="view-more pull-right"><a href="#">VIEW MORE</a></span>
+									<span class="clearfix"></span>
+								</div>
+							</li>
+							<li>
+								<img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The los angeles school">
+								<div class="list_content">
+									<h5>The los angeles school</h5>
+									<small class="city">Hollywood, CA</small>
+									<span class="view-more pull-right"><a href="#">VIEW MORE</a></span>
+									<span class="clearfix"></span>
+								</div>
+							</li>
+							<li class="colored">
+								<img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="The los angeles school">
+								<div class="list_content">
+									<h5>The los angeles school</h5>
+									<small class="city">Hollywood, CA</small>
+									<span class="view-more pull-right"><a href="#">VIEW MORE</a></span>
+									<span class="clearfix"></span>
+								</div>
+							</li>
+							<li>
+								<img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The los angeles school">
+								<div class="list_content">
+									<h5>The los angeles school</h5>
+									<small class="city">Hollywood, CA</small>
+									<span class="view-more pull-right"><a href="#">VIEW MORE</a></span>
+									<span class="clearfix"></span>
+								</div>
+							</li>
+							<li class="colored">
+								<img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="The los angeles school">
+								<div class="list_content">
+									<h5>The los angeles school</h5>
+									<small class="city">Hollywood, CA</small>
+									<span class="view-more pull-right"><a href="#">VIEW MORE</a></span>
+									<span class="clearfix"></span>
+								</div>
+							</li>
+						</ul>
+				</div>
+			</div>
                      <article id="major_degree">
-                        <div class="span8">
+                        <div class="span9">
                            <div  id="myTab" class="span5"> <a href="#home">Majors & Degrees</a> <a href="#profile">Location & Contact</a> </div>
                            <section class="span6">
                               <div class="tab-content">
                                  <div class="tab-pane active" id="home">
                                     <h5>Majors &amp; Degrees</h5>
-                                    <!--<table class="table">
-                                       <tr class="success">
-                                          <td> Degrees Offered</td>
-                                          <td class="text-success">Associate’s</td>
-                                          <td class="text-success">Bachelor’s</td>
-                                       </tr>
-                                       <tr class="text-error">
-                                          <td>Business / marketing</td>
-                                          <td></td>
-                                          <td></td>
-                                       </tr>
-                                       <tr class="space">
-                                          <td></td>
-                                       </tr>
-                                       <tr class="error">
-                                          <td>Business Management and adminstration</td>
-                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
-                                          <td></td>
-                                       </tr>
-                                       <tr  class="text-error">
-                                          <td>Communication technologies</td>
-                                          <td>&nbsp;</td>
-                                          <td></td>
-                                       </tr>
-                                       <tr  >
-                                          <td>Communication technologies</td>
-                                          <td>&nbsp;</td>
-                                          <td></td>
-                                       </tr>
-                                       <tr>
-                                          <td>Graphic Communications</td>
-                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
-                                          <td></td>
-                                       </tr>
-                                       <tr class="text-error">
-                                          <td>Computer and information sciences</td>
-                                          <td>&nbsp;</td>
-                                          <td></td>
-                                       </tr>
-                                       <tr class="space">
-                                          <td></td>
-                                       </tr>
-                                       <tr class="error">
-                                          <td>Network and System Administration</td>
-                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
-                                          <td></td>
-                                       </tr>
-                                       <tr class="text-error" >
-                                          <td> Engineering technologies</td>
-                                          <td></td>
-                                          <td></td>
-                                       </tr>
-                                       <tr class="space">
-                                          <td></td>
-                                       </tr>
-                                       <tr class="error" >
-                                          <td>Electrical, Electronic and Communications 
-                                             Engineering Technology 
-                                          </td>
-                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
-                                          <td></td>
-                                       </tr>
-                                       <tr class="error" >
-                                          <td> Computer Software Technology </td>
-                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
-                                          <td></td>
-                                       </tr>
-                                       <tr class="error" >
-                                          <td> Drafting and Design Technology </td>
-                                          <td><img src="<?php echo base_url()?>assets/img/check_opt.png"></td>
-                                          <td></td>
-                                       </tr>
-                                       <tr >
-                                          <td><a href="#">+More</a></td>
-                                          <td></td>
-                                          <td></td>
-                                       </tr>
-                                    </table>-->
 									<?php
 									$ukprn=$universityData[0]['UKPRN'];
 									$service_url = "https://JY4PDF8DMA1SS2WE16KB@data.unistats.ac.uk/api/KIS/Institution/$ukprn/Courses.json";
@@ -218,7 +202,6 @@
                                  <div class="tab-pane " id="profile">
                                     <h5>Location</h5>
                                     <div id="map">
-                                       <!--map code here-->
                                        <img src="<?php echo base_url()?>assets/img/map.png">
                                     </div>
                                     <br>
@@ -233,51 +216,10 @@
                                        Phone: 304-733-8700
                                     </address>
                                  </div>
-                           </section>
-                           </div>
+							  </div>
+						   </section>
+                        </div> 
                      </article>
-                     </div>
-                     <aside class="span4 indv_sidebar">
-                        <article>
-                           <h3>More School Link Us... </h3>
-                           <span class="arrow_b"></span>
-                           <ul class="unstyled">
-                              <li>
-                                 <img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="The los angeles school">
-                                 <div class="list_content">
-                                    <h4>The los angeles school</h4>
-                                    <p class="city">Hollywood, CA</p>
-                                 </div>
-                              </li>
-                              <li>
-                                 <img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The New Common school">
-                                 <div class="list_content">
-                                    <h4>The New Common
-                                       school
-                                    </h4>
-                                    <p class="city">Hollywood, CA</p>
-                                 </div>
-                              </li>
-                              <li>
-                                 <img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The New Common school">
-                                 <div class="list_content">
-                                    <h4>The New Common
-                                       school
-                                    </h4>
-                                    <p class="city">Hollywood, CA</p>
-                                 </div>
-                              </li>
-                              <li>
-                                 <img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The New Common school">
-                                 <div class="list_content">
-                                    <h4>The los angeles school</h4>
-                                    <p class="city">Hollywood, CA</p>
-                                 </div>
-                              </li>
-                           </ul>
-                        </article>
-                     </aside>
-               </section>
             </article>
             </div>
          </div>

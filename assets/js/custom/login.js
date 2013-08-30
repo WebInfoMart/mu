@@ -71,7 +71,7 @@ var login={
 /**************************facebook login code***************************/
 window.fbAsyncInit = function() {
         FB.init({
-          appId: '499639700115508',
+          appId: '175932012590484',         // appId: '499639700115508',
           cookie: true,
           xfbml: true,
           oauth: true
@@ -86,7 +86,7 @@ window.fbAsyncInit = function() {
       (function(d){
       var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
       js = d.createElement('script'); js.id = id; js.async = true;
-	  js.src = "//connect.facebook.net/en_US/all.js#appId=499639700115508&amp;xfbml=1";
+	  js.src = "//connect.facebook.net/en_US/all.js#appId=175932012590484&amp;xfbml=1";
       d.getElementsByTagName('head')[0].appendChild(js);
     }(document));
 	
@@ -99,12 +99,16 @@ function fblogin()
 					console.log(response);
 					//var facebook ='facebook';
 					console.log("https://graph.facebook.com/"+response.id+"/picture?type=large");
-					var dataString ='name='+response.name+ '&email='+response.email+'&social_id='+response.id;
+					var dataString ='name='+response.name+ '&email='+response.email+'&social_id='+response.id+'&birthday='+response.birthday;
 				     $.post('/auth/social_login/facebook',dataString,function(data){
 					 console.log(data);
 						if(data =="SUCCESS")
 						{
 							window.location.href='/';	  
+						}
+						else if(data == "FIRSTSUCCESS")
+						{
+							window.location.href='/profile';
 						}
 						else
 						{
@@ -114,5 +118,5 @@ function fblogin()
 					
 					});  
 			} 
-	}, {perms:'publish_stream,offline_access,manage_pages,email'});
+	}, {perms:'publish_stream,offline_access,manage_pages,email,user_birthday'});
 }
