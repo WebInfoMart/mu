@@ -9,54 +9,55 @@
          </ol>
          <!-- Carousel items -->
          <div class="carousel-inner">
-            <article class="active item">
-               <img src="<?php echo base_url();?>assets/img/slide_1.jpg">
+            <article class="item active">
+               <img src="<?php echo base_url()?>assets/img/slide_1.jpg">
                <div class="slider_content" id="test_prearation">
                   <h2 class="test_heading"></h2>
                   <section class="test_content">
                      <article>
-                        <img src="<?php echo base_url();?>assets/img/edit.png" class="pull-left adj_img">
+                        <img src="<?php echo base_url()?>assets/img/trial-test.png" class="pull-left adj_img">
                         <div class="para">
                            <h3>Trial Tests</h3>
-                           <p> To help you get the perfect score in exams, we have a series of trial tests. Challenge yourself! Keep practicing and increase your score!</p>
+                           <p><i>To help you get the perfect score in exams, we have a series of trial tests. Challenge yourself!</i></p>
                            <button class="btn btn-small slider_bu" type="button">See Test List</button>
                         </div>
                      </article>
                      <article>
-                        <img src="<?php echo base_url();?>assets/img/purchage.png" class="pull-left adj_img">
+                        <img src="<?php echo base_url()?>assets/img/purchase-test-material.png" class="pull-left adj_img">
                         <div class="para">
                            <h3>Options to purchase test material from multiple sources</h3>
-                           <p> Need more material for practicing? We are providing you with various options to purchase test material from multiple sources. </p>
+                           <p><i>Need more material for practicing? We are providing you with various options to purchase test material.</i></p>
                            <button class="btn btn-small slider_bu" type="button">More Info</button>
                         </div>
                      </article>
+<!-- 
                      <aside>
                         <h4> POPULAR TEST: </h4>
                         <p> IELTS preparation test, TOEFL test, GRE sample quiz, Language Test <a href="#">see more</a></p>
                      </aside>
+ -->
                   </section>
                </div>
             </article>
-            <article class="item ">
-               <img src="<?php echo base_url();?>assets/img/courses.jpg">
+            <article class="item">
+               <img src="<?php echo base_url()?>assets/img/courses.jpg">
                <div class="slider_content" id="cource">
-                  <h2 class="no_margin"><img src="<?php echo base_url();?>assets/img/cource_header.png"></h2>
+                  <h2 class="no_margin"><img src="<?php echo base_url()?>assets/img/search-courses.png"></h2>
                   <div id="cource_content" class="clearfix">
                      <p><i>Search our database of over 100,000 courses worldwide. Fill in the details below and click on the Start course search button to search for a specific course. </i></p>
                      <aside id="s_search">
                         <p  class="no_margin">
-                           <input type="text" placeholder="Text input" >
+                           <input type="text" placeholder="Search Course">
                            <button class="btn" type="button">Search</button>
                         </p>
                      </aside>
                      <article>
-                        <h4>RECENTLY SEARCHED courses:</h4>
-                        <p> Humanities <br>
-                           Social and Political Science<br>
-                           Veterinaly Medicine<br>
+                        <h3>Recently Searched courses:</h3>
+                        <p> Humanities, Social and Political Science, Veterinary Medicine, MBA Finance, Accountancy<br>
                            <a href="#">see more</a>
                         </p>
                      </article>
+<!-- 
                      <article>
                         <h4> Popular courses: </h4>
                         <p> Humanities, Social and Political Sciences, Veterinary Medicine Bachelors in 
@@ -64,25 +65,26 @@
                            <a href="#">see more courses</a>
                         </p>
                      </article>
+ -->
                   </div>
                </div>
             </article>
             <article class="item">
-               <img src="<?php echo base_url();?>assets/img/career.jpg">
+               <img src="<?php echo base_url()?>assets/img/career.jpg">
                <div class="slider_content" id="career">
-                  <h2 class="no_margin"><img src="<?php echo base_url();?>assets/img/career_header.png"></h2>
+                  <h2 class="no_margin"><img src="<?php echo base_url()?>assets/img/career-guide.png"></h2>
                   <div id="career_content" class="clearfix">
                      <article>
                         <h4><a href="#">Counselling</a></h4>
-                        <p> Need any guidance in choosing the right career? college? subject? Our dedicated counsellors will assist you in taking the right career decision. </p>
+                        <p> Need any guidance in choosing the right college? career? subject? Our counsellors will assist you. </p>
                      </article>
                      <article>
                         <h4><a href="#">Free Advice</a></h4>
-                        <p> In a dilemma? Valuable suggestions costs nothing. Contact us for 'free' advice regarding study, college, choice of subject etc. </p>
+                        <p> In a dilemma? Valuable suggestions costs nothing. Contact us for 'free' advice! </p>
                      </article>
                      <article>
                         <h4><a href="#">Helping Hand / Choose Correct Stream</a></h4>
-                        <p> Unable to decide which is the right path for you? We will lend you a helping hand to choose the right career path, leading to success.
+                        <p> Unable to decide which is the right path for you? Let us lend you a helping hand to choose the right career.
                         </p>
                      </article>
                      <button class="btn sl_bn" type="button">Ask our counselor</button>
@@ -91,10 +93,10 @@
             </article>
             <!--conect slider-->
             <article class="item">
-               <img src="<?php echo base_url();?>assets/img/connect_img.jpg">
+               <img src="<?php echo base_url()?>assets/img/connect_img.jpg">
                <div class="slider_content" id="career">
-                  <h2 class="no_margin"><img src="<?php echo base_url();?>assets/img/connect_header.png"></h2>
-                  <div id="career_content" class="clearfix">
+                  <h2 class="connect"><img src="<?php echo base_url()?>assets/img/mu-connect.png"></h2>
+                  <div id="connect_content" class="clearfix">
                      <article id="univ_connect" class="no_border">
                         <table class="table table-hover">
                            <tr>
@@ -133,16 +135,25 @@
                                  <div class="place"> Twian Che</div>
                               </td>
                            </tr>
+						   <tr>
+                              <td> L.O.G.O University <br>
+                                 <span> Science Fest 2013-14</span>
+                              </td>
+                              <td>
+                                 <date>14-Dec-2013</date>
+                                 <div class="place"> Twian Che</div>
+                              </td>
+                           </tr>
                         </table>
-                        <div class="shape4"> <img src="<?php echo base_url();?>assets/img/shape4.png" > </div>
-                        <h4>Meet Universities Events</h4>
+                        <!--<div class="shape4"> <img src="<?php echo base_url()?>assets/img/shape4.png" > </div>-->
+                        <!--<h4>Meet Universities Events</h4>
                         <table class="table table-hover">
                            <tr>
                               <td>Campagian </td>
                               <td> Guidence Show </td>
                               <td>Meet</td>
                            </tr>
-                        </table>
+                        </table>-->
                      </article>
                   </div>
                </div>
