@@ -184,11 +184,15 @@
       </div>
       <!--End Slider-->
       <!--main-->
-      <div role="main" id="main">
-         <section class="row container" id="services">
-            <h2>Meet Univ’s  -  Your guide to college information</h2>
-            <section id="block4">
-               <article>
+	  <div role="main" id="main">
+	  <div class="container">
+	  <div class="row main-div">
+	  <span class="span12">
+		 <h3>Meet Univ’s  -  Your guide to college information</h3></span>
+	  <div class="span8">
+         <section class="row" id="services">
+		 
+			<div class="span4">
                   <img src="<?php echo base_url();?>assets/img/timeline.png">
                   <div class="wow">
                      <h3>Get Counseled</h3>
@@ -197,8 +201,8 @@
                      </p>
                      <p><a href="<?php echo base_url('college');?>">College search &rarr;</a></p>
                   </div>
-               </article>
-               <article>
+               </div>
+               <div class="span4">
                   <img src="<?php echo base_url();?>assets/img/get.png">
                   <div class="wow">
                      <h3>Get Connected</h3>
@@ -208,8 +212,8 @@
                      </p>
                      <p><a href="<?php echo base_url('connect');?>">MU Connect &rarr;</a></p>
                   </div>
-               </article>
-               <article>
+               </div>
+               <div class="span4">
                   <img src="<?php echo base_url();?>assets/img/distance.png">
                   <div class="wow">
                      <h3>Get Coached</h3>
@@ -218,8 +222,8 @@
                      </p>
                      <p><a href="#">IELTS - Acedemic / English &rarr;</a></p>
                   </div>
-               </article>
-               <article>
+               </div>
+			   <div class="span4">
                   <img src="<?php echo base_url();?>assets/img/check.png">
                   <div class="wow">
                      <h3>Gifted - Know what you excel at!</h3>
@@ -229,10 +233,11 @@
 					 </p>
                      <p><a href="#">I am Gifted &rarr;</a></p>
                   </div>
-               </article>
-            </section>
-            <aside id="spotlight">
-               <article>
+               </div>
+		 </section>
+		 </div>
+		 <div class="spna4">
+            <div id="services">
                   <img src="<?php echo base_url();?>assets/img/spotlight.png">
                   <div class="wow">
                      <h3>Spotlight</h3>
@@ -245,10 +250,11 @@
                         <p><a href="#"> Information for Indian Students</a></p>
                      </ul>
                   </div>
-               </article>
-            </aside>
-         </section>
-         <section class="row container">
+               </div>
+		 </div>
+		 </div>
+	  </div>
+	  <section class="row container bottom-container">
             <article class="pull-left">
                <h3 class="green_title">Want to get into Havard or MIT ?</h3>
                <img src="<?php echo base_url();?>assets/img/feature_photo.png" class="pull-left">
@@ -266,7 +272,6 @@
                </p>
             </aside>
          </section>
-      </div>
       <!--end main-->
       
       <!--for offline testing 

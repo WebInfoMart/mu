@@ -525,9 +525,16 @@ article#univ_connect {
 }
 h1, h2, h3, h4, h5, h6 {
 }
+/*created be deepak manwal*/
+.main-div{
+	background:url(../img/green-border.png) repeat-x left bottom;
+}
+.bottom-container{
+	margin-bottom: 30px;
+}
+/*end of adding */
 #services {
 	font-size:14px;
-	background:url(../img/green-border.png) repeat-x left bottom;
 	margin-bottom:10px;
 	padding-bottom:15px;
 }
@@ -1665,7 +1672,7 @@ ul#notification li span {
 	padding:0;
 	color:#d78e39;
 	font-size:10px;
-	width:62px;
+	width:53px;
 	text-align:center;
 }
 .filter_content {
@@ -1683,7 +1690,7 @@ ul#notification li span {
 	color:#c26400;
 }
 .celender {
-	width:80px;
+	width:77px;
 	float:right;
 	text-align:center;
 	margin-left:10px;
@@ -1720,7 +1727,7 @@ ul#notification li span {
 	margin-right:2px;
 }
 #attending {
-	margin:20px;
+	margin:10px;
 	margin-left: 71px;
 }
 #attending input, #attending .add-on {
