@@ -6,14 +6,16 @@
 									foreach ($results as $universities)
 									{?>
 									<h4 class='pull-left'><?php echo $universities->univName; ?></h4>
-									<div class='place pull-right'>Tokyo, Japan</div>
+									<div class='place pull-right'>
+									<i class="icon-map-marker icon-class-mu"></i>
+									<?php 
+									echo $this->collegemodel->getUnivLocationById($universities->cityId,$universities->countryId);
+									?>
+									</div>
 									</div>
 									<hr class='clearfix'>
 									<div class='content_blog pull-left clearfix'>
-									<p>New River Community College is a Public institution 
-									 located in Dublin, Virginia in a Rural setting. The fall 
-									 application deadlinefor freshman is . The application 
-									 requirements include Transcript of high school ...
+									<p><?php echo substr($universities->overview,0,200)."...";?>
 										</p>
 										<p><a href='#'><i class='icon-plus-sign'></i> Add College</a></p>
 										</div>

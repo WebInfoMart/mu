@@ -24,7 +24,7 @@
          							   
          							    $('.tab_spine  ul:first').slideDown();
          							   
-         							       $('.tab_spine h3').click(function (e) {
+         							       $('.tab_spine h4').click(function (e) {
              e.preventDefault();
          	$('.tab_spine  ul').slideUp();
              $(this).next().slideDown();

@@ -41,4 +41,26 @@ class Collegemodel extends CI_Model
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	function getUnivLocationById($cityId,$countryId)
+	{
+		$location="";
+		$this->db->select('cityName');
+		$this->db->from('city');
+		$this->db->where('id',$cityId);
+		$query = $this->db->get();
+		$univ = $query->row();
+
+		if(isset($univ->cityName))
+			$location = $location.$univ->cityName.",";
+			
+		$this->db->select('countryName');
+		$this->db->from('country');
+		$this->db->where('id',$countryId);
+		$query = $this->db->get();
+		$univ = $query->row();
+		if(isset($univ->countryName))
+			$location = $location." ".$univ->countryName;
+			
+		return $location;
+	}
 }

@@ -794,7 +794,7 @@ h2.search_header {
 #collage_listing_page {
 }
 #collage_listing_page .span2 {
-	width:180px!important;
+	/*width:180px!important;*/
 }
 #collage_listing_page .span4 {
 	width:284px;
@@ -810,33 +810,37 @@ h2.search_header {
 	display:none;
 }
 #college_listing .span3 {
-	width:476px;
+	/*width:476px;*/
 }
 .tab_spine {
 }
-.tab_spine h3 {
-	height:36px;
-	color:#fff;
-	background:#4387cb;
-	font-size:18px;
-	padding-left:10px;
-	font-weight:normal;
-	cursor:pointer;
-	border:solid 1px #d1d1d1;
+.tab_spine h4 {
+	height: 27px;
+	color: #fff;
+	background: #4387cb;
+	font-size: 14px;
+	padding-left: 10px;
+	font-weight: normal;
+	cursor: pointer;
+	border: solid 1px #d1d1d1;
+	padding-top: 5px;
 }
-.tab_spine h3:first-child {
+.tab_spine h4:first-child {
 	margin-top:0;
 }
 .tab_spine ul li {
-	background: url("../img/menu-sing.png") no-repeat scroll 32px center #F6FCFE;
-	font-family: "Palatino";
+	background: /* url("../img/menu-sing.png") no-repeat scroll 32px center  */#F6FCFE;
+	/*font-family: "Palatino";*/
 	margin: 2px 0;
-	padding-left: 42px;
+	padding-left: 12px;
 	padding-right: 10px;
 	text-align: right;
 }
 .tab_spine ul li a {
 	color:#6c6c6c;
+}
+.tab_spine ul li i {
+	float:left;
 }
 .blog_style article {
 	background:#f6fbfb;
@@ -863,13 +867,21 @@ h2.search_header {
 	line-height:35px;
 	margin-right:10px;
 	padding-left:20px;
-	background:url(../img/place.png) no-repeat left center;
+	/*background:url(../img/place.png) no-repeat left center;*/
+}
+.icon-class-blue{
+	font-size:16px;
+	color:#005e72;
+}
+.icon-class-red{
+	font-size:16px;
+	color:#f67350;
 }
 .content_blog {
 	color:#6c6c6c;
 	font-size:12px;
 	padding:10px;
-	width:340px;
+	width:326px;
 }
 .content_blog i {
 	opacity:0.4;

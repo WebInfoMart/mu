@@ -10,6 +10,7 @@
 			</div>
 			<?php }?>
             <div class="border"></div>
+			<div class="row">
             <article class="span6 l_col_sing">
                <h3>Sign up <span>or  <a href="<?php echo base_url('login')?>">Login</a></span></h3>
                <h4>Student Details!</h4>
@@ -180,7 +181,8 @@
                   Requirments..
                </h2>
             </article>
-         </div>
+			</div>
+		 </div>
       </div>
       <!--end main-->
 	 

@@ -771,6 +771,7 @@ class Auth extends CI_Controller
 	function social_login($resource)
 	{
 		$user_id=0;	//userid
+		$profilePicOnly=0;
 		$user_details=$this->users->check_user_by_email();
 		$user_social_details=$this->users->get_user_social_detail($resource);
 		if(isset($user_social_details['userId']))						//social id already exist
@@ -805,14 +806,22 @@ class Auth extends CI_Controller
 						'email'=>$this->input->post('email'),
 						'activated'=>1,
 						);
-				$user_id=$this->users->save_user_details('users',$data);
+				$user_id=$this->users->save_user_details('users',$data);//saving userdetails
 				$data	=	array(
 								'userId'=>$user_id,
 								$resource=>$this->input->post('social_id')
 								);
 					
-				$social_id=$this->users->save_user_details('usersSocio',$data);
-				
+				$social_id=$this->users->save_user_details('usersSocio',$data);//saving social details
+				if($resource=='facebook')//saving profile pic when login with facebook
+				{
+					$dataNew	=	array(
+									'userId'=>$user_id,
+									'profilePic'=>'f'.$this->input->post('social_id')
+									);
+					$id = $this->users->save_user_details('userProfile',$dataNew);//saving profile pic of facebook
+					$profilePicOnly=1;
+				}
 			}
 			/*new user*/
 			//print_r($userdata=$this->users->register_social_user());
@@ -823,8 +832,16 @@ class Auth extends CI_Controller
 								'username'	=> "",
 								'status'	=> '1',
 								'birthday'	=> $this->input->post('birthday'),
-						));		$profile_detail=$this->users->check_profile_detail($user_id);						if(count($profile_detail)==0)		{		echo "FIRSTSUCCESS";		}		else		{
-		echo "SUCCESS";		}
+						));
+		$profile_detail=$this->users->check_profile_detail($user_id);
+		if(count($profile_detail)==0 || $profilePicOnly==1)
+		{
+			echo "FIRSTSUCCESS";
+		}
+		else
+		{
+		echo "SUCCESS";
+		}
 	
 	}
 	function profileNew()

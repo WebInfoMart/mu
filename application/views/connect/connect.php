@@ -10,7 +10,7 @@
                <div class="clearfix"></div>
                <div class="clearfix"></div>
                <div class="row clearfix" id="collage_listing_page">
-                  <article class="span8 pull-left" style="margin:0; width:696px;">
+                  <article class="span12">
                      <section id="sort_listing">
                         <h2 class="pull-left">Connect Listing - All</h2>
                         <ul class="inline pull-right">
@@ -20,52 +20,53 @@
                            <li><a href="#"> Destination</a></li>
                         </ul>
                      </section>
-                     <section class="span2">
+				  <div class="row">
+					 <section class="span3">
                         <h5 class="no_margin margin_b_10">Filter Your Search:</h5>
                         <div class="tab_spine clearfix">
-                           <h3>LOCATION</h3>
-                           <ul class="unstyled">
-                              <li><a href="#">50 miles of 24712</a></li>
-                              <li><a href="#">West Virginia</a></li>
-                           </ul>
-                        </div>
-                        <div class="tab_spine clearfix">
-                           <h3>Collage Type</h3>
-                           <ul class="unstyled">
-                              <li><a href="#">50 miles of 24712</a></li>
-                              <li><a href="#">West Virginia</a></li>
-                           </ul>
-                        </div>
-                        <div class="tab_spine clearfix">
-                           <h3>Interest</h3>
-                           <ul class="unstyled">
-                              <li><a href="#">50 miles of 24712</a></li>
-                              <li><a href="#">West Virginia</a></li>
-                           </ul>
-                        </div>
-                        <div class="tab_spine clearfix">
-                           <h3>Financial</h3>
-                           <ul class="unstyled">
-                              <li><a href="#">50 miles of 24712</a></li>
-                              <li><a href="#">West Virginia</a></li>
-                           </ul>
-                        </div>
-                        <div class="tab_spine clearfix">
-                           <h3>Critical</h3>
-                           <ul class="unstyled">
-                              <li><a href="#">50 miles of 24712</a></li>
-                              <li><a href="#">West Virginia</a></li>
-                           </ul>
-                        </div>
-                        <div class="tab_spine clearfix">
-                           <h3>Intex</h3>
-                           <ul class="unstyled">
-                              <li><a href="#">50 miles of 24712</a></li>
-                              <li><a href="#">West Virginia</a></li>
-                           </ul>
-                        </div>
+							<h4>Location</h4>
+							<ul class="unstyled">
+							<li><a href="#">50 miles of 24712</a></li>
+							<li><a href="#">West Virginia</a></li>
+							</ul>
+						</div>
+						<div class="tab_spine clearfix">
+							<h4>Collage Type</h4>
+							<ul class="unstyled">
+							<li><a href="#">50 miles of 24712</a></li>
+							<li><a href="#">West Virginia</a></li>
+							</ul>
+						</div>
+						<div class="tab_spine clearfix">
+							<h4>Interest</h4>
+							<ul class="unstyled">
+							<li><a href="#">50 miles of 24712</a></li>
+							<li><a href="#">West Virginia</a></li>
+							</ul>
+						</div>
+						<div class="tab_spine clearfix">
+							<h4>Financial</h4>
+							<ul class="unstyled">
+							<li><a href="#">50 miles of 24712</a></li>
+							<li><a href="#">West Virginia</a></li>
+							</ul>
+						</div>
+						<div class="tab_spine clearfix">
+							<h4>Critical</h4>
+							<ul class="unstyled">
+							<li><a href="#">50 miles of 24712</a></li>
+							<li><a href="#">West Virginia</a></li>
+							</ul>
+						</div>
+						<div class="tab_spine clearfix">
+							<h4>Intex</h4>
+							<ul class="unstyled">
+							<li><a href="#">50 miles of 24712</a></li>
+							<li><a href="#">West Virginia</a></li>
+							</ul>
+						</div>
                      </section>
-                     <article class="span3">
+                     <article class="span6">
                         <p class="text-right">Showing 12/233 <i class="icon-circle-arrow-right"></i></p>
                         <section class="search_style">
                            <article>
@@ -157,8 +158,7 @@
                            </ul>
                         </div>
                      </article>
-                  </article>
-                  <aside class="span4 pull-right no_padding">
+					 <article class="span3">
                      <article><img src="<?php echo base_url();?>assets/img/calender.jpg"> </article>
                      <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
                      <article>
@@ -169,7 +169,10 @@
                            international ...
                         </h5>
                      </article>
-                  </aside>
+					 </article>
+                  </div>
+				  </article>
+                  
                </div>
             </article>
          </div>

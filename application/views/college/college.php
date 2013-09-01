@@ -19,52 +19,52 @@
                </div>
                <div class="clearfix"></div>
                <div class="row clearfix" id="collage_listing_page">
-                  <section class="span2">
+                  <section class="span3">
                      <h5 class="no_margin margin_b_10">Filter Your Search:</h5>
                      <div class="tab_spine clearfix">
-                        <h3>Location</h3>
+                        <h4>Location</h4>
                         <ul class="unstyled">
-                           <li><a href="#">50 miles of 24712</a></li>
-                           <li><a href="#">West Virginia</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">London</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Newcastle</a></li>
                         </ul>
                      </div>
                      <div class="tab_spine clearfix">
-                        <h3>Collage Type</h3>
+                        <h4>Degree Type</h4>
                         <ul class="unstyled">
-                           <li><a href="#">50 miles of 24712</a></li>
-                           <li><a href="#">West Virginia</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Foundation</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Undergraduate</a></li>
                         </ul>
                      </div>
                      <div class="tab_spine clearfix">
-                        <h3>Interest</h3>
+                        <h4>Interest</h4>
                         <ul class="unstyled">
-                           <li><a href="#">50 miles of 24712</a></li>
-                           <li><a href="#">West Virginia</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Science</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Commerce</a></li>
                         </ul>
                      </div>
                      <div class="tab_spine clearfix">
-                        <h3>Financial</h3>
+                        <h4>Criteria</h4>
                         <ul class="unstyled">
-                           <li><a href="#">50 miles of 24712</a></li>
-                           <li><a href="#">West Virginia</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">IELTS</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">PTE</a></li>
                         </ul>
                      </div>
                      <div class="tab_spine clearfix">
-                        <h3>Critical</h3>
+                        <h4>Financials</h4>
                         <ul class="unstyled">
-                           <li><a href="#">50 miles of 24712</a></li>
-                           <li><a href="#">West Virginia</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Below &pound; 5000</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Above &pound; 5000</a></li>
                         </ul>
                      </div>
                      <div class="tab_spine clearfix">
-                        <h3>Intex</h3>
+                        <h4>Intake</h4>
                         <ul class="unstyled">
-                           <li><a href="#">50 miles of 24712</a></li>
-                           <li><a href="#">West Virginia</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Sept 2013</a></li>
+                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Jan 2014</a></li>
                         </ul>
                      </div>
                   </section>
-                  <article class="span3"  id="collegeContent">
+                  <article class="span6"  id="collegeContent">
                      <p class="text-right">Showing 10/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
                      <section class="blog_style">
                         <article class="clearfix">
@@ -73,14 +73,15 @@
 									foreach ($results as $universities)
 									{?>
 									<h4 class='pull-left'><?php echo $universities->univName; ?></h4>
-									<div class='place pull-right'>Tokyo, Japan</div>
+									<div class='place pull-right'>
+									<i class="icon-map-marker icon-class-mu"></i>
+									<?php 
+									echo $this->collegemodel->getUnivLocationById($universities->cityId,$universities->countryId);
+									?></div>
 									</div>
 									<hr class='clearfix'>
 									<div class='content_blog pull-left clearfix'>
-									<p>New River Community College is a Public institution 
-									 located in Dublin, Virginia in a Rural setting. The fall 
-									 application deadlinefor freshman is . The application 
-									 requirements include Transcript of high school ...
+									<p><?php echo substr($universities->overview,0,200)."...";?>
 										</p>
 										<p><a href='#'><i class='icon-plus-sign'></i> Add College</a></p>
 										</div>
@@ -110,7 +111,7 @@
                      </div>
 					 
                   </article>
-                  <aside class="span4">
+                  <aside class="span3">
                      <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
                      <article>
                         <img src="<?php echo base_url();?>assets/img/british-council.png">

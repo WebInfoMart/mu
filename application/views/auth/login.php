@@ -43,6 +43,7 @@ if(isset($userData))
 			</div>
 			<?php }?>
             <div class="border"></div>
+			<div class="row">
             <article class="span6 l_col_sing">
                <h3>Login <span>or  <a href="<?php echo base_url('register')?>">Sign up</a></span></h3>
                <h4>Student Details!</h4>
@@ -171,7 +172,8 @@ if(isset($userData))
                   Requirments..
                </h2>
             </article>
-         </div>
+			</div>
+		 </div>
       </div>
       <!--end main-->
 	 

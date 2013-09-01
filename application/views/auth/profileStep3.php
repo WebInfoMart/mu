@@ -26,20 +26,40 @@
                   <article class="span2 l_col_sing " style="background:none;">
                      <div  class="text-center" id="profile_2">
                         <div id="real_profile_pic">
-                           <?php 
+                            <?php 
 							if($userProfile['profilePic'])
+
 							{
-							?>
-								<img src="<?php echo base_url();?>uploads/user_pic/<?php echo $userProfile['profilePic'];?>">
-							<?php 
+								if(substr($userProfile['profilePic'],0,1)=='f')
+								{
+								?>
+								<img src="https://graph.facebook.com/<?php echo substr($userProfile['profilePic'],1)?>/picture?type=large"/>
+								<?php
 								}
 								else
 								{
-							?>
-									<img src="<?php echo base_url();?>assets/img/avatar.png"> 
-							<?php
-								} 
-							?>
+						?>
+
+							<img src="<?php echo base_url();?>uploads/user_pic/<?php echo $userProfile['profilePic'];?>">
+							
+
+						<?php 
+								}
+							}
+
+							else
+
+							{
+
+						?>
+
+								<img src="<?php echo base_url();?>assets/img/avatar.png"> 
+
+						<?php
+
+							} 
+
+						?>
                         </div>
                         <p><?php echo $userData['fullname'];?>,<?php echo $userProfile['gender'];?> <br>
                            <?php echo $userProfile['dob'];?> 
