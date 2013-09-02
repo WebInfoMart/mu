@@ -149,7 +149,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4697c5', end
 	height:75px;
 }
 #main {
-	margin:22px 0 42px 0px;
+	margin:22px 0 0px 0px;/*margin:22px 0 42px 0px;*/
 }
 #search {
 	float:left;
@@ -620,7 +620,7 @@ aside#british_council h4 {
 .page .well .bg
 {
 	position: absolute;
-	top:51px;/* for circle top: 44px;*/
+	top:52px;/* for circle top: 44px;*/
 	left: 8px;/*for circle left: 10px;*/
 }
 .page .well .logo
@@ -660,7 +660,7 @@ opacity: 0.5;
 	text-transform: uppercase;
 }
 .dashboard-data p{
-	font-size: 16px;
+	font-size: 14px;
 	color:#005e72;
 }
 .dashboard-section article{
@@ -684,7 +684,7 @@ opacity: 0.5;
 .box-content {
 	background: url(../img/detail-bg.png);
 	position:relative;
-	padding: 15px 10px;
+	padding: 8px 14px 15px;
 }
 .box-shadow1 {
 	box-shadow:0 0 4px rgba(0, 0, 0, 0.2);
@@ -771,7 +771,7 @@ a.white{
 .page .table td {
 	border-top:0;
 }
-h2.search_header {
+h3.search_header {
 	color:#d9d9d9;
 }
 .search_input input {
@@ -1016,6 +1016,9 @@ p.city {
 	padding-bottom:7px;
 	background:url(../img/bottom-border.png) repeat-x left bottom;
 }
+#major_degree{
+	margin:20px 0;
+}
 #major_degree h5 {
 	margin-top:4px;
 }
@@ -1041,9 +1044,9 @@ p.city {
 #major_degree .table tbody tr.error > td {
 	background-color:#fbf2f0!important;
 }
-#major_degree .span6 {
+/* #major_degree .span6 {
 	width:495px;
-}
+} */
 .green {
 	color:#86b10e;
 }

@@ -8,14 +8,14 @@
                   <li class="active">Search Result</li>
                </ul>
                <div class="clearfix"></div>
-               <h2 class="search_header pull-left"><?php echo $countResults;?> Colleges Found</h2>
+               <h3 class="search_header pull-left"><?php echo $countResults;?> Colleges Found</h3>
                <div class="search_input  pull-right">
-                  <form class="form-search">
+                  <!--<form class="form-search">
                      <div class="input-append">
                         <input type="text" class="span2 " Placeholder="Search Your Keyword...">
                         <button type="submit" class="btn">Search</button>
                      </div>
-                  </form>
+                  </form>-->
                </div>
                <div class="clearfix"></div>
                <div class="row clearfix" id="collage_listing_page">

@@ -183,76 +183,79 @@
          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a> <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> 
       </div>
       <!--End Slider-->
-      <!--main-->
+      
+	  <!--main-->
 	  <div role="main" id="main">
 	  <div class="container">
 	  <div class="row main-div">
-	  <span class="span12">
-		 <h3>Meet Univ’s  -  Your guide to college information</h3></span>
-	  <div class="span8">
-         <section class="row" id="services">
-		 
+	  <span class="span12" id="services">
+		 <h3>Meet Univ’s  -  Your guide to college information</h3>
+		 <div class="row">
+			<div class="span8">
+				<div class="row">
+					<div class="span4">
+					<img src="<?php echo base_url();?>assets/img/timeline.png">
+					<div class="wow">
+						<h3>Get Counseled</h3>
+						<p>Not sure where to start from ?<br>
+							Confused start your search here:
+						</p>
+						<p><a href="">College search &rarr;</a></p>
+					</div>
+					</div>
+					<div class="span4">
+						<img src="<?php echo base_url();?>assets/img/get.png">
+						<div class="wow">
+							<h3>Get Connected</h3>
+							<p>Figure out the college <br>
+								know your option to get<br> 
+								connected - Directly!
+							</p>
+							<p><a href="">MU Connect &rarr;</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4">
+					  <img src="<?php echo base_url();?>assets/img/distance.png">
+					  <div class="wow">
+						 <h3>Get Coached</h3>
+						 <p>Help in your application process <br>
+							Free Courseware for Exams.<br>
+						 </p>
+						 <p><a href="#">IELTS - Acedemic / English &rarr;</a></p>
+					  </div>
+				    </div>
+					<div class="span4">
+					  <img src="<?php echo base_url();?>assets/img/check.png">
+					  <div class="wow">
+						 <h3>Gifted - Know what you excel at!</h3>
+						 <p>
+						 Don't know which stream to choose ?<br>
+						 Confused career Choices?
+						 </p>
+						 <p><a href="#">I am Gifted &rarr;</a></p>
+					  </div>
+				    </div>
+				</div>
+			</div>
 			<div class="span4">
-                  <img src="<?php echo base_url();?>assets/img/timeline.png">
-                  <div class="wow">
-                     <h3>Get Counseled</h3>
-                     <p>Not sure where to start from ?<br>
-                        Confused start your search here:
-                     </p>
-                     <p><a href="<?php echo base_url('college');?>">College search &rarr;</a></p>
-                  </div>
-               </div>
-               <div class="span4">
-                  <img src="<?php echo base_url();?>assets/img/get.png">
-                  <div class="wow">
-                     <h3>Get Connected</h3>
-                     <p>Figure out the college <br>
-                        know your option to get<br> 
-						connected - Directly!
-                     </p>
-                     <p><a href="<?php echo base_url('connect');?>">MU Connect &rarr;</a></p>
-                  </div>
-               </div>
-               <div class="span4">
-                  <img src="<?php echo base_url();?>assets/img/distance.png">
-                  <div class="wow">
-                     <h3>Get Coached</h3>
-                     <p>Help in your application process <br>
-                        Free Courseware for Exams.<br>
-                     </p>
-                     <p><a href="#">IELTS - Acedemic / English &rarr;</a></p>
-                  </div>
-               </div>
-			   <div class="span4">
-                  <img src="<?php echo base_url();?>assets/img/check.png">
-                  <div class="wow">
-                     <h3>Gifted - Know what you excel at!</h3>
-                     <p>
-					 Don't know which stream to choose ?<br>
-					 Confused career Choices?
-					 </p>
-                     <p><a href="#">I am Gifted &rarr;</a></p>
-                  </div>
-               </div>
-		 </section>
-		 </div>
-		 <div class="spna4">
-            <div id="services">
-                  <img src="<?php echo base_url();?>assets/img/spotlight.png">
-                  <div class="wow">
-                     <h3>Spotlight</h3>
-                     <ul>
-                        <p><a href="#"> Myths about College Scholarships</a></p>
-                        <p><a href="#"> Key Steps in the Law Admission Process</a></p>
-                        <p><a href="#"> List of Rolling Admissions Schools</a></p>
-                        <p><a href="#"> The Basics of Financial Aid </a></p>
-                        <p><a href="#">Information for Chinese Students</a></p>
-                        <p><a href="#"> Information for Indian Students</a></p>
-                     </ul>
-                  </div>
-               </div>
-		 </div>
-		 </div>
+                <img src="<?php echo base_url();?>assets/img/spotlight.png">
+                <div class="wow">
+                   <h3>Spotlight</h3>
+                   <ul>
+                      <p><a href="#"> Myths about College Scholarships</a></p>
+                      <p><a href="#"> Key Steps in the Law Admission Process</a></p>
+                      <p><a href="#"> List of Rolling Admissions Schools</a></p>
+                      <p><a href="#"> The Basics of Financial Aid </a></p>
+                      <p><a href="#">Information for Chinese Students</a></p>
+                      <p><a href="#"> Information for Indian Students</a></p>
+                   </ul>
+				</div>
+			</div>
+		</div>
+	  </span>
+		</div>
 	  </div>
 	  <section class="row container bottom-container">
             <article class="pull-left">
