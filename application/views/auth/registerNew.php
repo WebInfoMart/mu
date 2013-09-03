@@ -174,7 +174,7 @@
 			
             <article class="span5 r_col_sing">
                <h4>Or,Sign up with</h4>
-               <img src="<?php echo base_url();?>assets/img/facebook_big.png">
+               <img src="<?php echo base_url();?>assets/img/facebook_big.png" onclick="fblogin();">
                <h2>Search many of <br>
                   colleges and there <br>
                   information as Per your <br>
@@ -187,5 +187,11 @@
       <!--end main-->
 	 
 	 <?php $this->load->view('layout/js');?>
-	  
+	   <script src="<?php echo base_url();?>assets/js/custom/client.js" type="text/javascript"></script>
+	 <script src="<?php echo base_url();?>assets/js/custom/login.js" type="text/javascript"></script> 
+	 <script>
+		$(document).ready(function () {
+			login.execute();									//code of JavaScript to be executed
+		})
+	</script>
 	 

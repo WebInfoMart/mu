@@ -165,7 +165,7 @@ if(isset($userData))
 			
             <article class="span5 r_col_sing">
                <h4>Or,Sign up with</h4>
-               <img src="<?php echo base_url();?>assets/img/facebook_big.png">
+               <img src="<?php echo base_url();?>assets/img/facebook_big.png" onclick="fblogin();">
                <h2>Search many of <br>
                   colleges and there <br>
                   information as Per your <br>

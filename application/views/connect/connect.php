@@ -66,7 +66,112 @@
 							</ul>
 						</div>
                      </section>
-                     <article class="span6">
+					 <div class="span6">
+							<div class="row">
+								<div class="span6">
+									<p class="text-right">Showing 10/100 <i class="icon-circle-arrow-right"></i></p>
+								</div>
+							</div>
+							<div class="row connect-listing">
+								<article class="span6">
+									<div class="row">
+										<div class="span4">
+											<div class='content_blog pull-left clearfix'>
+												<h4>Middlesex University</h4>
+												<hr>
+												<p>Education UK Exhibition</p>
+												<p class="date-time"><i class="icon-calendar"></i>&nbsp;&nbsp;26 Nov 2013<br>
+												<i class="icon-map-marker"></i>&nbsp;&nbsp;Mumbai, India</p>
+											</div>
+										</div>
+										<div class="span2 mu-connect">
+											<aside class="celender">
+												<div class="cl"> <small class="date">NOV</small> <small class="day">26</small> </div>
+												<div class="btn-group">
+												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">MU Connect <span class="caret"></span></button>
+												<ul class="dropdown-menu">
+												  <li><a href="#"><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
+												  <li><a href="#"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;E-Mail</a></li>
+												</ul>
+												</div>
+												<button class="btn btn-mini btn-primary voilet" type="button" id="attending-1" onclick="showAttending(this.id);">I am Attending</button>
+												Attending <a href="#">+124</a>
+											</aside>
+										</div>
+									</div>
+									<div class="row">
+										<div class="span6">
+											<section id="attending" class="attending-1" style="display:none;">
+												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
+													<input class="input-small" id="prependedInput" type="text" placeholder="Full Name:">
+												 </div>
+												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/mail-icon.png"></span>
+													<input class="input-small" id="prependedInput" type="text" placeholder="Email:">
+												 </div>
+												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/cell-icon.png"></span>
+													<input class="input-small" id="prependedInput" type="text" placeholder="Mobile No:">
+												 </div>
+												 <button class="btn btn-mini btn-primary green_bu" type="button">Connect</button>
+											</section>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="row connect-listing">
+								<article class="span6">
+									<div class="row">
+										<div class="span4">
+											<div class='content_blog pull-left clearfix'>
+												<h4>University of Greenwich</h4>
+												<hr>
+												<p>Offices of Education Link</p>
+												<p class="date-time"><i class="icon-calendar"></i>&nbsp;&nbsp;03 Oct 2013, 11:00 - 17:00<br>
+												<i class="icon-map-marker"></i>&nbsp;&nbsp;New Delhi, India</p>
+											</div>
+										</div>
+										<div class="span2 mu-connect">
+											<aside class="celender">
+												<div class="cl"> <small class="date">OCT</small> <small class="day">03</small> </div>
+												<div class="btn-group">
+												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">MU Connect <span class="caret"></span></button>
+												<ul class="dropdown-menu">
+												  <li><a href="#"><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
+												  <li><a href="#"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;E-Mail</a></li>
+												</ul>
+												</div>
+												<button class="btn btn-mini btn-primary voilet" type="button" id="attending-2" onclick="showAttending(this.id);">I am Attending</button>
+												Attending <a href="#">+67</a>
+											</aside>
+										</div>
+									</div>
+									<div class="row">
+										<div class="span6">
+											<section id="attending" class="attending-2" style="display:none;">
+												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
+													<input class="input-small" id="prependedInput" type="text" placeholder="Full Name:">
+												 </div>
+												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/mail-icon.png"></span>
+													<input class="input-small" id="prependedInput" type="text" placeholder="Email:">
+												 </div>
+												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/cell-icon.png"></span>
+													<input class="input-small" id="prependedInput" type="text" placeholder="Mobile No:">
+												 </div>
+												 <button class="btn btn-mini btn-primary green_bu" type="button">Connect</button>
+											</section>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="pagination pagination-small" id="my_pagi">
+							<?php //echo $links; ?>
+							<!--  <ul>
+								<li><a href="#">&lt;</a></li>
+								<li class="disabled no_border"><a href="#">1/201</a></li>
+								<li ><a href="#">&gt;</a></li>
+								</ul>-->
+							</div>
+					</div>
+                     <!--<article class="span6">
                         <p class="text-right">Showing 12/233 <i class="icon-circle-arrow-right"></i></p>
                         <section class="search_style">
                            <article>
@@ -157,7 +262,7 @@
                               <li ><a href="#">&gt;</a></li>
                            </ul>
                         </div>
-                     </article>
+                     </article>-->
 					 <article class="span3">
                      <article><img src="<?php echo base_url();?>assets/img/calender.jpg"> </article>
                      <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
@@ -179,8 +284,11 @@
       </div>
       <!--end main-->
 	  <?php $this->load->view('layout/js');?>
-	  
+	  <script src="<?php echo base_url();?>assets/js/bootstrap-dropdown.js"></script>
 	  <script>
+		$(document).ready(function(){
+			$('.dropdown-toggle').dropdown();
+		});
 		function showAttending(id)
 		{
 			$('.'+id).fadeIn();

@@ -190,7 +190,7 @@
 	  <div class="container">
 	  <div class="row main-div">
 		<span class="span12">
-			<h3>Meet Univ’s  -  Your guide to college information</h3>
+			<h3>MeetUniv.Com  -  Guide to college information</h3>
 			<hr>
 			<div class="row">
 				<div class="span8">
@@ -215,11 +215,11 @@
 								<i class="icon-sitemap"></i>
 							</div>
 							<div class="span3">
-								<h4>Get Counseled</h4>
-								<p>Not sure where to start from ?<br>
-									Confused start your search here:
+								<h4>Get Connected</h4>
+								<p>Figure out the college<br>
+									Know your option to get connected directly!
 								</p>
-								<p><a href="">College search &rarr;</a></p>
+								<p><a href="">MU Connect &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -231,11 +231,11 @@
 								<i class="icon-laptop"></i>
 							</div>
 							<div class="span3">
-								<h4>Get Counseled</h4>
-								<p>Not sure where to start from ?<br>
-									Confused start your search here:
+								<h4>Get Coached</h4>
+								<p>Help in your application process<br>
+									Free Courseware for Exams.
 								</p>
-								<p><a href="">College search &rarr;</a></p>
+								<p><a href="">IELTS - Academic / English &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -245,11 +245,11 @@
 								<i class="icon-magic"></i>
 							</div>
 							<div class="span3">
-								<h4>Get Counseled</h4>
-								<p>Not sure where to start from ?<br>
-									Confused start your search here:
+								<h4>Gifted - Know what your excel at!</h4>
+								<p>Don't know which stream to choose?<br>
+									Confused Career choices?
 								</p>
-								<p><a href="">College search &rarr;</a></p>
+								<p><a href="">I am Gifted &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -257,10 +257,8 @@
 				</div>
 				<aside class="span4" id="british_council">
 					<h4>British Cuncil</h4>
-					<p>international students comprise almost <br>
-						15 percent of the total student body . <br>
-						Total cost of attendance for most  <br>
-						international ...
+					<p>
+						The most trusted source of information about studying in the UK, in association with MeetUniv.com outlines the essential information for you to know & where to begin from.Single source , to keep you updated with the happenings in UK education.
 					</p>
 				</aside>
 			</div>

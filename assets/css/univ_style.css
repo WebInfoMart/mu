@@ -575,6 +575,9 @@ color: #ee7319;
 .bottom-span i{
 	font-size: 24px;
 }
+.span2.mu-connect ul li {
+text-align: left;
+}
 /*end of adding */
 #services {
 	font-size:14px;
@@ -908,6 +911,27 @@ h3.search_header {
 	margin-bottom:15px;
 	border:solid 1px #dddddd;
 	padding-bottom: 10px;
+}
+.connect-listing article {
+	margin-bottom:15px;
+	border:solid 1px #dddddd;
+	padding-bottom: 10px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.connect-listing hr{
+	margin:0px;
+}
+.connect-listing .btn-group{
+	margin:10px 0px;
+}
+.connect-listing i{
+	font-size: 14px;
+	color:#373;
+}
+.connect-listing h4 {
+	color:#373;
+	font-size:14px;
+	width:275px;
 }
 .blog_style .mu-connect{
 
@@ -1754,19 +1778,18 @@ ul#notification li span {
 	color:#c26400;
 }
 .celender {
-	width:77px;
 	float:right;
-	text-align:center;
-	margin-left:10px;
+	text-align:right;
+	margin: 20px 10px 0px;
 }
 .cl {
 	width:48px;
-	margin:auto;
 	background:#f2f2f2;
 	color:#4d4d4d;
 	text-align:center;
 	font-size:16px;
 	display:block;
+	float:right;
 }
 .cl .date {
 	width:100%;
@@ -1782,6 +1805,7 @@ ul#notification li span {
 }
 .celender .green {
 	font-size:10px;
+	text-align:center;
 }
 .celender a {
 	margin:0 2px;
@@ -1791,8 +1815,7 @@ ul#notification li span {
 	margin-right:2px;
 }
 #attending {
-	margin:10px;
-	margin-left: 71px;
+	margin: 0px 20px;
 }
 #attending input, #attending .add-on {
 	line-height:10px;

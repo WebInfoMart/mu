@@ -44,6 +44,7 @@ $route['404_override'] = '';
 $route['(register|login|home|profile|profile_match|profile_externalInfo)']='auth/$1';
 $route['college/collegePagination/(:num)'] = "college/collegePagination/$1";
 $route['college/(:any)/(:num)'] = "college/individualCollege/$1/$2";
+$route['about-us'] = "about_us";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
