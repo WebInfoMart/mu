@@ -203,7 +203,7 @@
 							<div class="span3">
 								<h4>Get Counseled</h4>
 								<p>Not sure where to start from ?<br>
-									Confused start your search here:
+									Confused start your search here:<br/><br/>
 								</p>
 								<p><a href="">College search &rarr;</a></p>
 							</div>
@@ -216,8 +216,8 @@
 							</div>
 							<div class="span3">
 								<h4>Get Connected</h4>
-								<p>Figure out the college<br>
-									Know your option to get connected directly!
+								<p>Shortlisted College!<br>
+									Know your options to get connected - Directly!
 								</p>
 								<p><a href="">MU Connect &rarr;</a></p>
 							</div>
@@ -233,7 +233,7 @@
 							<div class="span3">
 								<h4>Get Coached</h4>
 								<p>Help in your application process<br>
-									Free Courseware for Exams.
+									Free Courseware for Exams.<br/><br/>
 								</p>
 								<p><a href="">IELTS - Academic / English &rarr;</a></p>
 							</div>
@@ -245,7 +245,7 @@
 								<i class="icon-magic"></i>
 							</div>
 							<div class="span3">
-								<h4>Gifted - Know what your excel at!</h4>
+								<h4>Gifted - <small class="txt-info">Know what you excel at?</small></h4>
 								<p>Don't know which stream to choose?<br>
 									Confused Career choices?
 								</p>
@@ -255,7 +255,7 @@
 						</div>
 					</div>
 				</div>
-				<aside class="span4" id="british_council">
+				<aside class="span4" id="british_council" onclick="window.open('http://www.britishcouncil.in/why-the-uk')">
 					<h4>British Cuncil</h4>
 					<p>
 						The most trusted source of information about studying in the UK, in association with MeetUniv.com outlines the essential information for you to know & where to begin from.Single source , to keep you updated with the happenings in UK education.

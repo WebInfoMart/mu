@@ -76,7 +76,7 @@
 					</div>
 					<div class="span2">
 						<ul class="nav nav-list">
-						  <h5>Coaching
+						  <h5>Coaching<br/><br/>
 						  </h5>
 						  <li><a href="#"> IELTS Video Tutorials</a></li>
 						  <li><a href="#"> Career Stream Chooser</a></li>
@@ -99,6 +99,19 @@
 					   </ul>
 					</div>
 				</div>
+			</div>
+			<div class="static_bar">
+				<div class="container">
+					<ul class="inline text-right">
+						<li><a href="">About Us</a></li>
+						<li><a href="">Jobs</a></li>
+						<li><a href="">Team</a></li>
+						<li><a href="">Disclaimer</a></li>
+						<li><a href="">Privacy Policy</a></li>
+						<li><a href="">Feedback</a></li>
+						<li><a href="">Contact Us</a></li>
+					</ul>
+              	</div>
 			</div>
          </section>
          </div>

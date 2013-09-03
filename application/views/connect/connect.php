@@ -88,7 +88,7 @@
 											<aside class="celender">
 												<div class="cl"> <small class="date">NOV</small> <small class="day">26</small> </div>
 												<div class="btn-group">
-												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">MU Connect <span class="caret"></span></button>
+												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">Get Details <span class="caret"></span></button>
 												<ul class="dropdown-menu">
 												  <li><a href="#"><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
 												  <li><a href="#"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;E-Mail</a></li>

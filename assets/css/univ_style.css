@@ -79,7 +79,7 @@ aside#login .btn:last-child {
 	border-left:none;
 }
 #main_footer {
-	min-height:300px;
+	/*min-height:300px;Commented by Debal*/
 	background:#eaeaea;
 }
 #primary_footer {
@@ -215,7 +215,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4697c5', end
 	color:#4f4f4f;
 }
 footer {
-	padding-bottom:30px;
+	/*padding-bottom:30px;Commented by Debal*/
 }
 footer ul.inline {
 	margin:0 0 10px 0!important;
@@ -237,6 +237,15 @@ footer ul.inline li:first-child {
 }
 footer ul.inline li:last-child {
 	border-right:0;
+}
+.static_bar{
+	background:#666666;
+}
+.static_bar .container ul{
+    margin-top: 10px!important;
+}
+.static_bar .container ul li a{
+	color: #ffffff;
 }
 /*slider*/
 #slider {
@@ -632,6 +641,7 @@ text-align: left;
 } */
 aside#british_council {
 	line-height:24px;
+	cursor:pointer;/*Added by Debal 12:48-4/09*/
 }
 .feature_block h4 {
 	font-weight:bold;

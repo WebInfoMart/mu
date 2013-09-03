@@ -125,8 +125,8 @@ if(isset($userData))
 				</div>
 				
 						<div class="form_bu clearfix">
-						<input class="btn btn-large" type="submit" value="Let Me In">
-						<button class="btn btn-large" type="button">Cancel</button>
+						<input class="btn btn-medium" type="submit" value="Let Me In">
+						<button class="btn btn-medium" type="button">Cancel</button>
 					</div>
 				<?php echo form_close();?>
                <form>
@@ -164,8 +164,8 @@ if(isset($userData))
             </article>
 			
             <article class="span5 r_col_sing">
-               <h4>Or,Sign up with</h4>
-               <img src="<?php echo base_url();?>assets/img/facebook_big.png" onclick="fblogin();">
+               <h4>Or, Sign up with</h4>
+               <img src="<?php echo base_url();?>assets/img/facebook_big.png" onclick="fblogin();" style="cursor:pointer">
                <h2>Search many of <br>
                   colleges and there <br>
                   information as Per your <br>
