@@ -97,7 +97,7 @@
 				?>
 
 			   <?php echo form_open_multipart($this->uri->uri_string());?>
-
+				<div class="row">
                <article class="span6 l_col_sing">
 
                   
@@ -310,8 +310,8 @@
                   </div>
 
                </article>
-
-			   <?php form_close();?>
+				</div>
+			   <?php echo form_close();?>
 
             </section>
 

@@ -117,7 +117,7 @@
                             <a href="<?php echo base_url('auth/profileMatch');?>"><button class="btn " type="button">Back</button></a>
                            <input class="btn " type="submit" onclick="" value="Finish" name="save_external_info">
                         </div>
-                     <?php form_close();?>
+                     <?php echo form_close();?>
                   </article>
                </div>
             </section>

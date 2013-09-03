@@ -10,7 +10,7 @@
                </ul>
 			   <div class="well">
                   <div class="bg"><img src="<?php echo base_url()?>assets/img/college-bg-r.png"></img></div>
-                  <div class="logo"><img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png"></img></div>
+                  <div class="logo"><img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="<?php echo $universityData[0]['univName'];?>" title="<?php echo $universityData[0]['univName'];?>"></img></div>
 				  <div class="span10 offset1"><h3><?php echo $universityData[0]['univName'];?></h3></div>
 				  <span class=" clearfix"></span>
                </div>
@@ -25,7 +25,7 @@
 								<section class="dashboard-section">
 									<article>
 										<p><span >LOCATION</span> <br>
-											<i class="icon-compass icon-large blue"></i>&nbsp;
+											<i class="icon-compass icon-large blue" rel='tooltip' title='Location'></i>&nbsp;
 											<?php echo (isset($cityName))?$cityName:'N/A';?>
 										</p>
 									</article>
@@ -36,7 +36,7 @@
 									</article>
 									<article>
 										<p><span>YEAR OF ESTABLISHMENT </span> <br>
-											<i class="icon-calendar blue"></i>&nbsp;
+											<i class="icon-calendar blue" rel='tooltip' title='Year of Establishment'></i>&nbsp;
 											<?php echo (isset($universityDetail['yearOfEst']))?$universityDetail['yearOfEst']:'N/A';?> 
 										</p>
 									</article>
@@ -45,7 +45,7 @@
 								<hr>
 								<section class="dashboard-section">
 									<article>
-										<p><span>Scholership</span> <br>
+										<p><span>Scholarship</span> <br>
 											<?php echo (isset($universityDetail['scholership']))?$universityDetail['scholership']:'N/A';?>
 										</p>
 									</article>
@@ -91,14 +91,14 @@
 											<?php //echo (isset($universityDetail['accomodation'])&&$universityDetail['accomodation'])?$universityDetail['accomodation']:'N/A';?> 
 										</p>
 									</article>
-									<article>
+									<article id="facilities">
 										<p><span>Facilities </span> <br>
-											<?php echo (isset($universityDetail['library'])&&$universityDetail['library']=='1')?"<i class='icon-book' rel='tooltip' title='Library'></i>":'';?> 
-											<?php echo (isset($universityDetail['sports'])&&$universityDetail['sports']=='1')?"<i class='icon-gamepad' class='icon-book' rel='tooltip' title='Sports Facility'></i>":'';?> 
-											<?php echo (isset($universityDetail['scholer'])&&$universityDetail['scholer']=='1')?"<i class='icon-trophy' class='icon-book' rel='tooltip' title='Scholerships'></i>":'';?> 
-											<?php echo (isset($universityDetail['housing'])&&$universityDetail['housing']=='1')?"<i class='icon-building' class='icon-book' rel='tooltip' title='Housing'></i>":'';?> 
-											<?php echo (isset($universityDetail['exchange'])&&$universityDetail['exchange']=='1')?"<i class='icon-globe' class='icon-book' rel='tooltip' title='Exchange Programs'></i>":'';?> 
-											<?php echo (isset($universityDetail['online'])&&$universityDetail['online']=='1')?"<i class='icon-desktop' class='icon-book' rel='tooltip' title='Online Courses'></i>":'';?> 
+											<?php echo (isset($universityDetail['library'])&&$universityDetail['library']=='1')?"<i class='icon-book' rel='tooltip' title='Library'></i>":"<i class='icon-book not-activated' rel='tooltip' title='Library'></i>";?> 
+											<?php echo (isset($universityDetail['sports'])&&$universityDetail['sports']=='1')?"<i class='icon-gamepad' class='icon-book' rel='tooltip' title='Sports Facility'></i>":"<i class='icon-gamepad not-activated' class='icon-book' rel='tooltip' title='Sports Facility'></i>";?> 
+											<?php echo (isset($universityDetail['scholer'])&&$universityDetail['scholer']=='1')?"<i class='icon-trophy' class='icon-book' rel='tooltip' title='Scholerships'></i>":"<i class='icon-trophy not-activated' class='icon-book' rel='tooltip' title='Scholerships'></i>";?> 
+											<?php echo (isset($universityDetail['housing'])&&$universityDetail['housing']=='1')?"<i class='icon-building' class='icon-book' rel='tooltip' title='Housing'></i>":"<i class='icon-building not-activated' class='icon-book' rel='tooltip' title='Housing'></i>";?> 
+											<?php echo (isset($universityDetail['exchange'])&&$universityDetail['exchange']=='1')?"<i class='icon-globe' class='icon-book' rel='tooltip' title='Exchange Programs'></i>":"<i class='icon-globe not-activated' class='icon-book' rel='tooltip' title='Exchange Programs'></i>";?> 
+											<?php echo (isset($universityDetail['online'])&&$universityDetail['online']=='1')?"<i class='icon-desktop' class='icon-book' rel='tooltip' title='Online Courses'></i>":"<i class='icon-desktop not-activated' class='icon-book' rel='tooltip' title='Online Courses'></i>";?> 
 										</p>
 									</article>
 									<span class="clearfix"></span>
@@ -152,7 +152,7 @@
 								</div>
 							</li>
 							<li class="colored">
-								<img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="The los angeles school">
+								<img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="The los angeles school" title="The los angeles school">
 								<div class="list_content">
 									<h5>The los angeles school</h5>
 									<small class="city">Hollywood, CA</small>
@@ -161,7 +161,7 @@
 								</div>
 							</li>
 							<li>
-								<img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The los angeles school">
+								<img src="<?php echo base_url()?>assets/img/The-New-Common.png" alt="The los angeles school"  title="The los angeles school">
 								<div class="list_content">
 									<h5>The los angeles school</h5>
 									<small class="city">Hollywood, CA</small>
@@ -185,10 +185,10 @@
 						<div class="row">
 							<div class="span8">
 								<div class="row">
-									 <div  id="myTab" class="span2"> <a href="#home">Majors & Degrees</a> <a href="#profile">Location & Contact</a> </div>
+									 <div  id="myTab" class="span2 college-tab"> <a href="#profile">Location & Contact</a><br><a href="#home">Majors & Degrees</a>  </div>
 									 <section class="span6">
                               <div class="tab-content">
-                                 <div class="tab-pane active" id="home">
+                                 <div class="tab-pane" id="home">
                                     <h5>Majors &amp; Degrees</h5>
 									<?php
 									$ukprn=$universityData[0]['UKPRN'];
@@ -224,7 +224,7 @@
 									?>
 									</table>
                                  </div>
-                                 <div class="tab-pane" id="profile">
+                                 <div class="tab-pane  active" id="profile">
                                     <h5>Location</h5>
                                     <div id="map">
                                        <img src="<?php echo base_url()?>assets/img/map.png">

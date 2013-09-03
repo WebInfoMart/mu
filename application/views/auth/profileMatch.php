@@ -26,7 +26,7 @@
                         <div id="real_profile_pic"> 
 						
 						<?php 
-							if($userProfile['profilePic'])
+							if(isset($userProfile['profilePic']) && $userProfile['profilePic'])
 
 							{
 								if(substr($userProfile['profilePic'],0,1)=='f')
@@ -60,8 +60,10 @@
 
 						?>
 						</div>
-                        <p><?php echo $userData['fullname'];?>,<?php echo $userProfile['gender'];?> <br>
-                           <?php echo $userProfile['dob'];?> 
+                        <p>
+							<?php echo ($userData['fullname']);?>
+							<?php echo (isset($userProfile['gender']))?", ".$userProfile['gender']:"";?> <br>
+						   <?php echo (isset($userProfile['dob']))?$userProfile['dob']:"";?> 
                         </p>
                         <!--<p class="edit_profile_link"><a href="#">Edit Profile</a></p>-->
                      </div>
@@ -179,7 +181,7 @@
                             <a href="<?php echo base_url('auth/profileStep3');?>"><button class="btn " type="button">Skip</button></a>
                            <input class="btn " type="submit" onclick=""  name="save_profile_match" value="Next">
                         </div>
-                     <?php form_close();?>
+                     <?php echo form_close();?>
                   </article>
                </div>
             </section>
