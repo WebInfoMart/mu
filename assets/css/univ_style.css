@@ -228,6 +228,10 @@ footer ul.inline li {
 	line-height:13px;
 	font-size:12px;
 }
+ul.footer_icons>li{
+	font-size: 18px!important;
+	border: none!important;
+}
 footer ul.inline li a {
 	color:#4f4f4f;
 }

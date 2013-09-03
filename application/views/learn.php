@@ -6,10 +6,12 @@
 	</ul>
 	<div class="row">
 		<div class="span6">
-			<blockquote>
-				<p class="text-info">Tell me and I forget. Teach me and I remember. Involve me and I learn.</p>
-				<small>Benjamin Franklin</small>
-			</blockquote>
+			<div class="well">
+				<blockquote>
+					<p class="text-info">Tell me and I forget. Teach me and I remember. Involve me and I learn.</p>
+					<small>Benjamin Franklin</small>
+				</blockquote>
+			</div>
 			<h5 class="text-info">Want to get access to our vast resources of content to never stop your learning:</h5>
 			<h6 class="success">Want to get access to our vast resources of content to never stop your learning:</h6>			
 			<ul>

@@ -16,17 +16,6 @@
             </article>
          </section>-->
          <section id="secondary_footer">
-            <article class="row container" id="search_connect">
-               <div id="search">
-                  <form class="form-search">
-                     <div class="input-append">
-                        <input type="text" placeholder="Search" class="span2 search-query">
-                        <button type="submit" class="btn" > <i class="icon-search"></i></button>
-                     </div>
-                  </form>
-               </div>
-               <div id="connect"><span>Connect with us: <a href="#"><img src="<?php echo base_url();?>assets/img/facebook.png"></a> <a href="#"><img src="<?php echo base_url();?>assets/img/twitter.png"></a></span></div>
-            </article>
 			<div class="container">
 				<div class="row">
 					<div class="span2">
@@ -102,16 +91,27 @@
 			</div>
 			<div class="static_bar">
 				<div class="container">
-					<ul class="inline text-right">
-						<li><a href="">About Us</a></li>
-						<li><a href="">Jobs</a></li>
-						<li><a href="">Team</a></li>
-						<li><a href="">Disclaimer</a></li>
-						<li><a href="">Privacy Policy</a></li>
-						<li><a href="">Feedback</a></li>
-						<li><a href="">Contact Us</a></li>
-					</ul>
-              	</div>
+					<div class="row">
+						<div class="span4">
+							<ul class="inline footer_icons">
+  								<li><a href="#"><i class="icon-facebook-sign"></i></a></li>
+								<li><a href="#"><i class="icon-twitter-sign"></i></a></li>
+								<li><a href="#"><i class="icon-youtube-sign"></i></a></li>
+  							</ul>
+  						</div>
+  						<div class="span8">
+							<ul class="inline text-right">
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Jobs</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Disclaimer</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Feedback</a></li>
+								<li><a href="#">Contact Us</a></li>
+  							</ul>
+  						</div>
+  					</div>              	
+  				</div>
 			</div>
          </section>
          </div>
