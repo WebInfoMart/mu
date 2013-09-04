@@ -1169,16 +1169,22 @@ p.city {
 }
 #register_page .well {
 	border:none;
-	background:#f8faf0;
-	box-shadow:none;
+	background:#ffffff;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	border: solid 1px #ccc;
+	padding: 2px 15px;
 }
 .border {
 	border-bottom:dashed 2px #cacaca;
 	margin:20px 0;
 }
-#register_page .well h2 {
+#register_page .well .heading {
 	color:#1a97e1;
-	font-size:36px;
+	font-size:26px;
+}
+#register_page .well .heading small{
+	color:#1a97e1;
+	font-size:80%;
 }
 #register_page .well h2 span {
 	color:#919090;
@@ -1205,10 +1211,9 @@ p.city {
 	height:40px; */
 }
 #register_page input[type="password"] {
-	border-radius:0;
 	padding-top:0;
 	padding-bottom:0;
-	height:40px;
+	height:28px;
 }
 select {
 	color:#919090;
@@ -1240,8 +1245,9 @@ select {
 #register_page .r_col_sing h4 {
 	color:#000;
 }
-#register_page .r_col_sing h2 {
-	margin-top:80px;
+#register_page .r_col_sing .tag-line {
+	margin-top:30px;
+	font-size:21px;
 }
 #register_page .l_col_sing {
 	background:url(../img/gradiant-line.png) no-repeat right center;

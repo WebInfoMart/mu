@@ -18,7 +18,7 @@ if(isset($userData))
       <div role="main" id="main">
          <div class="row container" id="register_page">
             <div class="well well-small">
-               <h2>Log In with Meet Univ’s Account </h2>
+               <h4 class="heading"><small>Log In with</small> MeetUniv.Com <small>Account</small> </h4>
             </div>
 			<?php if(!$this->session->flashdata('message') && isset($notActivated)){?>
 			<?php echo form_open(base_url('auth/send_again')); ?>
@@ -42,7 +42,7 @@ if(isset($userData))
 				<?php echo $this->session->flashdata('message');?>
 			</div>
 			<?php }?>
-            <div class="border"></div>
+            <!--<div class="border"></div>-->
 			<div class="row">
             <article class="span6 l_col_sing">
                <h3>Login <span>or  <a href="<?php echo base_url('register')?>">Sign up</a></span></h3>
@@ -54,7 +54,7 @@ if(isset($userData))
 						'value' => set_value('login'),
 						'maxlength'	=> 80,
 						'size'	=> 30,
-						'class'	=> 'span4',
+						'class'	=> 'span3',
 						'placeholder'=> 'Email'
 					);
 					if ($login_by_username AND $login_by_email) {
@@ -68,7 +68,7 @@ if(isset($userData))
 						'name'	=> 'password',
 						'id'	=> 'password',
 						'size'	=> 30,
-						'class'	=> 'span4',
+						'class'	=> 'span3',
 						'placeholder'=> 'Password'
 					);
 					$remember = array(
@@ -129,8 +129,8 @@ if(isset($userData))
 						<button class="btn btn-medium" type="button">Cancel</button>
 					</div>
 				<?php echo form_close();?>
-               <form>
-                 <!-- <div class="input-prepend">
+               <!--<form>
+                  <div class="input-prepend">
                      <span class="add-on"><img src="<?php echo base_url();?>assets/img/student_name.png"></span>
                      <input class="span4"  type="text" placeholder="Student Name">
                   </div>
@@ -156,21 +156,21 @@ if(isset($userData))
                   <div class="form_bu clearfix">
                      <button class="btn btn-large" type="button" onclick="location.href='register_step_1.html'">Create Account</button>
                      <button class="btn btn-large" type="button">Cancel</button>
-                  </div>-->
-               </form>
-               <small>By creating an account, you agree to the <a href="#">Terms 
+                  </div>
+               </form>-->
+               <p style="margin: 0 0 50px;">By creating an account, you agree to the <a href="#">Terms 
                of Service </a><br> and to receive product information<br>
-               unless you choose <a href="#">otherwise</a>.</small>
+               unless you choose <a href="#">otherwise</a>.</p>
             </article>
 			
             <article class="span5 r_col_sing">
                <h4>Or, Sign up with</h4>
                <img src="<?php echo base_url();?>assets/img/facebook_big.png" onclick="fblogin();" style="cursor:pointer">
-               <h2>Search many of <br>
+               <h3 class="tag-line">Search many of <br>
                   colleges and there <br>
                   information as Per your <br>
                   Requirments..
-               </h2>
+               </h3>
             </article>
 			</div>
 		 </div>

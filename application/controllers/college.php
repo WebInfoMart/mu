@@ -26,6 +26,7 @@ public function index() {
     }
 	public function individualCollege($college,$collegeId)
 	{
+	 $collegeId=base64_decode($collegeId);
 	 $data["universityData"]=$this->collegemodel->getUniversityDataById($collegeId);
 	 $data["universityDetail"]=$this->collegemodel->getUniversityDetailById($collegeId);
 	 if($data['universityData'][0]['cityId']) //city details is present

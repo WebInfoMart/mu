@@ -101,13 +101,13 @@
   						</div>
   						<div class="span8">
 							<ul class="inline text-right">
-								<li><a href="#">About Us</a></li>
+								<li><a href="<?php echo base_url('about-us')?>">About Us</a></li>
 								<li><a href="#">Jobs</a></li>
 								<li><a href="#">Team</a></li>
 								<li><a href="#">Disclaimer</a></li>
 								<li><a href="#">Privacy Policy</a></li>
 								<li><a href="#">Feedback</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="<?php echo base_url('contact-us')?>">Contact Us</a></li>
   							</ul>
   						</div>
   					</div>              	
