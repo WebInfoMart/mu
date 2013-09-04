@@ -1,32 +1,54 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head><title>Welcome to <?php echo $site_name; ?>!</title></head>
+<!DOCTYPE html>
+<html lang="en">
 <body>
-<div style="max-width: 800px; margin: 0; padding: 30px 0;">
-<table width="80%" border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td width="5%"></td>
-<td align="left" width="95%" style="font: 13px/18px Arial, Helvetica, sans-serif;">
-<h2 style="font: normal 20px/23px Arial, Helvetica, sans-serif; margin: 0; padding: 0 0 18px; color: black;">Welcome to <?php echo $site_name; ?>!</h2>
-Thanks for joining <?php echo $site_name; ?>. We listed your sign in details below, make sure you keep them safe.<br />
-To open your <?php echo $site_name; ?> homepage, please follow this link:<br />
-<br />
-<big style="font: 16px/18px Arial, Helvetica, sans-serif;"><b><a href="<?php echo site_url('/login/'); ?>" style="color: #3366cc;">Go to <?php echo $site_name; ?> now!</a></b></big><br />
-<br />
-Link doesn't work? Copy the following link to your browser address bar:<br />
-<nobr><a href="<?php echo site_url('/login/'); ?>" style="color: #3366cc;"><?php echo site_url('/login/'); ?></a></nobr><br />
-<br />
-<br />
-<?php if (strlen($username) > 0) { ?>Your username: <?php echo $username; ?><br /><?php } ?>
-Your email address: <?php echo $email; ?><br />
-<?php /* Your password: <?php echo $password; ?><br /> */ ?>
-<br />
-<br />
-Have fun!<br />
-The <?php echo $site_name; ?> Team
-</td>
-</tr>
-</table>
-</div>
+	<table width="800px" align="center" style="font-family:arial;font-size:15px">
+		<tr>
+			<td style="float:left"><img src="images/logo.jpg"></td>
+		</tr>
+		<tr>
+			<td width="70%" height="100px" valign="top">
+				<table>
+							<tr><td>Welcome to MeetUniv.Com – Best Place to Meet Universities!</td></tr>
+							<tr><td style="padding-top:29px">Dear <?php echo $fullname; ?>,</td></tr>
+							<tr><td style="padding-top:18px">Research and connect with universities worldwide instantly with your new MeetUniv.Com account. Learn more about how an updated profile ,can get you connected better with your dream universities, or log in to your MeetUniv.Com account to get started now!</td></tr>
+							<tr><td style="padding-top:11px">Some important Pointers:</td></tr>
+							<tr>
+								<td>
+									<ul>
+										<li><a href="<?php echo site_url('/login/'); ?>" style="color:#000">Best Place to Meet Universities</a></li>
+										<li><a href="<?php echo site_url('/connect/'); ?>" style="color:#000">MU - Connect</a></li>
+										<!--<li><a href="#" style="color:#000">Exam Ware</a></li>
+										<li><a href="#" style="color:#000">Premium Counselling</a></li>-->
+									</ul>
+								<hr style="color:#ccc"></hr>
+								</td>
+							</tr>
+						<tr>
+							<td style="padding-top:20px">
+								MU Profile Id MU331
+							</td>
+						</tr>	
+				</table>
+			</td>
+		
+			<td style="border:1px solid #ccc" width="30%">
+				<table >
+					<tr><th style="background:#eee;padding-top:4px" height="30px" >Your Account Info</th></tr>
+					<tr><td style="padding-top:20px">Make sure you never provide your password to anyone.</td></tr>
+					<tr><td style="padding-top:26px;padding-bottom:10px">Email: <?php echo $email;?></td></tr>
+					<!--<tr><td style="padding-top:10px">password</td></tr>-->
+					<tr><td style="padding-top:52px"><a href="#" style="color: #000;text-decoration: none;">To Change your password , please click here.</a></td></tr>
+					<tr><td style="background:#eee" height="50px"></td></tr>
+					<tr><td style="padding-top: 30px;padding-bottom: 22px;">You should never give your MeetUniv.Com password to anyone, including our employees.</td></tr>
+					
+					
+				</table>
+			</td>
+		
+			
+		</tr>	
+		
+		
+	</table>
 </body>
 </html>

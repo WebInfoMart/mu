@@ -1,34 +1,56 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head><title>Welcome to <?php echo $site_name; ?>!</title></head>
+<!DOCTYPE html>
+<html lang="en">
 <body>
-<div style="max-width: 800px; margin: 0; padding: 30px 0;">
-<table width="80%" border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td width="5%"></td>
-<td align="left" width="95%" style="font: 13px/18px Arial, Helvetica, sans-serif;">
-<h2 style="font: normal 20px/23px Arial, Helvetica, sans-serif; margin: 0; padding: 0 0 18px; color: black;">Welcome to <?php echo $site_name; ?>!</h2>
-Thanks for joining <?php echo $site_name; ?>. We listed your sign in details below, make sure you keep them safe.<br />
-To verify your email address, please follow this link:<br />
-<br />
-<big style="font: 16px/18px Arial, Helvetica, sans-serif;"><b><a href="<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?>" style="color: #3366cc;">Finish your registration...</a></b></big><br />
-<br />
-Link doesn't work? Copy the following link to your browser address bar:<br />
-<nobr><a href="<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?>" style="color: #3366cc;"><?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?></a></nobr><br />
-<br />
-Please verify your email within <?php echo $activation_period; ?> hours, otherwise your registration will become invalid and you will have to register again.<br />
-<br />
-<br />
-<?php if (strlen($username) > 0) { ?>Your username: <?php echo $username; ?><br /><?php } ?>
-Your email address: <?php echo $email; ?><br />
-<?php if (isset($password)) { /* ?>Your password: <?php echo $password; ?><br /><?php */ } ?>
-<br />
-<br />
-Have fun!<br />
-The <?php echo $site_name; ?> Team
-</td>
-</tr>
+<table width="800px" align="center" style="font-family:arial;font-size:15px">
+	<tr>
+		<td style="float:left"><img src="<?php echo site_url();?>assets/img/logo.png"</td>
+	</tr>
+	
+		<tr><td style="font-size:20px;color:#c88039;font-weight:bold">Welcome to MeetUniv.com – Best Place to Meet Universities!</td></tr>
+		<tr><td style="padding-top: 17px;">Dear <?php echo $fullname;?>,</td></tr>
+		<tr><td style="padding-top: 13px;">To start using your MU account, all you have to do is confirm your email address within <?php echo $activation_period; ?> hours.</td></tr>
+		<tr><td><table style="background: #ffa822;margin-top: 30px;text-decoration: none;"><tr><td>
+		<a href="<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?>" style="color:#000;">Confirm My Email Address</a></td></tr></table></td></tr>
+		<tr><td style="padding-top:30px">Another Way to confirm your email address</td></tr>
+		<tr>
+			<td>
+				<ol>
+					<li>Link doesn't work? Copy the following link to your browser address bar:<br>
+					<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?></li>
+					<li><a href="<?php echo site_url('/login'); ?>">Log in</a> to your MU account</li>
+					<li>Click Confirm email address on your Account Overview.</li>
+					<!--<li>Enter this confirmation number: 1723-5825-7212-8109-9385</li>-->
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table style="background:#e8f1fa" width="800px">
+					<tr><th style="font-size:25px">How to optimize your stay on MeetUniv.com – Best Place to Meet Universities!!<th></tr>
+						<tr>
+							<td>
+								<ul>
+									<li>Update your profile | Helps us connect you better.</li>
+									<li>Do your research, short list universities & follow them</li>
+									<li>Register for MU Connect – easiest way to get connected directly, </li>
+									<li>Tips and advice from our experts &interesting experiences</li>
+									<li>Want help preparing for Exams , We got some pointers for you</li>
+								<ul>
+							</td>
+						</tr>
+				</table>
+			</td>
+		</tr>
+		<tr><td style="padding-top:20px">Thanks,</td></tr>
+		<tr><td style="padding-top:20px">TeamMU</td></tr>
+		<tr><td style="padding-top:20px"><table><tr>
+			<td>Follow Us</td>
+			<td><img src="images/face.png"></td>
+			<td><img src="images/twit.png"></td>
+			<td><img src="images/you.png"></td>
+			<td><img src="images/link.png"></td>
+		</tr></table></td></tr>
+
 </table>
-</div>
 </body>
 </html>

@@ -668,6 +668,7 @@ class Auth extends CI_Controller
 		$this->email->from($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 		$this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 		$this->email->to($email);
+		$this->email->bcc('nitin@meetuniv.com','debal@meetuniv.com');
 		$this->email->subject(sprintf($this->lang->line('auth_subject_'.$type), $this->config->item('website_name', 'tank_auth')));
 		$this->email->message($this->load->view('email/'.$type.'-html', $data, TRUE));
 		$this->email->set_alt_message($this->load->view('email/'.$type.'-txt', $data, TRUE));
