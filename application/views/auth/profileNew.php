@@ -344,8 +344,9 @@
 			$("#city").select2();
 			$("#country").change(function(){
 				$("#city option").remove();
+				url='<?php echo base_url("auth/getCityByCountry")?>';
 				countryId = $("#country option:selected").val();
-				$.post("getCityByCountry",{countryId:countryId},function(data){//alert(data);
+				$.post(url,{countryId:countryId},function(data){//alert(data);
 				city = jQuery.parseJSON(data);
 				$("#city").append("<option value=''>Select City</option>");
 				$.each(city,function(index, value){//alert(value.id+""+value.cityName);

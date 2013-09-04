@@ -46,6 +46,7 @@ $route['college/collegePagination/(:num)'] = "college/collegePagination/$1";
 $route['college/(:any)/(:any)'] = "college/individualCollege/$1/$2";
 $route['about-us'] = "about_us";
 $route['contact-us'] = "contact_us";
+$route['privacy-policy'] = "privacy_policy";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
