@@ -14,15 +14,25 @@
 
             <section id="register_page_steps">
 
-               <div class="well  well-small profile_steps ">
+               <div class="well container">
 
-                  <h2 class="pull-left">Complete Your Profile Dashboard</h2>
+                  <!--<h2 class="pull-left">Complete Your Profile Dashboard</h2>
 
-                  <aside class="pull-right" id="step"><img  src="<?php echo base_url();?>assets/img/s_1.png"></aside>
-
+                  <aside class="pull-right" id="step"><img  src="<?php echo base_url();?>assets/img/s_1.png"></aside>-->
+				<div class="row">
+					<div class="span6">
+						<h4 class="user-name"><strong><?php echo $userData['fullname']?></strong> 
+						<small>- Complete Your Profile Dashboard</small></h4>
+					</div>
+					<div class="span6 steps">
+					  <span class="">
+						<img  src="<?php echo base_url();?>assets/img/s_1.png">
+					  </span>
+					</div>
+				</div>
                </div>
 
-               <div class="name">
+               <!--<div class="name">
 
                   <div  class="well well-small">
 
@@ -30,7 +40,7 @@
 
                   </div>
 
-               </div>
+               </div>-->
 
                <div id="l_more">
 
@@ -160,7 +170,7 @@
 
 						<option value="0">Year</option>
 
-						<?php for($counter=1980;$counter<=2005;$counter++)
+						<?php for($counter=1970;$counter<=2005;$counter++)
 
 						{
 
@@ -219,19 +229,19 @@
 
 						<h4>Location</h4>
 
-							<select class="span2" name="country">
+							<select class="span2" name="country" id="country">
 
-								<option value="">Country</option>
-
-								<option value="1">India</option>
-
+								<option value="">Select Country</option>
+							<?php
+								foreach($country as $country){
+							?>
+								<option value="<?php echo $country['id'];?>"><?php echo $country['countryName'];?></option>
+							<?php }  ?>
 							</select>
 
-							<select name="city" class="span2">
+							<select name="city" class="span2" id="city">
 
-								<option value="">City</option>
-
-								<option value="1">Dehradun</option>
+								<option value="">Select City</option>
 
 							</select>
 
@@ -326,11 +336,24 @@
 	  
 
 	<?php $this->load->view('layout/js');?>
-
+	<script src="<?php echo base_url();?>assets/js/select2.js"></script>
 	  
 
 	<script>
-
+		$(document).ready(function(){
+			$("#city").select2();
+			$("#country").change(function(){
+				$("#city option").remove();
+				countryId = $("#country option:selected").val();
+				$.post("getCityByCountry",{countryId:countryId},function(data){//alert(data);
+				city = jQuery.parseJSON(data);
+				$("#city").append("<option value=''>Select City</option>");
+				$.each(city,function(index, value){//alert(value.id+""+value.cityName);
+					$("#city").append("<option value='"+value.id+"'>"+value.cityName+"</option>");
+				});
+				});
+			});
+		});
 		function changeDob()
 
 		{

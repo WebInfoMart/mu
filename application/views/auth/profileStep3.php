@@ -6,17 +6,23 @@
                <li class="active">Edit Profile</li>
             </ul>
             <section id="register_page_steps">
-               <div class="well  well-small profile_steps ">
-                  <h2 class="pull-left">Complete Your Profile Dashboard</h2>
-                  <aside class="pull-right" id="step">
-				  <img  src="<?php echo base_url();?>assets/img/s_3.png">
-				  </aside>
-               </div>
-               <div class="name">
-                  <div  class="well well-small">
-                     <h2><?php echo $userData['fullname'];?></h2>
-                  </div>
-               </div>
+               <div class="well container">
+
+                  <!--<h2 class="pull-left">Complete Your Profile Dashboard</h2>
+
+                  <aside class="pull-right" id="step"><img  src="<?php echo base_url();?>assets/img/s_1.png"></aside>-->
+				<div class="row">
+					<div class="span6">
+						<h4 class="user-name"><strong><?php echo $userData['fullname']?></strong> 
+						<small>- Complete Your Profile Dashboard</small></h4>
+					</div>
+					<div class="span6 steps">
+					  <span class="">
+						<img  src="<?php echo base_url();?>assets/img/s_3.png">
+					  </span>
+					</div>
+				</div>
+				</div>
                <div id="l_more">
                   <div class="well well-small">
                      <h4>Extended Info</h4>
@@ -27,7 +33,7 @@
                      <div  class="text-center" id="profile_2">
                         <div id="real_profile_pic">
                             <?php 
-							if($userProfile['profilePic'])
+							if(isset($userProfile['profilePic']))
 
 							{
 								if(substr($userProfile['profilePic'],0,1)=='f')
@@ -61,8 +67,8 @@
 
 						?>
                         </div>
-                        <p><?php echo $userData['fullname'];?>,<?php echo $userProfile['gender'];?> <br>
-                           <?php echo $userProfile['dob'];?> 
+                        <p><?php echo $userData['fullname'];?>,<?php echo (isset($userProfile['gender']))?$userProfile['gender']:'';?> <br>
+                           <?php echo (isset($userProfile['dob']))?$userProfile['dob']:'';?> 
                         </p>
                         <!--<p class="edit_profile_link"><a href="#">Edit Profile</a></p>-->
                      </div>

@@ -881,6 +881,9 @@ h3.search_header {
 #collage_listing_page .span4 article {
 	margin-bottom:20px;
 }
+#collage_listing_page .british-counsil {
+	color: #8c95b3;
+}
 .margin_b_10 {
 	margin-bottom:10px
 }
@@ -1196,10 +1199,10 @@ p.city {
 	color:#919090;
 }
 #register_page input[type="text"] {
-	border-radius:0;
+	/* border-radius:0;
 	padding-top:0;
 	padding-bottom:0;
-	height:40px;
+	height:40px; */
 }
 #register_page input[type="password"] {
 	border-radius:0;
@@ -1208,18 +1211,18 @@ p.city {
 	height:40px;
 }
 select {
-	height:40px;
 	color:#919090;
 }
 #register_page .add-on {
-	line-height:40px;
+	width:20px;
+	/* line-height:40px;
 	height:40px;
 	vertical-align:middle;
 	float:left;
 	border-radius:0;
 	width:40px;
 	padding-top:0;
-	padding-bottom:0
+	padding-bottom:0 */
 }
 #register_page .input-prepend {
 	border:none;
@@ -1252,20 +1255,28 @@ select {
 #register_page_steps {
 }
 #register_page_steps .well {
-	background:#cfe0ee;
-	border:solid 1px #989d7c;
-	box-shadow:0 0 3px rgba(0, 0, 0, 0.2);
-	border-radius:0;
-	color:#fff;
+	border: solid 1px #ccc;
+	border-radius: 0;
+	padding: 0px;
+	background: #fff;
 }
 #register_page_steps .well h2 {
 	color:#fff;
 	font-size:32px;
 	text-shadow:0 0 1px rgba(0, 0, 0, 0.8);
 }
-#register_page_steps .well-small {
-	height:64px;
+#register_page_steps .well .user-name{
+	color:#09508f;
+	margin: 10px;
 }
+#register_page_steps .well .steps{
+	text-align:right;
+	margin: 5px 0px;
+}
+#register_page_steps .well span{
+	text-align:right;
+}
+
 .name .well {
 	background:#f5f7fa!important;
 	border:0!important;
@@ -1448,23 +1459,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', end
 	font-size:20px;
 }
 #dashboard_container article {
-	width:100%;
 	position:relative;
 	background-image: url(../img/dashboard_bg.jpg);
 	background-repeat: repeat-x;
 	background-position: 40px top;
-	display:block;
-	float:left;
- margin-left:
+	/* display:block; */
+	/* float:left; */
 }
 #dashboard_container article .span3 {
-	margin:0;
+	/* margin:0; */
 }
 #profile_sidebar {
 	min-height:500px;
 	background:#55b8de;
 	position:relative;
-	border:solid 1px #209ccc;
+	/* border:solid 1px #209ccc;  */
 	text-align:center;
 	padding:44px 0;
 	font-size:16px;
@@ -1511,7 +1520,11 @@ ul#profile_status li:last-child {
 	border-color:#ff4e00;
 }
 #dashboard_container .span9 {
-	width:735px;
+	/* width:735px; */
+}
+#dashboard_container .profile-img
+{
+	width:150px;
 }
 #dashboard_cont .span5 {
 	width:284px;
@@ -1532,13 +1545,13 @@ ul#profile_status li:last-child {
 }
 #dashboard_cont ul.nav-tabs li a {
 	border:0;
-	height:53px;
+	height:42px;
 	margin:0;
 	color:#7b84a3;
 	padding:0 12px;
 	display:table-cell;
 	vertical-align:middle;
-	font-size:24px;
+	font-size:20px;
 	color:#50597b;
 	border-radius:0;
 	border-bottom:solid 4px #f2f9fc;
@@ -1611,13 +1624,14 @@ h6.looking {
 	background:none;
 	position:relative;
 	width:412px;
+	height:110px;
 }
 #recent_events .alert .close {
 	right:0;
 	position:absolute;
 	font-weight:bold;
 	color:#59658d;
-	top:20px;
+	top:10px;
 }
 #recent_events .alert h3 {
 	line-height:normal;

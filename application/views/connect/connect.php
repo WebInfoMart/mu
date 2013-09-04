@@ -268,10 +268,7 @@
                      <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
                      <article>
                         <img src="<?php echo base_url();?>assets/img/british-council.png">
-                        <h5 >international students comprise almost <br>
-                           percent of the total student body .<br>
-                           Total cost of attendance for most <br>
-                           international ...
+                        <h6 class="british-counsil">The most trusted source of information about studying in the UK, in association with MeetUniv.com outlines the essential information for you to know & where to begin from.Single source , to keep you updated with the happenings in UK education.
                         </h5>
                      </article>
 					 </article>

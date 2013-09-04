@@ -7,12 +7,35 @@
             </ul>
             <section id="dashboard_container" >
                <article>
+			    <div class="row">
                   <div id="profile_sidebar" class="span3 pull-left">
-                     <img src="<?php echo base_url();?>assets/img/man.jpg" alt="..." class="img-circle">
+					 <?php 
+							if(isset($userProfile['profilePic'])&& $userProfile['profilePic'])
+							{
+								if(substr($userProfile['profilePic'],0,1)=='f')
+								{
+								?>
+								<img src="https://graph.facebook.com/<?php echo substr($userProfile['profilePic'],1)?>/picture?type=large" class="img-circle profile-img"/>
+								<?php
+								}
+								else
+								{
+						?>
+							<img src="<?php echo base_url();?>uploads/user_pic/<?php echo $userProfile['profilePic'];?>" class="img-circle profile-img">
+						<?php 
+								}
+							}
+							else
+							{
+						?>
+								<img src="<?php echo base_url();?>assets/img/man.jpg" alt="..." class="img-circle profile-img"> 
+						<?php
+							} 
+						?>
                      <h2><?php echo $userData['fullname']?> </h2>
-                     <p>Lorem ipsum dolor sit amet 
+                     <!--<p>Lorem ipsum dolor sit amet 
                         consectetuer adipiscing
-                     </p>
+                     </p>-->
                      <br>
                      <img src="<?php echo base_url();?>assets/img/profile_statues.png">
                      <p>Profile Status</p>
@@ -22,9 +45,9 @@
                         <li>Test<span>70%</span></li>
                      </ul>
                   </div>
-                  <article class="span9" id="dashboard" >
+                  <article class="span9">
+				   <div class="row">
                      <section id="dashboard_cont" class="span6">
-                        <div class="row">
                            <ul id="profile_tab" class="nav nav-tabs">
                               <li class="active" ><a href="#Info">Info </a></li>
                               <li><a href="#Edu_ingo" data-toggle="tab">Edu.info</a></li>
@@ -112,49 +135,49 @@
                                     </article>
                                  </section>
                               </div>
-                              <div class="tab-pane" id="Edu_ingo">.Edu_ingo</div>
-                              <div class="tab-pane" id="Tests">.Tests</div>
+                              <div class="tab-pane" id="Edu_ingo">Coming Soon</div>
+                              <div class="tab-pane" id="Tests">Coming Soon</div>
                            </div>
-                        </div>
                      </section>
-                     <aside id="dashboard_sidebar" class="span4">
-                        <h6 class="profile_name" onclick="location.href='video.html'"><?php echo $userData['fullname']?> <img src="<?php echo base_url();?>assets/img/man.jpg" alt="..." class="img-circle" style="width:45px; height:45px;"></h6>
-                        <ul id="notification" class="unstyled">
+                     <aside id="dashboard_sidebar" class="span3">
+                        <h6 class="profile_name" onclick="location.href='video.html'"><?php echo $userData['fullname']?> <!--<img src="<?php echo base_url();?>assets/img/man.jpg" alt="..." class="img-circle" style="width:45px; height:45px;">--></h6>
+                        <!--<ul id="notification" class="unstyled">
                            <li><img src="<?php echo base_url();?>assets/img/arrow-bottom.png"></li>
                            <li><a href="#"><img src="<?php echo base_url();?>assets/img/bell.png"></a><span>6</span></li>
                            <li><a href="#"><img src="<?php echo base_url();?>assets/img/link.png"></a></li>
                            <li><a href="#"><img src="<?php echo base_url();?>assets/img/notice.png"></a></li>
-                        </ul>
+                        </ul>-->
                         <article>
                            <h3 >Saved Events</h3>
-                           <p>still you have not saved any 
-                              events
+                           <p>Still you have not saved any 
+                              events!
                            </p>
                         </article>
                         <article>
                            <h3 class="save_college">Saved Colleges</h3>
-                           <p>You have saved 1 college</p>
-                           <p class="saved"><a href="#">St Georges college of medical science</a> <a class="close" data-dismiss="alert" href="#">&times;</a> </p>
+                           <p>You have saved 0 college</p>
+                           <!--<p class="saved"><a href="#">St Georges college of medical science</a> <a class="close" data-dismiss="alert" href="#">&times;</a> </p>-->
                         </article>
                         <article>
                            <h3 class="college">College Search</h3>
-                           <ul class="unstyled">
-                              <li><a href="#">My colleges </a></li>
-                              <li><a href="#"> Saved Colleges </a></li>
-                              <li><a href="#"> Recomeded Colleges</a></li>
-                           </ul>
+                           <p>
+						    <ul class="unstyled">
+                               <li><a href="#">My colleges </a><span class="badge badge-success pull-right">1</span></li>
+                               <li><a href="#"> Saved Colleges </a><span class="badge badge-warning pull-right">2</span></li>
+                               <li><a href="#"> Recomeded Colleges</a><span class="badge badge-important pull-right">3</span></li>
+                            </ul>
+						   </p>
                         </article>
                         <article><img src="<?php echo base_url();?>assets/img/facebook_fane_icon.png"></article>
                         <article>
                            <img src="<?php echo base_url();?>assets/img/british-council.png">
-                           <h5>international students comprise almost <br>
-                              percent of the total student body .<br>
-                              Total cost of attendance for most <br>
-                              international ...
-                           </h5>
+                           <h6>The most trusted source of information about studying in the UK, in association with MeetUniv.com outlines the essential information for you to know & where to begin from.Single source , to keep you updated with the happenings in UK education.
+                           </h6>
                         </article>
                      </aside>
-                  </article>
+                   </div>
+				  </article>
+				</div>
                </article>
             </section>
          </div>

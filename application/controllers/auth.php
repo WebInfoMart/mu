@@ -889,6 +889,7 @@ class Auth extends CI_Controller
 				}
 				}
 			}
+			$upload_result['country']=$this->users->getAllCountry();
 			$this->layout->view('auth/profileNew',$upload_result);
 		}
 		else													// not logged in or non activated	
@@ -958,7 +959,9 @@ class Auth extends CI_Controller
 	{
 		if($this->tank_auth->is_logged_in())
 		{
-			$this->layout->view('auth/profileDashboard');
+			$data['userProfile'] = $this->users->getUserProfileDetails($this->tank_auth->get_user_id());
+			$data['userProfileMatch'] = $this->users->getUserProfileMatch($this->tank_auth->get_user_id());
+			$this->layout->view('auth/profileDashboard',$data);
 		}
 		else
 		{
@@ -983,6 +986,12 @@ class Auth extends CI_Controller
 		{
 			redirect('login');
 		}
+	}
+	function getCityByCountry()//for ajax
+	{
+		$data['city']=$this->users->getCityNamesByCountryId($this->input->post('countryId'));
+		$value = json_encode($data['city']);
+		echo $value;//printing data for ajex request
 	}
 	
 

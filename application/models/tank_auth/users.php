@@ -645,6 +645,22 @@ class Users extends CI_Model
 		$query=$this->db->query("select * from userProfile where userId=$userId limit 1");
 		return $query->row_array();
 	}
+	function getAllCountry()
+	{
+		$this->db->select('*');
+		$this->db->from("country");
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	function getCityNamesByCountryId($countryId)
+	{
+		$this->db->select("*");
+		$this->db->from("city");
+		$this->db->where('countryId',$countryId);
+		$query = $this->db->get();
+		return $query->result_array();
+		
+	}
 	
 }
 

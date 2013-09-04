@@ -7,6 +7,7 @@
       <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
       <link href="<?php echo base_url();?>assets/css/univ_style.css" rel="stylesheet" media="screen">
       <link href="<?php echo base_url();?>assets/css/font-awesome.css" rel="stylesheet" media="screen">
+      <link href="<?php echo base_url();?>assets/css/select2.css" rel="stylesheet" media="screen">
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
       <script src="<?php echo base_url();?>assets/js/modernizr-2.6.2.min.js"></script>
