@@ -125,7 +125,7 @@ if(isset($userData))
 				</div>
 				
 						<div class="form_bu clearfix">
-						<input class="btn btn-medium" type="submit" value="Let Me In">
+						<input class="btn btn-medium btn-info" type="submit" value="Let Me In">
 						<button class="btn btn-medium" type="button">Cancel</button>
 					</div>
 				<?php echo form_close();?>
@@ -158,9 +158,9 @@ if(isset($userData))
                      <button class="btn btn-large" type="button">Cancel</button>
                   </div>
                </form>-->
-               <p style="margin: 0 0 50px;">By creating an account, you agree to the <a href="#">Terms 
+               <p style="margin: 0 0 50px;">By creating an account, you agree to the <a href="<?php echo base_url('terms');?>">Terms 
                of Service </a><br> and to receive product information<br>
-               unless you choose <a href="#">otherwise</a>.</p>
+               unless you choose otherwise.</p>
             </article>
 			
             <article class="span5 r_col_sing">

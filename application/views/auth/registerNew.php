@@ -134,7 +134,7 @@
 					</div>
 				</div>
 						<div class="form_bu clearfix">
-						<button class="btn btn-medium" type="button" onclick="$('#registerForm').submit();">Create Account</button>
+						<button class="btn btn-medium btn-info" type="button" onclick="$('#registerForm').submit();">Create Account</button>
 						<button class="btn btn-medium" type="button">Cancel</button>
 					</div>
 				<?php echo form_close();?>
@@ -167,9 +167,9 @@
                      <button class="btn btn-large" type="button">Cancel</button>
                   </div>-->
                </form>
-               <small>By creating an account, you agree to the <a href="#">Terms 
+               <small>By creating an account, you agree to the <a href="<?php echo base_url('terms');?>">Terms 
                of Service </a><br> and to receive product information<br>
-               unless you choose <a href="#">otherwise</a>.</small>
+               unless you choose otherwise.</small>
             </article>
 			
             <article class="span5 r_col_sing">

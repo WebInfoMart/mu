@@ -94,9 +94,9 @@
 					<div class="row">
 						<div class="span4">
 							<ul class="inline footer_icons">
-  								<li><a href="#"><i class="icon-facebook-sign"></i></a></li>
-								<li><a href="#"><i class="icon-twitter-sign"></i></a></li>
-								<li><a href="#"><i class="icon-youtube-sign"></i></a></li>
+  								<li><a href="https://www.facebook.com/Meetuniv"><i class="icon-facebook-sign"></i></a></li>
+								<li><a href="https://twitter.com/MeetUniv"><i class="icon-twitter-sign"></i></a></li>
+								<li><a href="http://www.youtube.com/MeetUniv"><i class="icon-youtube-sign"></i></a></li>
   							</ul>
   						</div>
   						<div class="span8">

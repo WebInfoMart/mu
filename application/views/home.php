@@ -205,7 +205,7 @@
 								<p>Not sure where to start from ?<br>
 									Confused start your search here:<br/><br/>
 								</p>
-								<p><a href="">College search &rarr;</a></p>
+								<p><a href="<?php echo base_url('college')?>">College search &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -219,7 +219,7 @@
 								<p>Shortlisted College!<br>
 									Know your options to get connected - Directly!
 								</p>
-								<p><a href="">MU Connect &rarr;</a></p>
+								<p><a href="<?php echo base_url('connect')?>">MU Connect &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -235,7 +235,7 @@
 								<p>Help in your application process<br>
 									Free Courseware for Exams.<br/><br/>
 								</p>
-								<p><a href="">IELTS - Academic / English &rarr;</a></p>
+								<p><a href="<a href="<?php echo base_url('learn')?>">IELTS - Academic / English &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -249,14 +249,14 @@
 								<p>Don't know which stream to choose?<br>
 									Confused Career choices?
 								</p>
-								<p><a href="">I am Gifted &rarr;</a></p>
+								<p><a href="#">I am Gifted &rarr;</a></p>
 							</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<aside class="span4" id="british_council" onclick="window.open('http://www.britishcouncil.in/why-the-uk')">
-					<h4>British Cuncil</h4>
+					<h4>British Council</h4>
 					<p>
 						The most trusted source of information about studying in the UK, in association with MeetUniv.com outlines the essential information for you to know & where to begin from.Single source , to keep you updated with the happenings in UK education.
 					</p>

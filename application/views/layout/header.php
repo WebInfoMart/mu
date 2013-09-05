@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>University Connect, Search Courses, Career Guide, Test Preparation	- Meet Univ</title>
+      <title>University Connect - Education Fairs,  Spot Admission, University Visits, Universities, Courses, Test Prepration - MeetUniv.Com</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Bootstrap -->
+      <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.png" />
       <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
       <link href="<?php echo base_url();?>assets/css/univ_style.css" rel="stylesheet" media="screen">
       <link href="<?php echo base_url();?>assets/css/font-awesome.css" rel="stylesheet" media="screen">
