@@ -81,7 +81,7 @@
 				<div class="control-group">
 					<div class="controls">
 						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/student_name.png"></span>
+							<span class="add-on"><i class="icon-user"></i></span>
 							<?php echo form_input($fullname); ?>
 						</div>
 						<span class="help-inline" style="color:red;"><?php echo form_error($fullname['name']); ?><?php echo isset($errors[$fullname['name']])?$errors[$fullname['name']]:''; ?></span>
@@ -91,7 +91,7 @@
 				<div class="control-group">
 					<div class="controls">		
 						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/mail.png"></span>
+							<span class="add-on"><i class="icon-envelope"></i></span>
 							<?php echo form_input($email); ?>
 							
 						</div>
@@ -103,7 +103,7 @@
 				<div class="control-group">
 					<div class="controls">	
 						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/Mobile.png"></span>
+							<span class="add-on"><i class="icon-mobile-phone"></i></span>
 							<?php echo form_input($mobile); ?>
 						</div>
 						<span class="help-inline" style="color:red;">
@@ -114,7 +114,7 @@
 				<div class="control-group">
 					<div class="controls">	
 						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/Password.png"></span>
+							<span class="add-on"><i class="icon-unlock-alt"></i></span>
 							<?php echo form_password($password); ?>
 						</div>
 						<span class="help-inline" style="color:red;">
@@ -125,7 +125,7 @@
 				<div class="control-group">
 					<div class="controls">
 						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/Confirm-Password.png"></span>
+							<span class="add-on"><i class="icon-unlock"></i></span>
 							<?php echo form_password($confirm_password); ?>
 						</div>
 						<span class="help-inline" style="color:red;">
@@ -189,9 +189,89 @@
 	 <?php $this->load->view('layout/js');?>
 	   <script src="<?php echo base_url();?>assets/js/custom/client.js" type="text/javascript"></script>
 	 <script src="<?php echo base_url();?>assets/js/custom/login.js" type="text/javascript"></script> 
+	 <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js" type="text/javascript" ></script>
 	 <script>
 		$(document).ready(function () {
 			login.execute();									//code of JavaScript to be executed
+			$('#registerForm').validate({
+				errorElement: 'span',
+				errorClass: 'help-inline',
+				focusInvalid: false,
+				rules: {
+					fullname: {
+						required: true,
+						minlength: 3
+					},
+					email: {
+						required: true,
+						email:true
+					},
+					mobile: {
+						required: true,
+						minlength: 10
+					},
+					password: {
+						required: true,
+						minlength: 5
+					},
+					confirm_password: {
+						required: true,
+						minlength: 5,
+						equalTo: "#registerPassword"
+					}
+				},
+		
+				messages: {
+					fullname: {
+						required: "Please specify Full Name.",
+						minlength: "Please specify Name of minimum 4 character."
+					},
+					email: {
+						required: "Please provide a valid email.",
+						email: "Please provide a valid email."
+					},
+					password: {
+						required: "Please provide password.",
+						minlength: "Please specify a secure Password."
+					},
+					mobile: {
+						required: "Please provide a Orgnization Name.",
+						minlength: "Please specify Valid Mobile Number."
+					}
+				},
+		
+				invalidHandler: function (event, validator) { //display error alert on form submit   
+					$('.alert-error', $('.login-form')).show();
+				},
+		
+				highlight: function (e) {
+					$(e).closest('.control-group').removeClass('info').addClass('error');
+				},
+		
+				success: function (e) {
+					$(e).closest('.control-group').removeClass('error').addClass('info');
+					$(e).remove();
+				},
+		
+				errorPlacement: function (error, element) {
+					//console.log(error[0]['innerHTML']);
+					if(element.is(':checkbox') || element.is(':radio')) {
+						var controls = element.closest('.controls');
+						if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+						else error.insertAfter(element.nextAll('.lbl').eq(0));
+					} 
+					else if(element.is('.chzn-select')) {
+						error.insertAfter(element.nextAll('[class*="chzn-container"]').eq(0));
+					}
+					else error.insertAfter(element);
+				},
+		
+				submitHandler: function (form) {
+				form.submit();
+				},
+				invalidHandler: function (form) {
+				}
+			}); 
 		})
 	</script>
 	 

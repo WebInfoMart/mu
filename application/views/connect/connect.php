@@ -1,4 +1,130 @@
  <!--main-->
+ <div id="betaModal" class="modal hide fade">
+ <span  id="sendSmsForm">
+    <div class="modal-header">
+            <button class="close" data-dismiss="modal">×</button>
+            <h3 id="eventName">Event Name</h3>
+    </div>
+<div class="modal-body">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="span6">
+				  <div class="thumbnail" style="padding: 0;line-height:12px;">
+					<div style="padding:4px">
+					  <img alt="300x200" style="width: 248px;height: 100px;" src="http://placehold.it/200x150">
+					</div>
+					<div class="caption" style="padding:0px 9px;">
+					  <h4 id="universityName" style="color:#373;">Project A</h4>
+					  <p><a class="btn btn-primary btn-mini" href="#"><i class="icon-plus-sign"></i> Add College</a></p>
+					  <p id="eventLocation">
+						<i class="icon icon-calendar"></i> <span id="eventDate">Date</span>
+						</p><p><i class="icon icon-map-marker"></i> <span id="eventPlace">Place, Country</span>
+					  </p>
+					</div>
+					<div class="modal-footer" style="text-align: left">
+					  <div class="progress progress-striped active" style="background: #ddd">
+						<div class="bar" style="width: 60%;"></div>
+					  </div>
+					  <div class="row-fluid">
+						<div class="span4"><b>60%</b><br/><small>FUNDED</small></div>
+						<div class="span4"><b>$400</b><br/><small>PLEDGED</small></div>
+						<div class="span4"><b>18</b><br/><small>DAYS</small></div>
+					  </div>
+					</div>
+            </div>
+            </div>
+            <div class="span6">
+                <form class="form-horizontal">
+                    <p class="help-block">Name</p>
+                    <div class="input-prepend">
+                        <span class="add-on">*</span><input id="smsfullname" class="prependedInput" size="16" type="text" placeholder="Full Name" value="<?php echo ($userData)?$userData['fullname']:'';?>">
+                    </div>
+                    <p class="help-block">Email</p>
+                    <div class="input-prepend">
+                        <span class="add-on">@</span><input id="smsemail" class="prependedInput" size="16" type="email" placeholder="Email" value="<?php echo ($userData)?$userData['email']:'';?>">
+                    </div>
+					<p class="help-block">Phone</p>
+                    <div class="input-prepend">
+                        <span class="add-on">@</span><input id="smsphone" class="prependedInput" size="10" type="text" placeholder="Mobile phone" value="<?php echo ($userData)?$userData['mobile']:'';?>">
+                    </div>
+                  	<hr>
+					<div class="help-block" >
+                        <div class="alert alert-error" id="sendSmsError" style="display:none;">
+						  
+						</div>
+                    </div>
+                    <div class="help-block">
+                        <button type="button" class="btn btn-small btn-info pull-right" onclick="sendConnectSms();">Send SMS</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+</div>
+</span>
+<span id="registrationForm" style="display:none;">
+<div class="modal-header">
+            <button class="close" data-dismiss="modal">×</button>
+            <h4>Sent Successfully!</h4>
+    </div>
+<div class="modal-body">
+    <form action="http://localhost/mu/register" method="post" accept-charset="utf-8" id="registerForm">				<div class="control-group">
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/student_name.png"></span>
+							<input type="text" name="fullname" value="" id="fullname" size="30" class="span4" placeholder="Full Name">						</div>
+						<span class="help-inline" style="color:red;"></span>
+					</div>
+				</div>
+						
+				<div class="control-group">
+					<div class="controls">		
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/mail.png"></span>
+							<input type="text" name="email" value="" id="email" maxlength="80" size="30" class="span4" placeholder="Email">							
+						</div>
+						<span class="help-inline" style="color:red;">
+												</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">	
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/Mobile.png"></span>
+							<input type="text" name="mobile" value="" id="mobile" maxlength="10" size="30" class="span4" placeholder="Mobile">						</div>
+						<span class="help-inline" style="color:red;">
+												</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">	
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/Password.png"></span>
+							<input type="password" name="password" value="" id="password" maxlength="20" size="30" class="span4" placeholder="Password">						</div>
+						<span class="help-inline" style="color:red;">
+												</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/Confirm-Password.png"></span>
+							<input type="password" name="confirm_password" value="" id="confirm_password" maxlength="20" size="30" class="span4" placeholder="Confirm Password">						</div>
+						<span class="help-inline" style="color:red;">
+													</span>
+					</div>
+				</div>
+						<div class="form_bu clearfix">
+						<button class="btn btn-medium btn-info" type="button" onclick="$('#registerForm').submit();">Create Account</button>
+						<button class="btn btn-medium" type="button">Cancel</button>
+					</div>
+				</form>
+</div>
+</span>
+    <div class="modal-footer">
+        <p>&copy; MeetUniv.Com</p>
+    </div>
+</div>
       <div role="main" id="main">
          <div class="row container">
             <article id="college_listing" class="page">
@@ -66,205 +192,13 @@
 							</ul>
 						</div>
                      </section>
-					 <div class="span6">
-							<div class="row">
-								<div class="span6">
-									<p class="text-right">Showing 10/100 <i class="icon-circle-arrow-right"></i></p>
-								</div>
-							</div>
-							<div class="row connect-listing">
-								<article class="span6">
-									<div class="row">
-										<div class="span4">
-											<div class='content_blog pull-left clearfix'>
-												<h4>Middlesex University</h4>
-												<hr>
-												<p>Education UK Exhibition</p>
-												<p class="date-time"><i class="icon-calendar"></i>&nbsp;&nbsp;26 Nov 2013<br>
-												<i class="icon-map-marker"></i>&nbsp;&nbsp;Mumbai, India</p>
-											</div>
-										</div>
-										<div class="span2 mu-connect">
-											<aside class="celender">
-												<div class="cl"> <small class="date">NOV</small> <small class="day">26</small> </div>
-												<div class="btn-group">
-												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">Get Details <span class="caret"></span></button>
-												<ul class="dropdown-menu">
-												  <li><a href="#"><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
-												  <li><a href="#"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;E-Mail</a></li>
-												</ul>
-												</div>
-												<button class="btn btn-mini btn-primary voilet" type="button" id="attending-1" onclick="showAttending(this.id);">I am Attending</button>
-												Attending <a href="#">+124</a>
-											</aside>
-										</div>
-									</div>
-									<div class="row">
-										<div class="span6">
-											<section id="attending" class="attending-1" style="display:none;">
-												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
-													<input class="input-small" id="prependedInput" type="text" placeholder="Full Name:">
-												 </div>
-												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/mail-icon.png"></span>
-													<input class="input-small" id="prependedInput" type="text" placeholder="Email:">
-												 </div>
-												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/cell-icon.png"></span>
-													<input class="input-small" id="prependedInput" type="text" placeholder="Mobile No:">
-												 </div>
-												 <button class="btn btn-mini btn-primary green_bu" type="button">Connect</button>
-											</section>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="row connect-listing">
-								<article class="span6">
-									<div class="row">
-										<div class="span4">
-											<div class='content_blog pull-left clearfix'>
-												<h4>University of Greenwich</h4>
-												<hr>
-												<p>Offices of Education Link</p>
-												<p class="date-time"><i class="icon-calendar"></i>&nbsp;&nbsp;03 Oct 2013, 11:00 - 17:00<br>
-												<i class="icon-map-marker"></i>&nbsp;&nbsp;New Delhi, India</p>
-											</div>
-										</div>
-										<div class="span2 mu-connect">
-											<aside class="celender">
-												<div class="cl"> <small class="date">OCT</small> <small class="day">03</small> </div>
-												<div class="btn-group">
-												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">MU Connect <span class="caret"></span></button>
-												<ul class="dropdown-menu">
-												  <li><a href="#"><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
-												  <li><a href="#"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;E-Mail</a></li>
-												</ul>
-												</div>
-												<button class="btn btn-mini btn-primary voilet" type="button" id="attending-2" onclick="showAttending(this.id);">I am Attending</button>
-												Attending <a href="#">+67</a>
-											</aside>
-										</div>
-									</div>
-									<div class="row">
-										<div class="span6">
-											<section id="attending" class="attending-2" style="display:none;">
-												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
-													<input class="input-small" id="prependedInput" type="text" placeholder="Full Name:">
-												 </div>
-												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/mail-icon.png"></span>
-													<input class="input-small" id="prependedInput" type="text" placeholder="Email:">
-												 </div>
-												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/cell-icon.png"></span>
-													<input class="input-small" id="prependedInput" type="text" placeholder="Mobile No:">
-												 </div>
-												 <button class="btn btn-mini btn-primary green_bu" type="button">Connect</button>
-											</section>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="pagination pagination-small" id="my_pagi">
-							<?php //echo $links; ?>
-							<!--  <ul>
-								<li><a href="#">&lt;</a></li>
-								<li class="disabled no_border"><a href="#">1/201</a></li>
-								<li ><a href="#">&gt;</a></li>
-								</ul>-->
-							</div>
+					 <div class="span6" id="connectPagination">
+							
 					</div>
-                     <!--<article class="span6">
-                        <p class="text-right">Showing 12/233 <i class="icon-circle-arrow-right"></i></p>
-                        <section class="search_style">
-                           <article>
-                              <figure class="feature_image pull-left">
-                                 <img src="<?php echo base_url();?>assets/img/collete-image.png">
-                                 <figcaption>Tameside 
-                                    College
-                                 </figcaption>
-                              </figure>
-                              <div class="filter_content">
-                                 <h3>International technology Association 2013</h3>
-                                 <p>River Community College is a Public institution located in 
-                                    Dublin, Virginia .
-                                 </p>
-                                 <div class="date">21 Aug, 2013,6:30 pm - 9:00 pm<br>
-                                    London, UK
-                                 </div>
-                              </div>
-                              <aside class="celender">
-                                 <div class="cl"> <small class="date">AUG</small> <small class="day">22</small> </div>
-                                 <p class="green">Get Details Via<br>
-                                    <a href="#"><img src="<?php echo base_url();?>assets/img/sms.png">SMS</a> <img src="<?php echo base_url();?>assets/img/mail_red.png"><a href="#">Mail</a>
-                                 </p>
-                              </aside>
-							  <aside>
-								<button class="btn btn-mini btn-primary voilet" type="button" id="attending-1" onclick="showAttending(this.id);">I am Attending</button>
-                                 Attending <a href="#">+134</a>
-							  </aside>
-                              <div class="clearfix"></div>
-                              <section id="attending" class="attending-1" style="display:none;">
-                                 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
-                                    <input class="span1" id="prependedInput" type="text" placeholder="Full Name:">
-                                 </div>
-                                 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/mail-icon.png"></span>
-                                    <input class="span1" id="prependedInput" type="text" placeholder="Email:">
-                                 </div>
-                                 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/cell-icon.png"></span>
-                                    <input class="span1" id="prependedInput" type="text" placeholder="Mobile No:">
-                                 </div>
-                                 <button class="btn btn-mini btn-primary green_bu" type="button">Connect</button>
-                              </section>
-                           </article>
-						   <article>
-                              <figure class="feature_image pull-left">
-                                 <img src="<?php echo base_url();?>assets/img/collete-image.png">
-                                 <figcaption>Tameside 
-                                    College
-                                 </figcaption>
-                              </figure>
-                              <div class="filter_content">
-                                 <h3>International technology Association 2013</h3>
-                                 <p>River Community College is a Public institution located in 
-                                    Dublin, Virginia .
-                                 </p>
-                                 <div class="date">21 Aug, 2013,6:30 pm - 9:00 pm<br>
-                                    London, UK
-                                 </div>
-                              </div>
-                              <aside class="celender">
-                                 <div class="cl"> <small class="date">AUG</small> <small class="day">22</small> </div>
-                                 <p class="green">Get Details Via<br>
-                                    <a href="#"><img src="<?php echo base_url();?>assets/img/sms.png">SMS</a> <img src="<?php echo base_url();?>assets/img/mail_red.png"><a href="#">Mail</a>
-                                 </p>
-                              </aside>
-							  <aside>
-								<button class="btn btn-mini btn-primary voilet" type="button" id="attending-2" onclick="showAttending(this.id);">I am Attending</button>
-                                 Attending <a href="#">+134</a>
-							  </aside>
-                              <div class="clearfix"></div>
-                              <section id="attending" class="attending-2" style="display:none;">
-                                 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
-                                    <input class="span1" id="prependedInput" type="text" placeholder="Full Name:">
-                                 </div>
-                                 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/mail-icon.png"></span>
-                                    <input class="span1" id="prependedInput" type="text" placeholder="Email:">
-                                 </div>
-                                 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/cell-icon.png"></span>
-                                    <input class="span1" id="prependedInput" type="text" placeholder="Mobile No:">
-                                 </div>
-                                 <button class="btn btn-mini btn-primary green_bu" type="button">Connect</button>
-                              </section>
-                           </article>
-                        </section>
-                        <div class="pagination pagination-small" id="my_pagi">
-                           <ul>
-                              <li><a href="#">&lt;</a></li>
-                              <li class="disabled no_border"><a href="#">1/201</a></li>
-                              <li ><a href="#">&gt;</a></li>
-                           </ul>
-                        </div>
-                     </article>-->
+                     
 					 <article class="span3">
-                     <article><img src="<?php echo base_url();?>assets/img/calender.jpg"> </article>
+                     <article><!--<img src="<?php echo base_url();?>assets/img/calender.jpg">-->
+					 <div class="calendar_test" style="padding: 30px 0px;"></div> </article>
                      <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
                      <article>
                         <img src="<?php echo base_url();?>assets/img/british-council.png">
@@ -284,11 +218,91 @@
 	  <script src="<?php echo base_url();?>assets/js/bootstrap-dropdown.js"></script>
 	  <script>
 		$(document).ready(function(){
+			theMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+				theDays = ["S", "M", "T", "W", "T", "F", "S"];
+				theDate= ["05/September/2013",'Current Date','sdfds','blue'];
+				
 			$('.dropdown-toggle').dropdown();
+			$('.calendar_test').calendar({
+					months: theMonths,
+					days: theDays,
+					req_ajax: {
+						type: 'get',
+						url: '<?php echo base_url('connect/CurrentDate');?>'
+					}
+				});
+			
+			$.ajax({
+				type	:	'POST',
+				data	:	{offset:'6'},
+				url		:	"<?php echo base_url('connect/connectPagination')?>",
+				beforeSend: function(){
+					$("#connectPagination").css('opicity','0.4');
+				},
+				success: function(data){
+					$("#connectPagination").html(data);
+					$("#connectPagination").css('opicity','1');
+				},
+				
+			})
 		});
 		function showAttending(id)
 		{
 			$('.'+id).fadeIn();
-		
+		}
+		function ConnectMU(univName,eventName,eventDate,eventPlace)
+		{
+			$("#universityName").text(univName);
+			$("#eventName").html(eventName);
+			$("#eventDate").html(eventDate);
+			$("#eventPlace").html(eventPlace);
+			$("#betaModal").modal('show');
+		}
+		function sendConnectSms()
+		{
+			
+			url="<?php echo base_url('connect/attendEvent')?>";
+			var fullname = $("#smsfullname").val();
+			var email = $("#smsemail").val();
+			var phone = $("#smsphone").val();
+			var error = '';
+			if(fullname=='' || fullname==null)
+			{
+				error=error+"Name required!<br>";
+			}
+			if(email=='' || email==null)
+			{
+				error=error+"Email required!<br>";
+			}
+			if(phone=='' || phone==null || isNaN(phone))
+			{
+				error=error+"Phone Number Not Valid!";
+			}
+			if(error!='')
+			{
+				$('#sendSmsError').html(error);
+				$('#sendSmsError').fadeIn();
+				return;
+			}
+			var data = {name:fullname,email:email,phone:phone,type:'sms'}
+			$.post(url,data,function(data){
+				if(data=="NoLoggedIn")
+				{
+					$('#sendSmsForm').hide();
+					$("#fullname").val($("#smsfullname").val());
+					$("#email").val($("#smsemail").val());
+					$("#mobile").val($("#smsphone").val());
+					$('#registrationForm').fadeIn();
+				}
+				else
+				{
+					$("#betaModal").modal('hide');
+				}
+			});
+		}
+		function attendEvent(id)
+		{
+			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:$('#connect-'+id).val(),type:'register'};
+			$.post("<?php echo base_url('connect/attendEvent')?>",data,function(msg){alert(msg);});
 		}
 	  </script>

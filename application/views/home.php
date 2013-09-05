@@ -16,15 +16,20 @@
                   <div id="connect_content" class="clearfix">
                      <article id="univ_connect" class="no_border">
                         <table class="table table-hover">
-                           <tr>
-                              <td>Mubin University <br>
-                                 <span> Rolls royace exhibition</span>
+                           
+						<?php
+						foreach($connect as $connect)
+						{?>   
+						   <tr>
+                              <td><?php echo substr($this->connectmodel->getUniversityNameById($connect->univId),0,20)."..";?><br>
+                                 <span> <?php echo $connect->tagLine;?></span>
                               </td>
                               <td>
-                                 <date>24-july-2013</date>
-                                 <div class="place">Melbourne</div>
+                                 <date><?php echo $connect->date?></date>
+                                 <div class="place"><?php echo $this->collegemodel->getUnivLocationById($connect->cityId,$connect->countryId);?></div>
                               </td>
                            </tr>
+						<?php } ?>
                            <tr>
                               <td>Debong University <br>
                                  <span> Archological Meet</span>
@@ -52,7 +57,7 @@
                                  <div class="place"> Twian Che</div>
                               </td>
                            </tr>
-						   <tr>
+						   <!--<tr>
                               <td> L.O.G.O University <br>
                                  <span> Science Fest 2013-14</span>
                               </td>
@@ -60,7 +65,7 @@
                                  <date>14-Dec-2013</date>
                                  <div class="place"> Twian Che</div>
                               </td>
-                           </tr>
+                           </tr>-->
                         </table>
                         <!--<div class="shape4"> <img src="<?php echo base_url()?>assets/img/shape4.png" > </div>-->
                         <!--<h4>Meet Universities Events</h4>
@@ -74,7 +79,7 @@
                      </article>
                   </div>
                </div>
-               <aside class="slider_content extra_block">
+               <!--<aside class="slider_content extra_block">
                   <div>
                      <h3>Mubin University</h3>
                      <h4>Roll Royace Exhibition </h4>
@@ -93,7 +98,7 @@
                         </tr>
                      </table>
                   </div>
-               </aside>
+               </aside>-->
             </article>
             <article class="item">
                <img src="<?php echo base_url()?>assets/img/courses.jpg">

@@ -87,9 +87,9 @@
 								'class'	=> 	'span4',
 								'placeholder'=> 'School Name'
 						);
-						
+						$formAttr = array('id' => 'profileMatchForm');
 					?>
-                     <?php echo form_open($this->uri->uri_string());?>
+                     <?php echo form_open($this->uri->uri_string(),$formAttr);?>
                     <div class="control-group">
 					  <div class="controls">
                            <h4>School Name</h4>
@@ -125,9 +125,13 @@
 							}?>
 						</select>
 						<input class="span2" type="text" value="" name="XIIfields" placeholder="Field">
-						<div class="input-append span2">
-						    <input class="span1" type="text" value="" name="XIIpercentage" placeholder="%%">
-							<span class="add-on">%</span>
+						<div class="control-group">
+							<div class="controls">
+								<div class="input-append span2">
+									<span class="add-on">%</span>
+									<input class="span1" type="text" value="" name="XIIpercentage" id="XIIpercentage" placeholder="%%">
+								</div>	
+							</div>
 						</div>
 					</div>
 					<div class="controls controls-row" id="UG" style="display:none;">
@@ -142,9 +146,13 @@
 								}?>
 							</select>
 							<input class="span2" type="text" value="" name="UGfields" placeholder="Fields">
-							<div class="input-append span2">
-								<input class="span1" type="text" value="" name="UGpercentage" placeholder="%%">
-								<span class="add-on">%</span>
+							<div class="control-group">
+								<div class="controls">
+									<div class="input-append span2">
+										<span class="add-on">%</span>
+										<input class="span1" type="text" value="" name="UGpercentage" id="UGpercentage" placeholder="%%">
+									</div>
+								</div>
 							</div>
 					</div>
 					<div class="controls controls-row" id="PG" style="display:none;">
@@ -159,9 +167,13 @@
 								}?>
 							</select>
 							<input class="span2" type="text" value="" name="PGfields" placeholder="Fields" name="save_profile_match">
-							<div class="input-append span2">
-								<input class="span1" type="text" value="" name="PGpercentage" placeholder="%%">
-								<span class="add-on">%</span>
+							<div class="control-group">
+								<div class="controls">
+									<div class="input-append span2">
+										<span class="add-on">%</span>
+										<input class="span1" type="text" value="" name="PGpercentage" id="PGpercentage" placeholder="%%">
+									</div>
+								</div>
 							</div>
 					</div>
 					
@@ -200,7 +212,7 @@
 	  
 	  
 	  <?php $this->load->view('layout/js');?>
-	  
+	 <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js" type="text/javascript" ></script>
 	  <script>
 		$(document).ready(function(){
 			$(".lookingfor").click(function(){
@@ -225,6 +237,71 @@
 				}
 				
 				
+			});
+			$('#profileMatchForm').validate({
+				errorElement: 'span',
+				errorClass: 'help-inline',
+				focusInvalid: false,
+				rules: {
+					school: {
+						required: true
+					},
+					XIIpercentage: {
+						required: true,
+						 range: [1, 100]
+					},
+					UGpercentage: {
+						required: true,
+						 range: [1, 100]
+					},
+					PGpercentage: {
+						required: true,
+						 range: [1, 100]
+					},
+				},
+		
+				messages: {
+					XIIpercentage: {
+						required: "Please provide a valid Percentage.",
+					},
+					UGpercentage: {
+						required: "Please provide a valid Percentage.",
+					},
+					PGpercentage: {
+						required: "Please provide a valid Percentage.",
+					},
+				},
+		
+				invalidHandler: function (event, validator) { //display error alert on form submit   
+					$('.alert-error', $('.login-form')).show();
+				},
+		
+				highlight: function (e) {
+					$(e).closest('.control-group').removeClass('info').addClass('error');
+				},
+		
+				success: function (e) {
+					$(e).closest('.control-group').removeClass('error').addClass('info');
+					$(e).remove();
+				},
+		
+				errorPlacement: function (error, element) {
+					if(element.is(':checkbox') || element.is(':radio')) {
+						var controls = element.closest('.controls');
+						if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+						else error.insertAfter(element.nextAll('.lbl').eq(0));
+					} 
+					else if(element.is('.chzn-select')) {
+						error.insertAfter(element.nextAll('[class*="chzn-container"]').eq(0));
+					}
+					else error.insertAfter(element);
+				},
+		
+				submitHandler: function (form) {
+				form.submit();
+				},
+				invalidHandler: function (form) {
+				}
 			});
 		
 		});

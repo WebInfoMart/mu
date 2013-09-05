@@ -7,6 +7,7 @@
     <script src="<?php echo base_url();?>assets/js/custom-form-elements.js"></script>
     <script src="<?php echo base_url();?>assets/js/modernizr-2.6.2.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/bootstrap-tooltip.js"></script>
+    <script src="<?php echo base_url();?>assets/js/bootstrap_calendar.min.js"></script>
 	<script>
          $(document).ready(function(){
          

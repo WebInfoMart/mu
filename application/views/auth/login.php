@@ -91,7 +91,9 @@ if(isset($userData))
 				<div class="control-group">
 					<div class="controls">		
 						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/mail.png"></span>
+							<span class="add-on">
+							<i class="icon-envelope"></i>
+							</span>
 							<?php echo form_input($login); ?>
 							
 						</div>
@@ -104,7 +106,9 @@ if(isset($userData))
 				<div class="control-group">
 					<div class="controls">	
 						<div class="input-prepend">
-							<span class="add-on"><img src="<?php echo base_url();?>assets/img/Password.png"></span>
+							<span class="add-on">
+							<i class="icon-unlock-alt"></i>
+							</span>
 							<?php echo form_password($password); ?>
 						</div>
 						<span class="help-inline" style="color:red;">
@@ -180,8 +184,66 @@ if(isset($userData))
 	 <?php $this->load->view('layout/js');?>
 	 <script src="<?php echo base_url();?>assets/js/custom/client.js" type="text/javascript"></script>
 	 <script src="<?php echo base_url();?>assets/js/custom/login.js" type="text/javascript"></script> 
+	 <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js" type="text/javascript" ></script>
 	 <script>
 		$(document).ready(function () {
 			login.execute();									//code of JavaScript to be executed
+			$('#loginForm').validate({
+				errorElement: 'span',
+				errorClass: 'help-inline',
+				focusInvalid: false,
+				rules: {
+					login: {
+						required: true,
+						email:true
+					},
+					password: {
+						required: true,
+						minlength: 5
+					}
+				},
+		
+				messages: {
+					login: {
+						required: "Please provide a valid email.",
+						email: "Please provide a valid email."
+					},
+					password: {
+						required: "Please specify a password.",
+						minlength: "Please specify a secure password."
+					}
+				},
+		
+				invalidHandler: function (event, validator) { //display error alert on form submit   
+					$('.alert-error', $('.login-form')).show();
+				},
+		
+				highlight: function (e) {
+					$(e).closest('.control-group').removeClass('info').addClass('error');
+				},
+		
+				success: function (e) {
+					$(e).closest('.control-group').removeClass('error').addClass('info');
+					$(e).remove();
+				},
+		
+				errorPlacement: function (error, element) {
+					if(element.is(':checkbox') || element.is(':radio')) {
+						var controls = element.closest('.controls');
+						if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+						else error.insertAfter(element.nextAll('.lbl').eq(0));
+					} 
+					else if(element.is('.chzn-select')) {
+						error.insertAfter(element.nextAll('[class*="chzn-container"]').eq(0));
+					}
+					else error.insertAfter(element);
+				},
+		
+				submitHandler: function (form) {
+				form.submit();
+				},
+				invalidHandler: function (form) {
+				}
+			});
 		})
 	</script>

@@ -20,11 +20,14 @@ class Auth extends CI_Controller
 
 		$this->lang->load('tank_auth');
 		$this->load->model('tank_auth/users');
+		$this->load->model('connectmodel');
+		$this->load->model('collegemodel');
 	}
 
 	function index()
 	{
-		$this->layout->view('home');
+		$data['connect']=$this->connectmodel->getAllConnects(5,0);
+		$this->layout->view('home',$data);
 	}
 	function register()
 	{

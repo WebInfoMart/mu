@@ -11,8 +11,11 @@ body {
 	/*width:980px;*/
 	position:relative;
 }
+.help-inline{
+	font-size:13px;
+}
 header[role="banner"] {
-	height:93px;
+	height:67px;
 	top:0;
 	left:0;
 	position:fixed;
@@ -1237,7 +1240,7 @@ select {
 	margin-top:10px;
 }
 .form_bu .btn {
-	color:#919090;
+	/* color:#919090; */
 }
 #register_page small {
 	color:#919090;
