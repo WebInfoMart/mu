@@ -976,7 +976,8 @@ h3.search_header {
 }
 .place {
 	color:#9b9b9b;
-	line-height:35px;
+	line-height:18px;
+	font-size: 12px;
 	margin-right:10px;
 	padding-left:20px;
 	/*background:url(../img/place.png) no-repeat left center;*/

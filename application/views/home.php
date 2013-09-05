@@ -30,42 +30,6 @@
                               </td>
                            </tr>
 						<?php } ?>
-                           <tr>
-                              <td>Debong University <br>
-                                 <span> Archological Meet</span>
-                              </td>
-                              <td>
-                                 <date>4-nov-2013</date>
-                                 <div class="place">Sydney</div>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>Jyran University <br>
-                                 <span> NASA Exhibition </span>
-                              </td>
-                              <td>
-                                 <date>4-nov-2013</date>
-                                 <div class="place">Sydney</div>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td> L.O.G.O University <br>
-                                 <span> Science Fest 2013-14</span>
-                              </td>
-                              <td>
-                                 <date>14-Dec-2013</date>
-                                 <div class="place"> Twian Che</div>
-                              </td>
-                           </tr>
-						   <!--<tr>
-                              <td> L.O.G.O University <br>
-                                 <span> Science Fest 2013-14</span>
-                              </td>
-                              <td>
-                                 <date>14-Dec-2013</date>
-                                 <div class="place"> Twian Che</div>
-                              </td>
-                           </tr>-->
                         </table>
                         <!--<div class="shape4"> <img src="<?php echo base_url()?>assets/img/shape4.png" > </div>-->
                         <!--<h4>Meet Universities Events</h4>
