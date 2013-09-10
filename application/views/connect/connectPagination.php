@@ -24,7 +24,7 @@
 										</div>
 										<div class="span2 mu-connect">
 											<aside class="celender">
-												<div class="cl"> <small class="date"><?php echo substr($connect->date,3,3);?></small> <small class="day"><?php echo substr($connect->date,0,2);?></small> </div>
+												<div class="cl"> <small class="date"><?php echo $connect->month;?></small> <small class="day"><?php echo $connect->connectDate?></small> </div>
 												<div class="btn-group">
 												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">Get Details <span class="caret"></span></button>
 												<ul class="dropdown-menu">
@@ -41,13 +41,13 @@
 										<div class="span6">
 											<section id="attending" class="attending-<?php echo $counter;?>" style="display:none;">
 												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
-													<input class="input-small" id="name-<?php echo $counter;?>" type="text" placeholder="Full Name:" value="<?php echo ($userData)?$userData['fullname']:'';?>">
+													<input class="input-small" id="name-<?php echo $counter;?>" type="text" placeholder="Full Name:" value="<?php echo (isset($userData)&&$userData)?$userData['fullname']:'';?>">
 												 </div>
 												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/mail-icon.png"></span>
-													<input class="input-small" id="email-<?php echo $counter;?>" type="text" placeholder="Email:" value="<?php echo ($userData)?$userData['email']:'';?>">
+													<input class="input-small" id="email-<?php echo $counter;?>" type="text" placeholder="Email:" value="<?php echo (isset($userData)&&$userData)?$userData['email']:'';?>">
 												 </div>
 												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/cell-icon.png"></span>
-													<input class="input-small" id="phone-<?php echo $counter;?>" type="text" placeholder="Mobile No:" value="<?php echo ($userData)?$userData['mobile']:'';?>">
+													<input class="input-small" id="phone-<?php echo $counter;?>" type="text" placeholder="Mobile No:" value="<?php echo (isset($userData)&&$userData)?$userData['mobile']:'';?>">
 												 </div>
 												 <input class="input-small" id="connect-<?php echo $counter;?>" value="<?php echo $connect->id;?>" type="hidden">
 												 <button class="btn btn-mini btn-primary green_bu" type="button" onclick="attendEvent(<?php echo $counter;?>)">Connect</button>

@@ -963,8 +963,10 @@ class Auth extends CI_Controller
 	{
 		if($this->tank_auth->is_logged_in())
 		{
+			$this->load->model('connectmodel');
 			$data['userProfile'] = $this->users->getUserProfileDetails($this->tank_auth->get_user_id());
 			$data['userProfileMatch'] = $this->users->getUserProfileMatch($this->tank_auth->get_user_id());
+			$data['recentEvents'] = $this->connectmodel->getRecentEvents();
 			$this->layout->view('auth/profileDashboard',$data);
 		}
 		else

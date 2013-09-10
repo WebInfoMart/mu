@@ -17,6 +17,7 @@ class Connect extends CI_Controller
 	function CurrentDate()
 	{
 		$date = date('j/n/Y');
+		$date2 =
 		$array = array(
 		  array(
 			$date, 
@@ -26,7 +27,21 @@ class Connect extends CI_Controller
 			'<img src="http://bit.ly/XRpKAE" />'
 		  )
 		);
-
+		/* $array[1] = 
+		  array(
+			"27/09/2013", 
+			'github drinkup', 
+			'https://github.com/blog/category/drinkup', 
+			'blue'
+		  ); */
+		$dates = $this->connectmodel->getConnectDates();
+		foreach($dates as $dates)
+		{
+			$array[] = array($dates['date'], 
+			$dates['tagLine'], 
+			'http://meetuniv.com/connect', 
+			'blue');
+		}
 		header('Content-Type: application/json');
 		echo json_encode($array);
 	}
@@ -83,6 +98,7 @@ class Connect extends CI_Controller
 		}
 		
 		$this->db->insert('connectUser',$data);
+		exit;
 	}
 	
 }

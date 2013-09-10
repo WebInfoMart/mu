@@ -1,3 +1,32 @@
+
+<div id="avatarModal" class="modal hide fade">
+
+    <div class="modal-header">
+            <button class="close" data-dismiss="modal">×</button>
+            <h3 id="eventName">Choose Avatar</h3>
+    </div>
+<div class="modal-body">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="span3">
+				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar1.jpg?>" class="avatar" style="height:100px;width:90px;" rel="muAvatar1.jpg">
+			</div>
+			<div class="span3">
+				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar2.jpg?>" class="avatar"  style="height:100px;width:90px;"  rel="muAvatar2.jpg">
+			</div>
+			<div class="span3">
+				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar3.jpg?>" class="avatar"  style="height:100px;width:90px;" rel="muAvatar3.jpg">
+			</div>
+			<div class="span3">
+				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar4.jpg?>" class="avatar"  style="height:100px;width:90px;" rel="muAvatar4.jpg">
+			</div>
+        </div>
+	</div>
+</div>
+    <div class="modal-footer">
+        <p>&copy; MeetUniv.Com</p>
+    </div>
+</div>
 <!--main-->
 
       <div role="main" id="main">
@@ -265,7 +294,7 @@
 
                   <div class="profile_pic">
 
-                     <img src="<?php echo base_url();?>assets/img/profile_pic_demo.png" class="pull-left">
+                     <img id="tempraryProfilePic" src="<?php echo base_url();?>assets/img/profile_pic_demo.png" class="pull-left" style="width: 120px;height: 130px;">
 
                      <div id="profile_text">
 
@@ -273,7 +302,11 @@
 
                            TO GIVE INTERACTIVE LOOK OF <br>
 
-                           YOUR ACCOUNT
+                           YOUR PROFILE<br>
+						   
+						   <button type="button" class="btn btn-primary btn-small" onclick="uploadAvatar();">Choose Avatar</button><br>
+						   <span id="avatarTxt"></span>
+						   <input type="hidden" value="" name="avatarPic" id="avatarPic"/>
 
                         </p>
 
@@ -354,7 +387,23 @@
 				});
 				});
 			});
+			$(".avatar").each(function() {
+				$.data(this, 'size', { width: $(this).width(), height: $(this).height() });
+			}).hover(function() {
+				$(this).stop().animate({ height: $.data(this,'size').height*1.2, 
+										 width: $.data(this,'size').width*1.2 });
+			}, function() {
+				$(this).stop().animate({ height: $.data(this,'size').height, 
+										 width: $.data(this,'size').width });
+			});
+			$(".avatar").click(function(){
+				$("#avatarModal").modal('hide');
+				$("#avatarTxt").html($(this).attr('rel'));
+				$("#avatarPic").val($(this).attr('rel'));
+				$("#tempraryProfilePic").attr('src','<?php echo base_url()?>uploads/user_pic/'+$(this).attr('rel'));
+			});
 		});
+		
 		function changeDob()
 
 		{
@@ -367,6 +416,10 @@
 
 			}
 
+		}
+		function uploadAvatar()
+		{
+			$('#avatarModal').modal('show');
 		}
 
 	</script>

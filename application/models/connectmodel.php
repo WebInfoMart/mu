@@ -16,6 +16,7 @@ class Connectmodel extends CI_Model
 	public function getAllConnects($limit, $start)
 	{
         $this->db->limit($limit, $start);
+		$this->db->select("*,DATE_FORMAT(connect.date,'%b') as month,DATE_FORMAT(connect.date,'%e') as connectDate",false);
         $query = $this->db->get("connect");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
@@ -33,6 +34,20 @@ class Connectmodel extends CI_Model
 		$query = $this->db->get();
 		$row = $query->row();
 		return $row->univName;
+	}
+	public function getConnectDates()
+	{
+		$query = $this->db->query("SELECT DATE_FORMAT(date,'%e/%c/%Y') as date,tagLine FROM `connect`");
+		return $query->result_array();
+	}
+	public function getRecentEvents()
+	{
+		$this->db->select('*');
+		$this->db->from('connect');
+		$this->db->where('date >',date('Y-m-d'));
+		$this->db->order_by('date');
+		$data = $this->db->get();
+		return $data->result_array();
 	}
 	
 }

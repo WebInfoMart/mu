@@ -89,50 +89,21 @@
                                  </section>
                                  <section id="recent_events" class="span5 ">
                                     <h2>Recent Events</h2>
+									<?php 
+									foreach($recentEvents as $event)
+									{?>
                                     <article class="alert" >
-                                       <h3>Mubin University</h3>
+                                       <h3><?php echo $event['tagLine'];?></h3>
                                        <div class="span2">Roll Royace Exhibition 
                                           Exhibition is just About to give you 
                                           knowledge of RR Cars
                                        </div>
                                        <div class="span1">Melbourne stadium 
-                                          24-july-2013 
+                                          <?php echo $event['date'];?>
                                        </div>
                                        <a class="close" data-dismiss="alert" href="#">&times;</a> 
                                     </article>
-                                    <article class="alert" >
-                                       <h3>Mubin University</h3>
-                                       <div class="span2">Roll Royace Exhibition 
-                                          Exhibition is just About to give you 
-                                          knowledge of RR Cars
-                                       </div>
-                                       <div class="span1">Melbourne stadium 
-                                          24-july-2013 
-                                       </div>
-                                       <a class="close" data-dismiss="alert" href="#">&times;</a> 
-                                    </article>
-                                    <article class="alert" >
-                                       <h3>Mubin University</h3>
-                                       <div class="span2">Roll Royace Exhibition 
-                                          Exhibition is just About to give you 
-                                          knowledge of RR Cars
-                                       </div>
-                                       <div class="span1">Melbourne stadium 
-                                          24-july-2013 
-                                       </div>
-                                       <a class="close" data-dismiss="alert" href="#">&times;</a> 
-                                    </article>
-                                    <article class="alert" >
-                                       <h3>Mubin University</h3>
-                                       <div class="span2">Roll Royace Exhibition 
-                                          Exhibition is just About to give you 
-                                          knowledge of RR Cars
-                                       </div>
-                                       <div class="span1">Melbourne stadium 
-                                          24-july-2013 
-                                       </div>
-                                       <a class="close" data-dismiss="alert" href="#">&times;</a> 
-                                    </article>
+									<?php }?>
                                  </section>
                               </div>
                               <div class="tab-pane" id="Edu_ingo">Coming Soon</div>

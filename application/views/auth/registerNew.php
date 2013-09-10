@@ -217,7 +217,7 @@
 					confirm_password: {
 						required: true,
 						minlength: 5,
-						equalTo: "#registerPassword"
+						equalTo: "#password"
 					}
 				},
 		
@@ -233,6 +233,9 @@
 					password: {
 						required: "Please provide password.",
 						minlength: "Please specify a secure Password."
+					},
+					confirm_password: {
+						equalTo: "Should be Passwords don't match"
 					},
 					mobile: {
 						required: "Please provide a Orgnization Name.",

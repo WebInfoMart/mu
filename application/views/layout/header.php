@@ -34,7 +34,7 @@
             </nav>
 			<?php if(isset($userId)){?>
 			<div class="btn-group pull-right" style="margin-top:13px">
-				<button class="btn btn-small" style="background: #0073d1;color: white;"><?php echo($userData['fullname'])?></button>
+				<a class="btn btn-small" href="<?php echo base_url('auth/profileDashboard')?>" style="background: #0073d1;color: white;"><?php echo($userData['fullname'])?></a>
 				<a class="btn btn-small" href="<?php echo base_url('auth/logout')?>">LOG OUT</a>	
        		</div>
 			<?php }else{?>

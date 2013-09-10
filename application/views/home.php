@@ -21,11 +21,11 @@
 						foreach($connect as $connect)
 						{?>   
 						   <tr>
-                              <td><?php echo substr($this->connectmodel->getUniversityNameById($connect->univId),0,20)."..";?><br>
-                                 <span> <?php echo $connect->tagLine;?></span>
+                              <td><strong><?php echo substr($this->connectmodel->getUniversityNameById($connect->univId),0,20)."..";?></strong><br>
+                                 <small> <?php echo $connect->tagLine;?></small>
                               </td>
                               <td>
-                                 <date><?php echo $connect->date?></date>
+                                 <date class="date"><?php echo $connect->date?></date>
                                  <div class="place"><?php echo $this->collegemodel->getUnivLocationById($connect->cityId,$connect->countryId);?></div>
                               </td>
                            </tr>

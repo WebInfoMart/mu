@@ -4,6 +4,9 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 }
+.needsfilled {
+border-color: red!important;
+}
 #gap {
 	/* height:80px; */height:54px;
 }
@@ -981,6 +984,10 @@ h3.search_header {
 	margin-right:10px;
 	padding-left:20px;
 	/*background:url(../img/place.png) no-repeat left center;*/
+}
+.date {
+	font-size: 14px;
+	padding-left:20px;
 }
 .icon-class-blue{
 	font-size:16px;

@@ -490,7 +490,8 @@ class Users extends CI_Model
 							'dob'		=>	$this->input->post('dob'),
 							'gender'	=>	$this->input->post('gender'),
 							'cityId'	=>	$this->input->post('city'),
-							'countryId'=>	$this->input->post('country')
+							'countryId'=>	$this->input->post('country'),
+							'profilePic'=>	$this->input->post('avatarPic')
 								);
 			$this->db->where('userId', $userId);
 			$this->db->update('userProfile',$data);
@@ -502,7 +503,8 @@ class Users extends CI_Model
 							'dob'		=>	$this->input->post('dob'),
 							'gender'	=>	$this->input->post('gender'),
 							'cityId'	=>	$this->input->post('city'),
-							'countryId'=>	$this->input->post('country')
+							'countryId'=>	$this->input->post('country'),
+							'profilePic'=>	$this->input->post('avatarPic')
 								);
 			$this->db->insert('userProfile',$data);
 		}

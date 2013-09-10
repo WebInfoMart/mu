@@ -37,15 +37,15 @@
                 <form class="form-horizontal">
                     <p class="help-block">Name</p>
                     <div class="input-prepend">
-                        <span class="add-on">*</span><input id="smsfullname" class="prependedInput" size="16" type="text" placeholder="Full Name" value="<?php echo ($userData)?$userData['fullname']:'';?>">
+                        <span class="add-on">*</span><input id="smsfullname" class="prependedInput" size="16" type="text" placeholder="Full Name" value="<?php echo (isset($userData)&&$userData)?$userData['fullname']:'';?>">
                     </div>
                     <p class="help-block">Email</p>
                     <div class="input-prepend">
-                        <span class="add-on">@</span><input id="smsemail" class="prependedInput" size="16" type="email" placeholder="Email" value="<?php echo ($userData)?$userData['email']:'';?>">
+                        <span class="add-on">@</span><input id="smsemail" class="prependedInput" size="16" type="email" placeholder="Email" value="<?php echo (isset($userData)&&$userData)?$userData['email']:'';?>">
                     </div>
 					<p class="help-block">Phone</p>
                     <div class="input-prepend">
-                        <span class="add-on">@</span><input id="smsphone" class="prependedInput" size="10" type="text" placeholder="Mobile phone" value="<?php echo ($userData)?$userData['mobile']:'';?>">
+                        <span class="add-on">@</span><input id="smsphone" class="prependedInput" size="10" type="text" placeholder="Mobile phone" value="<?php echo (isset($userData)&&$userData)?$userData['mobile']:'';?>">
                     </div>
                   	<hr>
 					<div class="help-block" >
@@ -200,7 +200,7 @@
                      <article><!--<img src="<?php echo base_url();?>assets/img/calender.jpg">-->
 					 <div class="calendar_test" style="padding: 30px 0px;"></div> </article>
                      <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
-                     <article>
+                     <article onclick="window.open('http://www.britishcouncil.in/why-the-uk')" style="cursor:pointer;">
                         <img src="<?php echo base_url();?>assets/img/british-council.png">
                         <h6 class="british-counsil">The most trusted source of information about studying in the UK, in association with MeetUniv.com outlines the essential information for you to know & where to begin from.Single source , to keep you updated with the happenings in UK education.
                         </h5>
@@ -302,7 +302,42 @@
 		}
 		function attendEvent(id)
 		{
+			var fullname = $('#name-'+id).val();
+			var phone = $('#phone-'+id).val();
+			var email  = $('#email-'+id).val();
+			var valid = true;
+			if(fullname=='' || fullname==null)
+			{
+				$('#name-'+id).addClass('needsfilled');
+				valid = false;
+			}
+			else
+			{
+				$('#name-'+id).removeClass('needsfilled');
+			}
+			if(email=='' || email==null)
+			{
+				$('#email-'+id).addClass('needsfilled');
+				valid = false;
+			}
+			else
+			{
+				$('#email-'+id).removeClass('needsfilled');
+			}
+			if(phone=='' || phone==null || isNaN(phone) || phone.length!=10)
+			{
+				$('#phone-'+id).addClass('needsfilled');
+				valid = false;
+			}
+			else
+			{
+				$('#phone-'+id).removeClass('needsfilled');
+			}
+			
+			if(valid == true)
+			{
 			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:$('#connect-'+id).val(),type:'register'};
-			$.post("<?php echo base_url('connect/attendEvent')?>",data,function(msg){alert(msg);});
+			$.post("<?php echo base_url('connect/attendEvent')?>",data,function(msg){console.log(msg);});
+			}
 		}
 	  </script>
