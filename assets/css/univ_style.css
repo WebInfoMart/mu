@@ -982,6 +982,7 @@ h3.search_header {
 	line-height:18px;
 	font-size: 12px;
 	margin-right:10px;
+	margin-top: 5px;
 	padding-left:20px;
 	/*background:url(../img/place.png) no-repeat left center;*/
 }
@@ -1000,7 +1001,7 @@ h3.search_header {
 .content_blog {
 	color:#6c6c6c;
 	font-size:12px;
-	padding:10px;
+	padding:0px 10px;
 	width:326px;
 }
 .content_blog i {
@@ -1825,7 +1826,7 @@ ul#notification li span {
 .celender {
 	float:right;
 	text-align:right;
-	margin: 20px 10px 0px;
+	margin: 10px 10px 0px;
 }
 .cl {
 	width:48px;

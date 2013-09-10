@@ -19,7 +19,11 @@
 												<hr>
 												<p><?php echo $connect->tagLine;?></p>
 												<p class="date-time"><i class="icon-calendar"></i>&nbsp;&nbsp;<?php echo $connect->date;?><br>
-												<i class="icon-time"></i>&nbsp;&nbsp;<?php echo $connect->time?></p>
+												<i class="icon-time"></i>&nbsp;&nbsp;<?php echo $connect->time?>
+												<?php if($connect->location){?>
+												<br><i class="icon-map-marker"></i>&nbsp;&nbsp;<?php echo $connect->location?>
+												<?php }?>
+												</p>
 											</div>
 										</div>
 										<div class="span2 mu-connect">

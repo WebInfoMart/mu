@@ -17,6 +17,7 @@ class Connectmodel extends CI_Model
 	{
         $this->db->limit($limit, $start);
 		$this->db->select("*,DATE_FORMAT(connect.date,'%b') as month,DATE_FORMAT(connect.date,'%e') as connectDate",false);
+		$this->db->order_by('featured','desc');
         $query = $this->db->get("connect");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
