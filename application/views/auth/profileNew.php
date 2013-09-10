@@ -298,15 +298,12 @@
 
                      <div id="profile_text">
 
-                        <p>UPDATE YOUR PROFILE PICTURE<br>
+                        <p>Update your Profile Picture<br>
 
-                           TO GIVE INTERACTIVE LOOK OF <br>
+                           to give interactive look to <br>
 
-                           YOUR PROFILE<br>
+                           your Profile<br>
 						   
-						   <button type="button" class="btn btn-primary btn-small" onclick="uploadAvatar();">Choose Avatar</button><br>
-						   <span id="avatarTxt"></span>
-						   <input type="hidden" value="" name="avatarPic" id="avatarPic"/>
 
                         </p>
 
@@ -320,17 +317,8 @@
 
                      </div>
 
-					 
 
                      <!--<div class="span2 no_margin">
-
-                        <input type="radio" name="a" class="styled" />
-
-                        Fill Form 
-
-                     </div>
-
-                     <div class="span2 no_margin">
 
                         <input type="radio" name="a" class="styled" />
 
@@ -339,7 +327,13 @@
                      </div>-->
 
                   </div>
-
+				  <div class="clearfix"></div>
+				  <div class="profile_pic">
+					<h4>OR</h4>
+					<button type="button" class="btn btn-primary btn-small" onclick="uploadAvatar();">Choose Avatar</button>
+						   <span id="avatarTxt"></span>
+						   <input type="hidden" value="" name="avatarPic" id="avatarPic"/>
+				  </div>
                   <div class="clearfix"></div>
 
                   <div id="bu_next" class="pull-right">

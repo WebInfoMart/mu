@@ -305,6 +305,7 @@
 			var fullname = $('#name-'+id).val();
 			var phone = $('#phone-'+id).val();
 			var email  = $('#email-'+id).val();
+			var connectId = $('#connectid-'+id).val();
 			var valid = true;
 			if(fullname=='' || fullname==null)
 			{
@@ -336,8 +337,12 @@
 			
 			if(valid == true)
 			{
-			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:$('#connect-'+id).val(),type:'register'};
-			$.post("<?php echo base_url('connect/attendEvent')?>",data,function(msg){console.log(msg);});
+			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:$('#connect-'+id).val(),type:'register',connectId:connectId};
+			$.post("<?php echo base_url('connect/attendEvent')?>",data,function(msg){
+			console.log(msg);
+			$('.attending-'+id).hide();
+			$(".attendingsuccess-"+id).fadeIn();
+			});
 			}
 		}
 	  </script>

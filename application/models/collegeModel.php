@@ -16,6 +16,7 @@ class Collegemodel extends CI_Model
 	public function getAllUniversities($limit, $start)
 	{
         $this->db->limit($limit, $start);
+		$this->db->order_by('featured','desc');
         $query = $this->db->get("university");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {

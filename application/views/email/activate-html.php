@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
+<body style="background:#f1f1f1">
 <table width="800px" align="center" style="font-family:arial;font-size:15px">
 	<tr>
-		<td style="float:left"><img src="<?php echo site_url();?>assets/img/logo.png"</td>
+		<td style="float:left"><img src="<?php echo site_url();?>assets/email_img/logo.png"</td>
 	</tr>
 	
 		<tr><td style="font-size:20px;color:#c88039;font-weight:bold">Welcome to MeetUniv.com – Best Place to Meet Universities!</td></tr>
 		<tr><td style="padding-top: 17px;">Dear <?php echo $fullname;?>,</td></tr>
 		<tr><td style="padding-top: 13px;">To start using your MU account, all you have to do is confirm your email address within <?php echo $activation_period; ?> hours.</td></tr>
 		<tr><td><table style="background: #ffa822;margin-top: 30px;text-decoration: none;"><tr><td>
-		<a href="<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?>" style="color:#000;">Confirm My Email Address</a></td></tr></table></td></tr>
+		<a href="<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?>" style="color:#000;text-decoration:none;">Confirm My Email Address</a></td></tr></table></td></tr>
 		<tr><td style="padding-top:30px">Another Way to confirm your email address</td></tr>
 		<tr>
 			<td>
@@ -45,10 +45,10 @@
 		<tr><td style="padding-top:20px">TeamMU</td></tr>
 		<tr><td style="padding-top:20px"><table><tr>
 			<td>Follow Us</td>
-			<td><img src="images/face.png"></td>
-			<td><img src="images/twit.png"></td>
-			<td><img src="images/you.png"></td>
-			<td><img src="images/link.png"></td>
+			<td><a href="http://facebook.com/MeetUniv"><img src="<?php echo site_url();?>assets/email_img/face.png"></a></td>
+			<td><a href="http://twitter.com/MeetUniv"><img src="<?php echo site_url();?>assets/email_img/twit.png"></a></td>
+			<td><a href="http://youtube.com/MeetUniv"><img src="<?php echo site_url();?>assets/email_img/you.png"></a></td>
+			<td><a href=""><img src="<?php echo site_url();?>assets/email_img/link.png"></a></td>
 		</tr></table></td></tr>
 
 </table>

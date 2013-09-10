@@ -5,11 +5,13 @@ class Connect extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->ci =& get_instance();
 		$this->load->library('layout');
 		$this->load->model('connectmodel');
 		$this->load->model('collegemodel');
 		$this->load->library("pagination");
 		$this->load->model('tank_auth/users');
+		$this->ci->load->config('tank_auth', TRUE);
 	}
 	function index() {
        $this->layout->view('connect/connect');
@@ -86,7 +88,18 @@ class Connect extends CI_Controller
 			$sms=urlencode($sms);
 			$content=file_get_contents("http://api.unicel.in/SendSMS/sendmsg.php?uname=meetuni&pass=letsrock&send=meetus&dest=91".$data['phone']."&msg=".$sms);
 		}
-					
+		$data['connect'] = $this->connectmodel->getConnectDetailsForEmail($this->input->post('connectId'));
+		if($data['type']=='register')		
+		{
+			$this->load->library('email');
+			$this->email->from($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
+			$this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
+			$this->email->to($data['email']);
+			$this->email->bcc('nitin@meetuniv.com','debal@meetuniv.com');
+			$this->email->subject('Testing');
+			$this->email->message($this->load->view('email/registerEvent', $data, TRUE));
+			$this->email->send();
+		}		
 		if($this->session->userdata('user_id'))
 		{
 			$data['userId']	= $this->session->userdata('user_id');

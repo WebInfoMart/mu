@@ -49,5 +49,20 @@ class Connectmodel extends CI_Model
 		$data = $this->db->get();
 		return $data->result_array();
 	}
+	public function getConnectDetailsForEmail($id)
+	{
+		$this->db->select('*');
+		$this->db->from('connect');
+		$this->db->where('id',$id);
+		$data = $this->db->get();
+		$connect = $data->row_array();
+		$this->db->select('univName');
+		$this->db->from('university');
+		$this->db->where('id',$connect['univId']);
+		$data = $this->db->get();
+		$univ = $data->row();
+		$connect['hostedBy'] = $univ->univName;
+		return $connect;
+	}
 	
 }

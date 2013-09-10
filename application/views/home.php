@@ -25,7 +25,7 @@
                                  <small> <?php echo $connect->tagLine;?></small>
                               </td>
                               <td>
-                                 <date class="date"><?php echo $connect->date?></date>
+                                 <date class="homedate"><?php echo $connect->date?></date>
                                  <div class="place"><?php echo $this->collegemodel->getUnivLocationById($connect->cityId,$connect->countryId);?></div>
                               </td>
                            </tr>

@@ -25,9 +25,21 @@
 							</tr>
 						<tr>
 							<td style="padding-top:20px">
-								MU Profile Id MU331
+								<!--MU Profile Id MU331-->
 							</td>
-						</tr>	
+						</tr>
+						<tr>
+						<td>
+							<table>
+							<tr><td>Follow Us</td>
+							<td><a href="http://facebook.com/MeetUniv"><img src="<?php echo site_url();?>assets/email_img/face.png"></a></td>
+							<td><a href="http://twitter.com/MeetUniv"><img src="<?php echo site_url();?>assets/email_img/twit.png"></a></td>
+							<td><a href="http://youtube.com/MeetUniv"><img src="<?php echo site_url();?>assets/email_img/you.png"></a></td>
+							<td><a href=""><img src="<?php echo site_url();?>assets/email_img/link.png"></a></td>
+							</tr>
+							</table>
+						</td>
+						</tr>
 				</table>
 			</td>
 		
