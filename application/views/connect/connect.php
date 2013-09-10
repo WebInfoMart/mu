@@ -244,7 +244,7 @@
 					$("#connectPagination").css('opicity','1');
 				},
 				
-			})
+			});
 		});
 		function showAttending(id)
 		{

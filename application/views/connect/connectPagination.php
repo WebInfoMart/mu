@@ -74,5 +74,29 @@
 							
 							</div>
 							<script>
-								$(document).ready(function(){$('.dropdown-toggle').dropdown();});
+								$(document).ready(function(){
+								$('.dropdown-toggle').dropdown();
+								
+								$("#pagination a").click(function(){
+									var url = $(this).attr('href');
+									var temp = url.split('/');
+									
+									var data = {offset:temp[6]};
+									$.ajax({
+										type	:	'POST',
+										data	:	data,
+										url		:	url,
+										beforeSend: function(){
+											$("#connectPagination").css('opicity','0.4');
+										},
+										success: function(data){
+											$("#connectPagination").html(data);
+											$("#connectPagination").css('opicity','1');
+										},
+										
+									})
+									return false;
+								});
+								
+								});
 							</script>
