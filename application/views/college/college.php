@@ -24,8 +24,14 @@
                      <div class="tab_spine clearfix">
                         <h4>Location</h4>
                         <ul class="unstyled">
-                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">London</a></li>
-                           <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Newcastle</a></li>
+                           <li id="addingContent">
+							<div class="input-prepend">
+							  <span class="add-on" onclick="addLocation()" style="cursor:pointer;"><i class="icon-plus blue" style="font-size: 20px;"></i></span>
+							  <input class="span2" id="locationFilter" type="text" data-provide="typeahead" data-items="4">
+							  <input type="hidden" id="filtrationCities" value=""/>
+							</div>
+						   </li>
+                           <li id="allLocation">All Cities</li>
                         </ul>
                      </div>
                      <div class="tab_spine clearfix">
@@ -153,8 +159,23 @@
       <!--end main-->
 	  <?php $this->load->view('layout/js'); ?>
 	  <script src="<?php echo base_url();?>assets/js/bootstrap-dropdown.js"></script>
+	  <script src="<?php echo base_url();?>assets/js/bootstrap-typeahead.js"></script>
 	  <script>
 					$(document).ready(function(){
+						
+						/*typehead*/
+						/* $.get('<?php echo base_url()?>college/cityJsonList',function(data){
+									console.log(data);
+								}); */
+						$('#locationFilter').typeahead({
+							source: function(query, process){
+								 return $.get('<?php echo base_url()?>/college/cityJsonList',function(data){
+									return process(data)
+								}); 
+							}
+						});
+						
+						/*end*/
 						$('.dropdown-toggle').dropdown();
 						$("#pagination a").click(function(){
 							var url = $(this).attr('href');
@@ -178,5 +199,70 @@
 						});
 					
 					});
-					
+					function addLocation()
+					{
+						var location = $("#locationFilter").val();
+						if(location!='')
+						{
+						  var filtrationCities = $("#filtrationCities").val();
+							
+						  if(filtrationCities.indexOf(location)<=-1)
+						  {
+							$("#addingContent").after("<li><i class='icon-remove-sign icon-class-red' id='"+location.substring(0,4)+"' onclick='removeCity(\""+location+"\",this.id)'></i>"+location+"</li>");
+							
+							if(filtrationCities=='')
+							{
+								$("#allLocation").hide();
+								$("#filtrationCities").val(location);
+							}
+							else
+								$("#filtrationCities").val(filtrationCities+","+location);
+							
+							//alert($("#filtrationCities").val());
+							url="<?php echo base_url();?>college/filterByLocation";
+							data = {cityName:$("#filtrationCities").val()};
+							 $.ajax({
+								type	:	'POST',
+								data	:	data,
+								url		:	url,
+								beforeSend: function(){
+									$("#collegeContent").css('opicity','0.4');
+								},
+								success: function(data){
+									//alert(data);
+									$("#collegeContent").html(data);
+									$("#collegeContent").css('opicity','1');
+								},
+								
+							}) 
+						  }
+						}
+					}
+					function removeCity(cityName,id)
+					{
+					  var city = cityName;
+					  var filtrationCities = $("#filtrationCities").val();
+					  filtrationCities = filtrationCities.replace(city+",","");
+					  filtrationCities = filtrationCities.replace(","+city,"");
+					  filtrationCities = filtrationCities.replace(city,"");
+					  $("#filtrationCities").val(filtrationCities);
+					  $("#"+id).parent().remove();
+					  url="<?php echo base_url();?>college/filterByLocation";
+					  data = {cityName:$("#filtrationCities").val()};
+					   $.ajax({
+					  	type	:	'POST',
+					  	data	:	data,
+					  	url		:	url,
+					  	beforeSend: function(){
+					  		$("#collegeContent").css('opicity','0.4');
+					  	},
+					  	success: function(data){
+					  		//alert(data);
+					  		$("#collegeContent").html(data);
+					  		$("#collegeContent").css('opicity','1');
+					  	},
+					  	
+					  }) 
+					  //if()
+					}
 					</script>

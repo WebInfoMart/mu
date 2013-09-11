@@ -96,7 +96,7 @@ class Connect extends CI_Controller
 			$this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 			$this->email->to($data['email']);
 			$this->email->bcc('nitin@meetuniv.com','debal@meetuniv.com');
-			$this->email->subject('Testing');
+			$this->email->subject('Attending Event Info');
 			$this->email->message($this->load->view('email/registerEvent', $data, TRUE));
 			$this->email->send();
 		}		
@@ -109,8 +109,10 @@ class Connect extends CI_Controller
 		{
 			echo "NoLoggedIn";
 		}
+		$this->db->query('update connect set counter=counter+1 where id='.$data['connectId']);
+		//$this->db->insert('connectUser',$data);
+		$this->db->query("insert into connectUser(connectId,name,phone,email,type) values(".$data['connectId'].",'".$data['name']."','".$data['phone']."','".$data['email']."','".$data['type']."')");
 		
-		$this->db->insert('connectUser',$data);
 		exit;
 	}
 	

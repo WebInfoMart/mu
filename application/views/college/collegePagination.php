@@ -5,6 +5,8 @@
 					</div>
 					
 					<?php 
+					if($results)
+					{
 					foreach ($results as $universities)
 					{
 					?>
@@ -62,6 +64,20 @@
 					</div>
 					<?php
 					}
+					}
+					else{
+					?>
+					<div class="row blog_style">
+						<article class="span6">
+							<div class="row">
+								<div class="span6">
+									<h4>No Result Found!</h4>
+								</div>
+							</div>
+						</article>
+					</div>
+					<?php
+					}
 					?> 
 					<div class="pagination pagination-small" id="my_pagi">
 					   <?php echo $links; ?>
@@ -78,8 +94,7 @@
 		     
 			var url = $(this).attr('href');
 			var temp = url.split('/');
-			
-			var data = {offset:temp[6]};
+			var data = {offset:temp[6],cityName:$("#filtrationCities").val()};
 			$.ajax({
 				type	:	'POST',
 				data	:	data,

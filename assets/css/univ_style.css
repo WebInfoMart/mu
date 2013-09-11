@@ -506,14 +506,17 @@ article#univ_connect {
 }
 .extra_block {
 	bottom: auto;
-	right: 580px;/*right: 600px;*/
-	top: 100px;/*top: 280px;*/
+	/*right: 600px;*/
+	right: 190px;
+	top: 107px;
 	width: 380px;
-}
+	display:none;  /* amit*/
+	}
 .extra_block div {
 	font-size:14px;
 	padding:0 10px;
 }
+.show-div{ display:block;}
 .extra_block h3 {
 	font-size:20px;
 	color:#fff;
@@ -876,6 +879,7 @@ h3.search_header {
 	line-height:30px!important;
 }
 #collage_listing_page {
+margin-bottom:20px;
 }
 #collage_listing_page .span2 {
 	/*width:180px!important;*/
@@ -987,7 +991,7 @@ h3.search_header {
 	/*background:url(../img/place.png) no-repeat left center;*/
 }
 .homedate {
-	font-size: 14px;
+	font-size: 12px;
 	padding-left:20px;
 }
 .icon-class-blue{
@@ -2040,4 +2044,8 @@ text-shadow: 0 1px 0 #333;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+}
+#contact-error p {
+margin: 1px;
+color: red;
 }

@@ -81,10 +81,10 @@
 						  <li><a href="#"> iamgifted.in</a></li>
 						  <li><a href="#"> myieltsguru.com</a></li>
 						  <li><a href="#"> mygreguru.com</a></li>
-						  <li><a href="#"> psychologymajors.com</a></li>
+						  <!--<li><a href="#"> psychologymajors.com</a></li>
 						  <li><a href="#"> businessschoolsedge.com</a></li>
 						  <li></li>
-						  <li><a href="#"> topaccountingdegrees.com</a></li>
+						  <li><a href="#"> topaccountingdegrees.com</a></li>-->
 					   </ul>
 					</div>
 				</div>
@@ -102,12 +102,12 @@
   						<div class="span8">
 							<ul class="inline text-right">
 								<li><a href="<?php echo base_url('about-us')?>">About Us</a></li>
-								<li><a href="#">Jobs</a></li>
+								<li><a href="<?php echo base_url('contact-us')?>?type=2">Jobs</a></li>
 								<li><a href="#">Team</a></li>
 								<li><a href="#">Disclaimer</a></li>
 								<li><a href="#">Privacy Policy</a></li>
 								<li><a href="#">Feedback</a></li>
-								<li><a href="<?php echo base_url('contact-us')?>">Contact Us</a></li>
+								<li><a href="<?php echo base_url('contact-us')?>?type=1">Contact Us</a></li>
   							</ul>
   						</div>
   					</div>              	

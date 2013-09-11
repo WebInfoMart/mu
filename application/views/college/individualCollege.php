@@ -105,26 +105,26 @@
 								</section>
 								<hr>
 								<section class="dashboard-footer">
-									<article class="statistic">
-										<p><span class="first">Acceptance Criteria</span>
-										</p>
-									</article>
-									<article>
-										<p><span>SAT MATH <br>
-											NOT REPORTED</span>
-										</p>
-									</article>
-									<article>
-										<p><span>SAT MATH <br>
-											NOT REPORTED</span>
-										</p>
-									</article>
-									<article>
-										<p><span>SAT MATH <br>
-											NOT REPORTED</span>
-										</p>
-									</article>
-									<span class="clearfix"></span>
+								 <article class="statistic">
+								  <p><span class="first">Acceptance Criteria</span>
+								  </p>
+								 </article>
+								 <article>
+								  <p><span>Undergraduate <br>
+								   > 65% in XII</span>
+								  </p>
+								 </article>
+								 <article>
+								  <p><span>Postgraduate <br>
+								   > 60% in UG</span>
+								  </p>
+								 </article>
+								 <article>
+								  <p><span>Language <br>
+								   IELTS 6.0</span>
+								  </p>
+								 </article>
+								 <span class="clearfix"></span>
 								</section>
 							</div>
 						</div>

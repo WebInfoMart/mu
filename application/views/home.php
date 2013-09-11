@@ -18,28 +18,19 @@
                         <table class="table table-hover">
                            
 						<?php
-						foreach($connect as $connect)
+						foreach($connect as $connectshow)
 						{?>   
 						   <tr>
-                              <td><strong><?php echo substr($this->connectmodel->getUniversityNameById($connect->univId),0,20)."..";?></strong><br>
-                                 <small> <?php echo $connect->tagLine;?></small>
+                              <td id="<?php echo $connectshow->id?>" class="univ"><strong><?php echo substr($this->connectmodel->getUniversityNameById($connectshow->univId),0,20)."..";?></strong><br>
+                                 <small> <?php echo $connectshow->tagLine;?></small>
                               </td>
                               <td>
-                                 <date class="homedate"><?php echo $connect->date?></date>
-                                 <div class="place"><?php echo $this->collegemodel->getUnivLocationById($connect->cityId,$connect->countryId);?></div>
+                                 <date class="homedate"><?php echo $connectshow->date?></date>
+                                 <div class="place"><?php echo $this->collegemodel->getUnivLocationById($connectshow->cityId,$connectshow->countryId);?></div>
                               </td>
                            </tr>
 						<?php } ?>
                         </table>
-                        <!--<div class="shape4"> <img src="<?php echo base_url()?>assets/img/shape4.png" > </div>-->
-                        <!--<h4>Meet Universities Events</h4>
-                        <table class="table table-hover">
-                           <tr>
-                              <td>Campagian </td>
-                              <td> Guidence Show </td>
-                              <td>Meet</td>
-                           </tr>
-                        </table>-->
                      </article>
                   </div>
                </div>
@@ -63,6 +54,26 @@
                      </table>
                   </div>
                </aside>-->
+			   <aside id="slidemu" class="slider_content extra_block" style="z-index:888">
+                  <div >
+                     <h3>Mubin University</h3>
+                     <h4>Roll Royace Exhibition </h4>
+                     <p> Exhibition is just About to give you 
+                        knowledge of RR Cars
+                     </p>
+                     <table class="table">
+                        <tr>
+                           <td>Melbourne stadium <br>
+                              24-july-2013 
+                           </td>
+                           <td><button class="btn sl_bn" type="button">Register now</button>
+                              <br>
+                              <span>Registred <a href="#">+147</a></span>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </aside>
             </article>
             <article class="item">
                <img src="<?php echo base_url()?>assets/img/courses.jpg">
@@ -241,7 +252,7 @@
 							<h3><i class="icon-fast-forward"></i> &nbsp; Want to get into Havard or MIT ?</h3>
 							<h5>Let experts help you through the process.</h5>
 							<div class="pull-right">
-							<button class="btn btn-info" type="button">GET EXPERT HELP NOW</button>
+							<button class="btn btn-info" type="button" onclick="location.replace('<?php echo base_url('contact-us')?>?type=3')">GET EXPERT HELP NOW</button>
 							</div>
 						</div>
 						<div class="span2">
@@ -275,12 +286,26 @@
       <script>
          $(document).ready(function(){
          						   
-         						       $('.carousel').carousel({
-             interval: 5000,
-         	pause:"hover"
-             })
+         	$('.carousel').carousel({
+					 interval: 5000,
+					pause:"hover"
+             });
+			 
+			 $(".univ").click(function(){
+			  var pid=$(this).attr('id');
+			   /*$(".extra_block").removeClass("show-div");*/
+			  $("#slide"+pid).addClass("show-div");
+			  $("#slide"+pid).animate({right:'563'},'slow'); 
+			 });
+			 
+			  /*$(".univ").mouseout(function(){
+			  var pid=$(this).attr('id');
+			   $(".extra_block").removeClass("show-div");
+			   $("#slide"+pid).animate({right:'190'}); 
+			 }); */
          							   
-         						   })
+        });
+								   
          
          
       </script>

@@ -9,13 +9,42 @@ class Collegemodel extends CI_Model
 		
 	}
 	
-	public function record_count()
+	public function record_count($cityIdArray='')
 	{
-       return $totalUniversities=$this->db->count_all("university");
+       if($cityIdArray)
+	   {
+	    $this->db->select('id');
+		$this->db->from('university');
+		$this->db->where_in('cityId',$cityIdArray);
+		$query = $this->db->get();
+		$rs = $query->result_array();
+		return count($rs);
+	   }
+	   else
+	   { 
+		return $totalUniversities=$this->db->count_all("university");
+	   }
     }
 	public function getAllUniversities($limit, $start)
 	{
         $this->db->limit($limit, $start);
+		$this->db->order_by('featured','desc');
+        $query = $this->db->get("university");
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $getAllUniversities[] = $row;
+            }
+            return $getAllUniversities;
+        }
+        return false;
+	}
+	public function getUniversityByCity($limit, $start, $cityIdArray)
+	{
+        $this->db->limit($limit, $start);
+		if($cityIdArray)
+		{
+		$this->db->where_in('cityId',$cityIdArray);
+		}
 		$this->db->order_by('featured','desc');
         $query = $this->db->get("university");
         if ($query->num_rows() > 0) {
