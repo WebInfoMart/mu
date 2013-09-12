@@ -1,17 +1,24 @@
-	<div class="row">
-						<div class="span6">
+<div class="row">
+						<div class="span7">
 							<p class="text-right">Showing 10/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
 						</div>
 					</div>
 					
 					<?php 
-					if($results)
-					{
 					foreach ($results as $universities)
 					{
 					?>
 					<div class="row blog_style">
-						<article class="span6">
+						<article class="span7">
+						  <div class="row">
+						   <div class="span1">
+						   <?php if($universities->logo){?>
+						   <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $universities->logo;?>" alt="<?php echo $universities->univName;?>" title="<?php echo $universities->univName;?>" style="max-width: 70px;margin: 11px 4px;" class="img-polaroid"></img>
+						   <?php }else{?>
+						   <img src="<?php echo base_url()?>assets/univ_logo/univ.png?>" alt="<?php echo $universities->univName;?>" title="<?php echo $universities->univName;?>" style="max-width: 56px;margin: 13px 14px;" class="img-polaroid"></img>
+						   <?php }?>
+						   </div>
+						   <div class="span6">
 							<div class="row">
 								<div class="span4">
 									<h4><?php echo $universities->univName; ?></h4>
@@ -35,22 +42,22 @@
 									<div class="btn-group">
 										<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">MU Connect <span class="caret"></span></button>
 										<ul class="dropdown-menu">
-										  <li><a href="#">Action</a></li>
-										  <li><a href="#">Another action</a></li>
-										  <li><a href="#">Something else here</a></li>
-										  <li class="divider"></li>
-										  <li><a href="#">Separated link</a></li>
+										  <li><a href="#"><i class="icon-group"></i>&nbsp;&nbsp;In-Person</a></li>
+										  <li><a href="#"><i class="icon-phone"></i>&nbsp;&nbsp;On-Tel</a></li>
+										  <li><a href="#"><i class="icon-facetime-video"></i>&nbsp;&nbsp;Virtual</a></li>
 										</ul>
 									</div>
 								</div>
 							</div>
+						   </div>
+						  </div>
 							<div class="row">
-								<div class="span6">
+								<div class="span7">
 									<div class="row">
 										<div class="span3">
 										<a class="btn btn-primary btn-mini" href='#'><i class='icon-plus-sign'></i> Add College</a>
 										</div>
-										<div class="span3 mu-connect">
+										<div class="span4 mu-connect">
 										<?php
 											$link = str_replace(' ','-',$universities->univName);
 											$link = preg_replace('/[^A-Za-z0-9\-]/', '',$link);
@@ -58,20 +65,6 @@
 										<a class="btn btn-info btn-mini" href="<?php echo base_url().'college/'.$link.'/'.base64_encode($universities->id)?>">Univ Details</a>
 										</div>
 									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<?php
-					}
-					}
-					else{
-					?>
-					<div class="row blog_style">
-						<article class="span6">
-							<div class="row">
-								<div class="span6">
-									<h4>No Result Found!</h4>
 								</div>
 							</div>
 						</article>

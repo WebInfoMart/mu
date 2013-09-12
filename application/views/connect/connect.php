@@ -45,8 +45,10 @@
                     </div>
 					<p class="help-block">Phone</p>
                     <div class="input-prepend">
-                        <span class="add-on">@</span><input id="smsphone" class="prependedInput" size="10" type="text" placeholder="Mobile phone" value="<?php echo (isset($userData)&&$userData)?$userData['mobile']:'';?>">
-                    </div>
+                        <span class="add-on">+91</span><input id="smsphone" class="prependedInput" size="10" type="text" placeholder="Mobile phone" value="<?php echo (isset($userData)&&$userData)?$userData['mobile']:'';?>">
+                    
+						<input type="hidden" id="connectId" value="">
+					</div>
                   	<hr>
 					<div class="help-block" >
                         <div class="alert alert-error" id="sendSmsError" style="display:none;">
@@ -116,7 +118,7 @@
 				</div>
 						<div class="form_bu clearfix">
 						<button class="btn btn-medium btn-info" type="button" onclick="$('#registerForm').submit();">Create Account</button>
-						<button class="btn btn-medium" type="button">Cancel</button>
+						<button class="btn btn-medium" type="button" data-dismiss="modal">Cancel</button>
 					</div>
 				</form>
 </div>
@@ -197,15 +199,9 @@
 					</div>
                      
 					 <article class="span3">
-                     <article><!--<img src="<?php echo base_url();?>assets/img/calender.jpg">-->
-					 <div class="calendar_test" style="padding: 30px 0px;"></div> </article>
-                     <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
-                     <article onclick="window.open('http://www.britishcouncil.in/why-the-uk')" style="cursor:pointer;">
-                        <img src="<?php echo base_url();?>assets/img/british-council.png">
-                        <h6 class="british-counsil">The most trusted source of information about studying in the UK, in association with MeetUniv.com outlines the essential information for you to know & where to begin from.Single source , to keep you updated with the happenings in UK education.
-                        </h5>
-                     </article>
-					 </article>
+                      <article><div class="calendar_test" style="padding: 30px 0px;"></div> </article>
+                      <article><a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="Northumbria University Event in India" alt="Northumbria University Event in India" src="<?php echo base_url();?>assets/img/ad/nu600.jpg"></a></article>
+					</article><br/><br/>
                   </div>
 				  </article>
                   
@@ -248,14 +244,18 @@
 		});
 		function showAttending(id)
 		{
+			$(".attending").hide();
 			$('.'+id).fadeIn();
 		}
-		function ConnectMU(univName,eventName,eventDate,eventPlace)
+		function ConnectMU(connectId,univName,eventName,eventDate,eventPlace)
 		{
 			$("#universityName").text(univName);
 			$("#eventName").html(eventName);
 			$("#eventDate").html(eventDate);
 			$("#eventPlace").html(eventPlace);
+			$("#connectId").val(connectId);
+			$('#registrationForm').hide();
+			$('#sendSmsForm').show();
 			$("#betaModal").modal('show');
 		}
 		function sendConnectSms()
@@ -265,6 +265,7 @@
 			var fullname = $("#smsfullname").val();
 			var email = $("#smsemail").val();
 			var phone = $("#smsphone").val();
+			var connectId = $("#connectId").val();
 			var error = '';
 			if(fullname=='' || fullname==null)
 			{
@@ -284,7 +285,7 @@
 				$('#sendSmsError').fadeIn();
 				return;
 			}
-			var data = {name:fullname,email:email,phone:phone,type:'sms'}
+			var data = {name:fullname,email:email,phone:phone,type:'sms',connectId:connectId}
 			$.post(url,data,function(data){
 				if(data=="NoLoggedIn")
 				{
@@ -337,7 +338,7 @@
 			
 			if(valid == true)
 			{
-			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:$('#connect-'+id).val(),type:'register',connectId:connectId};
+			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:connectId,type:'register'};
 			$.post("<?php echo base_url('connect/attendEvent')?>",data,function(msg){
 			console.log(msg);
 			$('.attending-'+id).hide();

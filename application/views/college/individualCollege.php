@@ -9,10 +9,22 @@
                   <li class="active"><?php echo $universityData[0]['univName'];?></li>
                </ul>
 			   <div class="well">
-                  <div class="bg"><img src="<?php echo base_url()?>assets/img/college-bg-r.png"></img></div>
-                  <div class="logo"><img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="<?php echo $universityData[0]['univName'];?>" title="<?php echo $universityData[0]['univName'];?>"></img></div>
-				  <div class="span10 offset1"><h3><?php echo $universityData[0]['univName'];?></h3></div>
+                 <div class="row">
+                  <div class="span1">
+				  
+				  <?php 
+				  if($universityData[0]['logo'])
+				  {?>
+				  <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $universityData[0]['logo'];?>" alt="<?php echo $universityData[0]['univName'];?>" title="<?php echo $universityData[0]['univName'];?>" style="max-width: 115px;"></img>
+				  <?php 
+				  }else{?>
+				   <img src="<?php echo base_url()?>assets/univ_logo/univ.png?>" alt="<?php echo $universityData[0]['univName'];?>" title="<?php echo $universityData[0]['univName'];?>" style="max-width: 35px;padding: 0px 23px;"></img>
+				  <?php }?>
+				  <!--<img src="<?php echo base_url()?>assets/img/The-los-angeles-school.png" alt="<?php echo $universityData[0]['univName'];?>" title="<?php echo $universityData[0]['univName'];?>"></img>-->
+				  </div>
+				  <div class="span9 <?php echo ($universityData[0]['logo'])?"offset1":"";?>"><h3><?php echo $universityData[0]['univName'];?></h3></div>
 				  <span class=" clearfix"></span>
+				  </div>
                </div>
 			<div class="row">
 				<div class="span8">
@@ -245,8 +257,9 @@
 								</div>
 							</div>
 							<div class="span4">
-							
-							</div>
+							<a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="Northumbria University Event in India" alt="Northumbria University Event in India" src="<?php echo base_url();?>assets/img/ad/nu300.jpg"></a><br/><br/>
+							<a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="University of East London Event in India" alt="University of East London Event in India" src="<?php echo base_url();?>assets/img/ad/uel300.jpg"></a>
+						   </div>
 						</div>
                         <!--<div class="span9">
                            <div  id="myTab" class="span5"> <a href="#home">Majors & Degrees</a> <a href="#profile">Location & Contact</a> </div>

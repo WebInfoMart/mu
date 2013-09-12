@@ -93,4 +93,12 @@ class Collegemodel extends CI_Model
 			
 		return $location;
 	}
+	function getFeaturedColleges()
+	{
+		$this->db->select('*');
+		$this->db->from('university');
+		$this->db->where('featured','1');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 }

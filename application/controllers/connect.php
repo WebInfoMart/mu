@@ -77,19 +77,14 @@ class Connect extends CI_Controller
 		            'email' => $this->input->post('email'),
 					'type'	=> $this->input->post('type')
 					);
+		$data['connect'] = $this->connectmodel->getConnectDetailsForEmail($this->input->post('connectId'));
 		if($data['type']=='sms')
 		{
-			$sms = 'Meetuniversities.com "Connect" Confirmation:
-				Date: 22nd May, 2013
-				Time: 02:00PM - 06:00PM
-				Location: Business Center, Taj Deccan Road # 1 Banjara Hills, Hyderabad
-				Help: 08375034794
-				MeetUniversities.Com';
+			$sms = 'MeetUniv.com-All About Universities Worldwide.\nDirect "Connect" Reminder:\nDate: '.$data['connect']['date'].'\nTime: '.$data['connect']['time'].'\nLocation: '.$data['connect']['location'].'\nHelp: 8375034794\nMeetUniv.Com';
 			$sms=urlencode($sms);
 			$content=file_get_contents("http://api.unicel.in/SendSMS/sendmsg.php?uname=meetuni&pass=letsrock&send=meetus&dest=91".$data['phone']."&msg=".$sms);
 		}
-		$data['connect'] = $this->connectmodel->getConnectDetailsForEmail($this->input->post('connectId'));
-		if($data['type']=='register')		
+		else if($data['type']=='register')		
 		{
 			$this->load->library('email');
 			$this->email->from($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));

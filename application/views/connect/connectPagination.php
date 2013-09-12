@@ -32,7 +32,7 @@
 												<div class="btn-group">
 												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">Get Details <span class="caret"></span></button>
 												<ul class="dropdown-menu">
-												  <li><a href="javascript:void(0)" onclick='ConnectMU("<?php echo $univName;?>","<?php echo $connect->tagLine;?>","<?php echo $connect->date;?>","<?php echo $location;?>");'><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
+												  <li><a href="javascript:void(0)" onclick='ConnectMU("<?php echo $connect->id;?>","<?php echo $univName;?>","<?php echo $connect->tagLine;?>","<?php echo $connect->date;?>","<?php echo $location;?>");'><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
 												  <li><a href="#"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;E-Mail</a></li>
 												</ul>
 												</div>
@@ -43,7 +43,7 @@
 									</div>
 									<div class="row">
 										<div class="span6">
-											<section id="attending" class="attending-<?php echo $counter;?>" style="display:none;">
+											<section class="attending attending-<?php echo $counter;?>" id="attending" style="display:none;">
 												 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
 													<input class="input-small" id="name-<?php echo $counter;?>" type="text" placeholder="Full Name:" value="<?php echo (isset($userData)&&$userData)?$userData['fullname']:'';?>">
 													

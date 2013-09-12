@@ -30,7 +30,6 @@
 				<div class="alert alert-success"  id="contact-error">
 				  Success fully saved!
 			  </div><?php }?>
-			  <?php}?>
 			  <div class="controls controls-row">
 				  <input id="name" name="name" type="text" class="span3" placeholder="Name"> 
 				  <input id="email" name="email" type="email" class="span3" placeholder="Email address">
@@ -38,9 +37,9 @@
 			  <div class="controls controls-row">
 				  <select name="type" id="type">
 					<option value="">Type</option>
-					<option value="1" <?php echo($_GET['type']==1)?"selected":"";?>>Contact US</option>
-					<option value="2" <?php echo($_GET['type']==2)?"selected":"";?>>Jobs</option>
-					<option value="3" <?php echo($_GET['type']==3)?"selected":"";?>>Experts Help</option>
+					<option value="1" <?php echo(isset($_GET['type']) && $_GET['type']==1)?"selected":"";?>>Contact US</option>
+					<option value="2" <?php echo(isset($_GET['type']) && $_GET['type']==2)?"selected":"";?>>Jobs</option>
+					<option value="3" <?php echo(isset($_GET['type']) && $_GET['type']==3)?"selected":"";?>>Experts Help</option>
 					<option value="4">I Want More</option>
 				  </select>
 			  </div>

@@ -57,6 +57,7 @@ public function index() {
 	{
 		$array=array();
 		$this->db->select('cityName');
+		$this->db->where('countryId','13');
 		$this->db->from('city');
 		$query = $this->db->get();
 		$cityArray = $query->result_array();

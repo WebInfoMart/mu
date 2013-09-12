@@ -26,7 +26,8 @@ class Auth extends CI_Controller
 
 	function index()
 	{
-		$data['connect']=$this->connectmodel->getAllConnects(5,0);
+		$data['connect']=$this->connectmodel->getAllConnects(4,0);
+		$data['featuredCollges'] = $this->collegemodel->getFeaturedColleges();
 		$this->layout->view('home',$data);
 	}
 	function register()
@@ -114,7 +115,7 @@ class Auth extends CI_Controller
 		
 		$data["username"]=$this->tank_auth->get_user_id();
 		$data["id"]=$this->tank_auth->get_user_id();
-		$data['connect']=$this->connectmodel->getAllConnects(5,0);
+		$data['connect']=$this->connectmodel->getAllConnects(4,0);
 		$this->layout->view('home',$data);
 	}
 	/**

@@ -1,5 +1,134 @@
-
-      <!--Slider-->
+<!--model open-->
+<div id="betaModal" class="modal hide fade">
+ <span  id="sendSmsForm">
+    <div class="modal-header">
+            <button class="close" data-dismiss="modal">×</button>
+            <h3 id="eventName">Event Name</h3>
+    </div>
+<div class="modal-body">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="span6">
+				  <div class="thumbnail" style="padding: 0;line-height:12px;">
+					<div style="padding:4px">
+					  <img alt="300x200" style="width: 248px;height: 100px;" src="http://placehold.it/200x150">
+					</div>
+					<div class="caption" style="padding:0px 9px;">
+					  <h4 id="universityName" style="color:#373;">Project A</h4>
+					  <p><a class="btn btn-primary btn-mini" href="#"><i class="icon-plus-sign"></i> Add College</a></p>
+					  <p id="eventLocation">
+						<i class="icon icon-calendar"></i> <span id="eventDate">Date</span>
+						</p><p><i class="icon icon-map-marker"></i> <span id="eventPlace">Place, Country</span>
+					  </p>
+					</div>
+					<div class="modal-footer" style="text-align: left">
+					  <div class="progress progress-striped active" style="background: #ddd">
+						<div class="bar" style="width: 60%;"></div>
+					  </div>
+					  <div class="row-fluid">
+						<div class="span4"><b>60%</b><br/><small>FUNDED</small></div>
+						<div class="span4"><b>$400</b><br/><small>PLEDGED</small></div>
+						<div class="span4"><b>18</b><br/><small>DAYS</small></div>
+					  </div>
+					</div>
+            </div>
+            </div>
+            <div class="span6">
+                <form class="form-horizontal">
+                    <p class="help-block">Name</p>
+                    <div class="input-prepend">
+                        <span class="add-on">*</span><input id="smsfullname" class="prependedInput" size="16" type="text" placeholder="Full Name" value="<?php echo (isset($userData)&&$userData)?$userData['fullname']:'';?>">
+                    </div>
+                    <p class="help-block">Email</p>
+                    <div class="input-prepend">
+                        <span class="add-on">@</span><input id="smsemail" class="prependedInput" size="16" type="email" placeholder="Email" value="<?php echo (isset($userData)&&$userData)?$userData['email']:'';?>">
+                    </div>
+					<p class="help-block">Phone</p>
+                    <div class="input-prepend">
+                        <span class="add-on">+91</span><input id="smsphone" class="prependedInput" size="10" type="text" placeholder="Mobile phone" value="<?php echo (isset($userData)&&$userData)?$userData['mobile']:'';?>">
+                    
+						<input type="hidden" id="connectId" value="">
+					</div>
+                  	<hr>
+					<div class="help-block" >
+                        <div class="alert alert-error" id="sendSmsError" style="display:none;">
+						  
+						</div>
+                    </div>
+                    <div class="help-block">
+                        <button type="button" class="btn btn-small btn-info pull-right" onclick="sendConnectSms();">Send SMS</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+</div>
+</span>
+<span id="registrationForm" style="display:none;">
+<div class="modal-header">
+            <button class="close" data-dismiss="modal">×</button>
+            <h4>Sent Successfully!</h4>
+    </div>
+<div class="modal-body">
+    <form action="http://localhost/mu/register" method="post" accept-charset="utf-8" id="registerForm">				<div class="control-group">
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/student_name.png"></span>
+							<input type="text" name="fullname" value="" id="fullname" size="30" class="span4" placeholder="Full Name">						</div>
+						<span class="help-inline" style="color:red;"></span>
+					</div>
+				</div>
+						
+				<div class="control-group">
+					<div class="controls">		
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/mail.png"></span>
+							<input type="text" name="email" value="" id="email" maxlength="80" size="30" class="span4" placeholder="Email">							
+						</div>
+						<span class="help-inline" style="color:red;">
+												</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">	
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/Mobile.png"></span>
+							<input type="text" name="mobile" value="" id="mobile" maxlength="10" size="30" class="span4" placeholder="Mobile">						</div>
+						<span class="help-inline" style="color:red;">
+												</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">	
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/Password.png"></span>
+							<input type="password" name="password" value="" id="password" maxlength="20" size="30" class="span4" placeholder="Password">						</div>
+						<span class="help-inline" style="color:red;">
+												</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><img src="http://localhost/mu/assets/img/Confirm-Password.png"></span>
+							<input type="password" name="confirm_password" value="" id="confirm_password" maxlength="20" size="30" class="span4" placeholder="Confirm Password">						</div>
+						<span class="help-inline" style="color:red;">
+													</span>
+					</div>
+				</div>
+						<div class="form_bu clearfix">
+						<button class="btn btn-medium btn-info" type="button" onclick="$('#registerForm').submit();">Create Account</button>
+						<button class="btn btn-medium" type="button" data-dismiss="modal">Cancel</button>
+					</div>
+				</form>
+</div>
+</span>
+    <div class="modal-footer">
+        <p>&copy; MeetUniv.Com</p>
+    </div>
+</div>	  
+<!--model close-->	  
+	  <!--Slider-->
       <div id="myCarousel" class="carousel slide">
          <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -9,7 +138,39 @@
          </ol>
          <!-- Carousel items -->
          <div class="carousel-inner">
-			<article class="item active">
+			<article class="active item">
+               <img src="<?php echo base_url()?>assets/img/college_search.jpg">
+               <!--<marquee style="position:absolute; top:353px; left:442px; width:700px;">
+			   <?php 
+			   foreach($featuredCollges as $clg){?>
+                    <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $clg['logo'];?>" alt="<?php echo $clg['univName'];?>" title="<?php echo $clg['univName'];?>" style="max-width: 80px;margin: 10px;" />
+				<?php }?>
+                  </marquee>-->
+               <div class="slider_content" id="test_prearation" style="bottom:25%;width:330px;">
+                  <h2 class="test_college"></h2>
+                  
+                  <section class="college_content">
+                     <article>
+                        <div class="para-1">
+                          <p> Choosing the right College is important to begin your successful career. We provide a listing of more than 1000  Colleges worldwide. </p>
+                           <button class="btn btn-small slider_bu" type="button">Take a Look</button>
+                        </div>
+                     </article>
+                     <article>
+                          <div class="para-1">
+                           <h3>Most Searched Colleges</h3>
+                           <ul>
+						   <?php foreach($featuredCollges as $clg){?>
+                              <li><?php echo $clg['univName']?></li>
+							  <?php }?>
+                           </ul>
+                           <a href="#"> see more</a>
+                        </div>
+                     </article>
+                    </section>
+               </div>
+            </article>
+			<article class="item">
                <img src="<?php echo base_url()?>assets/img/connect_img.jpg">
                <div class="slider_content" id="career">
                   <h2 class="connect"><img src="<?php echo base_url()?>assets/img/mu-connect.png"></h2>
@@ -30,50 +191,76 @@
                               </td>
                            </tr>
 						<?php } ?>
+							<tr>
+							<td colspan='2'><button class="btn sl_bn pull_right" type="button"  onclick="location.replace('<?php echo base_url('connect')?>')">More</button></td>
+							</tr>
                         </table>
                      </article>
                   </div>
                </div>
-               <!--<aside class="slider_content extra_block">
-                  <div>
-                     <h3>Mubin University</h3>
-                     <h4>Roll Royace Exhibition </h4>
-                     <p> Exhibition is just About to give you 
-                        knowledge of RR Cars
-                     </p>
-                     <table class="table">
-                        <tr>
-                           <td>Melbourne stadium <br>
-                              24-july-2013 
-                           </td>
-                           <td><button class="btn sl_bn" type="button">Register now</button>
-                              <br>
-                              <span>Registred <a href="#">+147</a></span>
-                           </td>
-                        </tr>
-                     </table>
-                  </div>
-               </aside>-->
-			   <aside id="slidemu" class="slider_content extra_block" style="z-index:888">
-                  <div >
-                     <h3>Mubin University</h3>
-                     <h4>Roll Royace Exhibition </h4>
-                     <p> Exhibition is just About to give you 
-                        knowledge of RR Cars
-                     </p>
-                     <table class="table">
-                        <tr>
-                           <td>Melbourne stadium <br>
-                              24-july-2013 
-                           </td>
-                           <td><button class="btn sl_bn" type="button">Register now</button>
-                              <br>
-                              <span>Registred <a href="#">+147</a></span>
-                           </td>
-                        </tr>
-                     </table>
-                  </div>
+			   <?php
+				$counter=0;
+			   foreach($connect as $connect)
+				{
+				$univName=$this->connectmodel->getUniversityNameById($connect->univId);
+				$location=$this->collegemodel->getUnivLocationById($connect->cityId,$connect->countryId);
+				?>
+			   <aside id="slide<?php echo $connect->id;?>" class="slider_content extra_block" style="z-index:888">
+					<div class="row">
+						<div class="span4">
+							<div class='content_blog pull-left clearfix'>
+								<h4><?php echo $univName;?></h4>
+								<hr>
+								<p><?php echo $connect->tagLine;?></p>
+								<p class="date-time"><i class="icon-calendar"></i>&nbsp;&nbsp;<?php echo $connect->date;?><br>
+								<i class="icon-time"></i>&nbsp;&nbsp;<?php echo $connect->time?>
+								<?php if($connect->location){?>
+								<br><i class="icon-map-marker"></i>&nbsp;&nbsp;<?php echo $connect->location?>
+								<?php }?>
+								</p>
+							</div>
+						</div>
+						<div class="span2 mu-connect">
+							<aside class="celender">
+								<div class="cl"> <small class="date"><?php echo $connect->month;?></small> <small class="day"><?php echo $connect->connectDate?></small> </div>
+								<div class="btn-group">
+								<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">Get Details <span class="caret"></span></button>
+								<ul class="dropdown-menu pull-right">
+								  <li><a href="javascript:void(0)" onclick='ConnectMU("<?php echo $connect->id;?>","<?php echo $univName;?>","<?php echo $connect->tagLine;?>","<?php echo $connect->date;?>","<?php echo $location;?>");'><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
+								  <li><a href="#"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;E-Mail</a></li>
+								</ul>
+								</div>
+								<button class="btn btn-mini btn-primary voilet" type="button" id="attending-<?php echo $counter;?>" onclick="showAttending(this.id);">I am Attending</button>
+								<p class="attending_count">Attending <a href="#">+<?php echo $connect->counter;?></a></p>
+							</aside>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span6">
+							<section class="attending attending-<?php echo $counter;?>" id="attending" style="display:none;margin: 0px 20px 10px;">
+								 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/name-icon.png"></span>
+									<input class="input-small" id="name-<?php echo $counter;?>" type="text" placeholder="Full Name:" value="<?php echo (isset($userData)&&$userData)?$userData['fullname']:'';?>">
+									
+									<input type="hidden" id="connectid-<?php echo $counter;?>" name="connectid-<?php echo $counter;?>" value="<?php echo $connect->id;?>">
+									
+								 </div>
+								 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/mail-icon.png"></span>
+									<input class="input-small" id="email-<?php echo $counter;?>" type="text" placeholder="Email:" value="<?php echo (isset($userData)&&$userData)?$userData['email']:'';?>">
+								 </div>
+								 <div class="input-prepend"> <span class="add-on"><img src="<?php echo base_url();?>assets/img/cell-icon.png"></span>
+									<input class="input-small" id="phone-<?php echo $counter;?>" type="text" placeholder="Mobile No:" value="<?php echo (isset($userData)&&$userData)?$userData['mobile']:'';?>">
+								 </div>
+								 <input class="input-small" id="connect-<?php echo $counter;?>" value="<?php echo $connect->id;?>" type="hidden">
+								 <button class="btn btn-mini btn-primary green_bu" type="button" onclick="attendEvent(<?php echo $counter;?>)">Connect</button>
+							</section>
+							<section id="attendingsuccess" class="attendingsuccess-<?php echo $counter;?>" style="padding: 0px 75px 10px;color: green;display:none;">
+								 <strong>You have successfully register for this Event!</strong>
+							</section>
+						</div>
+					</div>
                </aside>
+			   <?php $counter++;}
+			   ?>
             </article>
             <article class="item">
                <img src="<?php echo base_url()?>assets/img/courses.jpg">
@@ -293,20 +480,139 @@
 			 
 			 $(".univ").click(function(){
 			  var pid=$(this).attr('id');
-			   /*$(".extra_block").removeClass("show-div");*/
-			  $("#slide"+pid).addClass("show-div");
-			  $("#slide"+pid).animate({right:'563'},'slow'); 
+			  $(".extra_block").animate({right:'209'},'fast',function(){
+			  
+				  $(".extra_block").removeClass("show-div");
+				  $("#slide"+pid).addClass("show-div");
+				  $("#slide"+pid).animate({right:'565'},'slow');
+			  });
+			   
 			 });
 			 
-			  /*$(".univ").mouseout(function(){
+			  /* $(".univ").mouseout(function(){
 			  var pid=$(this).attr('id');
 			   $(".extra_block").removeClass("show-div");
 			   $("#slide"+pid).animate({right:'190'}); 
-			 }); */
+			 });  */
          							   
         });
-								   
-         
+		$(document).mouseup(function (e)
+		{
+			var container = $(".slider_content");
+
+			if (!container.is(e.target) // if the target of the click isn't the container...
+				&& container.has(e.target).length === 0) // ... nor a descendant of the container
+			{
+				$(".extra_block").animate({right:'209'},function(){$(".extra_block").removeClass("show-div");});
+			
+			}
+		});
+		function ConnectMU(connectId,univName,eventName,eventDate,eventPlace)
+		{
+			$("#universityName").text(univName);
+			$("#eventName").html(eventName);
+			$("#eventDate").html(eventDate);
+			$("#eventPlace").html(eventPlace);
+			$("#connectId").val(connectId);
+			$('#registrationForm').hide();
+			$('#sendSmsForm').show();
+			$("#betaModal").modal('show');
+		}
+		function sendConnectSms()
+		{
+			
+			url="<?php echo base_url('connect/attendEvent')?>";
+			var fullname = $("#smsfullname").val();
+			var email = $("#smsemail").val();
+			var phone = $("#smsphone").val();
+			var connectId = $("#connectId").val();
+			var error = '';
+			if(fullname=='' || fullname==null)
+			{
+				error=error+"Name required!<br>";
+			}
+			if(email=='' || email==null)
+			{
+				error=error+"Email required!<br>";
+			}
+			if(phone=='' || phone==null || isNaN(phone))
+			{
+				error=error+"Phone Number Not Valid!";
+			}
+			if(error!='')
+			{
+				$('#sendSmsError').html(error);
+				$('#sendSmsError').fadeIn();
+				return;
+			}
+			var data = {name:fullname,email:email,phone:phone,type:'sms',connectId:connectId}
+			$.post(url,data,function(data){
+				if(data=="NoLoggedIn")
+				{
+					$('#sendSmsForm').hide();
+					$("#fullname").val($("#smsfullname").val());
+					$("#email").val($("#smsemail").val());
+					$("#mobile").val($("#smsphone").val());
+					$('#registrationForm').fadeIn();
+				}
+				else
+				{
+					$("#betaModal").modal('hide');
+				}
+			});
+		}
+		
+		function showAttending(id)
+		{
+			$(".attending").hide();
+			$('.'+id).fadeIn();
+		}
+		
+		function attendEvent(id)
+		{
+			var fullname = $('#name-'+id).val();
+			var phone = $('#phone-'+id).val();
+			var email  = $('#email-'+id).val();
+			var connectId = $('#connectid-'+id).val();
+			var valid = true;
+			if(fullname=='' || fullname==null)
+			{
+				$('#name-'+id).addClass('needsfilled');
+				valid = false;
+			}
+			else
+			{
+				$('#name-'+id).removeClass('needsfilled');
+			}
+			if(email=='' || email==null)
+			{
+				$('#email-'+id).addClass('needsfilled');
+				valid = false;
+			}
+			else
+			{
+				$('#email-'+id).removeClass('needsfilled');
+			}
+			if(phone=='' || phone==null || isNaN(phone) || phone.length!=10)
+			{
+				$('#phone-'+id).addClass('needsfilled');
+				valid = false;
+			}
+			else
+			{
+				$('#phone-'+id).removeClass('needsfilled');
+			}
+			
+			if(valid == true)
+			{
+			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:connectId,type:'register'};
+			$.post("<?php echo base_url('connect/attendEvent')?>",data,function(msg){
+			console.log(msg);
+			$('.attending-'+id).hide();
+			$(".attendingsuccess-"+id).fadeIn();
+			});
+			}
+		}
          
       </script>
    

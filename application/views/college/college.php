@@ -25,11 +25,10 @@
                         <h4>Location</h4>
                         <ul class="unstyled">
                            <li id="addingContent">
-							<div class="input-prepend">
-							  <span class="add-on" onclick="addLocation()" style="cursor:pointer;"><i class="icon-plus blue" style="font-size: 20px;"></i></span>
-							  <input class="span2" id="locationFilter" type="text" data-provide="typeahead" data-items="4">
+							  <input class="span2" id="locationFilter" type="text" data-provide="typeahead" data-items="4" placeholder="City Name">
+							  <!--<span class="add-on" style="cursor:pointer;"><i class="icon-plus blue" style="font-size: 20px;"></i></span>-->
+							  <button class="btn btn-primary btn-small" onclick="addLocation()" style="vertical-align: super;">Filter</button>
 							  <input type="hidden" id="filtrationCities" value=""/>
-							</div>
 						   </li>
                            <li id="allLocation">All Cities</li>
                         </ul>
@@ -70,9 +69,9 @@
                         </ul>
                      </div>
                   </section>
-                  <section class="span6" id="collegeContent">
+                  <section class="span7" id="collegeContent">
 					<div class="row">
-						<div class="span6">
+						<div class="span7">
 							<p class="text-right">Showing 10/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
 						</div>
 					</div>
@@ -82,7 +81,16 @@
 					{
 					?>
 					<div class="row blog_style">
-						<article class="span6">
+						<article class="span7">
+						  <div class="row">
+						   <div class="span1">
+						   <?php if($universities->logo){?>
+						   <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $universities->logo;?>" alt="<?php echo $universities->univName;?>" title="<?php echo $universities->univName;?>" style="max-width: 70px;margin: 11px 4px;" class="img-polaroid"></img>
+						   <?php }else{?>
+						   <img src="<?php echo base_url()?>assets/univ_logo/univ.png?>" alt="<?php echo $universities->univName;?>" title="<?php echo $universities->univName;?>" style="max-width: 56px;margin: 13px 14px;" class="img-polaroid"></img>
+						   <?php }?>
+						   </div>
+						   <div class="span6">
 							<div class="row">
 								<div class="span4">
 									<h4><?php echo $universities->univName; ?></h4>
@@ -113,13 +121,15 @@
 									</div>
 								</div>
 							</div>
+						   </div>
+						  </div>
 							<div class="row">
-								<div class="span6">
+								<div class="span7">
 									<div class="row">
 										<div class="span3">
 										<a class="btn btn-primary btn-mini" href='#'><i class='icon-plus-sign'></i> Add College</a>
 										</div>
-										<div class="span3 mu-connect">
+										<div class="span4 mu-connect">
 										<?php
 											$link = str_replace(' ','-',$universities->univName);
 											$link = preg_replace('/[^A-Za-z0-9\-]/', '',$link);
@@ -143,7 +153,7 @@
                         </ul>-->
                      </div>
 				  </section>
-                  <aside class="span3">
+                  <aside class="span2">
                      <article><img src="<?php echo base_url();?>assets/img/st_georges.png"> </article>
                      <article onclick="window.open('http://www.britishcouncil.in/why-the-uk')" style="cursor:pointer;">
                         <img src="<?php echo base_url();?>assets/img/british-council.png">
@@ -208,7 +218,7 @@
 							
 						  if(filtrationCities.indexOf(location)<=-1)
 						  {
-							$("#addingContent").after("<li><i class='icon-remove-sign icon-class-red' id='"+location.substring(0,4)+"' onclick='removeCity(\""+location+"\",this.id)'></i>"+location+"</li>");
+							$("#addingContent").after("<li><i class='icon-remove-sign icon-class-red' id='"+location.substring(0,4)+"' onclick='removeCity(\""+location+"\",this.id)' style='cursor:pointer'></i>"+location+"</li>");
 							
 							if(filtrationCities=='')
 							{
@@ -236,6 +246,7 @@
 								
 							}) 
 						  }
+						  $("#locationFilter").val('');
 						}
 					}
 					function removeCity(cityName,id)

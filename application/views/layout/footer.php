@@ -17,7 +17,7 @@
          </section>-->
          <section id="secondary_footer">
 			<div class="container">
-				<div class="row">
+								<div class="row">
 					<div class="span2">
 						<ul class="nav nav-list">
 						  <h5>College<br>
@@ -47,9 +47,8 @@
 						  </h5>
 						  <li><a href="#"> Meet UK Universities</a></li>
 						  <li><a href="#"> Meet USA Universities</a></li>
-						  <li><a href="#"> Meet Singapore</a></li>
-						  <li><a href="#"> Universities</a></li>
-						  <li><a href="#"> Majors</a></li>
+						  <li><a href="#"> Meet Singapore Universities</a></li>
+						  <li><a href="#"> Meet Australian Universities</a></li>
 					   </ul>
 					</div>
 					<div class="span2">
@@ -59,8 +58,8 @@
 						  </h5>
 						  <li><a href="#"> Resume Writing</a></li>
 						  <li><a href="#"> Statement of Purpose</a></li>
-						  <li><a href="#"> Requirements</a></li>
-						  <li><a href="#"> Tips & Techniques </a></li>
+						  <li><a href="#"> Interview Tips</a></li>
+						  <li><a href="#"> Premium College Counselling </a></li>
 					   </ul>
 					</div>
 					<div class="span2">
@@ -69,8 +68,8 @@
 						  </h5>
 						  <li><a href="#"> IELTS Video Tutorials</a></li>
 						  <li><a href="#"> Career Stream Chooser</a></li>
-						  <li><a href="#"> Requirements</a></li>
-						  <li><a href="#"> Tips & Techniques </a></li>
+						  <li><a href="#"> Expert Advice</a></li>
+						  <li><a href="#"> Business Games </a></li>
 					   </ul>
 					</div>
 					<div class="span2">
@@ -78,13 +77,10 @@
 						  <h5>Other <br>
 							 Resources
 						  </h5>
-						  <li><a href="#"> iamgifted.in</a></li>
 						  <li><a href="#"> myieltsguru.com</a></li>
+						  <li><a href="#"> mygmatguru.com</a></li>
 						  <li><a href="#"> mygreguru.com</a></li>
-						  <!--<li><a href="#"> psychologymajors.com</a></li>
-						  <li><a href="#"> businessschoolsedge.com</a></li>
-						  <li></li>
-						  <li><a href="#"> topaccountingdegrees.com</a></li>-->
+						  <li><a href="#"> iamgifted.in</a></li>
 					   </ul>
 					</div>
 				</div>
