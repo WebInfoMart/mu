@@ -37,14 +37,14 @@
 			  <div class="controls controls-row">
 				  <select name="type" id="type">
 					<option value="">Type</option>
-					<option value="1" <?php echo(isset($_GET['type']) && $_GET['type']==1)?"selected":"";?>>Contact US</option>
-					<option value="2" <?php echo(isset($_GET['type']) && $_GET['type']==2)?"selected":"";?>>Jobs</option>
-					<option value="3" <?php echo(isset($_GET['type']) && $_GET['type']==3)?"selected":"";?>>Experts Help</option>
-					<option value="4">I Want More</option>
+					<option value="contact us" <?php echo(isset($_GET['type']) && $_GET['type']==1)?"selected":"";?>>Contact US</option>
+					<option value="jobs" <?php echo(isset($_GET['type']) && $_GET['type']==2)?"selected":"";?>>Jobs</option>
+					<option value="experts help" <?php echo(isset($_GET['type']) && $_GET['type']==3)?"selected":"";?>>Experts Help</option>
+					<option value="i want more" <?php echo(isset($_GET['type']) && $_GET['type']==4)?"selected":"";?>>I Want More</option>
 				  </select>
 			  </div>
 			  <div class="controls">
-				  <textarea id="message" name="message" class="span6" placeholder="Your Message" rows="5"></textarea>
+				  <textarea id="message" name="message" class="span6" placeholder="Your Message" rows="5"><?php echo(isset($_GET['type']) && $_GET['type']==4)?"We want to give you guys more . Too Bad there are just 24Hrs in a day . Motivate our team of developers , content writers /curators , counselors to get you more. Drop in a email. Will help us priortise":"";?></textarea>
 			  </div>			  
 			  <div class="controls">
 				  <button id="contact-submit" name="submit-contact" type="submit" class="btn btn-primary input-medium pull-right">Send</button>

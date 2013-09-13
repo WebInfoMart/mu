@@ -135,6 +135,7 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
          </ol>
          <!-- Carousel items -->
          <div class="carousel-inner">
@@ -146,14 +147,14 @@
                     <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $clg['logo'];?>" alt="<?php echo $clg['univName'];?>" title="<?php echo $clg['univName'];?>" style="max-width: 80px;margin: 10px;" />
 				<?php }?>
                   </marquee>-->
-               <div class="slider_content" id="test_prearation" style="bottom:25%;width:330px;">
+               <div class="slider_content" id="test_prearation" style="bottom:17%;width:330px;top:79px;">
                   <h2 class="test_college"></h2>
                   
                   <section class="college_content">
                      <article>
                         <div class="para-1">
                           <p> Choosing the right College is important to begin your successful career. We provide a listing of more than 1000  Colleges worldwide. </p>
-                           <button class="btn btn-small slider_bu" type="button">Take a Look</button>
+                           <button class="btn btn-small slider_bu" type="button" onclick="location.replace('<?php echo base_url('college')?>')">Take a Look</button>
                         </div>
                      </article>
                      <article>
@@ -164,7 +165,7 @@
                               <li><?php echo $clg['univName']?></li>
 							  <?php }?>
                            </ul>
-                           <a href="#"> see more</a>
+                           <a href="<?php echo base_url('college')?>"> see more</a>
                         </div>
                      </article>
                     </section>
@@ -191,10 +192,8 @@
                               </td>
                            </tr>
 						<?php } ?>
-							<tr>
-							<td colspan='2'><button class="btn sl_bn pull_right" type="button"  onclick="location.replace('<?php echo base_url('connect')?>')">More</button></td>
-							</tr>
                         </table>
+						<span class="pull-right" style="padding: 10px 40px;font-style:normal;"><a href="<?php echo base_url('connect');?>"> see more</a></span>
                      </article>
                   </div>
                </div>
@@ -402,7 +401,7 @@
 								<p>Help in your application process<br>
 									Free Courseware for Exams.<br/><br/>
 								</p>
-								<p><a href="<a href="<?php echo base_url('learn')?>">IELTS - Academic / English &rarr;</a></p>
+								<p><a href="<?php echo base_url('contact-us')?>?type=4">IELTS - Academic / English &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -416,7 +415,7 @@
 								<p>Don't know which stream to choose?<br>
 									Confused Career choices?
 								</p>
-								<p><a href="#">I am Gifted &rarr;</a></p>
+								<p><a href="<?php echo base_url('contact-us')?>?type=4">I am Gifted &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -478,7 +477,7 @@
 					pause:"hover"
              });
 			 
-			 $(".univ").click(function(){
+			/*  $(".univ").hover(function(){
 			  var pid=$(this).attr('id');
 			  $(".extra_block").animate({right:'209'},'fast',function(){
 			  
@@ -487,6 +486,13 @@
 				  $("#slide"+pid).animate({right:'565'},'slow');
 			  });
 			   
+			 }); */
+			 $(".univ").hover(function(){
+			  var pid=$(this).attr('id');
+				  $(".extra_block").removeClass("show-div");
+				  $(".extra_block").css('right','209px');
+				  $("#slide"+pid).addClass("show-div");
+				  $("#slide"+pid).animate({right:'565'},'slow');
 			 });
 			 
 			  /* $(".univ").mouseout(function(){

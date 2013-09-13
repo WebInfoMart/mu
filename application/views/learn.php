@@ -23,7 +23,17 @@
 		</div>
 		<div class="span6">
 			<h4>Fill Up the Details!</h4>
-		  <form>
+		  <form method="post">
+			  <?php if(form_error('name')||form_error('email')||form_error('message')){?>
+			  <div class="alert alert-error"  id="contact-error">
+				  <?php echo form_error('name');?>
+				 <?php echo form_error('email');?>
+				 <?php echo form_error('message');?>
+			  </div><?php }?>
+			  <?php if(isset($success)){?>
+				<div class="alert alert-success"  id="contact-error">
+				  Success fully saved!
+			  </div><?php }?>
 			  <div class="controls controls-row">
 				  <input id="name" name="name" type="text" class="span3" placeholder="Name"> 
 				  <input id="email" name="email" type="email" class="span3" placeholder="Email address">

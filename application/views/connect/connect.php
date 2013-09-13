@@ -154,8 +154,7 @@
                         <div class="tab_spine clearfix">
 							<h4>Location</h4>
 							<ul class="unstyled">
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">All Cities</a></li>
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
@@ -343,6 +342,12 @@
 			console.log(msg);
 			$('.attending-'+id).hide();
 			$(".attendingsuccess-"+id).fadeIn();
+			var attendCount = parseInt($('#attendCount-'+id).val());
+			$('#attendCount-'+id).val(attendCount+1);
+			$('#attendCountTxt-'+id).text("+"+(attendCount+1));
+			$(".name").val(fullname);
+			$(".email").val(email);
+			$(".phone").val(phone);
 			});
 			}
 		}

@@ -926,6 +926,12 @@ h3.search_header {
 #collage_listing_page {
 margin-bottom:20px;
 }
+#collage_listing_page .label.label-success {
+margin: 10px;
+}
+#collage_listing_page .mu-connect-icon {
+margin: 0px;
+}
 #collage_listing_page .span2 {
 	/*width:180px!important;*/
 }

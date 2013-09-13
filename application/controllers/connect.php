@@ -104,6 +104,19 @@ class Connect extends CI_Controller
 		{
 			echo "NoLoggedIn";
 		}
+		/*saving temprary value in cookie*/
+		/* $name=array('name' => 'name','value' => $data['name'],'expire'=> 3600*24);
+		delete_cookie("name");
+		$this->input->set_cookie($name);
+		$email=array('name' => 'email','value' => $data['email'],'expire'=> 3600*24);
+		delete_cookie("email");
+		$this->input->set_cookie($name);
+		$phone=array('name' => 'name','value' => $data['name'],'expire'=> 3600*24);
+		delete_cookie("phone");
+		$this->input->set_cookie($phone);
+		 */
+		
+		
 		$this->db->query('update connect set counter=counter+1 where id='.$data['connectId']);
 		//$this->db->insert('connectUser',$data);
 		$this->db->query("insert into connectUser(connectId,name,phone,email,type) values(".$data['connectId'].",'".$data['name']."','".$data['phone']."','".$data['email']."','".$data['type']."')");
