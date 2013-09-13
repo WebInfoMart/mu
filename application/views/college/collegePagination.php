@@ -39,14 +39,18 @@
 									</div>
 								</div>
 								<div class="span2 mu-connect">
-									<div class="btn-group">
+									<!--<div class="btn-group">
 										<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">MU Connect <span class="caret"></span></button>
 										<ul class="dropdown-menu">
 										  <li><a href="#"><i class="icon-group"></i>&nbsp;&nbsp;In-Person</a></li>
 										  <li><a href="#"><i class="icon-phone"></i>&nbsp;&nbsp;On-Tel</a></li>
 										  <li><a href="#"><i class="icon-facetime-video"></i>&nbsp;&nbsp;Virtual</a></li>
 										</ul>
-									</div>
+									</div>-->
+									<span class="label label-success">MU Connect</span><br>
+									<a class="btn btn-mini btn-success mu-connect-icon" href="#"><i class="icon-group"></i></a>
+									<a class="btn btn-mini btn-success mu-connect-icon" href="#"><i class="icon-phone"></i></a>
+									<a class="btn btn-mini btn-success mu-connect-icon" href="#" style="margin-right: 10px;"><i class="icon-facetime-video"></i></a>
 								</div>
 							</div>
 						   </div>
