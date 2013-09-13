@@ -5,6 +5,8 @@ class Learn extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->ci =& get_instance();
+		$this->ci->load->config('tank_auth', TRUE);
 		$this->load->library('layout');
 		$this->load->library('form_validation');
 	}
@@ -38,6 +40,6 @@ class Learn extends CI_Controller
 				$data['success']="Successfully Saved!";
 			}
 		}
-		$this->layout->view('learn');
+		$this->layout->view('learn',$data);
 	}
 }
