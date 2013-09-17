@@ -5,6 +5,8 @@
 					</div>
 					
 					<?php 
+					if(isset($results) && $results)
+					{
 					foreach ($results as $universities)
 					{
 					?>
@@ -48,9 +50,9 @@
 										</ul>
 									</div>-->
 									<span class="label label-success">MU Connect</span><br>
-									<a class="btn btn-mini btn-success mu-connect-icon" href="#"><i class="icon-group"></i></a>
-									<a class="btn btn-mini btn-success mu-connect-icon" href="#"><i class="icon-phone"></i></a>
-									<a class="btn btn-mini btn-success mu-connect-icon" href="#" style="margin-right: 10px;"><i class="icon-facetime-video"></i></a>
+									<a class="btn btn-mini btn-success mu-connect-icon" href="#"><i class="icon-group" rel='tooltip' title='In-Person'></i></a>
+									<a class="btn btn-mini btn-success mu-connect-icon" href="#"><i class="icon-phone" rel='tooltip' title='On-Tel'></i></a>
+									<a class="btn btn-mini btn-success mu-connect-icon" href="#" style="margin-right: 10px;"><i class="icon-facetime-video" rel='tooltip' title='Virtual'></i></a>
 								</div>
 							</div>
 						   </div>
@@ -75,6 +77,15 @@
 					</div>
 					<?php
 					}
+					}
+					else{
+					?>
+					<div class="row blog_style">
+						<article class="span7"><h4>No Colleges Found</h4></article>
+					</div>
+					
+					<?php
+					}
 					?> 
 					<div class="pagination pagination-small" id="my_pagi">
 					   <?php echo $links; ?>
@@ -84,7 +95,8 @@
                            <li ><a href="#">&gt;</a></li>
                         </ul>-->
                      </div>
-<script>					 
+<script>			
+$("[rel=tooltip]").tooltip({ placement: 'bottom'});		 
  $(document).ready(function(){
 	  
 		$("#pagination a").click(function(){

@@ -35,7 +35,7 @@ a#logo {
 	left:-32px;
 }
 nav#top_menu {
-	margin-left:217px;
+	margin-left:250px;
 	float:left;
 }
 nav#top_menu ul {
@@ -892,6 +892,7 @@ a.white{
 	border-top:0;
 	border:none;
 	margin:0;
+	font-size: 14px;
 }
 .page .table td {
 	border-top:0;

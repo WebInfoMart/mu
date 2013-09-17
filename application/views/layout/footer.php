@@ -24,9 +24,9 @@
 							 Search
 						  </h5>
 						  <li><a href="<?php echo base_url('college')?>"> College Search</a></li>
-						  <li><a href="#"> Colleges by Country</a></li>
-						  <li><a href="#"> Popular College</a></li>
-						  <li><a href="#"> Popular Countries </a></li>
+						  <li><a href="<?php echo base_url('college')?>"> Colleges by Country</a></li>
+						  <li><a href="<?php echo base_url('college')?>"> Popular College</a></li>
+						  <li><a href="<?php echo base_url('college')?>"> Popular Countries </a></li>
 					   </ul>
 					</div>
 					<div class="span2">
@@ -34,10 +34,10 @@
 						  <h5> Country<br>
 							 Search
 						  </h5>
-						  <li><a href="#"> Study In UK</a></li>
-						  <li><a href="#"> Study In USA</a></li>
-						  <li><a href="#"> Study In Singapore</a></li>
-						  <li><a href="#"> Study In Dubai</a></li>
+						  <li><a href="<?php echo base_url('college')?>"> Study In UK</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Study In USA</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Study In Singapore</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Study In Dubai</a></li>
 					   </ul>
 					</div>
 					<div class="span2">
@@ -45,10 +45,10 @@
 						  <h5>College<br>
 							 Connect
 						  </h5>
-						  <li><a href="#"> Meet UK Universities</a></li>
-						  <li><a href="#"> Meet USA Universities</a></li>
-						  <li><a href="#"> Meet Singapore Universities</a></li>
-						  <li><a href="#"> Meet Australian Universities</a></li>
+						  <li><a href="<?php echo base_url('connect')?>"> Meet UK Universities</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Meet USA Universities</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Meet Singapore Universities</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Meet Australian Universities</a></li>
 					   </ul>
 					</div>
 					<div class="span2">
@@ -56,20 +56,20 @@
 						  <h5>College<br>
 							 Application
 						  </h5>
-						  <li><a href="#"> Resume Writing</a></li>
-						  <li><a href="#"> Statement of Purpose</a></li>
-						  <li><a href="#"> Interview Tips</a></li>
-						  <li><a href="#"> Premium College Counselling </a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Resume Writing</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Statement of Purpose</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Interview Tips</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Premium College Counselling </a></li>
 					   </ul>
 					</div>
 					<div class="span2">
 						<ul class="nav nav-list">
 						  <h5>Coaching<br/><br/>
 						  </h5>
-						  <li><a href="#"> IELTS Video Tutorials</a></li>
-						  <li><a href="#"> Career Stream Chooser</a></li>
-						  <li><a href="#"> Expert Advice</a></li>
-						  <li><a href="#"> Business Games </a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> IELTS Video Tutorials</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Career Stream Chooser</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Expert Advice</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Business Games </a></li>
 					   </ul>
 					</div>
 					<div class="span2">
@@ -77,10 +77,10 @@
 						  <h5>Other <br>
 							 Resources
 						  </h5>
-						  <li><a href="#"> myieltsguru.com</a></li>
-						  <li><a href="#"> mygmatguru.com</a></li>
-						  <li><a href="#"> mygreguru.com</a></li>
-						  <li><a href="#"> iamgifted.in</a></li>
+						  <li><a href="http://myieltsguru.com/"> myieltsguru.com</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> mygmatguru.com</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> mygreguru.com</a></li>
+						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> iamgifted.in</a></li>
 					   </ul>
 					</div>
 				</div>

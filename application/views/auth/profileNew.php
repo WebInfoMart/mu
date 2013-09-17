@@ -9,16 +9,16 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="span3">
-				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar1.jpg?>" class="avatar" style="height:100px;width:90px;" rel="muAvatar1.jpg">
+				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar1.png?>" class="avatar" style="height:100px;width:90px;" rel="muAvatar1.png">
 			</div>
 			<div class="span3">
-				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar2.jpg?>" class="avatar"  style="height:100px;width:90px;"  rel="muAvatar2.jpg">
+				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar2.png?>" class="avatar"  style="height:100px;width:90px;"  rel="muAvatar2.png">
 			</div>
 			<div class="span3">
-				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar3.jpg?>" class="avatar"  style="height:100px;width:90px;" rel="muAvatar3.jpg">
+				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar3.png?>" class="avatar"  style="height:100px;width:90px;" rel="muAvatar3.png">
 			</div>
 			<div class="span3">
-				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar4.jpg?>" class="avatar"  style="height:100px;width:90px;" rel="muAvatar4.jpg">
+				<img src="<?php echo base_url();?>uploads/user_pic/muAvatar4.png?>" class="avatar"  style="height:100px;width:90px;" rel="muAvatar4.png">
 			</div>
         </div>
 	</div>

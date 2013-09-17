@@ -71,6 +71,20 @@ class Collegemodel extends CI_Model
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	public function getCoursesByCollege($univId)
+	{
+		$query = $this->db->query("SELECT name,level1,level2,level3 FROM `courses` left join courseLevel on courses.ucasId=courseLevel.ucasId where univId=".$univId." order by courselevel.level2 desc");
+		return $query->result();
+	}
+	public function getCourseLevelName($level2)
+	{
+		$this->db->select('name');
+		$this->db->where('level',$level2);
+		$this->db->from('courseLevelC');
+		$query = $this->db->get();
+		$result = $query->row();
+		return $result->name;
+	}
 	function getUnivLocationById($cityId,$countryId)
 	{
 		$location="";

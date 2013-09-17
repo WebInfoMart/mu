@@ -147,7 +147,46 @@
                     <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $clg['logo'];?>" alt="<?php echo $clg['univName'];?>" title="<?php echo $clg['univName'];?>" style="max-width: 80px;margin: 10px;" />
 				<?php }?>
                   </marquee>-->
-               <div class="slider_content" id="test_prearation" style="bottom:17%;width:330px;top:79px;">
+				<div style="position:absolute; top:370px; left:336px; width:830px;">
+					<div id="ca-container" class="ca-container">
+					  <div class="ca-wrapper">
+					  
+								<div class="ca-item ca-item-1">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+									</div>
+								</div>
+					  
+								<div class="ca-item ca-item-2">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+									</div>
+								</div>
+					  
+								<div class="ca-item ca-item-3">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										</div>
+									</div>
+						
+								<div class="ca-item ca-item-4">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+										
+									</div>
+									
+								</div>
+								<div class="ca-item ca-item-5">
+									<div class="ca-item-main">
+										<div class="ca-icon"></div>
+									</div>
+								</div>
+					  
+								</div>
+								
+						</div>
+               </div>
+               <div class="slider_content" id="test_prearation" style="bottom:22%;width:330px;top:59px;">
                   <h2 class="test_college"></h2>
                   
                   <section class="college_content">
@@ -469,7 +508,11 @@
          
          -->
    <?php $this->load->view('layout/js');?>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/crousel-js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/crousel-js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/crousel-js/jquery.contentcarousel-autoscroll.js"></script>
       <script>
+		$('#ca-container').contentcarousel();
          $(document).ready(function(){
          						   
          	$('.carousel').carousel({
@@ -493,7 +536,7 @@
 				  $(".extra_block").css('right','209px');
 				  $("#slide"+pid).addClass("show-div");
 				  $("#slide"+pid).animate({right:'565'},'slow');
-			 });
+			 },function(){});
 			 
 			  /* $(".univ").mouseout(function(){
 			  var pid=$(this).attr('id');

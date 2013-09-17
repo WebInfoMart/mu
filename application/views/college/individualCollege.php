@@ -193,7 +193,8 @@
 						</ul>
 				</div>
 			</div>
-                     <article id="major_degree">
+					 
+					 <article id="major_degree">
 						<div class="row">
 							<div class="span8">
 								<div class="row">
@@ -202,38 +203,62 @@
                               <div class="tab-content">
                                  <div class="tab-pane" id="home">
                                     <h5>Majors &amp; Degrees</h5>
-									<?php
-									$ukprn=$universityData[0]['UKPRN'];
-									$service_url = "https://JY4PDF8DMA1SS2WE16KB@data.unistats.ac.uk/api/KIS/Institution/$ukprn/Courses.json";
-									// Initialize session and set URL.
-									$ch = curl_init();
-									curl_setopt($ch, CURLOPT_URL, $service_url);
 									
-									// Set so curl_exec returns the result instead of outputting it.
-									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_error($ch);
-									curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-									// Get the response and close the channel.
-									$response = curl_exec($ch);
-									curl_close($ch);
-									$output=json_decode($response);
-									//print_r($output);
-									?>
 									<table class="table">
 									 <tr class="success">
                                           <td> Degrees Offered</td>
-                                          <td class="text-success">Associate’s<?php echo $universityData[0]['UKPRN'];?></td>
+                                          <td class="text-success">Associate’s</td>
                                           <td class="text-success">Bachelor’s</td>
-                                       </tr>
-									<?php
-									if($output)
-									{
-										foreach($output as $output)
+                                     </tr>
+									 <?php 
+									 $tempraryHeader = '';
+									 foreach($courseDetail as $course)
+									 {
+									 if(!empty($course->level2))
+									 {
+										$levelName = $this->collegemodel->getCourseLevelName($course->level2);
+										if($levelName!=$tempraryHeader)
 										{
-											echo "<tr><td>".ucfirst(strtolower($output->Title))."</td></tr>";
+										?>
+										<tr class="text-error">
+										<td><?php echo $levelName;?></td>
+										<td><img src="<?php echo base_url();?>assets/img/check_opt.png"></td>
+                                          <td></td>
+										</tr>
+										<tr class="space">
+                                          <td></td>
+                                       </tr>
+										<?php
 										}
-									}
-									?>
+										
+									 $tempraryHeader = $levelName;
+									 }
+									 else
+									 {	
+									 if($tempraryHeader!='Others')
+										{
+										?>
+										<tr class="text-error">
+										<td>Others</td>
+										<td><img src="<?php echo base_url();?>assets/img/check_opt.png"></td>
+                                          <td></td>
+										</tr>
+										<tr class="space">
+                                          <td></td>
+                                       </tr>
+										<?php
+										}
+										$tempraryHeader='Others';
+									 }
+									 
+									 ?>
+									 <tr class="">
+										<td><?php echo $course->name;?></td>
+										<td></td>
+                                          <td></td>
+									 </tr>
+									 <?php 
+									 }?>
 									</table>
                                  </div>
                                  <div class="tab-pane  active" id="profile">

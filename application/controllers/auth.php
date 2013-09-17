@@ -116,6 +116,7 @@ class Auth extends CI_Controller
 		$data["username"]=$this->tank_auth->get_user_id();
 		$data["id"]=$this->tank_auth->get_user_id();
 		$data['connect']=$this->connectmodel->getAllConnects(4,0);
+		$data['featuredCollges'] = $this->collegemodel->getFeaturedColleges();
 		$this->layout->view('home',$data);
 	}
 	/**

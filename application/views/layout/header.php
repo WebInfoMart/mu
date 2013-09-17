@@ -12,6 +12,13 @@
       <link href="<?php echo base_url();?>assets/css/select2.css" rel="stylesheet" media="screen">
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+	  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/crousel-css/demo.css" />
+	  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/crousel-css/style.css" />
+	  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/crousel-css/jquery.jscrollpane.css" media="all" />
+	  
+	  
+	  
+	  
       <script src="<?php echo base_url();?>assets/js/modernizr-2.6.2.min.js"></script>
    </head>
    <body>
@@ -21,7 +28,7 @@
       <header role="banner">
          <div class="row container">
             <h1>Meet Univ</h1>
-            <a href="<?php echo base_url()?>" id="logo"><img src="<?php echo base_url();?>assets/img/logo.png" alt="Meet Univ"></a>
+            <a href="<?php echo base_url()?>" id="logo"><img src="<?php echo base_url();?>assets/img/logo_temp.png" alt="Meet Univ"></a>
             <nav role="navigation" id="top_menu">
                <ul>
                   <li><a href="<?php echo base_url('college');?>">Colleges</a></li>

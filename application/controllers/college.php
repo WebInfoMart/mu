@@ -29,6 +29,7 @@ public function index() {
 	 $collegeId=base64_decode($collegeId);
 	 $data["universityData"]=$this->collegemodel->getUniversityDataById($collegeId);
 	 $data["universityDetail"]=$this->collegemodel->getUniversityDetailById($collegeId);
+	 $data["courseDetail"]=$this->collegemodel->getCoursesByCollege($collegeId);
 	 if($data['universityData'][0]['cityId']) //city details is present
 	 {
 		$city=$this->db->get_where('city',array('id'=>$data['universityData'][0]['cityId']));
@@ -82,7 +83,10 @@ public function index() {
 				$this->db->from('city');
 				$res = $this->db->get();
 				$tempraryCity = $res->row();
+				if($tempraryCity)
+				{
 				$cityIdArray[] = $tempraryCity->id;
+				}
 			}
 		}
 		$config = array();
