@@ -2149,8 +2149,8 @@ margin: 0px 24px;
 .fac-img img{ margin-bottom:3px;}
 
 
-.year{width:127px; background-color:#EFFFEB; position:absolute; margin-top:96px; text-align:center; font-weight:bold; font-size:11px; height:54px;}
-.year span{ font-size:18px; color:#18a293;}
+.year_dashboard{width:127px; background-color:#EFFFEB; position:absolute; margin-top:96px; text-align:center; font-weight:bold; font-size:11px; height:54px;}
+.year_dashboard span{ font-size:18px; color:#18a293;}
 
 .type{float:left; width:77px; padding-bottom:2px; background-color:#fbebeb; position:absolute; margin-top:96px; margin-left:129px;
  font-size:14px;height:73px; }

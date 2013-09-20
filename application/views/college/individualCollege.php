@@ -46,7 +46,7 @@
 					</span><p>
                   </div>
                   
-                  <div class="year" >  Year of Establishment<br /><i class="icon-calendar icon-2x"></i> 
+                  <div class="year_dashboard" >  Year of Establishment<br /><i class="icon-calendar icon-2x"></i> 
 				  <span><?php echo (isset($universityDetail['yearOfEst']))?$universityDetail['yearOfEst']:'N/A';?> </span></div>
                   
                   <div class="type"><p>Type<p><span class="color"><?php echo (isset($universityDetail['type']))?$universityDetail['type']:'N/A';?></span></div>
