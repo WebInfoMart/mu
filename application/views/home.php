@@ -147,7 +147,7 @@
                     <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $clg['logo'];?>" alt="<?php echo $clg['univName'];?>" title="<?php echo $clg['univName'];?>" style="max-width: 80px;margin: 10px;" />
 				<?php }?>
                   </marquee>-->
-				<div style="position:absolute; top:370px; left:336px; width:830px;">
+				<!--<div style="position:absolute; top:370px; left:336px; width:830px;">
 					<div id="ca-container" class="ca-container">
 					  <div class="ca-wrapper">
 					  
@@ -184,8 +184,8 @@
 					  
 								</div>
 								
-						</div>
-               </div>
+					</div>
+               </div>-->
                <div class="slider_content" id="test_prearation" style="bottom:22%;width:330px;top:59px;">
                   <h2 class="test_college"></h2>
                   
