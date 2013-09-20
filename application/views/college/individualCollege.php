@@ -312,8 +312,8 @@
 									<table class="table">
 									 <tr class="success">
                                           <td> Degrees Offered</td>
-                                          <td class="text-success">Associate’s</td>
-                                          <td class="text-success">Bachelor’s</td>
+                                          <td class="text-success">Satisfaction</td>
+                                          <td class="text-success">Fee</td>
                                      </tr>
 									 <?php 
 									 $tempraryHeader = '';
@@ -376,7 +376,7 @@
                                  <div class="tab-pane  active" id="profile">
                                     <h5>Location</h5>
 									<input id="address" type="hidden" value="<?php echo (isset($universityDetail['address'])&&$universityDetail['address'])?$universityDetail['address']:'New Delhi, India';?>">
-                                    <div id="map-canvas" style="height:190px;width:280px;border: 1px solid #ccc;box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);">
+                                    <div id="map-canvas" style="height:190px;width:455px;border: 1px solid #ccc;box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);">
                                        <!--<img src="<?php echo base_url()?>assets/img/map.png">-->
                                     </div>
                                     <br>

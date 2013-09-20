@@ -2125,7 +2125,9 @@ color: red;
 font-size: 19px;
 line-height: 24px;
 }
-
+.avatar-thumb input {
+margin: 0px 24px;
+}
 /* amit seth */
 .right-section{width:289px; padding-top:11px; float:right; padding-right:8px; position:relative; height:338px;}
 .right-section p{ margin:0 !important;}

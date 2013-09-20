@@ -294,7 +294,7 @@
 
                   <div class="profile_pic">
 
-                     <img id="tempraryProfilePic" src="<?php echo base_url();?>assets/img/profile_pic_demo.png" class="pull-left" style="width: 120px;height: 130px;">
+                     <!--<img id="tempraryProfilePic" src="<?php echo base_url();?>assets/img/profile_pic_demo.png" class="pull-left" style="width: 120px;height: 130px;">
 
                      <div id="profile_text">
 
@@ -305,14 +305,40 @@
                            your Profile<br>
 						   
 
-                        </p>
+                        </p>-->
+						<ul class="thumbnails avatar-thumb">
+						  <li class="span1">
+						    
+							<a href="#" class="thumbnail">
+							  <img src="<?php echo base_url();?>uploads/user_pic/muAvatar1.png?>" class="avatar" style="" rel="muAvatar1.png">
+							</a>
+							<input type="radio" value="" name="avatarRadio" class="avatarRadio" id="avatarRadio" rel="muAvatar1.png">
+						  </li>
+						  <li class="span1">
+							<a href="#" class="thumbnail">
+							  <img src="<?php echo base_url();?>uploads/user_pic/muAvatar2.png?>" class="avatar"  style=""  rel="muAvatar2.png"/>
+							</a>
+							<input type="radio" value="" name="avatarRadio" class="avatarRadio" id="avatarRadio" rel="muAvatar2.png"/>
+						  </li><li class="span1">
+							<a href="#" class="thumbnail">
+							  <img src="<?php echo base_url();?>uploads/user_pic/muAvatar3.png?>" class="avatar"  style="" rel="muAvatar3.png"/>
+							</a>
+							<input type="radio" value="" name="avatarRadio" class="avatarRadio" id="avatarRadio" rel="muAvatar3.png"/>
+						  </li>
+						  <li class="span1">
+							<a href="#" class="thumbnail">
+							  <img src="<?php echo base_url();?>uploads/user_pic/muAvatar4.png?>" class="avatar"  style="" rel="muAvatar4.png"/>
+							</a>
+							<input type="radio" value="" name="avatarRadio" class="avatarRadio" id="avatarRadio" rel="muAvatar4.png"/>
+						  </li>
+						</ul>
 
                      </div>
 
                      <div class="clearfix"></div>
 
-					 <div class="span2 no_margin">
-
+					 <div class="span2" style="margin-top:-24px">
+						<h4>OR</h4>
                         <input type="file" name="profile_pic" value="Choose File">
 
                      </div>
@@ -329,8 +355,8 @@
                   </div>
 				  <div class="clearfix"></div>
 				  <div class="profile_pic">
-					<h4>OR</h4>
-					<button type="button" class="btn btn-primary btn-small" onclick="uploadAvatar();">Choose Avatar</button>
+					<!--<h4>OR</h4>
+					<button type="button" class="btn btn-primary btn-small" onclick="uploadAvatar();">Choose Avatar</button>-->
 						   <span id="avatarTxt"></span>
 						   <input type="hidden" value="" name="avatarPic" id="avatarPic"/>
 				  </div>
@@ -392,6 +418,11 @@
 			});
 			$(".avatar").click(function(){
 				$("#avatarModal").modal('hide');
+				$("#avatarTxt").html($(this).attr('rel'));
+				$("#avatarPic").val($(this).attr('rel'));
+				$("#tempraryProfilePic").attr('src','<?php echo base_url()?>uploads/user_pic/'+$(this).attr('rel'));
+			});
+			$(".avatarRadio").click(function(){
 				$("#avatarTxt").html($(this).attr('rel'));
 				$("#avatarPic").val($(this).attr('rel'));
 				$("#tempraryProfilePic").attr('src','<?php echo base_url()?>uploads/user_pic/'+$(this).attr('rel'));
