@@ -81,10 +81,10 @@
                                  </section>
                                  <section>
                                     <article class="span2">
-                                       <h6 class="icon looking">Email</h6>
+                                       <h6 class="icon looking">Looking For</h6>
                                     </article>
                                     <article class="span2 text-right">
-                                       <p>Master courses</p>
+                                       <p>Not updated.</p>
                                     </article>
                                  </section>
                                  <section id="recent_events" class="span5 ">
@@ -111,7 +111,7 @@
                            </div>
                      </section>
                      <aside id="dashboard_sidebar" class="span3">
-                        <h6 class="profile_name" onclick="location.href='video.html'"><?php echo $userData['fullname']?> <!--<img src="<?php echo base_url();?>assets/img/man.jpg" alt="..." class="img-circle" style="width:45px; height:45px;">--></h6>
+                        <h5 class="profile_name" onclick="location.href='video.html'"><?php echo $userData['fullname']?> <!--<img src="<?php echo base_url();?>assets/img/man.jpg" alt="..." class="img-circle" style="width:45px; height:45px;">--></h5>
                         <!--<ul id="notification" class="unstyled">
                            <li><img src="<?php echo base_url();?>assets/img/arrow-bottom.png"></li>
                            <li><a href="#"><img src="<?php echo base_url();?>assets/img/bell.png"></a><span>6</span></li>

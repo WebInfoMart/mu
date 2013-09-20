@@ -1,6 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
-
+.left{ float:left; overflow:hidden}
+.right{ float:right; overflow:hidden;}
+.clear{ clear:both; overflow:hidden;}
 body {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -35,7 +37,7 @@ a#logo {
 	left:-32px;
 }
 nav#top_menu {
-	margin-left:250px;
+	margin-left:280px;
 	float:left;
 }
 nav#top_menu ul {
@@ -752,7 +754,7 @@ aside#british_council h4 {
 
 .box-shadow {
 	box-shadow:0 0 4px rgba(0, 0, 0, 0.2);
-	padding:15px;
+	padding:2px;
 }
 .dashboard-data{
 	background:url(../img/dashboard-gb.png);
@@ -800,9 +802,11 @@ opacity: 0.5;
 	text-align: right;
 }
 .box-content {
-	background: url(../img/detail-bg.png);
-	position:relative;
-	padding: 8px 14px 15px;
+	background: url(../img/detail-bg.jpg);
+	position: relative;
+	margin: 10px 5px 10px 9px;
+	height: 339px;
+	width: 629px; /* amit -width changed */
 }
 .box-shadow1 {
 	box-shadow:0 0 4px rgba(0, 0, 0, 0.2);
@@ -1038,7 +1042,7 @@ margin: 0px;
 	line-height:18px;
 	font-size: 12px;
 	margin-right:10px;
-	margin-top: 5px;
+	margin-top: 10px;
 	padding-left:20px;
 	/*background:url(../img/place.png) no-repeat left center;*/
 }
@@ -1763,8 +1767,9 @@ h6.looking {
 #dashboard_sidebar a {
 	color:#50597b;
 }
-h6.profile_name {
+h5.profile_name {
 	text-align:right;
+	padding-right:24px;
 }
 .profile_name img {
 	margin-right:14px;
@@ -2101,3 +2106,86 @@ text-shadow: 0 1px 0 #333;
 margin: 1px;
 color: red;
 }
+
+.college-list .icon-map-marker {
+	float: left;
+	margin-right: 12px;
+	margin-left: 5px;
+	margin-top: 12px;
+	font-size: 70px;
+	color: #d22c30;
+}
+.college-list .icon-calendar {
+	margin-right: 15px;
+	color: #18a293;
+}
+
+
+.fac-img i {
+font-size: 19px;
+line-height: 24px;
+}
+
+/* amit seth */
+.right-section{width:289px; padding-top:11px; float:right; padding-right:8px; position:relative; height:338px;}
+.right-section p{ margin:0 !important;}
+
+.new-castle{}
+.new-castle p{ font-size:12px; font-weight:bold; text-align:center; }
+.new-castle span{font-size:19px; color:#34a89b;}
+.new-castle span.color{color:#1b6f6f; font-size:17px; padding-top:6px; display: block;}
+.new-castle img{ margin-right:15px;}
+
+.yellow-bg{ background:#faf0ca; float:left; width:206px; height:94px; position:absolute;}
+.yellow-bg img{ float:left; margin-right:12px; margin-left:5px; margin-top:12px;}
+.yellow-bg p{ font-size:13px; color:#ff0000; padding-top:27px; float:left;}
+.yellow-bg span{float:right; font-size: 24px; font-weight: bold;   padding-right: 0px;    text-align: right; color:#ff0000;}
+
+.facilities{overflow:hidden;width:81px; text-align:center;background-color:#faf3fe; margin-left:208px;}
+.facilities p{ font-size:14px; margin-bottom:6px; }
+.fac-img{width:30px; padding-left:26px; padding-bottom:6px;}
+.fac-img img{ margin-bottom:3px;}
+
+
+.year{width:127px; background-color:#EFFFEB; position:absolute; margin-top:96px; text-align:center; font-weight:bold; font-size:11px; height:54px;}
+.year span{ font-size:18px; color:#18a293;}
+
+.type{float:left; width:77px; padding-bottom:2px; background-color:#fbebeb; position:absolute; margin-top:96px; margin-left:129px;
+ font-size:14px;height:73px; }
+.type p{ text-align:center; padding-top:5px; }
+.type span{ font-size:19px; color:#1c6e71; padding-top:5px; display:block;}
+
+
+.intake-date{width:127px; height:59px; position:absolute; margin-top:152px; background-color:#f4f4f4;}
+.intake-date p{ font-size:16px; font-weight:bold; padding-top:2px; padding-left:10px;}
+.intake-date p.big-font{ font-size:24px; color:#9b1014; padding-left:10px;}
+
+.scholarship{ width:159px; height:62px; position:absolute; margin-top:173px; margin-left:129px; background-color:#e7fffd;}
+.scholarship p{font-size:15px; font-weight:bold; padding-left:10px; padding-top:2px;}
+.scholarship img{ margin-left:10px;  margin-top:2px; float:left; margin-right:5px;}
+.scholarship p.green{ color:#337f60; float:left; line-height:16px; width:70px;px; padding-left:0;}
+
+
+.students{ float:left; width:123px; background-color:#fff1ec; margin-right:2px; padding-left:4px; position:absolute; margin-top:213px;}
+.students p{ font-size:14px;  font-weight:bold; padding-left:10px;}
+.students p span{ font-size:10px; color:#d15635; font-weight:normal;display:block}
+
+.staff{width:59px; float:left; margin-top:237px; padding-left:4px; background-color:#d4f8ea; position:absolute; margin-left:130px; height:45px;}
+.staff p{font-size:12px; padding-top:0px;}
+.staff p span{display: inline-block;    font-size: 10px;    line-height: 12px;}
+
+.accomodation{width:84px; float:left;padding-left:0px; padding-top:10px; margin-left:6px; position:absolute; margin-top:226px; margin-left:195px; width:93px;}
+.accomodation  p{font-size:9px; padding-top:2px; background-color:#f9f4f8; font-weight:bold; padding-left:2px; padding-right:6px; margin:0; }
+.accomodation  p span{font-size:16px; font-weight:bold; }
+
+.acceptance-criteria{overflow:hidden; padding-left:0px; background-color:#eaf2ef; margin-top:284px; position:absolute; width:289px;}
+.acceptance-criteria p{ margin-bottom:0;}
+.acceptance-criteria p.title{ font-size:14px; font-weight:bold; margin-bottom:0; padding-left:4px;}
+.acceptance-criteria p.sub-title{ color:#d25634; float:left; padding-right:16px; padding-left:4px; margin-right:2px; line-height:17px;}
+.acceptance-criteria p.sub-title span{color:#333333; background:url(../images/bullet.jpg) no-repeat left; padding-left:8px;}
+
+.caption-bar{ background:url(../img/caption-bg.png) repeat-x; height:54px; position:relative;}
+.caption-bar p.title{ color:#ffffff; font-size:22px;padding-left:148px; padding-top:13px;}
+.caption-bar img{ position:absolute; top:-8px; left:20px;}
+.box-content p span{ font-size:22px;color:#ffffff;}
+.box-content p{ color:#ffffff; padding-left:20px;padding-top:39px; font-size:14px; width:398px;}

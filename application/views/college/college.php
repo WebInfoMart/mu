@@ -8,7 +8,7 @@
                   <li class="active">Search Result</li>
                </ul>
                <div class="clearfix"></div>
-               <h3 class="search_header pull-left"><?php echo $countResults;?> Colleges Found</h3>
+               <!--<h3 class="search_header pull-left"><?php echo $countResults;?> Colleges Found</h3>-->
                <div class="search_input  pull-right">
                   <!--<form class="form-search">
                      <div class="input-append">

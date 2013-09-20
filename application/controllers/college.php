@@ -35,6 +35,9 @@ public function index() {
 		$city=$this->db->get_where('city',array('id'=>$data['universityData'][0]['cityId']));
 		$temp = $city->row();
 		$data['cityName'] = $temp->cityName;
+		$country=$this->db->get_where('country',array('id'=>$temp->countryId));
+		$temp2 = $country->row();
+		$data['countryName'] = $temp2->countryName;
 	 }
 	 $this->layout->view("college/individualCollege",$data);
 	}
