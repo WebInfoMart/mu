@@ -964,6 +964,7 @@ class Auth extends CI_Controller
 	}
 	function profileDashboard()
 	{
+		$this->load->model('connectmodel');
 		if($this->tank_auth->is_logged_in())
 		{
 			$this->load->model('connectmodel');

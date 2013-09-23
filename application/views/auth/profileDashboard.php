@@ -91,15 +91,15 @@
                                     <h2>Recent Events</h2>
 									<?php 
 									foreach($recentEvents as $event)
-									{?>
+									{
+									$univName=$this->connectmodel->getUniversityNameById($event['univId']);
+									?>
                                     <article class="alert" >
-                                       <h3><?php echo $event['tagLine'];?></h3>
-                                       <div class="span2">Roll Royace Exhibition 
-                                          Exhibition is just About to give you 
-                                          knowledge of RR Cars
+                                       <h3><?php echo $univName;?></h3>
+                                       <div class="span2"><?php echo $event['tagLine'];?>
                                        </div>
-                                       <div class="span1">Melbourne stadium 
-                                          <?php echo $event['date'];?>
+                                       <div class="span1"><i class="icon-calendar"  style="font-size:14px"></i>&nbsp;<?php echo $event['date'];?><br>
+									   <i class="icon-time" style="font-size:14px"></i>&nbsp;<?php echo $event['time'];?>
                                        </div>
                                        <a class="close" data-dismiss="alert" href="#">&times;</a> 
                                     </article>

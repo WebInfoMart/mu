@@ -1,6 +1,6 @@
 <div class="row">
 								<div class="span6">
-									<p class="text-right">Showing 2/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
+									<p class="text-right">Showing <?php echo count($results)?>/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
 								</div>
 							</div>
 					<?php

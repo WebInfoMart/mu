@@ -141,12 +141,6 @@
          <div class="carousel-inner">
 			<article class="active item">
                <img src="<?php echo base_url()?>assets/img/college_search.jpg">
-               <!--<marquee style="position:absolute; top:353px; left:442px; width:700px;">
-			   <?php 
-			   foreach($featuredCollges as $clg){?>
-                    <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $clg['logo'];?>" alt="<?php echo $clg['univName'];?>" title="<?php echo $clg['univName'];?>" style="max-width: 80px;margin: 10px;" />
-				<?php }?>
-                  </marquee>-->
 				<!--<div style="position:absolute; top:370px; left:336px; width:830px;">
 					<div id="ca-container" class="ca-container">
 					  <div class="ca-wrapper">
@@ -186,6 +180,35 @@
 								
 					</div>
                </div>-->
+			   <!-- scroll items starts -->
+			   <!--<marquee style="position:absolute; top:353px; left:442px; width:700px;">
+			   <?php 
+			   foreach($featuredCollges as $clg){?>
+                    <img src="<?php echo base_url()?>assets/univ_logo/<?php echo $clg['logo'];?>" alt="<?php echo $clg['univName'];?>" title="<?php echo $clg['univName'];?>" style="max-width: 80px;margin: 10px;" />
+				<?php }?>
+                  </marquee>-->
+               <div style="position:absolute; top:380px; left:488px;" >
+                 <div id="demo5" class="scroll-img">
+                  <ul>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb1.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb2.jpg"></a></li>
+                    <li><a href="<?php echo base_url()?>college/Sheffield-Hallam-University/NjM5" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb3.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb4.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb5.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb1.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb2.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb3.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb4.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb5.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb1.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb2.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb3.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb4.jpg"></a></li>
+                    <li><a href="#" target="_blank"><img src="<?php echo base_url();?>assets/img/thumb5.jpg"></a></li>
+                  </ul>
+                </div>
+              </div>
+            <!-- scroll items ends -->
                <div class="slider_content" id="test_prearation" style="bottom:22%;width:330px;top:59px;">
                   <h2 class="test_college"></h2>
                   
@@ -508,18 +531,23 @@
          
          -->
    <?php $this->load->view('layout/js');?>
-	<script type="text/javascript" src="<?php echo base_url();?>assets/crousel-js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assets/crousel-js/jquery.mousewheel.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>assets/crousel-js/jquery.contentcarousel-autoscroll.js"></script>
-      <script>
-		$('#ca-container').contentcarousel();
+	
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.scrollbox.js"></script>
+	<script>
          $(document).ready(function(){
-         						   
-         	$('.carousel').carousel({
-					 interval: 5000,
-					pause:"hover"
-             });
-			 
+         	
+			$('#demo5').scrollbox({
+				direction: 'h',
+				distance: 134
+			  });
+			  
+			  var queueNext = 7;
+			  (function () {
+				$('#demo6-queue ul').append('<li><p>'+ queueNext +'</p></li>');
+				queueNext++;
+				setTimeout(arguments.callee, 2000 + parseInt(Math.random() * 2000, 10));
+			  }());
+			
 			/*  $(".univ").hover(function(){
 			  var pid=$(this).attr('id');
 			  $(".extra_block").animate({right:'209'},'fast',function(){

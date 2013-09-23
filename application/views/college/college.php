@@ -72,7 +72,7 @@
                   <section class="span7" id="collegeContent">
 					<div class="row">
 						<div class="span7">
-							<p class="text-right">Showing 10/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
+							<p class="text-right">Showing <?php echo count($results)?>/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
 						</div>
 					</div>
 					
