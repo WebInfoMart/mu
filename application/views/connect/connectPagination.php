@@ -19,10 +19,9 @@
 												<hr>
 												<p><?php echo $connect->tagLine;?></p>
 												<p class="date-time"><i class="icon-calendar"></i>&nbsp;&nbsp;<?php echo $connect->date;?><br>
-												<i class="icon-time"></i>&nbsp;&nbsp;<?php echo $connect->time?>
-												<?php if($connect->location){?>
-												<br><i class="icon-map-marker"></i>&nbsp;&nbsp;<?php echo $connect->location?>
-												<?php }?>
+												<i class="icon-time"></i>&nbsp;&nbsp;<?php echo $connect->time?><br>
+												<i class="icon-map-marker"></i>&nbsp;&nbsp;
+												<?php echo $location?>
 												</p>
 											</div>
 										</div>
@@ -82,8 +81,11 @@
 								$("#pagination a").click(function(){
 									var url = $(this).attr('href');
 									var temp = url.split('/');
-									
-									var data = {offset:temp[6]};
+									var filtrationCities = $("#filtrationCities").val();
+									var shortDestiValue=$("#shortDestiValue").val();
+									var shortUnivValue=$("#shortUnivValue").val();
+									var shortDateValue=$("#shortDateValue").val();
+									var data = {offset:temp[6],desti:shortDestiValue,univ:shortUnivValue,date:shortDateValue};
 									$.ajax({
 										type	:	'POST',
 										data	:	data,
@@ -92,6 +94,7 @@
 											$("#connectPagination").css('opicity','0.4');
 										},
 										success: function(data){
+										//alert(data);
 											$("#connectPagination").html(data);
 											$("#connectPagination").css('opicity','1');
 										},

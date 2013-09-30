@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>University Connect - Education Fairs,  Spot Admission, University Visits, Universities, Courses, Test Prepration - MeetUniv.Com</title>
+      <title><?php echo $title?></title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta name="description" content="<?php echo $description;?>">
+	  <meta name="keywords" content="<?php echo $keywords;?>">
+	  <meta name="charset" content="UTF-8">
+	  <meta name="robots" content="index, follow">
+	  <meta name="googlebot" content="index, follow">
+	  <meta http-equiv="content-language" content="EN">
+	  <meta name="copyright" content="Copyright © 2013 meetuniv.com ">
+	  <meta name="rating" content="general">
+	  <meta name="distribution" content="Global">
+	  <meta name="revisit-after" content="30 days">
       <!-- Bootstrap -->
       <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.png" />
       <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" media="screen">

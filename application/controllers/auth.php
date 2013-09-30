@@ -26,12 +26,19 @@ class Auth extends CI_Controller
 
 	function index()
 	{
+		$data['title'] = "MeetUniv : Best Place to Meet Universities | Meet The Representatives";
+		$data['description'] = "Best Place to Meet Universities | University Connect | Education Fairs | Spot Admission | University Visits | Universities | Courses | Test Preparation";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Prepration";
+		
 		$data['connect']=$this->connectmodel->getAllConnects(4,0);
 		$data['featuredCollges'] = $this->collegemodel->getFeaturedColleges();
 		$this->layout->view('home',$data);
 	}
 	function register()
 	{
+		$data['title'] = "Join MeetUniv.com to know more about universities of your choice, courses, and test preparation";
+		$data['description'] = "Register - to know more about universities of your choice, courses, and test preparation. Shortlist the ones which offer maximum scholarships  of U.K. at Meetuniv.Com. ";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('home');
 
@@ -126,6 +133,9 @@ class Auth extends CI_Controller
 	 */
 	function login()
 	{
+		$data['title'] = "Login to connect for the information of top colleges and universities of U.K. at Meetuniv.Com.";
+		$data['description'] = "Login - Want to shortlist best universities in U.K. offering scholarships & courses of your choice. Get connected for the information of top colleges and universities of U.K. at Meetuniv.Com";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('home');
 
@@ -879,6 +889,9 @@ class Auth extends CI_Controller
 	}
 	function profile()
 	{
+		$data['title'] = "MeetUniv.Com : Complete Your Profile - Step One";
+		$data['description'] = "Provide your personal information with MeetUniv.com";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
 		$upload_result["error"]='';
 		if ($this->tank_auth->is_logged_in()) {					// logged in or activated	
 			if($this->input->post('save_profile'))
@@ -926,6 +939,9 @@ class Auth extends CI_Controller
 	}
 	function profileMatch()								//function of profile  match of user
 	{
+		$data['title'] = "MeetUniv.Com : Complete Your Profile - Step Two";
+		$data['description'] = "Provide your academic information with MeetUniv.com";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
 		if($this->tank_auth->is_logged_in())
 		{
 			if($this->input->post('save_profile_match'))
@@ -947,6 +963,7 @@ class Auth extends CI_Controller
 	}
 	function profile_externalInfo() //temprary
 	{
+		
 		if($this->tank_auth->is_logged_in())
 		{
 			//$this->form_validation->set_rules('sat_math', 'SAT Math', 'trim|required|xss_clean|min_length[3]');
@@ -964,6 +981,9 @@ class Auth extends CI_Controller
 	}
 	function profileDashboard()
 	{
+		$data['title'] = "MeetUniv.Com : Welcome to Your Dashboard";
+		$data['description'] = "Welcome to the Dashboard at  MeetUniv.com";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
 		$this->load->model('connectmodel');
 		if($this->tank_auth->is_logged_in())
 		{
@@ -980,6 +1000,9 @@ class Auth extends CI_Controller
 	}
 	function profileStep3()
 	{
+		$data['title'] = "MeetUniv.Com : Complete Your Profile - Step Three";
+		$data['description'] = "Provide your IELTS-GMAT-TOEFL-PTE details with MeetUniv.com";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
 		if($this->tank_auth->is_logged_in())
 		{
 			//$this->form_validation->set_rules('sat_math', 'SAT Math', 'trim|required|xss_clean|min_length[3]');

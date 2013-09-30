@@ -14,7 +14,11 @@ class Connect extends CI_Controller
 		$this->ci->load->config('tank_auth', TRUE);
 	}
 	function index() {
-       $this->layout->view('connect/connect');
+		
+		$data['title'] = "MeetUniv connects you with Top universities & colleges worldwide .Multiple modes of connection available, whether in-person | On-Telephone | Virtual.";
+		$data['description'] = "Looking for information on Top Universities in U.K, At MeetUniv.Com - we connect you with Top universities & colleges worldwide - directly! Multiple modes of connection available, whether in-person | On-Telephone | Virtual";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+		$this->layout->view('connect/connect',$data);
     }
 	function CurrentDate()
 	{
@@ -23,10 +27,8 @@ class Connect extends CI_Controller
 		$array = array(
 		  array(
 			$date, 
-			'bootstrap logo popover!', 
-			'#', 
-			'#51a351', 
-			'<img src="http://bit.ly/XRpKAE" />'
+			'Today', 
+			'http://meetuniv.com/connect',
 		  )
 		);
 		/* $array[1] = 
@@ -77,6 +79,7 @@ class Connect extends CI_Controller
 		            'email' => $this->input->post('email'),
 					'type'	=> $this->input->post('type')
 					);
+		echo $data['type'];
 		$data['connect'] = $this->connectmodel->getConnectDetailsForEmail($this->input->post('connectId'));
 		if($data['type']=='sms')
 		{
@@ -90,7 +93,7 @@ class Connect extends CI_Controller
 			$this->email->from($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 			$this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 			$this->email->to($data['email']);
-			$this->email->bcc('nitin@meetuniv.com','debal@meetuniv.com');
+			$this->email->bcc('nitin@meetuniv.com','debal@meetuniv.com','deepak@webinfomart.com');
 			$this->email->subject('Attending Event Info');
 			$this->email->message($this->load->view('email/registerEvent', $data, TRUE));
 			$this->email->send();
@@ -104,17 +107,6 @@ class Connect extends CI_Controller
 		{
 			echo "NoLoggedIn";
 		}
-		/*saving temprary value in cookie*/
-		/* $name=array('name' => 'name','value' => $data['name'],'expire'=> 3600*24);
-		delete_cookie("name");
-		$this->input->set_cookie($name);
-		$email=array('name' => 'email','value' => $data['email'],'expire'=> 3600*24);
-		delete_cookie("email");
-		$this->input->set_cookie($name);
-		$phone=array('name' => 'name','value' => $data['name'],'expire'=> 3600*24);
-		delete_cookie("phone");
-		$this->input->set_cookie($phone);
-		 */
 		
 		
 		$this->db->query('update connect set counter=counter+1 where id='.$data['connectId']);
@@ -122,6 +114,57 @@ class Connect extends CI_Controller
 		$this->db->query("insert into connectUser(connectId,name,phone,email,type) values(".$data['connectId'].",'".$data['name']."','".$data['phone']."','".$data['email']."','".$data['type']."')");
 		
 		exit;
+	}
+	public function filterByLocation($page='')
+	{
+		$city = $this->input->post('cityName');
+		$FiltercityArray = explode(',',$city);
+		$cityIdArray = array();
+		if(strlen($city))
+		{
+			foreach($FiltercityArray as $index=>$key)
+			{
+				$this->db->select('id');
+				$this->db->where('cityName',$key);
+				$this->db->from('city');
+				$res = $this->db->get();
+				$tempraryCity = $res->row();
+				if($tempraryCity)
+				{
+				$cityIdArray[] = $tempraryCity->id;
+				}
+			}
+		}
+		$config = array();
+        $config["base_url"] = base_url() . "connect/filterByLocation";
+        $config["total_rows"] = $this->connectmodel-> record_count($cityIdArray);
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 3;
+		$config['full_tag_open'] = '<div id="pagination">';
+		$config['full_tag_close'] = '</div>';
+        $this->pagination->initialize($config);
+		
+		if($this->input->post('date'))
+		{
+			$data["results"] = $this->connectmodel-> getConnectByCityShortDate($config["per_page"], $page, $cityIdArray);
+		}
+		else if($this->input->post('univ'))
+		{
+			$data["results"] = $this->connectmodel-> getConnectByCityShortUniv($config["per_page"], $page, $cityIdArray);
+		}
+		
+		else if($this->input->post('desti'))
+		{
+			$data["results"] = $this->connectmodel-> getConnectByCityShortDesti($config["per_page"], $page, $cityIdArray);
+		}
+		else
+		{
+			$data["results"] = $this->connectmodel-> getConnectByCity($config["per_page"], $page, $cityIdArray);
+		}
+		$data["links"] = $this->pagination->create_links();
+		$data["countResults"] = $this->connectmodel-> record_count($cityIdArray);
+        $content = $this->load->view("connect/connectPagination", $data);
+		echo $content;
 	}
 	
 }

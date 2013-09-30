@@ -10,7 +10,11 @@ class College extends CI_Controller
 		$this->load->library("pagination");
 	}
 public function index() {
-        $config = array();
+		
+        $data['title'] = "Shortlist, compare & research on Universities and Colleges in UK.";
+		$data['description'] = "MeetUniv.Com lists over 4500 universities & colleges in the world. Must visit destination for students looking at to study abroad. Students can Shortlist, compare & research on Universities and Colleges in UK";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+		$config = array();
         $config["base_url"] = base_url() . "college/collegePagination";
         $config["total_rows"] = $this->collegemodel->record_count();
         $config["per_page"] = 5;

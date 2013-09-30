@@ -54,8 +54,13 @@ nav#top_menu ul li {
 	line-height:60px;
 }
 nav#top_menu ul li a {
-	color:#555555;
+	color:#999999;
 	text-decoration:none;
+}
+#top_menu li a:hover {
+	color: #85b207;
+	border-top: solid 4px #85b207;
+	text-decoration: none;
 }
 aside#login {
 	float:right;
@@ -1809,18 +1814,17 @@ ul#notification li span {
 	font-size:10px;
 }
 #sort_listing {
-	height:57px;
-	margin-bottom:10px;
+	height:45px;
+	margin-bottom:20px;
 	background:#f2f9fc;
 }
 #sort_listing h2 {
-	color:#aaadaf;
+	color:#737678;
 	float:none;
 	margin-left:10px;
 	font-weight:normal;
 	width:auto;
 	display:inline;
-	line-height:57px;
 	font-size:22px;
 }
 #sort_listing ul {
@@ -1832,14 +1836,14 @@ ul#notification li span {
 	padding:0;
 	display:table-cell;
 	vertical-align:middle;
-	font-size:16px;
+	font-size:14px;
 }
 #sort_listing ul li:first-child {
 	padding-right:30px;
 }
 #sort_listing ul li a {
 	border:0;
-	height:53px;
+	height:41px;
 	margin:0;
 	color:#7b84a3;
 	padding:0 12px;
@@ -2164,7 +2168,7 @@ margin: 0px 24px;
 
 .scholarship{ width:159px; height:62px; position:absolute; margin-top:173px; margin-left:129px; background-color:#e7fffd;}
 .scholarship p{font-size:15px; font-weight:bold; padding-left:10px; padding-top:2px;}
-.scholarship img{ margin-left:10px;  margin-top:2px; float:left; margin-right:5px;}
+.scholarship i{ margin-left:10px;  margin-top:-4px; float:left; margin-right:5px;color: #308462;}
 .scholarship p.green{ color:#337f60; float:left; line-height:16px; width:70px;px; padding-left:0;}
 
 
@@ -2191,3 +2195,30 @@ margin: 0px 24px;
 .caption-bar img{ position:absolute; top:-8px; left:20px;}
 .box-content p span{ font-size:22px;color:#ffffff;}
 .box-content p{ color:#ffffff; padding-left:20px;padding-top:39px; font-size:14px; width:398px;}
+.british{
+	width: 609px;
+	height: 412px;
+	margin: 0px auto;
+	background: url('../img/british.png');
+}
+.british-footer{
+	width: 609px;
+	margin: 0px auto;
+	text-align:center;
+	font-size: 13px;
+}
+.british-footer a{
+	color: #fa721d;
+	font-weight: bold;
+}
+.surveyButton
+{
+top: 45px;
+left: 25px;
+width: 127px;
+height: 36px;
+background: transparent url('../img/start_survey.png') 0 0 no-repeat scroll;
+border: none;
+text-indent: -9999px;
+cursor: pointer;
+}

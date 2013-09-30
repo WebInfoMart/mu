@@ -101,7 +101,8 @@
 								<li><a href="<?php echo base_url('contact-us')?>?type=2">Jobs</a></li>
 								<li><a href="#">Team</a></li>
 								<li><a href="#">Disclaimer</a></li>
-								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="<?php echo base_url('terms');?>">Terms & Condition</a></li>
+								<li><a href="<?php echo base_url('privacy-policy');?>">Privacy Policy</a></li>
 								<li><a href="#">Feedback</a></li>
 								<li><a href="<?php echo base_url('contact-us')?>?type=1">Contact Us</a></li>
   							</ul>

@@ -612,7 +612,17 @@
 			{
 				error=error+"Email required!<br>";
 			}
-			if(phone=='' || phone==null || isNaN(phone))
+			else
+			{
+				var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;	
+				if (reg.test(email) == false) 
+				{         
+					$("#email").addClass('needsfilled');
+					error = error+"Email is not valid.<br>";
+					
+				}
+			}
+			if(phone=='' || phone==null || isNaN(phone) || phone.length!=10)
 			{
 				error=error+"Phone Number Not Valid!";
 			}
@@ -668,7 +678,16 @@
 			}
 			else
 			{
-				$('#email-'+id).removeClass('needsfilled');
+				var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;	
+				if (reg.test(email) == false) 
+				{         
+					$('#email-'+id).addClass('needsfilled');
+					valid = false;
+				}
+				else
+				{
+					$('#email-'+id).removeClass('needsfilled');
+				}
 			}
 			if(phone=='' || phone==null || isNaN(phone) || phone.length!=10)
 			{
@@ -679,7 +698,6 @@
 			{
 				$('#phone-'+id).removeClass('needsfilled');
 			}
-			
 			if(valid == true)
 			{
 			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:connectId,type:'register'};
@@ -687,6 +705,12 @@
 			console.log(msg);
 			$('.attending-'+id).hide();
 			$(".attendingsuccess-"+id).fadeIn();
+			var attendCount = parseInt($('#attendCount-'+id).val());
+			$('#attendCount-'+id).val(attendCount+1);
+			$('#attendCountTxt-'+id).text("+"+(attendCount+1));
+			$(".name").val(fullname);
+			$(".email").val(email);
+			$(".phone").val(phone);
 			});
 			}
 		}

@@ -80,12 +80,12 @@
                 </div>
                   <div class="scholarship" >
                   <p>Scholarship</p>
-                  <img src="<?php echo base_url();?>assets/img/1.jpg" class="left"/>
+                  <i class="icon-money icon-4x left"></i>
                   <p class="green"><?php echo (isset($universityDetail['scholership']))?$universityDetail['scholership']:'N/A';?></p>
                </div>
              
                 <div class="students" >
-                  <p> Students <br /> <img src="<?php echo base_url();?>assets/img/people.jpg" /> <br /> <span><?php echo (isset($universityDetail['students']))?$universityDetail['students']:'N/A';?></span></p>
+                  <p> Students <br /> <i class="icon-male icon-2x" style="color:#cd2903"></i><i class="icon-female icon-2x" style="color:#cd2903"></i> <br /> <span><?php echo (isset($universityDetail['students']))?$universityDetail['students']:'N/A';?></span></p>
                 </div>
                <div class="staff" >
                   <p>Staff <br /><span> <?php echo (isset($universityDetail['staff']))?$universityDetail['staff']:'N/A';?></span></p>

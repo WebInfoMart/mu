@@ -143,9 +143,20 @@
                         <h2 class="pull-left">Connect Listing - All</h2>
                         <ul class="inline pull-right">
                            <li>Sort By</li>
-                           <li class="active"><a href="#">Date</a></li>
-                           <li><a href="#"> University</a></li>
-                           <li><a href="#"> Destination</a></li>
+                           <li class="short active" id="shortFeature"><a href="javascript:void(1)" onclick="shortFeature()"><i class="icon-book"></i>&nbsp;Featured</a>
+							<input type="hidden" id="shortFeatureValue" value="0">
+						   </li>
+                           <li id="shortDate" class="short">
+							<a href="javascript:void(1)" onclick="shortDate()"><i class="icon-calendar"></i>&nbsp;Date</a>
+							<input type="hidden" id="shortDateValue" value="0">
+						   </li>
+                           <li class="short" id="shortUniv"><a href="javascript:void(1)" onclick="shortUniv()"><i class="icon-building"></i>&nbsp; University</a>
+						   <input type="hidden" id="shortUnivValue" value="0">
+						   </li>
+                           <li class="short" id="shortDesti">
+							<a href="javascript:void(1)"  onclick="shortDesti()"><i class="icon-map-marker"></i>&nbsp; Destination</a>
+						    <input type="hidden" id="shortDestiValue" value="0">
+						   </li>
                         </ul>
                      </section>
 				  <div class="row">
@@ -154,11 +165,17 @@
                         <div class="tab_spine clearfix">
 							<h4>Location</h4>
 							<ul class="unstyled">
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">All Cities</a></li>
+							<li id="addingContent">
+							  <input class="span2" id="locationFilter" type="text" data-provide="typeahead" data-items="4" placeholder="City Name">
+							  <!--<span class="add-on" style="cursor:pointer;"><i class="icon-plus blue" style="font-size: 20px;"></i></span>-->
+							  <button class="btn btn-primary btn-small" onclick="addLocation()" style="vertical-align: super;">Filter</button>
+							  <input type="hidden" id="filtrationCities" value=""/>
+						    </li>
+							<li id="allLocation"><a href="#">All Cities</a></li>
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
-							<h4>Collage Type</h4>
+							<h4>College Type</h4>
 							<ul class="unstyled">
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
@@ -199,7 +216,8 @@
                      
 					 <article class="span3">
                       <article><div class="calendar_test" style="padding: 30px 0px;"></div> </article>
-                      <article><a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="Northumbria University Event in India" alt="Northumbria University Event in India" src="<?php echo base_url();?>assets/img/ad/nu600.jpg"></a></article>
+                      <!--<article><a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="Northumbria University Event in India" alt="Northumbria University Event in India" src="<?php echo base_url();?>assets/img/ad/nu600.jpg"></a></article>-->
+					  <article><a target="_blank" href="http://goo.gl/OE6TTJ" style="text-decoration:none;text-align:centre"><img title="British Council Survey" alt="British Council Survey" src="<?php echo base_url();?>assets/img/ad/bcsurvey.jpg"></a></article>
 					</article><br/><br/>
                   </div>
 				  </article>
@@ -240,7 +258,124 @@
 				},
 				
 			});
+			
 		});
+		
+		
+		function shortDesti(){
+				  var filtrationCities = $("#filtrationCities").val();
+				  $("#filtrationCities").val(filtrationCities);
+				  url="<?php echo base_url();?>connect/filterByLocation";
+				  data = {cityName:$("#filtrationCities").val(),desti:1};
+				   $.ajax({
+					type	:	'POST',
+					data	:	data,
+					url		:	url,
+					beforeSend: function(){
+								$("#connectPagination").css('opicity','0.4');
+							},
+							success: function(data){
+								//alert(data);
+								$("#connectPagination").html(data);
+								$("#connectPagination").css('opicity','1');
+								$(".short").removeClass('active');
+								$("#shortDesti").addClass('active');
+								$("#shortUnivValue").val('0');
+								$("#shortDestiValue").val('1');
+								$("#shortDateValue").val('0');
+								$("#shortFeatureValue").val('0');
+							},
+					
+				  })
+			
+			}
+			
+		function shortFeature()
+		{
+			  var filtrationCities = $("#filtrationCities").val();
+			  $("#filtrationCities").val(filtrationCities);
+			  url="<?php echo base_url();?>connect/filterByLocation";
+			  data = {cityName:$("#filtrationCities").val()};
+			   $.ajax({
+				type	:	'POST',
+				data	:	data,
+				url		:	url,
+				beforeSend: function(){
+							$("#connectPagination").css('opicity','0.4');
+						},
+						success: function(data){
+							//alert(data);
+							$("#connectPagination").html(data);
+							$("#connectPagination").css('opicity','1');
+							$(".short").removeClass('active');
+							$("#shortFeature").addClass('active');
+							$("#shortUnivValue").val('0');
+							$("#shortDestiValue").val('0');
+							$("#shortDateValue").val('0');
+							$("#shortFeatureValue").val('1');
+						},
+				
+			  })
+		
+		}
+		
+		
+		function shortDate(){
+				  var filtrationCities = $("#filtrationCities").val();
+				  $("#filtrationCities").val(filtrationCities);
+				  url="<?php echo base_url();?>connect/filterByLocation";
+				  data = {cityName:$("#filtrationCities").val(),date:1};
+				   $.ajax({
+					type	:	'POST',
+					data	:	data,
+					url		:	url,
+					beforeSend: function(){
+								$("#connectPagination").css('opicity','0.4');
+							},
+							success: function(data){
+								//alert(data);
+								$("#connectPagination").html(data);
+								$("#connectPagination").css('opicity','1');
+								$(".short").removeClass('active');
+								$("#shortDate").addClass('active');
+								$("#shortUnivValue").val('0');
+								$("#shortDestiValue").val('0');
+								$("#shortDateValue").val('1');
+								$("#shortFeatureValue").val('0');
+							},
+					
+				  })
+			
+			}
+			function shortUniv(){
+				  var filtrationCities = $("#filtrationCities").val();
+				  $("#filtrationCities").val(filtrationCities);
+				  url="<?php echo base_url();?>connect/filterByLocation";
+				  data = {cityName:$("#filtrationCities").val(),univ:1};
+				   $.ajax({
+					type	:	'POST',
+					data	:	data,
+					url		:	url,
+					beforeSend: function(){
+								$("#connectPagination").css('opicity','0.4');
+							},
+							success: function(data){
+								//alert(data);
+								$("#connectPagination").html(data);
+								$("#connectPagination").css('opicity','1');
+								$(".short").removeClass('active');
+								$("#shortUniv").addClass('active');
+								$("#shortUnivValue").val('1');
+								$("#shortDestiValue").val('0');
+								$("#shortDateValue").val('0');
+								$("#shortFeatureValue").val('0');
+							},
+					
+				  })
+			
+			}
+		
+		
 		function showAttending(id)
 		{
 			$(".attending").hide();
@@ -274,7 +409,17 @@
 			{
 				error=error+"Email required!<br>";
 			}
-			if(phone=='' || phone==null || isNaN(phone))
+			else
+			{
+				var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;	
+				if (reg.test(email) == false) 
+				{         
+					$("#email").addClass('needsfilled');
+					error = error+"Email is not valid.<br>";
+					
+				}
+			}
+			if(phone=='' || phone==null || isNaN(phone) || phone.length!=10)
 			{
 				error=error+"Phone Number Not Valid!";
 			}
@@ -323,7 +468,16 @@
 			}
 			else
 			{
-				$('#email-'+id).removeClass('needsfilled');
+				var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;	
+				if (reg.test(email) == false) 
+				{         
+					$('#email-'+id).addClass('needsfilled');
+					valid = false;
+				}
+				else
+				{
+					$('#email-'+id).removeClass('needsfilled');
+				}
 			}
 			if(phone=='' || phone==null || isNaN(phone) || phone.length!=10)
 			{
@@ -334,7 +488,6 @@
 			{
 				$('#phone-'+id).removeClass('needsfilled');
 			}
-			
 			if(valid == true)
 			{
 			var data = {name:$('#name-'+id).val(),phone:$('#phone-'+id).val(),email:$('#email-'+id).val(),connectId:connectId,type:'register'};
@@ -351,4 +504,74 @@
 			});
 			}
 		}
+		
+		function addLocation()
+		{
+			var location = $("#locationFilter").val();
+			if(location!='')
+			{
+			  var filtrationCities = $("#filtrationCities").val();
+				
+			  if(filtrationCities.indexOf(location)<=-1)
+			  {
+				$("#addingContent").after("<li><i class='icon-remove-sign icon-class-red' id='"+location.substring(0,4)+"' onclick='removeCity(\""+location+"\",this.id)' style='cursor:pointer'></i>"+location+"</li>");
+				
+				if(filtrationCities=='')
+				{
+					$("#allLocation").hide();
+					$("#filtrationCities").val(location);
+				}
+				else
+					$("#filtrationCities").val(filtrationCities+","+location);
+				
+				//alert($("#filtrationCities").val());
+				url="<?php echo base_url();?>connect/filterByLocation";
+				data = {cityName:$("#filtrationCities").val()};
+				 $.ajax({
+					type	:	'POST',
+					data	:	data,
+					url		:	url,
+					beforeSend: function(){
+						$("#connectPagination").css('opicity','0.4');
+					},
+					success: function(data){
+						//alert(data);
+						$("#connectPagination").html(data);
+						$("#connectPagination").css('opicity','1');
+					},
+					
+				}) 
+			  }
+			  $("#locationFilter").val('');
+			}
+		}
+		
+		function removeCity(cityName,id)
+		{
+		  var city = cityName;
+		  var filtrationCities = $("#filtrationCities").val();
+		  filtrationCities = filtrationCities.replace(city+",","");
+		  filtrationCities = filtrationCities.replace(","+city,"");
+		  filtrationCities = filtrationCities.replace(city,"");
+		  $("#filtrationCities").val(filtrationCities);
+		  $("#"+id).parent().remove();
+		  url="<?php echo base_url();?>connect/filterByLocation";
+		  data = {cityName:$("#filtrationCities").val()};
+		   $.ajax({
+			type	:	'POST',
+			data	:	data,
+			url		:	url,
+			beforeSend: function(){
+						$("#connectPagination").css('opicity','0.4');
+					},
+					success: function(data){
+						//alert(data);
+						$("#connectPagination").html(data);
+						$("#connectPagination").css('opicity','1');
+					},
+			
+		  }) 
+		  //if()
+		}
+		
 	  </script>
