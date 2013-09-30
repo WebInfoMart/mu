@@ -119,6 +119,9 @@ class Auth extends CI_Controller
 		if (!$this->tank_auth->is_logged_in()) {									
 			redirect('/auth/login');
 		}
+		$data['title'] = "MeetUniv : Best Place to Meet Universities | Meet The Representatives";
+		$data['description'] = "Best Place to Meet Universities | University Connect | Education Fairs | Spot Admission | University Visits | Universities | Courses | Test Preparation";
+		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Prepration";
 		
 		$data["username"]=$this->tank_auth->get_user_id();
 		$data["id"]=$this->tank_auth->get_user_id();
@@ -861,7 +864,7 @@ class Auth extends CI_Controller
 		}
 	
 	}
-	function profileNew()
+	/* function profileNew()
 	{
 		$upload_result["error"]='';
 		if ($this->tank_auth->is_logged_in()) {					// logged in or activated	
@@ -886,13 +889,13 @@ class Auth extends CI_Controller
 		{
 		redirect('/auth/login/');
 		}
-	}
+	} */
 	function profile()
 	{
 		$data['title'] = "MeetUniv.Com : Complete Your Profile - Step One";
 		$data['description'] = "Provide your personal information with MeetUniv.com";
 		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
-		$upload_result["error"]='';
+		$data["error"]='';
 		if ($this->tank_auth->is_logged_in()) {					// logged in or activated	
 			if($this->input->post('save_profile'))
 			{
@@ -902,15 +905,15 @@ class Auth extends CI_Controller
 				if($this->form_validation->run())
 				{
 				$this->users->save_profile();
-				$upload_result["error"]=$this->users->upload_profile_pic();
-				if($upload_result["error"]=='' || $upload_result["error"]=='SUCCESS')
+				$data["error"]=$this->users->upload_profile_pic();
+				if($data["error"]=='' || $data["error"]=='SUCCESS')
 				{
 					redirect('auth/profileMatch');
 				}
 				}
 			}
-			$upload_result['country']=$this->users->getAllCountry();
-			$this->layout->view('auth/profileNew',$upload_result);
+			$data['country']=$this->users->getAllCountry();
+			$this->layout->view('auth/profileNew',$data);
 		}
 		else													// not logged in or non activated	
 		{
