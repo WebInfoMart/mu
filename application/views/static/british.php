@@ -1,10 +1,10 @@
 
-<?php header( "Refresh:5; url=http://goo.gl/8BAS5Q", true, 303);?>
+<?php header( "Refresh:5; url=http://bit.do/w2sms", true, 303);?>
 <div role="main" id="main">
 	 <div class="row container">
 	 <div class="british">
 		<div class="sapn3" style="padding: 188px 246px;">
-			<button class="surveyButton" onclick="location.replace('http://goo.gl/8BAS5Q')">Start Survey</button>
+			<button class="surveyButton" onclick="location.replace('http://bit.do/w2sms')">Start Survey</button>
 		</div>
 	 </div>
 	 <div class="british-footer">

@@ -18,8 +18,9 @@ class British_council extends CI_Controller
 		//echo $serverName = $_SERVER['SERVER_NAME'];
 		//echo $ipremote = $_SERVER['REMOTE_ADDR'];
 		//echo $ipserver = $_SERVER['SERVER_ADDR'];
-		//echo base64_encode('tyroo');
-		//print_r($_SERVER);
+		//echo base64_encode('bcs-w2s');
+		//$_SERVER['HTTP_REFERRER'];
+		//echo ($_SERVER[''])
 		$source = (isset($_GET['source']))?base64_decode($_GET['source']):'admin';
 		$dataInsert = array(
 			'ipremote' => $_SERVER['REMOTE_ADDR'],
@@ -27,6 +28,9 @@ class British_council extends CI_Controller
 			'userAgent' => $_SERVER['HTTP_USER_AGENT'],
 			'source' => $source
 		);
+		if(isset($_SERVER['HTTP_REFERER'])) {
+			  $dataInsert['referer'] = $_SERVER['HTTP_REFERER'];
+		  }
 		$this->db->insert('bc_campaign',$dataInsert);
 		$this->layout->view('static/british',$data);
 	}
