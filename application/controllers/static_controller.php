@@ -50,7 +50,7 @@ class Static_controller extends CI_Controller
 				$this->email->from($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 				$this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 				$this->email->to('deepak@webinfomart.com');
-				$this->email->bcc('nitin@meetuniv.com','debal@meetuniv.com');
+				$this->email->bcc('nitin@meetuniv.com','debal@meetuniv.com','debal@webinfomart.com','kapoorn@gmail.com');
 				$this->email->subject('Contact Us');
 				$this->email->message($message);
 				$this->email->send();

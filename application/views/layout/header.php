@@ -20,9 +20,9 @@
       <link href="<?php echo base_url();?>assets/css/font-awesome.css" rel="stylesheet" media="screen">
 	  <link href="<?php echo base_url();?>assets/css/bootstrap_calendar.css" rel="stylesheet" media="screen">
       <link href="<?php echo base_url();?>assets/css/select2.css" rel="stylesheet" media="screen">
+      <link href="<?php echo base_url();?>assets/css/univ-slider.css" rel="stylesheet" media="screen">
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/demo.css" />
 	  
 	  
 	  

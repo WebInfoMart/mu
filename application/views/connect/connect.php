@@ -217,7 +217,7 @@
 					 <article class="span3">
                       <article><div class="calendar_test" style="padding: 30px 0px;"></div> </article>
                       <!--<article><a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="Northumbria University Event in India" alt="Northumbria University Event in India" src="<?php echo base_url();?>assets/img/ad/nu600.jpg"></a></article>-->
-					  <article><a target="_blank" href="http://bit.do/hpbanner" style="text-decoration:none;text-align:centre"><img title="British Council Survey" alt="British Council Survey" src="<?php echo base_url();?>assets/img/ad/bcsurvey.jpg"></a></article>
+					  <article><a target="_blank" href="http://bit.do/hpbannernew" style="text-decoration:none;text-align:centre"><img title="British Council Survey" alt="British Council Survey" src="<?php echo base_url();?>assets/img/ad/bcsurvey.jpg"></a></article>
 					</article><br/><br/>
                   </div>
 				  </article>

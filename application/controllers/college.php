@@ -30,6 +30,12 @@ public function index() {
     }
 	public function individualCollege($college,$collegeId)
 	{
+	 $data['title'] = "$college - Universities in Uk - Meet univ.com";
+	 $data['description'] = "$college - In Newcastle upon Tyne, is an expanding multicultural learning community, with excellent links with further and higher education. - Meet univ.com";
+	 $keywords = array("MeetUniv, Meet UK Universities, Universities & colleges in UK, Scholarships, Executive MBA in UK, Universities events, Spot Admission, Universities events in India","MeetUniv, Study in UK, Study in UK universities, Best universities in UK , Engineering colleges in UK, Education Fairs, University Visits, IELTS","List of Top 10 colleges & universities, Study MBA in UK, Higher education in UK, Universities events in India, Education Fairs, GMAT","IELTS-GMAT-TOEFL, International students, Colleges in UK, Postgraduate study in abroad, University Courses, Test Preparation");
+	 $first = rand(0,1);
+	 $second = rand(2,3);
+	 $data['keywords'] = "$college - ".$keywords[$first]." - ".$keywords[$second];
 	 $collegeId=base64_decode($collegeId);
 	 $data["universityData"]=$this->collegemodel->getUniversityDataById($collegeId);
 	 $data["universityDetail"]=$this->collegemodel->getUniversityDetailById($collegeId);

@@ -1,10 +1,10 @@
-
-<?php header( "Refresh:5; url=http://bit.do/w2sms", true, 303);?>
+<?php $url = (rand(1,2)==1)?"http://bit.do/w2smsconnect":"http://bit.do/w2smscollege";?>
+<?php header( "Refresh:3; url=$url", true, 303);?>
 <div role="main" id="main">
 	 <div class="row container">
 	 <div class="british">
 		<div class="sapn3" style="padding: 188px 246px;">
-			<button class="surveyButton" onclick="location.replace('http://bit.do/w2sms')">Start Survey</button>
+			<button class="surveyButton" onclick="location.replace('<?php echo $url;?>')">Start Survey</button>
 		</div>
 	 </div>
 	 <div class="british-footer">

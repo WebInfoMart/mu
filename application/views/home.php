@@ -209,7 +209,7 @@
                 </div>
               </div>
             <!-- scroll items ends -->
-               <div class="slider_content" id="test_prearation" style="bottom:22%;width:330px;top:59px;">
+               <div class="slider_content" id="test_prearation" style="bottom:20%;width:330px;top:59px;">
                   <h2 class="test_college"></h2>
                   
                   <section class="college_content">
@@ -223,11 +223,19 @@
                           <div class="para-1">
                            <h3>Most Searched Colleges</h3>
                            <ul>
-						   <?php foreach($featuredCollges as $clg){?>
-                              <li><?php echo $clg['univName']?></li>
+						   <?php foreach($featuredCollges as $clg){
+						   $link = str_replace(' ','-',$clg['univName']);
+						   ?>
+                              <li>
+							  <a class="feature-link" href="<?php echo base_url().'college/'.$link.'/'.base64_encode($clg['id']);?>">
+							  <?php echo $clg['univName']?>
+							  </a>
+							  </li>
 							  <?php }?>
                            </ul>
-                           <a href="<?php echo base_url('college')?>"> see more</a>
+						   <div class="pull-right" style="padding: 0px 20px;">
+							<a href="<?php echo base_url('college')?>" class="see-more"> see more</a>
+						   </div>
                         </div>
                      </article>
                     </section>
@@ -338,7 +346,9 @@
                      <article>
                         <h3>Recently Searched courses:</h3>
                         <p> Humanities, Social and Political Science, Veterinary Medicine, MBA Finance, Accountancy<br>
-                           <a href="#">see more</a>
+                           <span class="pull-right" style="padding: 10px 25px;font-style:normal;">
+						   <a href="#">see more</a>
+						   </span>
                         </p>
                      </article>
 <!-- 

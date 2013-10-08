@@ -158,7 +158,7 @@
                      </div>
 				  </section>
                   <aside class="span2">
-                      <article onclick="window.open('http://bit.do/hpbanner')" style="cursor:pointer;">
+                      <article onclick="window.open('http://bit.do/hpbannernew')" style="cursor:pointer;">
                         <img src="<?php echo base_url();?>assets/img/ad/bcsurvey.jpg">
                      </article>
                   </aside>
