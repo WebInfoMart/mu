@@ -1,4 +1,18 @@
-<?php $url = (rand(1,2)==1)?"http://bit.do/w2smsconnect":"http://bit.do/w2smscollege";?>
+<?php 
+	$url = '';
+	//echo $source;ibibo = aWJpYm8=
+	//echo base64_encode('ibibo');
+	//exit;
+	if($source == 'bcs-w2s')
+	{
+		$url = (rand(1,2)==1)?"http://bit.do/w2smsconnect":"http://bit.do/w2smscollege";
+	}
+	else if($source == 'ibibo')
+	{
+		$url = (rand(1,2)==1)?"http://bit.do/ibiboconnect":"http://bit.do/ibibocollege";
+	}
+	
+?>
 <?php header( "Refresh:3; url=$url", true, 303);?>
 <div role="main" id="main">
 	 <div class="row container">

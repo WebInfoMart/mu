@@ -67,8 +67,10 @@
 										<?php
 											$link = str_replace(' ','-',$universities->univName);
 											$link = preg_replace('/[^A-Za-z0-9\-]/', '',$link);
+											$temp_link = rtrim(base64_encode($universities->id),'=');
+											
 										?>
-										<a class="btn btn-info btn-mini" href="<?php echo base_url().'college/'.$link.'/'.base64_encode($universities->id)?>">Univ Details</a>
+										<a class="btn btn-info btn-mini" href="<?php echo base_url().'college/'.$link.'/'.$temp_link?>">Univ Details</a>
 										</div>
 									</div>
 								</div>

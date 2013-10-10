@@ -32,6 +32,7 @@ class British_council extends CI_Controller
 			  $dataInsert['referer'] = $_SERVER['HTTP_REFERER'];
 		  }
 		$this->db->insert('bc_campaign',$dataInsert);
+		$data['source'] = $source;
 		$this->layout->view('static/british',$data);
 	}
 }

@@ -196,14 +196,14 @@
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
-							<h4>Critical</h4>
+							<h4>Criteria</h4>
 							<ul class="unstyled">
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
-							<h4>Intex</h4>
+							<h4>Interest</h4>
 							<ul class="unstyled">
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>

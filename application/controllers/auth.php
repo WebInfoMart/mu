@@ -36,9 +36,7 @@ class Auth extends CI_Controller
 	}
 	function register()
 	{
-		$data['title'] = "Join MeetUniv.com to know more about universities of your choice, courses, and test preparation";
-		$data['description'] = "Register - to know more about universities of your choice, courses, and test preparation. Shortlist the ones which offer maximum scholarships  of U.K. at Meetuniv.Com. ";
-		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+		
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('home');
 
@@ -111,6 +109,9 @@ class Auth extends CI_Controller
 				} */
 			
 			$data['use_username'] = $use_username;
+			$data['title'] = "Join MeetUniv.com to know more about universities of your choice, courses, and test preparation";
+			$data['description'] = "Register - to know more about universities of your choice, courses, and test preparation. Shortlist the ones which offer maximum scholarships  of U.K. at Meetuniv.Com. ";
+			$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
 			$this->layout->view('auth/registerNew',$data);
 		}
 	}
