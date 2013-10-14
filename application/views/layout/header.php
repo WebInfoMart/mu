@@ -43,7 +43,7 @@
                   <li><a href="<?php echo base_url('connect');?>">Connect</a></li>
                   <!--<li><a href="#">Courses</a></li>
                   <li><a href="#">Councel</a></li>-->
-                  <li><a href="<?php echo base_url('learn');?>">Learn</a></li>
+                  <li><a href="<?php echo base_url('learn/edurator');?>">Learn</a></li>
                   <!--<li><a href="#">Blog</a></li>-->
                </ul>
             </nav>

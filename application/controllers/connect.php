@@ -12,6 +12,7 @@ class Connect extends CI_Controller
 		$this->load->library("pagination");
 		$this->load->model('tank_auth/users');
 		$this->ci->load->config('tank_auth', TRUE);
+		$this->ci->load->config('email', TRUE);
 	}
 	function index() {
 		
@@ -89,7 +90,13 @@ class Connect extends CI_Controller
 		}
 		else if($data['type']=='register')		
 		{
-			$this->load->library('email');
+			//$this->load->library('email');
+			$this->email->set_newline("\r\n");
+			$config['protocol'] = $this->config->item('mail_protocol','email');
+			$config['smtp_host'] = $this->config->item('smtp_server','email');
+			$config['smtp_user'] = $this->config->item('smtp_user_name','email');
+			$config['smtp_pass'] = $this->config->item('smtp_pass','email');
+			$this->email->initialize($config);
 			$this->email->from($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 			$this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 			$this->email->to($data['email']);

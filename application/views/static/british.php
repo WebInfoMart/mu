@@ -1,7 +1,10 @@
 <?php 
 	$url = '';
 	//echo $source;ibibo = aWJpYm8=
-	//echo base64_encode('ibibo');
+	//echo $source;bcs-w2s = YmNzLXcycw==
+	//echo base64_encode('bcs-w2s');
+	//echo "<br>".rtrim(base64_encode('bcs-w2s'),'=');
+	//echo "<br>".$source;
 	//exit;
 	if($source == 'bcs-w2s')
 	{
@@ -12,6 +15,7 @@
 		$url = (rand(1,2)==1)?"http://bit.do/ibiboconnect":"http://bit.do/ibibocollege";
 	}
 	
+	//echo $url;exit;
 ?>
 <?php header( "Refresh:3; url=$url", true, 303);?>
 <div role="main" id="main">

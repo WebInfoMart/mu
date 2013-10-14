@@ -8,7 +8,7 @@
 |--------------------------------------------------------------------------
 */
 $config['website_name'] = 'MeetUniv';
-$config['webmaster_email'] = 'MeetUniv.Com';
+$config['webmaster_email'] = 'info@meetuniv.com';
 
 /*
 |--------------------------------------------------------------------------

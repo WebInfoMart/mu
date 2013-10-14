@@ -417,13 +417,13 @@
 										 width: $.data(this,'size').width });
 			});
 			$(".avatar").click(function(){
-				$("#avatarModal").modal('hide');
+				//$("#avatarModal").modal('hide');
 				$("#avatarTxt").html($(this).attr('rel'));
 				$("#avatarPic").val($(this).attr('rel'));
 				$("#tempraryProfilePic").attr('src','<?php echo base_url()?>uploads/user_pic/'+$(this).attr('rel'));
 			});
 			$(".avatarRadio").click(function(){
-				$("#avatarTxt").html($(this).attr('rel'));
+				//$("#avatarTxt").html($(this).attr('rel'));
 				$("#avatarPic").val($(this).attr('rel'));
 				$("#tempraryProfilePic").attr('src','<?php echo base_url()?>uploads/user_pic/'+$(this).attr('rel'));
 			});
