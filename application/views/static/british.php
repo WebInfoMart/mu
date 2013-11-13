@@ -17,7 +17,7 @@
 	
 	//echo $url;exit;
 ?>
-<?php header( "Refresh:3; url=$url", true, 303);?>
+<?php header( "Refresh:2; url=$url", true, 303);?>
 <div role="main" id="main">
 	 <div class="row container">
 	 <div class="british">

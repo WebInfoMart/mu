@@ -30,9 +30,15 @@
               </div>
               <p><span><?php echo $universityData[0]['univName'];?></span>
 			  <br />
-				In Newcastle upon Tyne, is an expanding multicultural 
-				learning community, with excellent links with further and 
-				higher education...</p>
+				<?php if($universityData[0]['overview']!='')
+					{
+					echo  substr($universityData[0]['overview'],0,350)."...";
+					}
+					else
+					{
+					echo "We are gathering information.";
+					}
+				?></p>
             </div>
             <div class=" left right-section">
             
@@ -108,9 +114,19 @@
 						<div class="row">
 							<div class="span8">
 								<div class="row">
-									 <div  id="myTab" class="span2 college-tab"> <a href="#profile">Location & Contact</a><br><a href="#home">Majors & Degrees</a>  </div>
+									 <div  id="myTab" class="span2 college-tab"> 
+										 <a href="#profile">Location & Contact</a>
+										 <br>
+										 <a href="#overview">Overview</a>
+										 <br>
+										 <a href="#home">Majors & Degrees</a>
+									 </div>
 									 <section class="span6">
                               <div class="tab-content">
+								 <div class="tab-pane" id="overview">
+								 <h5>Overview</h5>
+								 <p><?php echo $universityData[0]['overview'];?></p>
+								 </div>
                                  <div class="tab-pane" id="home">
                                     <h5>Majors &amp; Degrees</h5>
 									
@@ -178,7 +194,7 @@
                                        </tr>
 									</table>
                                  </div>
-                                 <div class="tab-pane  active" id="profile">
+                                 <div class="tab-pane active" id="profile">
                                     <h5>Location</h5>
 									<input id="address" type="hidden" value="<?php echo (isset($universityDetail['address'])&&$universityDetail['address'])?$universityDetail['address']:'New Delhi, India';?>">
                                     <div id="map-canvas" style="height:190px;width:455px;border: 1px solid #ccc;box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);">

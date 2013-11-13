@@ -48,5 +48,27 @@ class Quiz extends CI_Controller
 		$data['score'] = $this->quizmodel->getUserScore($userId);
 		$this->layout->view('quiz/score',$data);
 	}
+	function newQuiz()
+	{
+	$data['title'] = "MeetUniv.Com : Test";
+		$data['description'] = "MeetUniv.com";
+		$data['keywords'] = "";
+		$userId=$this->tank_auth->get_user_id();
+		$data['lastQuizTime']=$this->quizmodel->getLastQuizTime($userId);
+		$query = $this->db->get('question',40);
+		$data['question'] = $query->result();
+	$this->layout->view('quiz/newQuiz',$data);
+	
+	}
+	function report()
+	{
+		if (!$this->tank_auth->is_logged_in()) {									
+			redirect('/auth/login');
+		}
+		$data['title'] = "MeetUniv.Com :Test Score";
+		$data['description'] = "MeetUniv.com";
+		$data['keywords'] = "";
+		$this->layout->view('quiz/report',$data);
+	}
 	
 }

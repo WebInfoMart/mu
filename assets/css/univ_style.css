@@ -2198,7 +2198,7 @@ margin: 0px 24px;
 .caption-bar p.title{ color:#ffffff; font-size:22px;padding-left:148px; padding-top:13px;}
 .caption-bar img{ position:absolute; top:-8px; left:20px;}
 .box-content p span{ font-size:22px;color:#ffffff;}
-.box-content p{ color:#ffffff; padding-left:20px;padding-top:39px; font-size:14px; width:398px;}
+.box-content p{ color:#ffffff; padding-left:20px;padding-top:15px; font-size:14px; width:590px;}
 .british{
 	width: 609px;
 	height: 412px;
@@ -2227,7 +2227,7 @@ text-indent: -9999px;
 cursor: pointer;
 }
 
-.demo-mode{background:url(../img/domo-bg.jpg) repeat-x top; width:100%; margin-top:50px; height:50px;}
+.demo-mode{background:url(../img/domo-bg.jpg) repeat-x top; width:100%; margin-top:30px; height:50px;}
 .demo-mode p{color:#fe5401; font-size:25px; padding-top:13px; float:left;}
 .demo-mode nav{ float:left}
 .demo-mode nav ul{list-style:none;}
@@ -2236,11 +2236,127 @@ cursor: pointer;
 .demo-mode nav ul li a:hover{color:#009590; text-decoration:none; border-bottom:4px #009590 solid; background:#fff; cursor:pointer; }
 .demo-mode img{margin-left:0; margin-top:6px;}
 
-.question{ float:left; width:765px; padding-bottom:20px;}
-.question p{color:#3e3e3e; font-size:14px; width:663px;}
-.question p.ques{color:#038500; font-size:16px; width:100px;}
-.option{ border:1px solid #eee7e7; height:34px;width:495px; margin-bottom:20px; border-radius:3px; background:#f7f7f7 url(../images/v-bar-bg.jpg) no-repeat 40px center;}
+.question{ float:left; width:900px; padding: 15px 0px;}
+.question p{color:#3e3e3e; font-size:14px; width:920px;}
+.question p.ques{color:#038500; font-size:16px; width:100px;margin: 0px;}
+.question span{margin-right:20px}
+.option{ border:1px solid #eee7e7; height:34px;width:514px; margin:17px 0px; border-radius:3px; background:#f7f7f7 url(../images/v-bar-bg.jpg) no-repeat 40px center;}
 .option input[type="checkbox"]{margin-top:13px; margin-left:40px;}
-.opt{ padding-left:14px; font-size:18px; line-height:32px;}
-.fig{ }
-.fig img{}
+.option input[type="radio"]{margin-top:10px; margin-left:15px;}
+.opt{ padding-left:14px; line-height:32px;}
+.fig{}
+ol.vertical{padding: 10px 0px;margin-left: 13px;}
+.list{float:left;}
+.list ol{padding: 15px 0px;list-style:none;}
+.list ol li{line-height: 38px;padding: 1px;margin: 12px 0px;}
+.left.options {margin: 11px 11px;}
+.progress-container{background: #eee;
+border-bottom: 1px solid #ccc;
+border-left: 1px solid #ccc;
+border-right: 1px solid #ccc;}
+ol.vertical li {
+cursor: move;
+display: block;
+margin: 20px 0px;
+padding: 5px;
+border: 1px solid #eee7e7;
+width: 500px;
+border-radius: 3px;
+background: #f7f7f7 url(../images/v-bar-bg.jpg) no-repeat 40px center;
+padding-left: 14px;
+}
+ol.vertical li.placeholder:before {
+position: absolute;
+content: "";
+width: 0;
+height: 0;
+margin-top: -5px;
+left: -5px;
+top: -4px;
+border: 5px solid transparent;
+border-left-color: red;
+border-right: none;
+}
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+.quiz-list .active
+{
+color: black;
+border: 1px solid #ccc;
+height: 20px;
+}
+.answer{
+width: 602px;
+margin: 0 auto;
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* career suggestion page*/
+
+img.arrow{ margin-top:100px; margin:100px 20px 0px;}
+
+.career-suggestion{ padding-top:10px;}
+
+.career-suggestion ul{margin-left:15px !important;}
+
+.career-menu-bar{clear:both; overflow:hidden; background:url(../img/menu-bg.jpg) repeat-x; margin-bottom:20px;}
+
+.career-menu-bar ul{clear:both; overflow:hidden; list-style:none; font-size:15px;  }
+
+.career-menu-bar ul li{float:left;}
+
+.career-menu-bar ul li a{text-decoration:none; color:#767676;display:block; padding:19px 10px;}
+
+.career-menu-bar ul li a:hover{color:#018797; background:url(../img/hover-bg.jpg) repeat-x;}
+
+/* level*/
+
+.level{	float:left;width:400px; background:#f7fbfe; margin-bottom:20px;}
+
+.level ul{clear:both; overflow:hidden; list-style:none;}
+
+.level ul li{clear:both;}
+
+.level ul li input{ float:left; margin-right:10px;}
+
+.level ul li p{float:left; overflow:hidden; }
+
+.level h5{background:#92b5c8; font-weight:normal; font-size:18px; color:#ffffff; padding:5px; margin-top:0; overflow:hidden;}
+
+/* career */
+.career{float:left; overflow:hidden; background:#f7fbfe; width:400px; margin-bottom:20px;}
+
+.career ul{ overflow:hidden; list-style:none;}
+
+.career ul li{ overflow:hidden; clear:both;}
+
+.career ul li img{ margin-right:20px;}
+
+.career h5{background:#92b5c8; font-weight:normal; font-size:18px; color:#ffffff; padding:5px; margin-top:0; overflow:hidden;}
+
+/* interest */
+.interest{float:left; overflow:hidden; background:#f7fbfe; width:400px;margin-bottom:20px;}
+
+.interest ul{ overflow:hidden; list-style:none;}
+
+.interest ul li{ overflow:hidden; clear:both;}
+
+.interest ul li img{ margin-right:20px; width:282px; margin-top:5px;}
+
+.interest h5{background:#92b5c8; font-weight:normal; font-size:18px; color:#ffffff; padding:5px; margin-top:0; overflow:hidden;}
+
+/* qualification*/
+
+.qualification{float:left; overflow:hidden; background:#f7fbfe; width:400px;margin-bottom:20px;}
+
+.qualification ul{ overflow:hidden; list-style:none;}
+
+.qualification ul li{ overflow:hidden; clear:both;}
+
+.qualification ul li img{ margin-right:20px; width:282px;}
+
+.qualification h5{background:#92b5c8; font-weight:normal; font-size:18px; color:#ffffff; padding:5px; margin-top:0; overflow:hidden;}

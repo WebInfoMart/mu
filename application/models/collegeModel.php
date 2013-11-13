@@ -112,6 +112,7 @@ class Collegemodel extends CI_Model
 		$this->db->select('*');
 		$this->db->from('university');
 		$this->db->where('featured','1');
+		$this->db->limit(6);
 		$query = $this->db->get();
 		return $query->result_array();
 	}
