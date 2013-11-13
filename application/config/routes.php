@@ -51,6 +51,7 @@ $route['privacy-policy'] = "static_controller/privacy_policy";
 $route['about-us'] = "static_controller/about_us";
 $route['contact-us'] = "static_controller/contact_us";
 $route['terms'] = "static_controller/terms";
+$route['gifted'] = "quiz";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
