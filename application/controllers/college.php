@@ -11,9 +11,9 @@ class College extends CI_Controller
 	}
 public function index() {
 		
-        $data['title'] = "Shortlist, compare & research on Universities and Colleges in UK.";
-		$data['description'] = "MeetUniv.Com lists over 4500 universities & colleges in the world. Must visit destination for students looking at to study abroad. Students can Shortlist, compare & research on Universities and Colleges in UK";
-		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+        $data['title'] = "Shortlist, compare & Meet UK Universities for Abroad scholarship & spot admission at our education fair & Abroad university visit in india";
+		$data['description'] = "MeetUniv.Com lists over 1000 Abroad universities & colleges.Meet top Abroad universities and colleges in Europe to study abroad?We provide info on Top University in UK.You can find list of UK - London Colleges and Universities.";
+		$data['keywords'] = "UK university list,Meet UK Universities, university of uk,Abroad University events in india,Spot Admission & scholarships, university in uk, indian scholarships for studying abroad,Abroad Education Fairs in india,Meet top UK Universities,Top study abroad scholarships,2014 UK University Fair,study overseas,study abroad";
 		$config = array();
         $config["base_url"] = base_url() . "college/collegePagination";
         $config["total_rows"] = $this->collegemodel->record_count();

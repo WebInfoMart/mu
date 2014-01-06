@@ -13,9 +13,9 @@ class Learn extends CI_Controller
 	function index()
 	{
 		$data = array();
-		$data['title'] = "Learn from the best ,MeetUniv.Com get you the best of curated educational content on the web ,with powered packed video lectures.";
-		$data['description'] = "Learn from the best, MeetUniv.Com get you the best of curated educational content on the web ,with powered packed video lectures. Superior in house content on higher education - IELTS | GRE | GMAT | CAT";
-		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+		$data['title'] = "MeetUniv provides Video Lectures,Article on IELTS,TOEFL,GRE,GMAT";
+		$data['description'] = "MeetUniv  provides Video Lectures,Article on IELTS,TOEFL,GMAT,GRE, for study in Abroad Universities from the best of curated educational content on the web.";
+		$data['keywords'] = "UK Universities courses,Video Lectures,Articles,IELTS,TOEFL,GRE,GMAT,University events in india,Spot Admission & scholarships,Meet top UK Universities,indian scholarships for studying abroad,Education Fairs in india,Top study abroad scholarships,2014 UK University Fair";
 		if($this->input->post())
 		{
 			$this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean');

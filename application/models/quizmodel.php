@@ -8,7 +8,7 @@ class Quizmodel extends CI_Model
 		parent::__construct();
 		
 	}
-	public function getLastQuizTime($userId)
+	/* public function getLastQuizTime($userId)
 	{
 		$this->db->select('timeSpent');
 		$this->db->from(' userquizrecord');
@@ -24,8 +24,8 @@ class Quizmodel extends CI_Model
 		$this->db->where('userId', $userId);
 		$query=$this->db->update('userquizrecord',$data);
 		return "success";
-	}
-	public function saveanswer($userId)
+	} */
+	/* public function saveanswer($userId)
 	{
 		$exists = $this->checkExists($userId);
 		if(!$exists)
@@ -47,14 +47,129 @@ class Quizmodel extends CI_Model
 			$this->db->update('userquizrecord',array('answer'=>$ans));
 			return "Updated successfully";
 		}
-	}
-	public function checkExists($userId)
+	} */
+	
+	function savePartBScoreapi($email,$testid)
 	{
-		$query = $this->db->get_where('userquizrecord',array('userId'=>$userId));
-		$user = $query->row();
-		return ($user)?$user->answer:false;
+		$data  = array(
+				'io' => $this->input->post('io'),
+				'cb' => $this->input->post('cb'),
+				'aot'=> $this->input->post('aot'),
+				'qa'=> $this->input->post('qa'),
+				'rnd'=> $this->input->post('rnd')
+		);
+		//print_r($data);
+		$this->db->where('email',$email);
+		$this->db->where('testId',$testid);
+		$this->db->update('scoreapi',$data);
 	}
-	public function updateingAnswer($currentAns, $answer, $question)
+	function savePartBScore($userId)
+	{
+		$data  = array(
+				'io' => $this->input->post('io'),
+				'cb' => $this->input->post('cb'),
+				'aot'=> $this->input->post('aot'),
+				'qa'=> $this->input->post('qa'),
+				'rnd'=> $this->input->post('rnd')
+		);
+		//print_r($data);
+		$this->db->where('userId',$userId);
+		$this->db->update('psychometric',$data);
+	}
+	function savePartCScore($userId)
+	{
+		$data  = array(
+				'sec' => $this->input->post('sec'),
+				'ver' => $this->input->post('ver'),
+				'affi'=> $this->input->post('affi'),
+				'rec'=> $this->input->post('rec'),
+				'auto'=> $this->input->post('auto')
+		);
+		//print_r($data);
+		$this->db->where('userId',$userId);
+		$this->db->update('psychometric',$data);
+	}
+	function savePartCScoreapi($email,$testid)
+	{
+		$data  = array(
+				'sec' => $this->input->post('sec'),
+				'ver' => $this->input->post('ver'),
+				'affi'=> $this->input->post('affi'),
+				'rec'=> $this->input->post('rec'),
+				'auto'=> $this->input->post('auto')
+		);
+		//print_r($data);
+		$this->db->where('email',$email);
+		$this->db->where('testId',$testid);
+		$this->db->update('scoreapi',$data);
+	}
+	function savePartAScore($userId)
+	{
+		$testId = $this->input->post('testid');
+		$source = ($this->session->userdata('source'))?$this->session->userdata('source'):1;
+		$exists = $this->checkExists($userId,$testId,$source);
+		//exit;
+		
+		$data  = array(
+					'userId'    => $userId,
+					'testId'	=> $testId,
+					'sourceId'    => $source,
+					'UpperLeft' => $this->input->post('UpperLeft'),
+					'LowerLeft' => $this->input->post('LowerLeft'),
+					'LowerRight'=> $this->input->post('LowerRight'),
+					'UpperRight'=> $this->input->post('UpperRight')
+			);
+		if(!$exists)
+		{
+			//echo "insert";
+			//print_r($data);
+			echo "inserted";
+			$this->db->insert('psychometric',$data);
+		}
+		else
+		{
+			echo "Update";
+			$this->db->where('userId',$userId);
+			$this->db->update('psychometric',$data);
+		}
+	}
+	function savePartAScoreapi($email,$testid)
+	{
+		echo $exists = $this->checkExistsEmailApi($email,$testid);
+		$data  = array(
+				'email'     => $email,
+				'testId'	=> $testid,
+				'UpperLeft' => $this->input->post('UpperLeft'),
+				'LowerLeft' => $this->input->post('LowerLeft'),
+				'LowerRight'=> $this->input->post('LowerRight'),
+				'UpperRight'=> $this->input->post('UpperRight')
+		);
+		if(!$exists)
+		{
+			//echo "insert";
+			$this->db->insert('scoreapi',$data);
+		}
+		else
+		{
+			echo "Update";
+			$this->db->where('email',$email);
+			$this->db->where('testId',$testid);
+			$this->db->update('scoreapi',$data);
+		}
+	}
+	public function checkExistsEmailApi($email,$testid)
+	{
+		$query = $this->db->get_where('scoreapi',array('email'=>$email,'testId'=>$testid));
+		$user = $query->row();
+		return ($user)?$user->email:false;
+	}
+	public function checkExists($userId,$testid,$source)
+	{
+		$query = $this->db->get_where('psychometric',array('userId'=>$userId,'testId'=>$testid,'sourceId'=>$source));
+		$user = $query->row();
+		return ($user)?$user->userId:false;
+	}
+	/* public function updateingAnswer($currentAns, $answer, $question)
 	{
 		$qu = explode(';',$currentAns);
 		//print_r($qu);
@@ -75,7 +190,7 @@ class Quizmodel extends CI_Model
 			$newans.=$index.":".$key.";";
 		}
 		return $newans;
-	}
+	} 
 	function checkAllreadyAnswer($question)
 	{
 		$userId = $this->tank_auth->get_user_id();
@@ -129,5 +244,28 @@ class Quizmodel extends CI_Model
 			return $score;
 		}
 		return 0;
+	}*/
+	function enterApiUser()
+	{
+		$data = array(
+			'email' => $_GET['email'],
+			'testid' => $_GET['testid']
+		);
+		
+		$this->db->select('*');
+		$this->db->from('apiData');
+		$this->db->where($data);
+		$rs = $this->db->get();
+		
+		$entry = $rs->row();
+		if(!($entry))
+		{
+			$this->db->insert('apiData',$data);
+		}
+	}
+	function getUserScoreApi($userId)
+	{
+		$data = $this->db->get_where('psychometric',array('userId'=>$userId));
+		return $data->row();
 	}
 }

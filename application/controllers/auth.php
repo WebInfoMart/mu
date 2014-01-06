@@ -26,12 +26,16 @@ class Auth extends CI_Controller
 
 	function index()
 	{
-		$data['title'] = "MeetUniv : Best Place to Meet Universities | Meet The Representatives";
-		$data['description'] = "Best Place to Meet Universities | University Connect | Education Fairs | Spot Admission | University Visits | Universities | Courses | Test Preparation";
-		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Prepration";
+		$data['title'] = "Meet top Abroad universities for spot admission & scholarships : MeetUniv";
+		$data['description'] = "Meet top Abroad universities at our university events in India.Search Meetuniv.com for Abroad Colleges,University,course details,admissions,scholarships,visa at Upcoming 2014 Abroad university Events & education fairs in india.";
+		$data['keywords'] = "Meet UK Universities,Abroad University events in india,Spot Admission & scholarships,Meet top UK Universities,indian scholarships for studying abroad, Abroad Education Fairs in india,2014 UK University Fair,List of Scholarships for International Students,Top study abroad scholarships";
 		
 		$data['connect']=$this->connectmodel->getAllConnects(4,0);
 		$data['featuredCollges'] = $this->collegemodel->getFeaturedColleges();
+		$this->db_forum = $this->ci->load->database('alternate', True);
+		$data['latestArticles'] = $this->collegemodel->getLatestArticle();
+		//print_r($this->db_forum->select("*")->from('art_articles')->limit('1')->get()->result());
+		$this->db = $this->ci->load->database('default', True);
 		$this->layout->view('home',$data);
 	}
 	function register()
@@ -109,9 +113,9 @@ class Auth extends CI_Controller
 				} */
 			
 			$data['use_username'] = $use_username;
-			$data['title'] = "Join MeetUniv.com to know more about universities of your choice, courses, and test preparation";
-			$data['description'] = "Register - to know more about universities of your choice, courses, and test preparation. Shortlist the ones which offer maximum scholarships  of U.K. at Meetuniv.Com. ";
-			$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+			$data['title'] = "Join MeetUniv.com to know University events in india, Spot Admission & scholarships, & more";
+			$data['description'] = "Meet top Abroad Universities to know more about Abroad University events & Abroad Education Fairs in india,  Shortlist the ones which offer Spot Admission & scholarships. ";
+			$data['keywords'] = "Study Overseas,Meet UK Universities,2014 UK University Fair,Spot Admission & scholarships, IELTS,,GMAT,Abroad University events in india,Top study abroad scholarships,Meet top UK Universities,indian scholarships for studying abroad,Video Lectures, Articles,Education Fairs in india,";
 			$this->layout->view('auth/registerNew',$data);
 		}
 	}
@@ -120,9 +124,9 @@ class Auth extends CI_Controller
 		if (!$this->tank_auth->is_logged_in()) {									
 			redirect('/auth/login');
 		}
-		$data['title'] = "MeetUniv : Best Place to Meet Universities | Meet The Representatives";
-		$data['description'] = "Best Place to Meet Universities | University Connect | Education Fairs | Spot Admission | University Visits | Universities | Courses | Test Preparation";
-		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Prepration";
+		$data['title'] = "Meet top Abroad universities for spot admission & scholarships : MeetUniv";
+		$data['description'] = "Meet top Abroad universities at our university events in India.Search Meetuniv.com for Abroad Colleges,University,course details,admissions,scholarships,visa at Upcoming 2014 Abroad university Events & education fairs in india.";
+		$data['keywords'] = "Meet UK Universities,Abroad University events in india,Spot Admission & scholarships,Meet top UK Universities,indian scholarships for studying abroad, Abroad Education Fairs in india,2014 UK University Fair,List of Scholarships for International Students,Top study abroad scholarships";
 		
 		$data["username"]=$this->tank_auth->get_user_id();
 		$data["id"]=$this->tank_auth->get_user_id();
@@ -137,9 +141,9 @@ class Auth extends CI_Controller
 	 */
 	function login()
 	{
-		$data['title'] = "Login to connect for the information of top colleges and universities of U.K. at Meetuniv.Com.";
-		$data['description'] = "Login - Want to shortlist best universities in U.K. offering scholarships & courses of your choice. Get connected for the information of top colleges and universities of U.K. at Meetuniv.Com";
-		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+		$data['title'] = "Login to Meet top UK Universities  & university events in india.";
+		$data['description'] = "Want to Meet top UK Universities offering Spot Admission & scholarships with courses of your choice. Get connected for 2014 UK University Fair & Education Fairs in india";
+		$data['keywords'] = "Study Abroad, Meet UK Universities,IELTS,GMAT,University events in india,Spot Admission & scholarships,Meet top UK Universities,indian scholarships for studying abroad,Video Lectures, Articles,Education Fairs in india,2014 UK University Fair,Top study abroad scholarships";
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('home');
 

@@ -487,7 +487,7 @@
 								<p>Don't know which stream to choose?<br>
 									Confused Career choices?
 								</p>
-								<p><a href="<?php echo base_url('contact-us')?>?type=4">I am Gifted &rarr;</a></p>
+								<p><a href="<?php echo base_url('gifted')?>">I am Gifted &rarr;</a></p>
 							</div>
 							</div>
 						</div>
@@ -521,12 +521,20 @@
 				<div class="span4">
 					<h4>Spotlight</h4>
 					<ul>
-						<p><a href="#"> Myths about College Scholarships</a></p>
+						<?php foreach($latestArticles as $article){ 
+						$articleTitle = str_replace(".","",$article->title);
+						$articlerows = str_replace(" ","-",$articleTitle);
+						$art = rtrim($articlerows, "-"); 
+						?>
+						<p><a href="<?php echo base_url();?>learn/blog/read-<?php echo $art; ?>_<?php echo $article->id;?>.html"><?php echo $articleTitle; 
+						?></a></p>
+						<?php } ?>
+						<!--<p><a href="#"> Myths about College Scholarships</a></p>
 						<p><a href="#"> Key Steps in the Law Admission Process</a></p>
 						<p><a href="#"> List of Rolling Admissions Schools</a></p>
 						<p><a href="#"> The Basics of Financial Aid </a></p>
 						<p><a href="#">Information for Chinese Students</a></p>
-						<p><a href="#"> Information for Indian Students</a></p>
+						<p><a href="#"> Information for Indian Students</a></p>-->
 					</ul>
 				</div>
 			</div>

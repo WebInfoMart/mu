@@ -20,9 +20,9 @@ class Static_controller extends CI_Controller
 	}
 	function about_us()
 	{
-		$data['title'] = "MeetUniv.Com is your medium to research, short list & connect with universities worldwide, With many education fairs, university visits, university events";
-		$data['description'] = "No more random listing of universities. With many education fairs, university visits, university events, now meet the university of your choice directly on MeetUniv.Com. MeetUniv.Com lets you research, shortlist & apply to the university of your choice.";
-		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+		$data['title'] = "MeetUniv.Com provides Spot Admission, scholarships,Abroad University events & Abroad Education Fairs in india, connect with universities worldwide";
+		$data['description'] = "With Upcoming 2014 Abroad university Events & Abroad education fairs in india, we listed top 1000 universities & colleges with course details,admissions process ,scholarships,visa .Meet the university directly on MeetUniv.Com. We lets you research, shortlist & apply to the university of your choice.";
+		$data['keywords'] = "Spot Admission & scholarships, indian scholarships for studying abroad,study abroad,Study in Uk,Abroad Education Fairs in india,UK university events ,2014 UK University Fair,Meet UK Universities events, Abroad University events in india,uk university education fair, Meet top UK Universities,Top study abroad scholarships";
 		$this->layout->view('static/about_us',$data);
 	}
 	function contact_us()

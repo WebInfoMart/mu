@@ -16,9 +16,9 @@ class Connect extends CI_Controller
 	}
 	function index() {
 		
-		$data['title'] = "MeetUniv connects you with Top universities & colleges worldwide .Multiple modes of connection available, whether in-person | On-Telephone | Virtual.";
-		$data['description'] = "Looking for information on Top Universities in U.K, At MeetUniv.Com - we connect you with Top universities & colleges worldwide - directly! Multiple modes of connection available, whether in-person | On-Telephone | Virtual";
-		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
+		$data['title'] = "2014 Abroad University Events & Abroad Education fairs in India : Meetuniv.com";
+		$data['description'] = "MeetUniv connects you Upcoming 2014 Abroad university Events & Abroad education fairs in india of top Uk Colleges, Abroad University,course details,admissions,Abroad scholarships,visa & more.";
+		$data['keywords'] = "UK university events ,Meet UK Universities events, Abroad University events in india,Spot Admission & scholarships, indian scholarships for studying abroad,Abroad Education Fairs in india,uk university education fair, Meet top Abroad Universities,2014 UK University Fair,study abroad,List of Scholarships for International Students,Study in Uk";
 		$this->layout->view('connect/connect',$data);
     }
 	function CurrentDate()

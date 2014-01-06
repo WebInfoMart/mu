@@ -53,5 +53,9 @@ $route['contact-us'] = "static_controller/contact_us";
 $route['terms'] = "static_controller/terms";
 $route['gifted'] = "quiz";
 
+$route['gifted/report']='quiz/report';
+$route['gifted/api']='quiz/api';
+$route['gifted/reportpdf']='quiz/reportpdf';
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

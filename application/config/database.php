@@ -44,6 +44,25 @@
 | The $active_record variables lets you determine whether or not to load
 | the active record class
 */
+$active_group = 'alternate';
+$active_record = TRUE;
+
+$db['alternate']['hostname'] = 'localhost';
+$db['alternate']['username'] = 'root';
+$db['alternate']['password'] = '';
+$db['alternate']['database'] = 'mu_video';
+$db['alternate']['dbdriver'] = 'mysql';
+$db['alternate']['dbprefix'] = '';
+$db['alternate']['pconnect'] = TRUE;
+$db['alternate']['db_debug'] = TRUE;
+$db['alternate']['cache_on'] = FALSE;
+$db['alternate']['cachedir'] = '';
+$db['alternate']['char_set'] = 'utf8';
+$db['alternate']['dbcollat'] = 'utf8_general_ci';
+$db['alternate']['swap_pre'] = '';
+$db['alternate']['autoinit'] = TRUE;
+$db['alternate']['stricton'] = FALSE;
+
 
 $active_group = 'default';
 $active_record = TRUE;
@@ -63,6 +82,8 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+
 
 
 /* End of file database.php */
