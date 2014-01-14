@@ -28,15 +28,15 @@
 				  <?php }?>
                  
               </div>
-              <p><span><?php echo $universityData[0]['univName'];?></span>
+              <p><span><?php //echo $universityData[0]['univName'];?></span>
 			  <br />
 				<?php if($universityData[0]['overview']!='')
 					{
-					echo  substr($universityData[0]['overview'],0,350)."...";
+					//echo  substr($universityData[0]['overview'],0,350)."...";
 					}
 					else
 					{
-					echo "We are gathering information.";
+					//echo "We are gathering information.";
 					}
 				?></p>
             </div>
@@ -180,7 +180,8 @@
 									 
 									 ?>
 									 <tr class="course-<?php echo $counter;?>" <?php echo ($counter>10)?'style="display:none;"':'';?>>
-										<td><?php echo $course->name;?></td>
+									 <?php $courseName = str_replace(",","",$course->name);?>
+										<td><a href="<?php echo base_url();?>course/<?php echo str_replace(" ","-",$universityData[0]['univName'])."/".$universityData[0]['id']."/".str_replace(" ","-",$courseName)."/".$course->courseId;?>"><?php echo $course->name;?></a></td>
 										<td></td>
                                           <td></td>
 									 </tr>

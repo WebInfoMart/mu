@@ -45,6 +45,7 @@ $route['(register|login|home|profile|profile_match|profile_externalInfo)']='auth
 $route['college/collegePagination/(:num)'] = "college/collegePagination/$1";
 $route['college/filterByLocation/(:num)'] = "college/filterByLocation/$1";
 $route['college/(:any)/(:any)'] = "college/individualCollege/$1/$2";
+$route['course/(:any)/(:any)/(:any)/(:any)'] = "course/index/$1/$2/$3/$4";
 $route['about-us'] = "about_us";
 $route['contact-us'] = "contact_us";
 $route['privacy-policy'] = "static_controller/privacy_policy";

@@ -40,8 +40,8 @@
             <a href="<?php echo base_url()?>" id="logo"><img src="<?php echo base_url();?>assets/img/new_logo.png" alt="Meet Univ"></a>
             <nav role="navigation" id="top_menu">
                <ul>
-                  <li><a href="<?php echo base_url('college');?>">Colleges</a></li>
-                  <li><a href="<?php echo base_url('connect');?>">Connect</a></li>
+                  <li <?php if($active=='college'){ ?>class="active"<?php } ?>><a href="<?php echo base_url('college');?>">Colleges</a></li>
+                  <li <?php if($active=='connect'){ ?>class="active"<?php } ?>><a href="<?php echo base_url('connect');?>">Connect</a></li>
                   <!--<li><a href="#">Courses</a></li>
                   <li><a href="#">Councel</a></li>-->
                   <li><a href="<?php echo base_url('learn/edurator');?>">Learn</a></li>

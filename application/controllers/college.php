@@ -11,6 +11,7 @@ class College extends CI_Controller
 	}
 public function index() {
 		
+		$data['active'] = 'college';
         $data['title'] = "Shortlist, compare & Meet UK Universities for Abroad scholarship & spot admission at our education fair & Abroad university visit in india";
 		$data['description'] = "MeetUniv.Com lists over 1000 Abroad universities & colleges.Meet top Abroad universities and colleges in Europe to study abroad?We provide info on Top University in UK.You can find list of UK - London Colleges and Universities.";
 		$data['keywords'] = "UK university list,Meet UK Universities, university of uk,Abroad University events in india,Spot Admission & scholarships, university in uk, indian scholarships for studying abroad,Abroad Education Fairs in india,Meet top UK Universities,Top study abroad scholarships,2014 UK University Fair,study overseas,study abroad";
@@ -30,6 +31,7 @@ public function index() {
     }
 	public function individualCollege($college,$collegeId)
 	{
+	 $data['active'] = 'college';
 	 $data['title'] = "$college - Universities in Uk - Meet univ.com";
 	 $data['description'] = "$college - In Newcastle upon Tyne, is an expanding multicultural learning community, with excellent links with further and higher education. - Meet univ.com";
 	 $keywords = array("MeetUniv, Meet UK Universities, Universities & colleges in UK, Scholarships, Executive MBA in UK, Universities events, Spot Admission, Universities events in India","MeetUniv, Study in UK, Study in UK universities, Best universities in UK , Engineering colleges in UK, Education Fairs, University Visits, IELTS","List of Top 10 colleges & universities, Study MBA in UK, Higher education in UK, Universities events in India, Education Fairs, GMAT","IELTS-GMAT-TOEFL, International students, Colleges in UK, Postgraduate study in abroad, University Courses, Test Preparation");
@@ -117,6 +119,57 @@ public function index() {
         $data["results"] = $this->collegemodel-> getUniversityByCity($config["per_page"], $page, $cityIdArray);
 		$data["links"] = $this->pagination->create_links();
 		$data["countResults"] = $this->collegemodel-> record_count($cityIdArray);
+        $content = $this->load->view("college/collegePagination", $data);
+		echo $content;
+	}
+	
+	public function countryJsonList()
+	{
+		$array=array();
+		$this->db->select('countryName');
+		//$this->db->where('countryId','13');
+		$this->db->from('country');
+		$query = $this->db->get();
+		$countryArray = $query->result_array();
+		foreach($countryArray as $country)
+		{
+			$array[] = $country['countryName'];
+		}
+		header('Content-Type: application/json');
+		echo json_encode($array);
+	}
+	public function filterLocationByCountry($page='')
+	{
+		$country = $this->input->post('countryName');
+		//print_r($country);exit;
+		$FiltercountryArray = explode(',',$country);
+		$countryIdArray = array();
+		if(strlen($country))
+		{
+			foreach($FiltercountryArray as $index=>$key)
+			{
+				$this->db->select('id');
+				$this->db->where('countryName',$key);
+				$this->db->from('country');
+				$res = $this->db->get();
+				$tempraryCountry = $res->row();
+				if($tempraryCountry)
+				{
+				$countryIdArray[] = $tempraryCountry->id;
+				}
+			}
+		}
+		$config = array();
+        $config["base_url"] = base_url() . "college/filterLocationByCountry";
+        $config["total_rows"] = $this->collegemodel-> record_count_country($countryIdArray);
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 3;
+		$config['full_tag_open'] = '<div id="pagination">';
+		$config['full_tag_close'] = '</div>';
+        $this->pagination->initialize($config);
+        $data["results"] = $this->collegemodel-> getUniversityByCountry($config["per_page"], $page, $countryIdArray);
+		$data["links"] = $this->pagination->create_links();
+		$data["countResults"] = $this->collegemodel-> record_count_country($countryIdArray);
         $content = $this->load->view("college/collegePagination", $data);
 		echo $content;
 	}

@@ -26,6 +26,7 @@ class Auth extends CI_Controller
 
 	function index()
 	{
+		$data['active'] = '';
 		$data['title'] = "Meet top Abroad universities for spot admission & scholarships : MeetUniv";
 		$data['description'] = "Meet top Abroad universities at our university events in India.Search Meetuniv.com for Abroad Colleges,University,course details,admissions,scholarships,visa at Upcoming 2014 Abroad university Events & education fairs in india.";
 		$data['keywords'] = "Meet UK Universities,Abroad University events in india,Spot Admission & scholarships,Meet top UK Universities,indian scholarships for studying abroad, Abroad Education Fairs in india,2014 UK University Fair,List of Scholarships for International Students,Top study abroad scholarships";
@@ -112,6 +113,7 @@ class Auth extends CI_Controller
 					}
 				} */
 			
+			$data['active'] = '';
 			$data['use_username'] = $use_username;
 			$data['title'] = "Join MeetUniv.com to know University events in india, Spot Admission & scholarships, & more";
 			$data['description'] = "Meet top Abroad Universities to know more about Abroad University events & Abroad Education Fairs in india,  Shortlist the ones which offer Spot Admission & scholarships. ";
@@ -141,6 +143,7 @@ class Auth extends CI_Controller
 	 */
 	function login()
 	{
+		$data['active'] = '';
 		$data['title'] = "Login to Meet top UK Universities  & university events in india.";
 		$data['description'] = "Want to Meet top UK Universities offering Spot Admission & scholarships with courses of your choice. Get connected for 2014 UK University Fair & Education Fairs in india";
 		$data['keywords'] = "Study Abroad, Meet UK Universities,IELTS,GMAT,University events in india,Spot Admission & scholarships,Meet top UK Universities,indian scholarships for studying abroad,Video Lectures, Articles,Education Fairs in india,2014 UK University Fair,Top study abroad scholarships";

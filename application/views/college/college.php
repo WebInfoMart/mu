@@ -21,8 +21,20 @@
                <div class="row" id="collage_listing_page">
                   <section class="span3">
                      <h5 class="no_margin margin_b_10">Filter Your Search:</h5>
+					 <div class="tab_spine clearfix">
+                        <h4>Country</h4>
+                        <ul class="unstyled">
+                           <li id="addingContentCountry">
+							  <input class="span2" id="locationFilterByCountry" type="text" data-provide="typeahead" data-items="4" placeholder="Country Name">
+							  <!--<span class="add-on" style="cursor:pointer;"><i class="icon-plus blue" style="font-size: 20px;"></i></span>-->
+							  <button class="btn btn-primary btn-small" onclick="addLocationByCountry()" style="vertical-align: super;">Filter</button>
+							  <input type="hidden" id="filtrationCountries" value=""/>
+						   </li>
+                           <li id="allCountryLocation">All Countries</li>
+                        </ul>
+                     </div>
                      <div class="tab_spine clearfix">
-                        <h4>Location</h4>
+                        <h4>City</h4>
                         <ul class="unstyled">
                            <li id="addingContent">
 							  <input class="span2" id="locationFilter" type="text" data-provide="typeahead" data-items="4" placeholder="City Name">
@@ -186,6 +198,14 @@
 							}
 						});
 						
+						$('#locationFilterByCountry').typeahead({
+							source: function(query, process){
+								 return $.get('<?php echo base_url()?>/college/countryJsonList',function(data){
+									return process(data)
+								}); 
+							}
+						});
+						
 						/*end*/
 						$('.dropdown-toggle').dropdown();
 						$("#pagination a").click(function(){
@@ -277,4 +297,77 @@
 					  }) 
 					  //if()
 					}
+					
+					/*added by raghvendra*/
+					
+					function addLocationByCountry()
+					{
+						var location = $("#locationFilterByCountry").val();
+						if(location!='')
+						{
+						  var filtrationCountries = $("#filtrationCountries").val();
+							//alert(filtrationCountries);
+						  if(filtrationCountries.indexOf(location)<=-1)
+						  {
+							$("#addingContentCountry").after("<li><i class='icon-remove-sign icon-class-red' id='"+location.substring(0,4)+"' onclick='removeCountry(\""+location+"\",this.id)' style='cursor:pointer'></i>"+location+"</li>");
+							
+							if(filtrationCountries=='')
+							{
+								$("#allLocation").hide();
+								$("#filtrationCountries").val(location);
+							}
+							else
+								$("#filtrationCountries").val(filtrationCountries+","+location);
+							
+							//alert($("#filtrationCountries").val());
+							url="<?php echo base_url();?>college/filterLocationByCountry";
+							data = {countryName:$("#filtrationCountries").val()};
+							//alert(data);return;
+							 $.ajax({
+								type	:	'POST',
+								data	:	data,
+								url		:	url,
+								beforeSend: function(){
+									$("#collegeContent").css('opicity','0.4');
+								},
+								success: function(data){
+									//alert(data);
+									$("#collegeContent").html(data);
+									$("#collegeContent").css('opicity','1');
+								},
+								
+							}) 
+						  }
+						  $("#locationFilter").val('');
+						}
+					}
+					function removeCountry(countryName,id)
+					{
+					  var country = countryName;
+					  //alert(country);
+					  var filtrationCountries = $("#filtrationCountries").val();
+					  filtrationCountries = filtrationCountries.replace(country+",","");
+					  filtrationCountries = filtrationCountries.replace(","+country,"");
+					  filtrationCountries = filtrationCountries.replace(country,"");
+					  $("#filtrationCountries").val(filtrationCountries);
+					  $("#"+id).parent().remove();
+					  url="<?php echo base_url();?>college/filterLocationByCountry";
+					  data = {cityName:$("#filtrationCountries").val()};
+					   $.ajax({
+					  	type	:	'POST',
+					  	data	:	data,
+					  	url		:	url,
+					  	beforeSend: function(){
+					  		$("#collegeContent").css('opicity','0.4');
+					  	},
+					  	success: function(data){
+					  		//alert(data);
+					  		$("#collegeContent").html(data);
+					  		$("#collegeContent").css('opicity','1');
+					  	},
+					  	
+					  }) 
+					  //if()
+					}
+					
 					</script>
