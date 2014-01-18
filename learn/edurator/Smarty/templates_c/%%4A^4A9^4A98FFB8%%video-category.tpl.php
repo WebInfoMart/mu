@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2013-10-04 04:30:15
+<?php /* Smarty version 2.6.20, created on 2014-01-18 07:48:36
          compiled from video-category.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'header.tpl', 'smarty_include_vars' => array('p' => 'general','rss' => "video-category")));

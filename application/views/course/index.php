@@ -2,8 +2,14 @@
       <div class="row container">
       <div class="row">
         <div class="span12">
-          <img src="<?php echo base_url();?>assets/images/course_images/howard-university.jpg" class="left" />
-          <p class="left tenuni">10 more universities</p>
+          <ul class="breadcrumb univ_breadcrumb">
+                  <li><a href="<?php echo base_url()?>">Home</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
+                  <li><a href="<?php echo base_url('college')?>">College Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
+				  <li><a href="<?php echo base_url('college')?>/<?php echo $universityName; ?>/<?php echo base64_encode($universityId); ?>"><?php echo str_replace("-"," ",$universityName); ?></a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
+                  <li class="active"><?php echo str_replace("-"," ",$courseName);?></li>
+               </ul>
+          <!--<img src="<?php echo base_url();?>assets/images/course_images/howard-university.jpg" class="left" />
+          <p class="left tenuni">10 more universities</p>-->
         </div>
       </div>
         <div class="row">
@@ -21,15 +27,28 @@
 				</div>
             
               <div class="span4">
-                <img src="<?php echo base_url();?>assets/images/course_images/version-7.jpg" class="good-img">
+			  <!--
+				<span class="good-img"><?php echo $nssData[0]['value']?>%<span>
                 <h4 class="good">Good</h4>
                 <p class="good"> Based on 14000 votes</p>
-                <input type="button" class=" shortlist btn btn-default " value="+ shortlist" >
+               
+				-->
+				
+				<div class="row">
+					<div class="span3">
+						<h4 class="good">Good</h4>
+						<p class="good"> Based on 14000 votes</p>
+					</div>
+					<div class="span1">
+						<h3 class="greenbg"><?php echo $nssData[0]['value']?>%</h3>
+					</div>
+				</div>
+				<input type="button" class=" shortlist btn btn-default " value="+ shortlist" >
               </div>
             </div>
           </div>
         </div>  
-        <div class="row">
+        <!--<div class="row">
           <div class=" individual-page-border span12">
             <div class="row">
               <div class="span9">
@@ -48,7 +67,7 @@
             </div>
           </div>
          
-        </div>
+        </div>-->
          <div class="row">
          <!-- accordian starts -->
           <!--<div class="container-fluid" style="padding-right:0">
@@ -120,6 +139,7 @@ qui officia deserunt mollit anim id est laborum.
           
 		  <!---Accreditation--->
           </div>
+		  <hr/>
 		  <div class="row">
             <div class="gr-bg span12">
               <p class="">Employment & Accreditation</p>
@@ -152,11 +172,12 @@ qui officia deserunt mollit anim id est laborum.
 	  <div class="row">
             <div class=" seminar  span12">
               <div class="row">
-                <div class="span10" style="background:none repeat scroll 0% 0% #cccccc; width:145px;">
-                  <h2> £<?php echo $salaryData['7']['video'];?> </h2>
-                </div>
+                
 				<div class="span10">
                   <h2> Average salary six months after the course </h2>
+                </div>
+				<div class="span10" style="background:none repeat scroll 0% 0% #cccccc; width:145px;float:right;">
+                  <h2> £<?php echo $salaryData['7']['video'];?> </h2>
                 </div>
                 <div class="span9" style="font-family:Arial,Helvetica,sans-serif; font-size:15px;">
 				Typical salary range: £<?php echo $salaryData['7']['video'];?> - £<?php echo $salaryData['6']['video'];?>
@@ -184,11 +205,11 @@ qui officia deserunt mollit anim id est laborum.
                 </div>
             </div>
           </div>
-		  <hr/>
+		  
       </div>
 	  
 	  <!---Go on to work and/or study start here--->
-	  
+	  <hr/>
 	  <div class="row">
             <div class=" seminar  span12">
               <div class="row">
@@ -196,7 +217,7 @@ qui officia deserunt mollit anim id est laborum.
                   <h2> Go on to work and/or study </h2>
                 </div>
                 <div class="span2">
-                  <img src="<?php echo base_url();?>assets/images/course_images/23.jpg" class="num" />
+                  <!--<img src="<?php echo base_url();?>assets/images/course_images/23.jpg" class="num" />-->
 				</div>
               </div>
             </div>
@@ -208,7 +229,7 @@ qui officia deserunt mollit anim id est laborum.
                   <!--<img src="<?php echo base_url();?>assets/images/course_images/time-period.jpg" />-->
 				  <!--<div id="chart_div" style="width:400; height:300"></div>-->
 				  <div class="chartBox" id="chart_pie_9adbc379657d44dd94216f4878fd64ce"></div>
-                  <p class="chart"> Chart Explained</p>
+                  <!--<p class="chart"> Chart Explained</p>-->
                 </div>
             </div>
           </div>
@@ -255,7 +276,7 @@ qui officia deserunt mollit anim id est laborum.
             </script>
 	  
 	  <!----Employment six months after the course Start Here--->
-	  
+	  <hr/>
 	  <div class="row">
             <div class=" seminar  span12">
               <div class="row">
@@ -263,7 +284,7 @@ qui officia deserunt mollit anim id est laborum.
                   <h2> Employment six months after the course </h2>
                 </div>
                 <div class="span2">
-                  <img src="<?php echo base_url();?>assets/images/course_images/23.jpg" class="num" />
+                  
 				</div>
               </div>
             </div>
@@ -275,12 +296,46 @@ qui officia deserunt mollit anim id est laborum.
                   <!--<img src="<?php echo base_url();?>assets/images/course_images/time-period.jpg" />-->
 				  <!--<div id="chart_div" style="width:400; height:300"></div>-->
 				   <div class="chartBox" id="chart_pie_da8f7b75c43a42099472de0daea79906"></div>
-                  <p class="chart"> Chart Explained</p>
+                  <!--<p class="chart"> Chart Explained</p>-->
                 </div>
             </div>
           </div>
       </div>
-	  
+	  <script type="text/javascript">
+                google.load("visualization", "1", { packages: ["corechart"] });
+                google.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+
+                    var dataArray = [['Key', 'Value']];
+
+                        dataArray.push(['In a professional or managerial job', <?php echo $jobData[0]['value']?>]);
+                        dataArray.push(['Not in a professional or managerial job', <?php echo $jobData[1]['value']?>]);
+                        dataArray.push(['In an unknown job type', <?php echo $jobData[2]['value']?>]);
+
+            var data = google.visualization.arrayToDataTable(dataArray);
+
+            var options = {
+                chartArea: { top: 8, width: "100%", height: 214 },
+                tooltip: { text: 'value'},
+                pieSliceText: 'value',
+                colors: [],
+                fontSize: 12,
+                legend: { alignment: "center" },
+	            width: 610,
+                height: 230
+            };
+
+                options.colors.push('#006db4');
+                options.colors.push('#dd322d');
+                options.colors.push('#f27820');
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart_pie_da8f7b75c43a42099472de0daea79906'));
+                    chart.draw(data, options);
+                }
+
+            </script>
+	  <hr/>
 	  <div class="row">
             <div class=" seminar  span12">
               <div class="row">
@@ -381,43 +436,10 @@ qui officia deserunt mollit anim id est laborum.
 			</div>
           </div>
       </div>
-	  <script type="text/javascript">
-                google.load("visualization", "1", { packages: ["corechart"] });
-                google.setOnLoadCallback(drawChart);
-
-                function drawChart() {
-
-                    var dataArray = [['Key', 'Value']];
-
-                        dataArray.push(['In a professional or managerial job', <?php echo $jobData[0]['value']?>]);
-                        dataArray.push(['Not in a professional or managerial job', <?php echo $jobData[1]['value']?>]);
-                        dataArray.push(['In an unknown job type', <?php echo $jobData[2]['value']?>]);
-
-            var data = google.visualization.arrayToDataTable(dataArray);
-
-            var options = {
-                chartArea: { top: 8, width: "100%", height: 214 },
-                tooltip: { text: 'value'},
-                pieSliceText: 'value',
-                colors: [],
-                fontSize: 12,
-                legend: { alignment: "center" },
-	            width: 610,
-                height: 230
-            };
-
-                options.colors.push('#006db4');
-                options.colors.push('#dd322d');
-                options.colors.push('#f27820');
-
-            var chart = new google.visualization.PieChart(document.getElementById('chart_pie_da8f7b75c43a42099472de0daea79906'));
-                    chart.draw(data, options);
-                }
-
-            </script>
+	  
 		
 		<!---Entry Information start here--->
-		<hr/>
+		
 		<div class="row">
          </div>
 		  <div class="row">
@@ -432,7 +454,7 @@ qui officia deserunt mollit anim id est laborum.
                   <h2> Entry qualifications </h2>
                 </div>
                 <div class="span2">
-                  <img src="<?php echo base_url();?>assets/images/course_images/23.jpg" class="num" />
+                  
 				</div>
               </div>
             </div>
@@ -442,7 +464,7 @@ qui officia deserunt mollit anim id est laborum.
               <div class="row">
                 <div class="span9">
                   <div class="chartBox" id="chart_pie_b73b329502654f00a25741a3772ed3b5"></div>
-                  <p class="chart"> Chart Explained</p>
+                  <!--<p class="chart"> Chart Explained</p>-->
                 </div>
             </div>
           </div>
@@ -491,6 +513,70 @@ qui officia deserunt mollit anim id est laborum.
 
             </script>
 	  
+	  <!---UCAS Tariff scores--->
+	  <hr/>
+	  <div class="row">
+            <div class=" seminar  span12">
+              <div class="row">
+                <div class="span10">
+                  <h2> UCAS Tariff scores </h2>
+                </div>
+                <div class="span2">
+                  
+				</div>
+              </div>
+            </div>
+          </div>
+	  <div class="row">
+            <div class="span12">
+              <div class="row">
+                <div class="span9">
+                  <div class="chartBox" id="chart_bar_31eefe7b2b554e039a1846dc7feee613"></div>
+                </div>
+            </div>
+          </div>
+      </div>
+	  
+	  <script type="text/javascript">
+                 google.load("visualization", "1", { packages: ["corechart"] });
+                 google.setOnLoadCallback(drawBarChart);
+
+                 function drawBarChart() {
+
+                     var dataArray = [['Key', 'Percentage']];
+
+                         dataArray.push(['\u003c 120', <?php echo $tariffData[0]['value']?>]);
+                         dataArray.push(['120 - 159', <?php echo $tariffData[1]['value']?>]);
+                         dataArray.push(['160 - 199', <?php echo $tariffData[2]['value']?>]);
+                         dataArray.push(['200 - 239', <?php echo $tariffData[3]['value']?>]);
+                         dataArray.push(['240 - 279', <?php echo $tariffData[4]['value']?>]);
+                         dataArray.push(['280 - 319', <?php echo $tariffData[5]['value']?>]);
+                         dataArray.push(['320 - 359', <?php echo $tariffData[6]['value']?>]);
+                         dataArray.push(['360 - 399', <?php echo $tariffData[7]['value']?>]);
+                         dataArray.push(['400 - 439', <?php echo $tariffData[8]['value']?>]);
+                         dataArray.push(['440 - 479', <?php echo $tariffData[9]['value']?>]);
+                         dataArray.push(['480 - 519', <?php echo $tariffData[10]['value']?>]);
+                         dataArray.push(['520 - 559', <?php echo $tariffData[11]['value']?>]);
+                         dataArray.push(['560 - 599', <?php echo $tariffData[12]['value']?>]);
+                         dataArray.push(['600+', <?php echo $tariffData[13]['value']?>]);
+
+                    var data = google.visualization.arrayToDataTable(dataArray);
+
+                    var options = {
+	                    chartArea: {left:100,height:"280" },
+	                    fontSize: 12,
+	                    colors: ['#006db4'],
+	                    legend: 'none',
+	                    hAxis: { viewWindowMode: 'explicit', viewWindow: {max:108, min:0}, minValue: 0, maxValue: 100 },
+	                    width: 610,
+	                    height: 353
+                    };
+
+                     var chart = new google.visualization.BarChart(document.getElementById('chart_bar_31eefe7b2b554e039a1846dc7feee613'));
+                     chart.draw(data, options);
+                 }
+
+             </script>
 			
 	  <!----Stages Start Here--->
 	  
@@ -519,7 +605,7 @@ qui officia deserunt mollit anim id est laborum.
                   <!--<img src="<?php echo base_url();?>assets/images/course_images/time-period.jpg" />-->
 				  <!--<div id="chart_div" style="width:400; height:300"></div>-->
 				  <div class="chartBox" id="chart_column_313db0ad64e24cb79ef40dc0f7c560b8"></div>
-                  <p class="chart"> Chart Explained</p>
+                  <!--<p class="chart"> Chart Explained</p>-->
                 </div>
 			</div>
           </div>
@@ -560,7 +646,7 @@ qui officia deserunt mollit anim id est laborum.
 </script>
 
 	   <!----Assessment by coursework Start Here--->
-	  
+	  <hr/>
 	  <div class="row">
             <div class=" seminar  span12">
               <div class="row">
@@ -580,7 +666,7 @@ qui officia deserunt mollit anim id est laborum.
                   <!--<img src="<?php echo base_url();?>assets/images/course_images/time-period.jpg" />-->
 				  <!--<div id="chart_div" style="width:400; height:300"></div>-->
 				  <div class="chartBox" id="chart_column_58f8607f0bd94c92b76144a4a8c215e1"></div>
-                  <p class="chart"> Chart Explained</p>
+                  <!--<p class="chart"> Chart Explained</p>-->
                 </div>
             </div>
           </div>
@@ -601,7 +687,7 @@ qui officia deserunt mollit anim id est laborum.
         var data = google.visualization.arrayToDataTable(dataArray);
 
         var options = {
-            chartArea: { left: 28, height: "80%", width: "65%" },            colors: [],            fontSize: 12,	        vAxis: {minValue:0, maxValue:100},            width: 610,            height: 180        };            options.colors.push('#006db4');            options.colors.push('#dd322d');            options.colors.push('#f27820');        var chart = new google.visualization.ColumnChart(document.getElementById('chart_column_58f8607f0bd94c92b76144a4a8c215e1'));        chart.draw(data, options);    }</script></li><li>                            <script type="text/javascript">                google.load("visualization", "1", { packages: ["corechart"] });                google.setOnLoadCallback(drawChart);                function drawChart() {                    var dataArray = [['Key', 'Value']];                        dataArray.push(['1st class degree', 20]);                        dataArray.push(['Upper 2nd class degree', 50]);                        dataArray.push(['Lower 2nd class degree', 30]);                        dataArray.push(['Other honours / pass without honours', 0]);                        dataArray.push(['Ordinary degree', 0]);                        dataArray.push(['Degree that is not subject to classification', 0]);            var data = google.visualization.arrayToDataTable(dataArray);            var options = {                chartArea: { top: 8, width: "100%", height: 214 },                tooltip: { text: 'value'},                pieSliceText: 'value',                colors: [],                fontSize: 12,                legend: { alignment: "center" },	            width: 610,                height: 230            };                options.colors.push('#006db4');                options.colors.push('#dd322d');
+            chartArea: { left: 28, height: "80%", width: "65%" },            colors: [],            fontSize: 12,	        vAxis: {minValue:0, maxValue:100},            width: 610,            height: 180        };            options.colors.push('#006db4');            options.colors.push('#dd322d');            options.colors.push('#f27820');        var chart = new google.visualization.ColumnChart(document.getElementById('chart_column_58f8607f0bd94c92b76144a4a8c215e1'));        chart.draw(data, options);    }</script>                            <script type="text/javascript">                google.load("visualization", "1", { packages: ["corechart"] });                google.setOnLoadCallback(drawChart);                function drawChart() {                    var dataArray = [['Key', 'Value']];                        dataArray.push(['1st class degree', 20]);                        dataArray.push(['Upper 2nd class degree', 50]);                        dataArray.push(['Lower 2nd class degree', 30]);                        dataArray.push(['Other honours / pass without honours', 0]);                        dataArray.push(['Ordinary degree', 0]);                        dataArray.push(['Degree that is not subject to classification', 0]);            var data = google.visualization.arrayToDataTable(dataArray);            var options = {                chartArea: { top: 8, width: "100%", height: 214 },                tooltip: { text: 'value'},                pieSliceText: 'value',                colors: [],                fontSize: 12,                legend: { alignment: "center" },	            width: 610,                height: 230            };                options.colors.push('#006db4');                options.colors.push('#dd322d');
                 options.colors.push('#f27820');
                 options.colors.push('#008808');
                 options.colors.push('#d23894');
@@ -614,7 +700,7 @@ qui officia deserunt mollit anim id est laborum.
             </script>
 			
 	  <!--Class of degree start here--->
-	  
+	  <hr/>
 	  <div class="row">
             <div class=" seminar  span12">
               <div class="row">
@@ -634,7 +720,7 @@ qui officia deserunt mollit anim id est laborum.
                   <!--<img src="<?php echo base_url();?>assets/images/course_images/time-period.jpg" />-->
 				  <!--<div id="chart_div" style="width:400; height:300"></div>-->
 				  <div class="chartBox" id="chart_pie_a157a444189046efa1ff408cd80b2200"></div>
-                  <p class="chart"> Chart Explained</p>
+                  <!--<p class="chart"> Chart Explained</p>-->
                 </div>
             </div>
           </div>
@@ -682,7 +768,7 @@ qui officia deserunt mollit anim id est laborum.
             </script>
 	  
 	  <!--Continuation start here--->
-	  
+	  <hr/>
 	  <div class="row">
             <div class=" seminar  span12">
               <div class="row">
@@ -702,7 +788,7 @@ qui officia deserunt mollit anim id est laborum.
                   <!--<img src="<?php echo base_url();?>assets/images/course_images/time-period.jpg" />-->
 				  <!--<div id="chart_div" style="width:400; height:300"></div>-->
 				  <div class="chartBox" id="chart_pie_546f1dae52b74c2bb00f9cbeb582b6e2"></div>
-                  <p class="chart"> Chart Explained</p>
+                  <!--<p class="chart"> Chart Explained</p>-->
                 </div>
             </div>
           </div>
@@ -747,7 +833,6 @@ qui officia deserunt mollit anim id est laborum.
 
             </script>
 	
-	<!--Stages end here-->
 	
 
     

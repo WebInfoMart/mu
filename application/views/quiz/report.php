@@ -18,7 +18,7 @@
 		<span class="pop-up-text">You look the first step,<br/>let us help with the most </span>
 		</div>
 		<div class="get"><h3>This is what you get</h3></div>
-		<ul class="gifted-popup-ul">
+		<ul class="gifted-popup-ul li p" style="text-align:center;">
 		  <li>
 			<img src="<?php echo base_url();?>assets/img/img1.jpg">
 			<p>Career Path Finder</p>
@@ -152,18 +152,18 @@
 				   <!--<div class="span2"><img src="<?php echo base_url();?>assets/images/arrow.jpg" class="pull-left" /></div>-->
 				   <div class="span6 pull-right">
 				   <div class="level">
-				   <h5><span style="float:left;">DOWNLOAD CAREER SUGGESTIONS</span><span style="float:right;font-weight: normal"> Favourites</span></h5>
+				   <h5><span style="float:left;">DOWNLOAD CAREER SUGGESTIONS</span><span style="float:right;font-weight: normal"> <!--Favourites--></span></h5>
 				   <div class="col1">
 					<div class="alpha">
 					<img src="<?php echo base_url();?>assets/img/download.jpg">
 					</div>
 					<div class="beta lock">
 						<ul>
-							<li>
-							<span>Free</span><span><a id = 'pdflink' href="<?php echo base_url()?>assets/fpdf.php?<?php echo $link; ?>" target="_blank"><img src=" <?php echo base_url();?>assets/img/free1.jpg" style="margin-left:50px;"></a></span>
+							<li style="margin-bottom:15px;">
+							<span>Free</span><span><a id = 'pdflink' href="<?php echo base_url()?>assets/fpdf.php?<?php echo $link; ?>" target="_blank"><img src=" <?php echo base_url();?>assets/img/free1.jpg" style="margin-left:61px;"></a></span>
 							</li>
 							<li>
-							<span>Amplified</span><span><a id="amplified" href="#"><img src="<?php echo base_url();?>assets/img/free2.jpg"></a></span>
+							<span>$Amplified</span><span><a id="amplified" href="#"><img src="<?php echo base_url();?>assets/img/free2.jpg"></a></span>
 							</li>
 
 							<!--<li>
@@ -325,7 +325,7 @@
 							
 							
 							<div class="level">
-								<h5><span style="float:left;">Analysis</span><span style="float:right;font-weight: normal"> Favourites</span></h5>
+								<h5><span style="float:left;">Analysis</span><span style="float:right;font-weight: normal"> <!--Favourites--></span></h5>
 								<?php //if(($score->upperLeft>=$score->lowerLeft)&&($score->upperLeft>=$score->lowerRight)&&($score->upperLeft>=$score->upperRight)){?>
 								<?php if($graph_value==1){?>
 									<div class="analysis_text">
@@ -376,9 +376,207 @@
 						 <!--<div class="span2"><img src="<?php echo base_url();?>assets/images/arrow.jpg" class="pull-left" /></div>-->
 						<div class="span6 pull-right">
 							<div class="level">
-								<h5><span style="float:left;">CARRER SUGGESTIONS</span><span style="float:right;font-weight: normal"> Favourites</span></h5>
+								<h5><span style="float:left;">CARRER SUGGESTIONS</span><span style="float:right;font-weight: normal"> <!--Favourites--></span></h5>
 								<ul class="carrer">
-									<li>Sales Management</li>
+								<?php if($graph_value==1){?>
+									<dl>
+										<dt>Engineering</dt>
+											<dd>Aircraft Technician</dd>
+											<dd>Chemical Engineer</dd>
+											<dd>CAD Draughting</dd>
+											<dd>Civil Engineering</dd>
+											<dd>Electricity Distribution</dd>
+											<dd>Electric/ Electronic Engineering</dd>
+											<dd>Engineering Machinist</dd>
+											<dd>Engineering Maintenance Fitter / Technician</dd>
+											<dd>Engineer: Energy</dd>
+											<dd>Environmental Engineering</dd>
+											<dd>Chemical Engineering</dd>
+											<dd>Biomedical Engineering</dd>
+											<dd>Marine Engineering</dd>
+											<dd>Mechanical Engineering</dd>
+											<dd>Mining Engineering</dd>
+											<dd>Manufacturing Engineering</dd>
+											<dd>Nuclear Engineering</dd>
+											<dd>Software Engineering</dd>
+											<dd>Music Technologist</dd>
+											<dd>Sound/ Recording Engineering</dd>
+											<dd>Engineering Tech: Communications</dd>
+											<dd>Welder</dd>
+											<dd>Aerospace Engineering</dd>
+											<dd>Food Engineering</dd>
+											<dd>Medical Engineering</dd>
+											<dd>Textile Engineering</dd>
+											<dd>Transport Engineering</dd>
+											<dd>Renewable Energy Engineering</dd>
+											<dd>Auto Electrician</dd>
+											<dd>Land- Based Service Engineering</dd>
+											<dd>Aeronautical Technician</dd>
+											<dd>Plant Mechanic</dd>
+											<dd>Clinical Engineering</dd>
+											<dd>Gas Service Engineering</dd>
+											<dd>Locksmith</dd>
+											<dd>Motor Vehicle Technician</dd>
+											<dd>Vehicle Body Shop</dd>
+											<dd>Naval Architect</dd>
+											<dd>Offshore Gas/ Oil Work</dd>
+											<dd>Boat Builder</dd>
+											<dd>Communications Engineering</dd>
+											<dd>Patrol Officer (Breakdown)</dd>
+											<dd>Paint Sprayer</dd>
+											<dd>Home Appliance Engineering</dd>
+											<dd>Electrical Technician</dd>
+											<dd>Mechanical Technician</dd>
+											<dd>Engineer – Toolmaker</dd>
+											<dd>Electronics Assembler</dd>
+											<dd>Alarm Fitter/ Installer</dd>
+											<dd>Aerial/ Dish Installer</dd>
+											<dd>Tyre & Exhaust Fitter</dd>
+											<dd>Bicycle Mechanic</dd>
+											<dd>Blacksmith</dd>
+											<dd>Electricity Generation</dd>
+											<dd>Energy Technician</dd>
+											<dd>Gas Distribution</dd>
+											<dd>Motorcycle Mechanic</dd>
+											<dd>Sound Recordist</dd>
+											<dd>Watch/ Clock Repairer</dd>
+											<dd>Windscreen Technician</dd>
+											<dd>Engineer: Land Based</dd>
+										<dt>Banking</dt>
+										<dt>Legal</dt>
+											<dd>Court Usher</dd>
+											<dd>Barrister/ Advocate</dd>
+											<dd>Tax Lawyer</dd>
+											<dd>Banking Solicitor</dd>
+											<dd>Company Secretary</dd>
+											<dd>Solicitor</dd>
+											<dd>Legal Executive</dd>
+											<dd>Patent Examiner</dd>
+											<dd>Politician</dd>
+											<dd>Barrister’s Clerk</dd>
+											<dd>Licensed Conveyancer</dd>
+											<dd>Court Officer</dd>
+											<dd>Court Clerk (Legal Adviser)</dd>
+											<dd>Law Costs Draftsperson</dd>
+											<dd>Paralegal</dd>
+											<dd>Patent Attorney</dd>
+										<dt>Medicine</dt>
+									</dl>
+								<?php } else if($graph_value==2){ ?>
+									<dl>
+										<dt>Entrepreneurship</dt>
+										<dt>Management</dt>
+											<dd>Banking & Insurance Management</dd>
+											<dd>Finance Management</dd>
+											<dd>Human Resource Management</dd>
+											<dd>Marketing & Sales Management</dd>
+											<dd>Operations Management</dd>
+											<dd>Rural Management</dd>
+											<dd>Export Management</dd>
+											<dd>Business Management</dd>
+											<dd>Civil Service Management</dd>
+											<dd>Management Consultant</dd>
+											<dd>Waste Management</dd>
+											<dd>Business Manager</dd>
+											<dd>Investment Manager</dd>
+											<dd>Business Development Manager</dd>
+										<dt>Consulting</dt>
+										<dt>Strategizing</dt>
+									</dl>
+								<?php } else if($graph_value==3){ ?>
+									<dl>
+										<dt>Planning</dt>
+										<dt>Supervising</dt>
+										<dt>Administration</dt>
+											<dd>Business Administration</dd>
+											<dd>Business Manager</dd>
+											<dd>Civil Service: Manager</dd>
+											<dd>Civil Service: ‘Fast Stream’ Trainee</dd>
+											<dd>Civil Service Scientist</dd>
+											<dd>Civil Service: Finance Service(HMRC)</dd>
+											<dd>Civil Service: Administration</dd>
+											<dd>Civil Service: DEFRA(Department for Environment, Food & Rural Affairs)</dd>
+											<dd>Civil Service: DESG (Defence Engineering & Science Group)</dd>
+											<dd>Civil Service: Legal Service</dd>
+											<dd>Civil Service: Intelligence Officer</dd>
+											<dd>Administration</dd>
+											<dd>Diplomat</dd>
+											<dd>Environmental Health</dd>
+											<dd>Local Government: Manager</dd>
+											<dd>Local Government: Clerical Staff</dd>
+											<dd>Human Resources</dd>
+											<dd>Chartered Secretary (Professional Administrator)</dd>
+											<dd>Receptionist</dd>
+											<dd>Secretary</dd>
+											<dd>Trading Standards Officer</dd>
+											<dd>Agricultural Administrator</dd>
+											<dd>Employment Consultant</dd>
+											<dd>Health & Safety Inspector</dd>
+											<dd>Bilingual Secretary</dd>
+											<dd>Supervisor</dd>
+											<dd>Medical Secretary</dd>
+											<dd>Estimator</dd>
+											<dd>Legal Secretary</dd>
+											<dd>Project Manager</dd>
+											<dd>Medical Receptionist</dd>
+											<dd>Executive Secretary/ P.A.</dd>
+											<dd>Executive Search</dd>
+											<dd>Business Development Manager</dd>
+											<dd>European Union Administrator</dd>
+											<dd>Ergonomist</dd>
+											<dd>Health & Safety</dd>
+											<dd>Revenue Officer</dd>
+											<dd>Telephonist</dd>
+										<dt>Auditing</dt>
+									</dl>
+								<?php } else if($graph_value==4){ ?>
+								
+									<dl>
+										<dt>Social Work</dt>
+										<dt>Sales</dt>
+											<dd>Antiques & Art Dealer</dd>
+											<dd>Retail Manager</dd>
+											<dd>Florist</dd>
+											<dd>Sales Assistant</dd>
+											<dd>Market Trader</dd>
+											<dd>Meter Reader</dd>
+											<dd>Merchandiser</dd>
+											<dd>Customer Service Manager/ Advisor</dd>
+											<dd>Builders Merchant</dd>
+											<dd>Vehicle Sales Executive</dd>
+											<dd>Post Office(Counter Staff)</dd>
+											<dd>Wholesale Manager</dd>
+											<dd>Retail Jeweller</dd>
+											<dd>Call Centre Operator</dd>
+											<dd>Butcher</dd>
+											<dd>Checkout Operator</dd>
+											<dd>Car Rental Agent</dd>
+											<dd>Bookseller</dd>
+											<dd>Vehicle Parts Operative</dd>
+										<dt>Music</dt>
+										<dt>Teaching</dt>
+											<dd>Professor</dd>
+											<dd>University Lecturer</dd>
+											<dd>Nursery Nurse</dd>
+											<dd>P.E. Teacher</dd>
+											<dd>Teacher: Secondary</dd>
+											<div id="career" style="display:none;">
+												<dd>Music Teacher</dd>
+												<dd>Teacher: Special Education Needs</dd>
+												<dd>Pre-school Leader</dd>
+												<dd>Teaching Assistant</dd>
+												<dd>Teacher of English to Speakers of Other Languages</dd>
+												<dd>College Lecturer</dd>
+												<dd>Nursery Assistant</dd>
+												<dd>Teacher: Primary</dd>
+												<dd>School Bursar</dd>
+												<dd>School Secretary</dd>
+											</div>
+									</dl>
+								
+								<div id="opener"><a href="#1" name="1" onclick="return show();">+More</a></div>
+								<?php } ?>
+									<!--<li>Sales Management</li>
 									<li>Real Estate Development</li>
 									<li>Marketing Management</li>
 									<li>Enterpenureship</li>
@@ -393,7 +591,7 @@
 									<li>Information managment system</li>
 									<li>Security Trading</li>
 									<li>Stock Broking</li>
-									<li>Corporate Finanace</li>
+									<li>Corporate Finanace</li>-->
 									
 								</ul>
 							</div>	
@@ -421,6 +619,18 @@
 		</div>-->
         <!-- contents ends -->
 		<?php $this->load->view('layout/js');?>
+		
+		<!--More button for div show--->
+		<script> 
+		function show() { 
+			if(document.getElementById('career').style.display=='none') { 
+				document.getElementById('career').style.display='block'; 
+			} 
+			return false;
+		} 
+		</script>
+		<!--end-->
+		
 		<script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-modal.js"></script>
 		<script>
 		$(document).on("click","#amplified",function(){

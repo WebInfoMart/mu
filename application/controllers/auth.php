@@ -906,6 +906,7 @@ class Auth extends CI_Controller
 	} */
 	function profile()
 	{
+		$data['active'] = '';
 		$data['title'] = "MeetUniv.Com : Complete Your Profile - Step One";
 		$data['description'] = "Provide your personal information with MeetUniv.com";
 		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";

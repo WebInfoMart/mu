@@ -42,6 +42,8 @@ public function index() {
 	 $data["universityData"]=$this->collegemodel->getUniversityDataById($collegeId);
 	 $data["universityDetail"]=$this->collegemodel->getUniversityDetailById($collegeId);
 	 $data["courseDetail"]=$this->collegemodel->getCoursesByCollege($collegeId);
+	 //echo "<pre>";print_r($data);
+	 //$data["nssData"] = $this->collegemodel->getNssDataByCourseId($data['universityData'][0]['courseId']);
 	 if($data['universityData'][0]['cityId']) //city details is present
 	 {
 		$city=$this->db->get_where('city',array('id'=>$data['universityData'][0]['cityId']));
@@ -172,5 +174,13 @@ public function index() {
 		$data["countResults"] = $this->collegemodel-> record_count_country($countryIdArray);
         $content = $this->load->view("college/collegePagination", $data);
 		echo $content;
+	}
+	
+	public function getSatisfactionByCourseId()
+	{
+		$data = $this->collegemodel->getSatisfaction($_POST['id']);
+		
+		echo json_encode($data);exit;
+		
 	}
 }

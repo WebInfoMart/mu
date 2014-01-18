@@ -87,7 +87,7 @@
                   <div class="scholarship" >
                   <p>Scholarship</p>
                   <i class="icon-money icon-4x left"></i>
-                  <p class="green"><?php echo (isset($universityDetail['scholership']))?$universityDetail['scholership']:'N/A';?></p>
+                  <p class="green-clg"><?php echo (isset($universityDetail['scholership']))?$universityDetail['scholership']:'N/A';?></p>
                </div>
              
                 <div class="students" >
@@ -99,7 +99,7 @@
                 <div class="accomodation" >
                   <p>ACCOMODATION<br /><span><?php echo ($universityDetail['accomodation'])?$universityDetail['accomodation']:'N/A';?></span></p>
                 </div>
-                 <div class="acceptance-criteria">
+                 <div class="acceptance-criteria" style="margin-top:283px;";>
                   <p class="title"> Acceptance Criteria</p>
                   <p class="sub-title" > post graduate <br /><span> 65% in xII</span></p>
                   <p class="sub-title" >undergraduate <br /><span>60% in UG</span></p>
@@ -129,7 +129,7 @@
 								 </div>
                                  <div class="tab-pane" id="home">
                                     <h5>Majors &amp; Degrees</h5>
-									
+									<?php $this->load->view('layout/js');?>
 									<table class="table">
 									 <tr class="success">
                                           <td> Degrees Offered</td>
@@ -139,8 +139,11 @@
 									 <?php 
 									 $tempraryHeader = '';
 									 $counter=1;
+									 $satisfactionId = '';
 									 foreach($courseDetail as $course)
 									 {
+									 //echo "<pre>";
+									 //print_r($course);
 									 if(!empty($course->level2))
 									 {
 										$levelName = $this->collegemodel->getCourseLevelName($course->level2);
@@ -180,14 +183,19 @@
 									 
 									 ?>
 									 <tr class="course-<?php echo $counter;?>" <?php echo ($counter>10)?'style="display:none;"':'';?>>
-									 <?php $courseName = str_replace(",","",$course->name);?>
-										<td><a href="<?php echo base_url();?>course/<?php echo str_replace(" ","-",$universityData[0]['univName'])."/".$universityData[0]['id']."/".str_replace(" ","-",$courseName)."/".$course->courseId;?>"><?php echo $course->name;?></a></td>
+									 <?php $courseName = str_replace(array(',', '(', ')', '"', '\'', '-'), array('', '', '', '', '', ''),$course->name);?>
+										<td><a href="<?php echo base_url();?>course/<?php echo str_replace(" ","-",$universityData[0]['univName'])."/".$universityData[0]['id']."/".str_replace(" ","-",$courseName)."/".urlencode($course->courseId)?>"><?php echo $course->name;?></a></td>
+									
+										<td id="satisfactionValue_<?php echo $course->courseId; ?>"></td>
 										<td></td>
-                                          <td></td>
 									 </tr>
 									 <?php 
+									 $satisfactionId = $satisfactionId.$course->courseId.',';
 									 $counter++;
-									 }?>
+									 }
+									 $getSatisfactionId = rtrim($satisfactionId, ",");
+									 //echo $getSatisfactionId;
+									 ?>
 									 <tr>
                                           <td><a href="javascript:void(0)" onclick="show_more_courses()">+More</a></td>
                                           <td><input type="hidden" value="2" id="courseCount"/></td>
@@ -237,7 +245,7 @@
          </div>
          <!--end main-->
 		 
-		 <?php $this->load->view('layout/js')?>
+		 
 		 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 		 <script>
          $(document).ready(function(){
@@ -301,3 +309,36 @@
 				$("#courseCount").val(parseInt(count)+1);
 			}
       </script>
+	  
+	  <!---Get Satisfaction ids--->
+	  
+	  <script type="text/javascript">
+		 $( document ).ready(function() {
+			//alert('hello');
+			$.ajax({
+			type: 'POST',
+			url: "<?php echo base_url(); ?>college/getSatisfactionByCourseId",
+			async:false,
+			data: {id:'<?php echo $getSatisfactionId;?>'},
+			//dataType: 'json',
+			cache: false,
+				success: function(data)
+				{ 
+					//alert(data);
+					//console.log(data)
+					var obj=jQuery.parseJSON(data);
+					alert(obj);
+					//console.log(obj);
+					$.each(obj, function(index, value){
+						if(value.code=='Q1'){
+							console.log(value);
+							alert(value.value);
+							$('#satisfactionValue_'+value.courseId).html(value.value);
+						}
+					});
+				}			
+			});	
+		}); 
+			
+	</script>
+	  

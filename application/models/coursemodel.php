@@ -9,97 +9,105 @@ class Coursemodel extends CI_Model
 		
 	}
 	
-	public function getCourseId($id)
-	{
-		//echo $id;exit;
-		$this->db->select('*');
-		$this->db->from('courses');
-		$this->db->where('id',$id);
-		$query=$this->db->get();
-		$courseData = $query->result_array();
-		return $courseData[0]['courseId'];
-		
-	}
 	
-	public function getAccreditationData($id)
+	public function getAccreditationData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('accreditation');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
-	public function getStagesData($id)
+	public function getStagesData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('stages');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
-	public function getDegreeClassesData($id)
+	public function getDegreeClassesData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('degreeclass');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
-	public function getContinuationData($id)
+	public function getContinuationData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('continuation');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
-	public function getEmploymentData($id)
+	public function getEmploymentData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('employment');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
-	public function getJobData($id)
+	public function getJobData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('jobtype');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
-	public function getEntryData($id)
+	public function getEntryData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('entry');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
-	public function getSalaryData($id)
+	public function getSalaryData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('salary');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
-	public function getCommonData($id)
+	public function getCommonData($courseId)
 	{
 		$this->db->select('*');
 		$this->db->from('common');
-		$this->db->where('courseId',$id);
+		$this->db->where('courseId',$courseId);
 		$query=$this->db->get();
 		return $query->result_array();
 	}
 	
+	public function getTariffData($courseId)
+	{
+		$this->db->select('*');
+		$this->db->from('tariff');
+		$this->db->where('courseId',$courseId);
+		$query=$this->db->get();
+		return $query->result_array();
+	}
+	
+	public function getNssData($courseId)
+	{
+		$this->db->select('*');
+		$this->db->from('nss');
+		$this->db->where('courseId',$courseId);
+		$query=$this->db->get();
+		return $query->result_array();
+	}
+	
+		
 }

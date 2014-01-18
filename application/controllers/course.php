@@ -9,12 +9,16 @@ class Course extends CI_Controller
 		$this->load->model('coursemodel');
 		$this->load->library("pagination");
 	}
+	
 	public function index($universityName,$universityId,$courseName,$courseId) {
+		
 		
 		$data['active']="";
 		$data['title'] = "";
 		$data['keywords'] = "";
 		$data['description'] = "";
+		$data['universityName'] = $universityName;
+		$data['universityId'] = $universityId;
 		$data['courseName'] = $courseName;
 		$data["accreditationData"] = $this->coursemodel->getAccreditationData($courseId);
 		$data["stagesData"] = $this->coursemodel->getStagesData($courseId);
@@ -25,11 +29,15 @@ class Course extends CI_Controller
 		$data["entryData"] = $this->coursemodel->getEntryData($courseId);
 		$data["salaryData"] = $this->coursemodel->getSalaryData($courseId);
 		$data["commonData"] = $this->coursemodel->getCommonData($courseId);
+		$data["tariffData"] = $this->coursemodel->getTariffData($courseId);
+		$data["nssData"] = $this->coursemodel->getNssData($courseId);
 		//echo $course_id;exit;
 		//echo "<pre>";print_r($data);
 		
         $this->layout->view('course/index.php', $data);
     }
+	
+	
 	
 
 }

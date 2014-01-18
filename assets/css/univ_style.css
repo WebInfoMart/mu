@@ -2202,7 +2202,7 @@ margin: 0px 24px;
 .scholarship{ width:159px; height:62px; position:absolute; margin-top:173px; margin-left:129px; background-color:#e7fffd;}
 .scholarship p{font-size:15px; font-weight:bold; padding-left:10px; padding-top:2px;}
 .scholarship i{ margin-left:10px;  margin-top:-4px; float:left; margin-right:5px;color: #308462;}
-.scholarship p.green{ color:#337f60; float:left; line-height:16px; width:70px;px; padding-left:0;}
+.scholarship p.green-clg{ color:#337f60; float:left; line-height:16px; width:70px;px; padding-left:0;}
 
 
 .students{ float:left; width:123px; background-color:#fff1ec; margin-right:2px; padding-left:4px; position:absolute; margin-top:213px;}
@@ -2217,11 +2217,11 @@ margin: 0px 24px;
 .accomodation  p{font-size:9px; padding-top:2px; background-color:#f9f4f8; font-weight:bold; padding-left:2px; padding-right:6px; margin:0; }
 .accomodation  p span{font-size:16px; font-weight:bold; }
 
-.acceptance-criteria{overflow:hidden; padding-left:0px; background-color:#eaf2ef; margin-top:284px; position:absolute; width:289px;}
-.acceptance-criteria p{ margin-bottom:0;}
-.acceptance-criteria p.title{ font-size:14px; font-weight:bold; margin-bottom:0; padding-left:4px;}
-.acceptance-criteria p.sub-title{ color:#d25634; float:left; padding-right:16px; padding-left:4px; margin-right:2px; line-height:17px;}
-.acceptance-criteria p.sub-title span{color:#333333; background:url(../images/bullet.jpg) no-repeat left; padding-left:8px;}
+.clg-acceptance-criteria{overflow:hidden; padding-left:0px; background-color:#eaf2ef; margin-top:284px; position:absolute; width:289px;}
+.clg-acceptance-criteria p{ margin-bottom:0;}
+.clg-acceptance-criteria p.title{ font-size:14px; font-weight:bold; margin-bottom:0; padding-left:4px;}
+.clg-acceptance-criteria p.sub-title{ color:#d25634; float:left; padding-right:16px; padding-left:4px; margin-right:2px; line-height:17px;}
+.clg-acceptance-criteria p.sub-title span{color:#333333; background:url(../images/bullet.jpg) no-repeat left; padding-left:8px;}
 
 .caption-bar{ background:url(../img/caption-bg.png) repeat-x; height:54px; position:relative;}
 .caption-bar p.title{ color:#ffffff; font-size:22px;padding-left:148px; padding-top:13px;}
@@ -2649,6 +2649,15 @@ font-size: 12px;
 padding-top: 14px;
 }
 
+/*.button{
+background: url('../img/button_bg.jpg');
+padding: 3px 14px 14px 14px;
+color: #fff;
+float: right;
+margin-right: 15px;
+margin-top: 10px;
+}*/
+
 .button{
 background: url('../img/button_bg.jpg');
 padding: 3px 14px 14px 14px;
@@ -2656,6 +2665,9 @@ color: #fff;
 float: right;
 margin-right: 15px;
 margin-top: 10px;
+background-size: 100%;
+background-position: 49%;
+background-repeat: no-repeat;
 }
 
 .analysis_text{
@@ -2720,7 +2732,9 @@ text-align:center;
 font-weight: 800;
 }
 
-
+.gifted-popup-ul li p {
+text-align: center;
+}
 
 .gifted-popup-ul {
 list-style:none;
@@ -2789,7 +2803,7 @@ font-size: 13px;
 line-height: 17px;
 }
 
-/* added by amit seth */
+/* added for course individual page */
 .right-section{width:289px; padding-top:9px; float:right; padding-right:8px;}
 .right-section p{ margin:0 !important;}
 
@@ -2868,3 +2882,9 @@ p.green{color:#006892; font-size:23px; float:left; width:180px; padding-top:10px
 .seminar p{ font-size:16px;}
 .tenuni{ padding-top:31px; font-size:12px; color:#3c5005; padding-left:17px;}
 .shortlist{ font-size:16px !important; color:#0088cc !important; float:right; margin-right:20px; margin-top:10px;}
+
+.greenbg {
+background: #8fbc17;
+padding-left: 6px;
+color: #ffffff;
+}
