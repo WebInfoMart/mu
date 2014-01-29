@@ -45,7 +45,7 @@ $route['(register|login|home|profile|profile_match|profile_externalInfo)']='auth
 $route['college/collegePagination/(:num)'] = "college/collegePagination/$1";
 $route['college/filterByLocation/(:num)'] = "college/filterByLocation/$1";
 $route['college/(:any)/(:any)'] = "college/individualCollege/$1/$2";
-$route['course/(:any)/(:any)/(:any)/(:any)'] = "course/index/$1/$2/$3/$4";
+$route['course/(:any)/(:any)/(:any)/(:any)'] = "course/individualCourse/$1/$2/$3/$4";
 $route['about-us'] = "about_us";
 $route['contact-us'] = "contact_us";
 $route['privacy-policy'] = "static_controller/privacy_policy";
@@ -55,6 +55,7 @@ $route['terms'] = "static_controller/terms";
 $route['gifted'] = "quiz";
 
 $route['gifted/report']='quiz/report';
+$route['gifted/reportapi']='quiz/reportapi';
 $route['gifted/api']='quiz/api';
 $route['gifted/reportpdf']='quiz/reportpdf';
 

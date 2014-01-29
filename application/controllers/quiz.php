@@ -68,7 +68,7 @@ class Quiz extends CI_Controller
 	{
 	
 		//checking right paramter passed or not
-		//$this->load->library('psychometric');
+		$this->load->library('psychometric');
 		
 		if(isset($_GET['uname']) && isset($_GET['pass']) && isset($_GET['email']) && isset($_GET['name']) && isset($_GET['testid']))
 		{
@@ -81,12 +81,13 @@ class Quiz extends CI_Controller
 		}//end
 		
 		//custom function for checking authentication
-		//$valid = $this->psychometric->checkAuthentication();
+		$valid = $this->psychometric->checkAuthentication();
 		//print_r($this->session->all_userdata());exit;
 		//end of authentication function
-		if(TRUE)
+		if($valid)
 		{
 			$this->quizmodel->enterApiUser();
+			$data['active'] = '';
 			$data['title'] = "MeetUniv.Com :Gifted Authorized";
 			$data['description'] = "MeetUniv.com";
 			$data['keywords'] = "";
@@ -126,6 +127,28 @@ class Quiz extends CI_Controller
 			redirect('http://meetuniv.com/gifted');
 		}
 		//$this->layout->view('quiz/report',$data);
+	}
+	
+	function reportapi()
+	{
+		$data['active'] = '';
+		$data['title'] = "MeetUniv.Com :Test Score";
+		$data['description'] = "MeetUniv.com";
+		$data['keywords'] = "";
+		$userId=$this->tank_auth->get_user_id();
+		if(!$userId)
+		{
+			echo "error";exit;
+		}
+		$data['score'] = $this->quizmodel->getUserScoreApi($userId);
+		$data['graph_value'] = $this->getSectionValue($data['score']);
+		$data['link'] = $this->calculateForPdf($data['score']);
+		$data['max_score'] = $this->maxScoreForInterestProfile($data['score']);
+		$data['min_score'] = $this->minScoreForInterestProfile($data['score']);
+		$data['max_score_motivation'] = $this->maxScoreForMotivationAndWork($data['score']);
+		$data['min_score_motivation'] = $this->minScoreForMotivationAndWork($data['score']);
+		//echo "<pre>";print_r($data);
+		$this->layout->view('quiz/reportapi',$data);
 	}
 	
 	function maxScoreForInterestProfile($ms){
@@ -510,19 +533,7 @@ class Quiz extends CI_Controller
 		
 		return  $value;
 	}
-	function reportapi()
-	{
-		$data['title'] = "MeetUniv.Com :Test Score";
-		$data['description'] = "MeetUniv.com";
-		$data['keywords'] = "";
-		$userId=$this->tank_auth->get_user_id();
-		if(!$userId)
-		{
-			echo "error";exit;
-		}
-		$data['score'] = $this->quizmodel->getUserScoreApi($userId);
-		$this->layout->view('quiz/reportapi',$data);
-	}
+	
 	
 	
 }

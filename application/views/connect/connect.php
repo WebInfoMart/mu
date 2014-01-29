@@ -2,8 +2,8 @@
  <div id="betaModal" class="modal hide fade">
  <span  id="sendSmsForm">
     <div class="modal-header">
-            <button class="close" data-dismiss="modal">×</button>
-            <h3 id="eventName">Event Name</h3>
+            <button class="close" data-dismiss="modal" style="padding-right:12px;">×</button>
+            <h3 id="eventName" style="padding-left:14px;">Event Name</h3>
     </div>
 <div class="modal-body">
     <div class="row-fluid">
@@ -11,14 +11,15 @@
             <div class="span6">
 				  <div class="thumbnail" style="padding: 0;line-height:12px;">
 					<div style="padding:4px">
-					  <img alt="300x200" style="width: 248px;height: 100px;" src="http://placehold.it/200x150">
+					  <!--<img alt="300x200" style="width: 248px;height: 100px;" src="http://placehold.it/200x150">-->
+					  <img alt="300x200" style="width: 220px;height: 100px; margin-left:20px;" src="<?php echo base_url();?>assets/img/popup_event_image1.png">
 					</div>
 					<div class="caption" style="padding:0px 9px;">
 					  <h4 id="universityName" style="color:#373;">Project A</h4>
 					  <p><a class="btn btn-primary btn-mini" href="#"><i class="icon-plus-sign"></i> Add College</a></p>
-					  <p id="eventLocation">
+					  <p id="eventLocation" class="edit-move-left">
 						<i class="icon icon-calendar"></i> <span id="eventDate">Date</span>
-						</p><p><i class="icon icon-map-marker"></i> <span id="eventPlace">Place, Country</span>
+						</p><p class="edit-move-left" style="padding-top:3px;padding-bottom:6px;"><i class="icon icon-map-marker"></i> <span id="eventPlace">Place, Country</span>
 					  </p>
 					</div>
 					<div class="modal-footer" style="text-align: left">
@@ -177,36 +178,36 @@
 						<div class="tab_spine clearfix">
 							<h4>College Type</h4>
 							<ul class="unstyled">
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Foundation</a></li>
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
 							<h4>Interest</h4>
 							<ul class="unstyled">
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Science</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Commerce</a></li>
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
 							<h4>Financial</h4>
 							<ul class="unstyled">
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Below &pound; 5000</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Above &pound; 5000</a></li>
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
 							<h4>Criteria</h4>
 							<ul class="unstyled">
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">IELTS</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">PTE</a></li>
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
-							<h4>Interest</h4>
+							<h4>Intake</h4>
 							<ul class="unstyled">
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">50 miles of 24712</a></li>
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Sept 2013</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Jan 2014</a></li>
 							</ul>
 						</div>
                      </section>

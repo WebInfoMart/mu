@@ -526,7 +526,7 @@
 						$articlerows = str_replace(" ","-",$articleTitle);
 						$art = rtrim($articlerows, "-"); 
 						?>
-						<p><a href="<?php echo base_url();?>learn/blog/read-<?php echo $art; ?>_<?php echo $article->id;?>.html"><?php echo $articleTitle; 
+						<p><a href="<?php echo base_url();?>learn/blog/read-<?php echo $art; ?>_<?php echo $article->id;?>.html" style="font-family:'Open Sans', sans-serif;font-size:12px;color:#333333;"><?php echo $articleTitle; 
 						?></a></p>
 						<?php } ?>
 						<!--<p><a href="#"> Myths about College Scholarships</a></p>

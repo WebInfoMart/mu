@@ -186,7 +186,7 @@
 									 <?php $courseName = str_replace(array(',', '(', ')', '"', '\'', '-'), array('', '', '', '', '', ''),$course->name);?>
 										<td><a href="<?php echo base_url();?>course/<?php echo str_replace(" ","-",$universityData[0]['univName'])."/".$universityData[0]['id']."/".str_replace(" ","-",$courseName)."/".urlencode($course->courseId)?>"><?php echo $course->name;?></a></td>
 									
-										<td id="satisfactionValue_<?php echo $course->courseId; ?>"></td>
+										<td id="satisfactionValue_<?php echo $course->courseId; ?>">%</td>
 										<td></td>
 									 </tr>
 									 <?php 
@@ -327,13 +327,13 @@
 					//alert(data);
 					//console.log(data)
 					var obj=jQuery.parseJSON(data);
-					alert(obj);
+					//alert(obj);
 					//console.log(obj);
 					$.each(obj, function(index, value){
 						if(value.code=='Q1'){
-							console.log(value);
-							alert(value.value);
-							$('#satisfactionValue_'+value.courseId).html(value.value);
+							//console.log(value);
+							//alert(value.value);
+							$('#satisfactionValue_'+value.courseId).html(value.value+'%');
 						}
 					});
 				}			

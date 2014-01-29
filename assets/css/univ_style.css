@@ -2265,7 +2265,7 @@ cursor: pointer;
 .demo-mode nav ul li a:hover{color:#009590; text-decoration:none; border-bottom:4px #009590 solid; background:#fff; cursor:pointer; }
 .demo-mode img{margin-left:0; margin-top:6px;}
 
-.question{ float:left; width:900px; padding: 15px 0px;}
+.question{ float:left; width:940px; padding: 15px 15px;}
 .question p{color:#3e3e3e; font-size:14px; width:920px;}
 .question p.ques{color:#038500; font-size:16px; width:100px;margin: 0px;}
 .question span{margin-right:20px}
@@ -2649,15 +2649,6 @@ font-size: 12px;
 padding-top: 14px;
 }
 
-/*.button{
-background: url('../img/button_bg.jpg');
-padding: 3px 14px 14px 14px;
-color: #fff;
-float: right;
-margin-right: 15px;
-margin-top: 10px;
-}*/
-
 .button{
 background: url('../img/button_bg.jpg');
 padding: 3px 14px 14px 14px;
@@ -2665,9 +2656,6 @@ color: #fff;
 float: right;
 margin-right: 15px;
 margin-top: 10px;
-background-size: 100%;
-background-position: 49%;
-background-repeat: no-repeat;
 }
 
 .analysis_text{
@@ -2700,7 +2688,7 @@ margin-bottom:10%
 
 .grey-text{font-family: "Open Sans"; color:#ccc; font-size:34px; font-weight:bold;}
 
-.orange-text{font-family:"Open Sans"; color:#F36314; font-size:44px; padding-top:207px; font-weight:bold; padding-left:72px;}
+.orange-text{font-family:"Open Sans"; color:#F36314; font-size:44px; padding-top:216px; font-weight:bold; padding-left:85px;}
 
 
 /*added for popup*/
@@ -2732,9 +2720,7 @@ text-align:center;
 font-weight: 800;
 }
 
-.gifted-popup-ul li p {
-text-align: center;
-}
+
 
 .gifted-popup-ul {
 list-style:none;
@@ -2763,7 +2749,7 @@ padding: 9px 0px;
 .btn:hover, .btn:focus{
 color:#fff;
 }
-.btngifted {
+.btngift {
 color:#fff !important;
 background: rgb(33,165,80); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(33,165,80,1) 1%, rgba(4,153,49,1) 100%); /* FF3.6+ */
@@ -2801,6 +2787,13 @@ font-size: 23PX;
 font-weight: bold;
 font-size: 13px;
 line-height: 17px;
+}
+
+/*added by deepak*/
+.popover-title.gifted-popover {
+font-weight: 600;
+font-size: 16px;
+color: #0073d1;
 }
 
 /* added for course individual page */
@@ -2864,7 +2857,7 @@ line-height: 17px;
 .good{ text-align:right; margin:0; padding:0; }
 .drgimon{ font-size:23px; line-height:29px; padding-left:10px;}
 h3.padlt{ padding-left:10px;}
-h4.good{ padding-top:20px;}
+h4.good{ padding-top:15px;}
 .good-img{ margin-top:13px; margin-right:20px; float:right; margin-left:20px;}
 p.green{color:#006892; font-size:23px; float:left; width:180px; padding-top:10px; padding-bottom:10px; margin-left:10px; }
 .green-btn{ background:url(../images/course_images/btn-bg.jpg) repeat-x; border:0; height:27px; width:101px !important;  margin-top:10px;margin-bottom:10px; color:#ffffff;}
@@ -2881,10 +2874,33 @@ p.green{color:#006892; font-size:23px; float:left; width:180px; padding-top:10px
 .seminar{ margin-top:10px;}
 .seminar p{ font-size:16px;}
 .tenuni{ padding-top:31px; font-size:12px; color:#3c5005; padding-left:17px;}
-.shortlist{ font-size:16px !important; color:#0088cc !important; float:right; margin-right:20px; margin-top:10px;}
+.shortlist{ font-size:16px !important; color:#0088cc !important; float:right; margin-right:0px; margin-top:10px;}
 
 .greenbg {
 background: #8fbc17;
 padding-left: 6px;
 color: #ffffff;
 }
+
+/*added by raghvendra*/
+.edit-move-left{margin-left:-25px; padding-top: 4px;padding-bottom: 1px;}
+
+
+/*added for course individual page 24/01/2014*/
+
+ul.employment{list-style:none; margin:0; padding:0px 0px 10px;}
+ul.employment li{background:url(../images/bullet.jpg) no-repeat 10px 7px;  padding:5px 30px;border:1px solid #9abc32; border-width:0px 0 1px;}
+
+ul.employment li:first-child{border-top-width:1px}
+
+ul.employment li:nth-child(odd){background:url(../images/bullet.jpg) no-repeat 10px 7px #e4ecce;}
+h3.blue-text{color:#0066cc; font-style:italic; font-weight:normal; line-height:27px; padding-top:10px;}
+p.votes{color:#373737; font-size:16px; font-weight:bold; padding-top:5px;}
+p.votes span{font-size:24px; color:#ff892a; display:block; padding-top:5px;}
+/* amit*/h3.employment{font-weight:normal; background:url(../images/title-star.jpg) no-repeat left; border-bottom:1px solid #cccccc; padding-left:35px; margin-bottom:10px; line-height:28px; margin-top:32px; padding-bottom:5px;}
+.ratings-percent{ clear:both; overflow:hidden; }
+h4.red-font{ color:#dd322d; font-size:18px; padding-top:10px;}
+/* amit*/
+table.jobs tr td{border-bottom: 1px solid #cccccc; padding:5px 5px;}
+table.jobs tr:last-child td{border-bottom:0;}
+table.jobs tr:nth-child(even) td{background:#eaeaea;}

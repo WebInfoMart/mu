@@ -10,9 +10,9 @@ class Course extends CI_Controller
 		$this->load->library("pagination");
 	}
 	
-	public function index($universityName,$universityId,$courseName,$courseId) {
+	public function individualCourse($universityName,$universityId,$courseName,$courseId) {
 		
-		
+		//echo $universityName;exit;
 		$data['active']="";
 		$data['title'] = "";
 		$data['keywords'] = "";
@@ -34,7 +34,7 @@ class Course extends CI_Controller
 		//echo $course_id;exit;
 		//echo "<pre>";print_r($data);
 		
-        $this->layout->view('course/index.php', $data);
+        $this->layout->view('course/individualCourse.php', $data);
     }
 	
 	
