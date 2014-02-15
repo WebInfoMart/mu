@@ -344,7 +344,6 @@
 					function removeCountry(countryName,id)
 					{
 					  var country = countryName;
-					  //alert(country);
 					  var filtrationCountries = $("#filtrationCountries").val();
 					  filtrationCountries = filtrationCountries.replace(country+",","");
 					  filtrationCountries = filtrationCountries.replace(","+country,"");
@@ -352,7 +351,7 @@
 					  $("#filtrationCountries").val(filtrationCountries);
 					  $("#"+id).parent().remove();
 					  url="<?php echo base_url();?>college/filterLocationByCountry";
-					  data = {cityName:$("#filtrationCountries").val()};
+					  data = {countryName:$("#filtrationCountries").val()};
 					   $.ajax({
 					  	type	:	'POST',
 					  	data	:	data,

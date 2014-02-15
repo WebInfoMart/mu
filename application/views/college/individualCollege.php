@@ -187,7 +187,7 @@
 										<td><a href="<?php echo base_url();?>course/<?php echo str_replace(" ","-",$universityData[0]['univName'])."/".$universityData[0]['id']."/".str_replace(" ","-",$courseName)."/".urlencode($course->courseId)?>"><?php echo $course->name;?></a></td>
 									
 										<td id="satisfactionValue_<?php echo $course->courseId; ?>">%</td>
-										<td></td>
+										<td id="courseFee_<?php echo $course->courseId; ?>"></td>
 									 </tr>
 									 <?php 
 									 $satisfactionId = $satisfactionId.$course->courseId.',';
@@ -334,6 +334,40 @@
 							//console.log(value);
 							//alert(value.value);
 							$('#satisfactionValue_'+value.courseId).html(value.value+'%');
+						}
+					});
+				}			
+			});	
+		}); 
+			
+	</script>
+	
+	<script type="text/javascript">
+		 $( document ).ready(function() {
+			//alert('hii');
+			$.ajax({
+			type: 'POST',
+			url: "<?php echo base_url(); ?>college/getCourseFeeById",
+			async:false,
+			data: {id:'<?php echo $getSatisfactionId;?>'},
+			//dataType: 'json',
+			//alert('test');return;
+			cache: false,
+				success: function(data)
+				{ 
+					//alert('data');
+					//alert(data);
+					//console.log(data)
+					var obj=jQuery.parseJSON(data);
+					//alert(obj);
+					//console.log(obj);return;
+					$.each(obj, function(index, value){
+						if(value.MaximumFeeForEnglandDomicile==0){
+							//console.log(value);
+							//alert(value.value);
+							$('#courseFee_'+value.courseId).html('N/A');
+						}else{
+							$('#courseFee_'+value.courseId).html('£'+value.MaximumFeeForEnglandDomicile);
 						}
 					});
 				}			

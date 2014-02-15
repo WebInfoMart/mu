@@ -172,6 +172,7 @@ public function index() {
         $data["results"] = $this->collegemodel-> getUniversityByCountry($config["per_page"], $page, $countryIdArray);
 		$data["links"] = $this->pagination->create_links();
 		$data["countResults"] = $this->collegemodel-> record_count_country($countryIdArray);
+		//echo "<pre>";print_r($data);exit;
         $content = $this->load->view("college/collegePagination", $data);
 		echo $content;
 	}
@@ -179,6 +180,15 @@ public function index() {
 	public function getSatisfactionByCourseId()
 	{
 		$data = $this->collegemodel->getSatisfaction($_POST['id']);
+		
+		echo json_encode($data);exit;
+		
+	}
+	
+	public function getCourseFeeById()
+	{
+		//echo $_POST['id'];exit;
+		$data = $this->collegemodel->getCourseFee($_POST['id']);
 		
 		echo json_encode($data);exit;
 		

@@ -17,32 +17,19 @@
 					</div>
 					<div class="span3">
 						<!--<input type="image" src="assets/images/short-list-btn.jpg" class="pull-right">-->
-						<input type="image" style = "margin-left:115px;" src="<?php echo base_url();?>assets/images/short-list-btn.jpg">
+						<!--<input type="image" style = "margin-left:115px;" src="<?php echo base_url();?>assets/images/short-list-btn.jpg">-->
 						
 						<p class="pull-right votes">Based on 14000 votes <br><span class="pull-right"><?php echo $nssData[0]['value']?>%</span></p><br>
 					</div>
 				</div>
 			</div>
 		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-			</script>
-			<script> 
-			$(document).ready(function(){
-			  $("#slide").click(function(){
-				$("#employement").slideToggle(1000);
-			  });
-			  $("#slideEntry").click(function(){
-				$("#entry").slideToggle(1000);
-			  });
-			  $("#slideStudy").click(function(){
-				$("#study").slideToggle(1000);
-			  });
-			});
-			</script>
+		
+
 		<div class = "row">
 			<div class = "span12">
 				<h3 class="employment">Employment & Accreditation</h3>
-			<div id = "slide" style="float:right; margin-top:-40px;cursor:pointer;"><img src="<?php echo base_url();?>assets/images/down-arrow.png" >
+			<div id = "slide" style="float:right; margin-top:-40px;cursor:pointer;"><img src="<?php echo base_url();?>assets/images/up-arrow.png" class="imageSwip">
 			</div>
 			</div>
 		</div>
@@ -122,11 +109,12 @@
 					height: 130
 				};
 
-					options.colors.push('#006db4');
+					options.colors.push('#07a7e3');
 					options.colors.push('#dd322d');
 					options.colors.push('#f27820');
 					options.colors.push('#008808');
 					options.colors.push('#d23894');
+
 
 				var chart = new google.visualization.PieChart(document.getElementById('chart_pie_9adbc379657d44dd94216f4878fd64ce'));
 						chart.draw(data, options);
@@ -164,8 +152,11 @@
 					height: 130
 				};
 
-					options.colors.push('#006db4');
-					options.colors.push('#dd322d');
+					//options.colors.push('#006db4');
+					//options.colors.push('#dd322d');
+					//options.colors.push('#f27820');
+					options.colors.push('#07a7e3');
+					options.colors.push('#abbf1f');
 					options.colors.push('#f27820');
 
 				var chart = new google.visualization.PieChart(document.getElementById('chart_pie_da8f7b75c43a42099472de0daea79906'));
@@ -267,7 +258,7 @@
 		<div class="row">
 			<div class="span12">
 				<h3 class="employment">Entry Information</h3>
-				<div id = "slideEntry" style="float:right; margin-top:-40px;cursor:pointer;"><img src="<?php echo base_url();?>assets/images/down-arrow.png">
+				<div id = "slideEntry" style="float:right; margin-top:-40px;cursor:pointer;"><img src="<?php echo base_url();?>assets/images/down-arrow.png" class="swapImg">
 				</div>
 			</div>
 		</div>
@@ -303,7 +294,7 @@
 				var data = google.visualization.arrayToDataTable(dataArray);
 
 				var options = {
-					chartArea: { top: 8, width: "100%", height: 214 },
+					chartArea: { top: 8, left: -100, width: "70%", height: 214 },
 					tooltip: { text: 'value'},
 					pieSliceText: 'value',
 					colors: [],
@@ -314,12 +305,13 @@
 				};
 
 					options.colors.push('#006db4');
-					options.colors.push('#dd322d');
-					options.colors.push('#f27820');
+					options.colors.push('#660066');
+					options.colors.push('#79BEDB');
 					options.colors.push('#008808');
 					options.colors.push('#d23894');
 					options.colors.push('#2d3091');
 					options.colors.push('#2ca096');
+
 
 				var chart = new google.visualization.PieChart(document.getElementById('chart_pie_b73b329502654f00a25741a3772ed3b5'));
 						chart.draw(data, options);
@@ -376,7 +368,7 @@
 		<div class="row">
 			<div class="span12">
 				<h3 class="employment">Study Information</h3>
-				<div id = "slideStudy" style="float:right; margin-top:-40px;cursor:pointer;"><img src="<?php echo base_url();?>assets/images/down-arrow.png">
+				<div id = "slideStudy" style="float:right; margin-top:-40px;cursor:pointer;"><img src="<?php echo base_url();?>assets/images/down-arrow.png" class="swapImg">
 				</div>
 			</div>
 		</div>
@@ -407,7 +399,7 @@
 			var data = google.visualization.arrayToDataTable(dataArray);
 
 			var options = {
-				chartArea: { left: 28, height: "80%", width: "65%" },
+				chartArea: { left: 28, height: "80%", width: "60%" },
 				colors: [],
 				fontSize: 12,
 				vAxis: {minValue:0, maxValue:100},
@@ -415,9 +407,9 @@
 				height: 180
 			};
 
-				options.colors.push('#006db4');
-				options.colors.push('#dd322d');
-				options.colors.push('#f27820');
+				options.colors.push('#CC99CC');
+				options.colors.push('#FFCC00');
+				options.colors.push('#660066');
 
 			var chart = new google.visualization.ColumnChart(document.getElementById('chart_column_313db0ad64e24cb79ef40dc0f7c560b8'));
 			chart.draw(data, options);
@@ -444,10 +436,10 @@
 			var data = google.visualization.arrayToDataTable(dataArray);
 
 			var options = {
-				chartArea: { left: 28, height: "80%", width: "65%" },            colors: [],            fontSize: 12,	        vAxis: {minValue:0, maxValue:100},            width: 550,            height: 180        };            options.colors.push('#006db4');            options.colors.push('#dd322d');            options.colors.push('#f27820');        var chart = new google.visualization.ColumnChart(document.getElementById('chart_column_58f8607f0bd94c92b76144a4a8c215e1'));        chart.draw(data, options);    }</script>                            <script type="text/javascript">                google.load("visualization", "1", { packages: ["corechart"] });                google.setOnLoadCallback(drawChart);                function drawChart() {                    var dataArray = [['Key', 'Value']];                        dataArray.push(['1st class degree', 20]);                        dataArray.push(['Upper 2nd class degree', 50]);                        dataArray.push(['Lower 2nd class degree', 30]);                        dataArray.push(['Other honours / pass without honours', 0]);                        dataArray.push(['Ordinary degree', 0]);                        dataArray.push(['Degree that is not subject to classification', 0]);            var data = google.visualization.arrayToDataTable(dataArray);            var options = {                chartArea: { top: 8, width: "100%", height: 214 },                tooltip: { text: 'value'},                pieSliceText: 'value',                colors: [],                fontSize: 12,                legend: { alignment: "center" },	            width: 310,                height: 130            };                options.colors.push('#006db4');                options.colors.push('#dd322d');
-					options.colors.push('#f27820');
-					options.colors.push('#008808');
-					options.colors.push('#d23894');
+				chartArea: { left: 28, height: "80%", width: "65%" },            colors: [],            fontSize: 12,	        vAxis: {minValue:0, maxValue:100},            width: 450,            height: 180        };            options.colors.push('#CC99CC');            options.colors.push('#FFCC00');            options.colors.push('#660066');        var chart = new google.visualization.ColumnChart(document.getElementById('chart_column_58f8607f0bd94c92b76144a4a8c215e1'));        chart.draw(data, options);    }</script>                            <script type="text/javascript">                google.load("visualization", "1", { packages: ["corechart"] });                google.setOnLoadCallback(drawChart);                function drawChart() {                    var dataArray = [['Key', 'Value']];                        dataArray.push(['1st class degree', 20]);                        dataArray.push(['Upper 2nd class degree', 50]);                        dataArray.push(['Lower 2nd class degree', 30]);                        dataArray.push(['Other honours / pass without honours', 0]);                        dataArray.push(['Ordinary degree', 0]);                        dataArray.push(['Degree that is not subject to classification', 0]);            var data = google.visualization.arrayToDataTable(dataArray);            var options = {                chartArea: { top: 8, width: "100%", height: 214 },                tooltip: { text: 'value'},                pieSliceText: 'value',                colors: [],                fontSize: 12,                legend: { alignment: "center" },	            width: 310,                height: 130            };                options.colors.push('#006db4');                options.colors.push('#dd322d');
+					options.colors.push('#CC99CC');
+					options.colors.push('#FFCC00');
+					options.colors.push('#660066');
 					options.colors.push('#2d3091');
 
 				var chart = new google.visualization.PieChart(document.getElementById('chart_pie_bc929221aed34feda6815c1fc486f90a'));
@@ -480,7 +472,7 @@
 				var data = google.visualization.arrayToDataTable(dataArray);
 
 				var options = {
-					chartArea: { top: 8, width: "100%", height: 214 },
+					chartArea: { top: 8, left: -100, width: "60%", height: 214 },
 					tooltip: { text: 'value'},
 					pieSliceText: 'value',
 					colors: [],
@@ -491,7 +483,7 @@
 				};
 
 					options.colors.push('#006db4');
-					options.colors.push('#dd322d');
+					options.colors.push('#983265');
 					options.colors.push('#f27820');
 					options.colors.push('#008808');
 					options.colors.push('#d23894');
@@ -524,17 +516,17 @@
 				var data = google.visualization.arrayToDataTable(dataArray);
 
 				var options = {
-					chartArea: { top: 8, width: "100%", height: 214 },
+					chartArea: { top: 8, left: -100, width: "70%", height: 214 },
 					tooltip: { text: 'value'},
 					pieSliceText: 'value',
 					colors: [],
 					fontSize: 12,
 					legend: { alignment: "left" },
-					width: 400,
+					width: 500,
 					height: 130
 				};
 
-					options.colors.push('#006db4');
+					options.colors.push('#979735');
 					options.colors.push('#dd322d');
 					options.colors.push('#f27820');
 					options.colors.push('#008808');
@@ -545,6 +537,45 @@
 					}
 
 				</script>
+				
+	<!---On click change toggle image--->
+	
+		<script src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js" type="text/javascript"></script>
+			<script>
+			$(function () {
+				$(".imageSwip").live("click", function () {
+					if ($(this).attr("class") == "imageSwip") {
+						this.src = this.src.replace("up-arrow", "down-arrow");
+					} else {
+						this.src = this.src.replace("down-arrow", "up-arrow");
+					}
+					$(this).toggleClass("on");
+				});
+			});
+			$(function () {
+				$(".swapImg").live("click", function () {
+					if ($(this).attr("class") == "swapImg") {
+						this.src = this.src.replace("down-arrow", "up-arrow");
+					} else {
+						this.src = this.src.replace("up-arrow", "down-arrow");
+					}
+					$(this).toggleClass("on");
+				});
+			});
+			</script>
+			<script> 
+			$(document).ready(function(){
+			  $("#slide").click(function(){
+				$("#employement").slideToggle(800);
+			  });
+			  $("#slideEntry").click(function(){
+				$("#entry").slideToggle(600);
+			  });
+			  $("#slideStudy").click(function(){
+				$("#study").slideToggle(600);
+			  });
+			});
+			</script>
 			</div>
 		</div>
     </div>   

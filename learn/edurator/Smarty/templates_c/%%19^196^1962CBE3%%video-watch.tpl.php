@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2013-10-04 04:09:23
+<?php /* Smarty version 2.6.20, created on 2014-02-07 13:26:35
          compiled from video-watch.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'echo_securimage_sid', 'video-watch.tpl', 126, false),)), $this); ?>

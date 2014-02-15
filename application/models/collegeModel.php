@@ -167,12 +167,21 @@ class Collegemodel extends CI_Model
 	public function getSatisfaction($courseIds)
 	{
 	
-		//echo $courseIds;exit;
 		$course_id = explode(',',$courseIds);
-		//$course_id = array('21FPSY-N-PSY1', '21FSES-N-ASE1', '21SBFS-N-BFB1');
-		// "<pre>";print_r($course_id);exit;
 		$this->db->select('*');
 		$this->db->from('nss');
+		$this->db->where_in('courseId', $course_id);
+		$query=$this->db->get();
+		return $satisfaction = $query->result_array();
+		
+	}
+	
+	public function getCourseFee($courseIds)
+	{
+	
+		$course_id = explode(',',$courseIds);
+		$this->db->select('*');
+		$this->db->from('course_fee');
 		$this->db->where_in('courseId', $course_id);
 		$query=$this->db->get();
 		return $satisfaction = $query->result_array();

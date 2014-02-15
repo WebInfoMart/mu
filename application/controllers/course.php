@@ -13,8 +13,10 @@ class Course extends CI_Controller
 	public function individualCourse($universityName,$universityId,$courseName,$courseId) {
 		
 		//echo $universityName;exit;
+		$university_name = str_replace('-',' ',$universityName);
+		$course_name = str_replace('-',' ',$courseName);
 		$data['active']="";
-		$data['title'] = "";
+		$data['title'] = "$university_name - $course_name";
 		$data['keywords'] = "";
 		$data['description'] = "";
 		$data['universityName'] = $universityName;

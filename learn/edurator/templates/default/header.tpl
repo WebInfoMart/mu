@@ -54,6 +54,7 @@
       <link rel="shortcut icon" href="http://meetuniv.com/assets/img/favicon.png">
       <link href="http://meetuniv.com/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
       <link href="http://meetuniv.com/assets/css/univ_style.css" rel="stylesheet" media="screen">
+	  <link media="screen" rel="stylesheet" href="http://localhost/mu/learn/edurator/templates/default/css/univ_style.css">
       <link href="http://meetuniv.com/assets/css/font-awesome.css" rel="stylesheet" media="screen">
 	  <link href="http://meetuniv.com/assets/css/bootstrap_calendar.css" rel="stylesheet" media="screen">
       <link href="http://meetuniv.com/assets/css/select2.css" rel="stylesheet" media="screen">
