@@ -4,7 +4,7 @@
             <article id="college_listing" class="page">
                <ul class="breadcrumb univ_breadcrumb">
                   <li><a href="<?php echo base_url()?>">Home</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
-                  <li><a href="<?php echo base_url('college')?>">College Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
+                  <li><a href="<?php echo base_url('college-study-in-abroad')?>">College Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
                   <li class="active">Search Result</li>
                </ul>
                <div class="clearfix"></div>
@@ -21,20 +21,8 @@
                <div class="row" id="collage_listing_page">
                   <section class="span3">
                      <h5 class="no_margin margin_b_10">Filter Your Search:</h5>
-					 <div class="tab_spine clearfix">
-                        <h4>Country</h4>
-                        <ul class="unstyled">
-                           <li id="addingContentCountry">
-							  <input class="span2" id="locationFilterByCountry" type="text" data-provide="typeahead" data-items="4" placeholder="Country Name">
-							  <!--<span class="add-on" style="cursor:pointer;"><i class="icon-plus blue" style="font-size: 20px;"></i></span>-->
-							  <button class="btn btn-primary btn-small" onclick="addLocationByCountry()" style="vertical-align: super;">Filter</button>
-							  <input type="hidden" id="filtrationCountries" value=""/>
-						   </li>
-                           <li id="allCountryLocation">All Countries</li>
-                        </ul>
-                     </div>
                      <div class="tab_spine clearfix">
-                        <h4>City</h4>
+                        <h4>Location</h4>
                         <ul class="unstyled">
                            <li id="addingContent">
 							  <input class="span2" id="locationFilter" type="text" data-provide="typeahead" data-items="4" placeholder="City Name">
@@ -45,7 +33,21 @@
                            <li id="allLocation">All Cities</li>
                         </ul>
                      </div>
-                     <div class="tab_spine clearfix">
+					 <div class="tab_spine clearfix">
+                        <h4>Refind courses</h4>
+                        <ul class="unstyled">
+                           <li id="addingContent" style="padding-left: 6px;">
+						   <form method="post" action="<?php echo base_url();?>college/searchCollegeByCourse" name="search" id="search">
+							  <input class="span2" id="collegeFilter" type="text" data-provide="typeahead" data-items="4" placeholder="Search" autocomplete="off">
+							  <!--<span class="add-on" style="cursor:pointer;"><i class="icon-plus blue" style="font-size: 20px;"></i></span>-->
+							  <button class="btn btn-primary btn-small" type="submit" style="vertical-align: super;">Search</button>
+							  <input type="hidden" id="filtrationCities" value=""/>
+							</form>
+						   </i>
+                           
+                        </ul>
+                     </div>
+                     <!--<div class="tab_spine clearfix">
                         <h4>Degree Type</h4>
                         <ul class="unstyled">
                            <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Foundation</a></li>
@@ -79,7 +81,7 @@
                            <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Sept 2013</a></li>
                            <li><i class="icon-remove-sign icon-class-red"></i><a href="#">Jan 2014</a></li>
                         </ul>
-                     </div>
+                     </div>-->
                   </section>
                   <section class="span7" id="collegeContent">
 					<div class="row">
@@ -87,7 +89,8 @@
 							<p class="text-right">Showing <?php echo count($results)?>/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
 						</div>
 					</div>
-					
+					<?php echo $this->load->view('rotator/collegeImgRotator');?>
+					<!---<a href="http://myieltsgurus.com" target="_blank"><img src="<?php echo base_url();?>assets/img/ad/ielts.jpg" title="MyIELTSGurus.Com" alt="MyIELTSGurus.Com" /></a>--><br/>
 					<?php 
 					foreach ($results as $universities)
 					{
@@ -105,7 +108,11 @@
 						   <div class="span6">
 							<div class="row">
 								<div class="span4">
-									<h4><?php echo $universities->univName; ?></h4>
+									<?php
+										$link = str_replace(' ','-',$universities->univName);
+										$link = preg_replace('/[^A-Za-z0-9\-]/', '',$link);
+									?>
+									<h4><a style="text-decoration:none" href="<?php echo base_url().'college/'.$link.'/'.base64_encode($universities->id)?>"><?php echo $universities->univName; ?></a></h4>
 								</div>
 								<div class="span2">
 									<div class='place pull-right'>
@@ -146,10 +153,6 @@
 										<a class="btn btn-primary btn-mini" href='#'><i class='icon-plus-sign'></i> Add College</a>
 										</div>
 										<div class="span4 mu-connect">
-										<?php
-											$link = str_replace(' ','-',$universities->univName);
-											$link = preg_replace('/[^A-Za-z0-9\-]/', '',$link);
-										?>
 										<a class="btn btn-info btn-mini" href="<?php echo base_url().'college/'.$link.'/'.base64_encode($universities->id)?>">Univ Details</a>
 										</div>
 									</div>
@@ -170,8 +173,8 @@
                      </div>
 				  </section>
                   <aside class="span2">
-                      <article onclick="window.open('http://bit.do/hpbannernew')" style="cursor:pointer;">
-                        <img src="<?php echo base_url();?>assets/img/ad/bcsurvey.jpg">
+					 <article onclick="window.open('http://meetuniv.com/Study-In-Uk-Meet-Sixty-Universities.php?src=home')" style="cursor:pointer;">
+                        <img src="<?php echo base_url();?>assets/img/ad/bc500.jpg">
                      </article>
                   </aside>
                </div>
@@ -198,12 +201,26 @@
 							}
 						});
 						
-						$('#locationFilterByCountry').typeahead({
+						$('#collegeFilter').typeahead({
 							source: function(query, process){
-								 return $.get('<?php echo base_url()?>/college/countryJsonList',function(data){
+								 //return $.get('<?php echo base_url()?>/college/courseJsonList',function(data){
+								 return $.get('<?php echo base_url()?>/assets/courses.json',function(data){
 									return process(data)
 								}); 
 							}
+						});
+						
+						//**** search courses ****/////
+						$('#search').submit(function(){
+							var c_name = $('#collegeFilter').val();
+							
+							//var courseName = c_name.replace("-","=");
+							
+							var courseName = c_name.replace(/\s+/g, '+');
+							//	alert(courseName);return false;
+							//var courseName = c_name.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/\//g, "-");
+							window.location.href = "<?php echo base_url();?>college/searchCollegeByCourse/"+courseName;
+							return false;
 						});
 						
 						/*end*/
@@ -297,76 +314,4 @@
 					  }) 
 					  //if()
 					}
-					
-					/*added by raghvendra*/
-					
-					function addLocationByCountry()
-					{
-						var location = $("#locationFilterByCountry").val();
-						if(location!='')
-						{
-						  var filtrationCountries = $("#filtrationCountries").val();
-							//alert(filtrationCountries);
-						  if(filtrationCountries.indexOf(location)<=-1)
-						  {
-							$("#addingContentCountry").after("<li><i class='icon-remove-sign icon-class-red' id='"+location.substring(0,4)+"' onclick='removeCountry(\""+location+"\",this.id)' style='cursor:pointer'></i>"+location+"</li>");
-							
-							if(filtrationCountries=='')
-							{
-								$("#allLocation").hide();
-								$("#filtrationCountries").val(location);
-							}
-							else
-								$("#filtrationCountries").val(filtrationCountries+","+location);
-							
-							//alert($("#filtrationCountries").val());
-							url="<?php echo base_url();?>college/filterLocationByCountry";
-							data = {countryName:$("#filtrationCountries").val()};
-							//alert(data);return;
-							 $.ajax({
-								type	:	'POST',
-								data	:	data,
-								url		:	url,
-								beforeSend: function(){
-									$("#collegeContent").css('opicity','0.4');
-								},
-								success: function(data){
-									//alert(data);
-									$("#collegeContent").html(data);
-									$("#collegeContent").css('opicity','1');
-								},
-								
-							}) 
-						  }
-						  $("#locationFilter").val('');
-						}
-					}
-					function removeCountry(countryName,id)
-					{
-					  var country = countryName;
-					  var filtrationCountries = $("#filtrationCountries").val();
-					  filtrationCountries = filtrationCountries.replace(country+",","");
-					  filtrationCountries = filtrationCountries.replace(","+country,"");
-					  filtrationCountries = filtrationCountries.replace(country,"");
-					  $("#filtrationCountries").val(filtrationCountries);
-					  $("#"+id).parent().remove();
-					  url="<?php echo base_url();?>college/filterLocationByCountry";
-					  data = {countryName:$("#filtrationCountries").val()};
-					   $.ajax({
-					  	type	:	'POST',
-					  	data	:	data,
-					  	url		:	url,
-					  	beforeSend: function(){
-					  		$("#collegeContent").css('opicity','0.4');
-					  	},
-					  	success: function(data){
-					  		//alert(data);
-					  		$("#collegeContent").html(data);
-					  		$("#collegeContent").css('opicity','1');
-					  	},
-					  	
-					  }) 
-					  //if()
-					}
-					
 					</script>

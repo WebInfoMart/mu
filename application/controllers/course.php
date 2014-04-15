@@ -9,10 +9,18 @@ class Course extends CI_Controller
 		$this->load->model('coursemodel');
 		$this->load->library("pagination");
 	}
-	
+	/* public function test()
+	{
+		print_r($_POST);exit;
+	} */
 	public function individualCourse($universityName,$universityId,$courseName,$courseId) {
 		
-		//echo $universityName;exit;
+		$courseDetail = $this->coursemodel->getCounterValue($courseId);
+		$pageCount = $courseDetail[0]['page_count'];
+		if(!empty($courseId)){
+			$count = $pageCount + 1;
+			$this->coursemodel->countCourses($count,$courseId);
+		}
 		$university_name = str_replace('-',' ',$universityName);
 		$course_name = str_replace('-',' ',$courseName);
 		$data['active']="";
@@ -38,8 +46,6 @@ class Course extends CI_Controller
 		
         $this->layout->view('course/individualCourse.php', $data);
     }
-	
-	
 	
 
 }

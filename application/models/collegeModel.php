@@ -72,9 +72,9 @@ class Collegemodel extends CI_Model
 		return $query->row_array();
 	}
 	public function getCoursesByCollege($univId)
-	{
-		$query = $this->db->query("SELECT * FROM `courses` left join courseLevel on courses.ucasId=courseLevel.ucasId where univId=".$univId." order by courseLevel.level2 desc");
-		return $query->result();
+	{		$query = $this->db->query("SELECT courses.id,courses.courseId as ucasId FROM `courses` left join courseLevel on courses.ucasId=courseLevel.ucasId where univId=".$univId." order by courseLevel.level2 desc");		return $query->result();
+		/* $query = $this->db->query("SELECT * FROM `courses` left join courseLevel on courses.ucasId=courseLevel.ucasId where univId=".$univId." order by courseLevel.level2 desc"); */
+		//return $query->result();
 	}
 	public function getCourseLevelName($level2)
 	{
@@ -115,78 +115,5 @@ class Collegemodel extends CI_Model
 		$this->db->limit(6);
 		$query = $this->db->get();
 		return $query->result_array();
-	}
-	
-	function getLatestArticle()
-
-	{
-
-		  		
-		$query = $this->db_forum->query("SELECT * FROM art_articles ORDER BY id DESC LIMIT 0, 5");
-
-		return $query->result();
-
-	}
-	
-	public function record_count_country($countryIdArray='')
-	{
-       if($countryIdArray)
-	   {
-	    $this->db->select('id');
-		$this->db->from('university');
-		$this->db->where_in('countryId',$countryIdArray);
-		$query = $this->db->get();
-		$filteredUniversity = $query->result_array();
-		return count($filteredUniversity);
-	   }
-	   else
-	   { 
-		return $totalUniversities=$this->db->count_all("university");
-	   }
-    }
-		
-	public function getUniversityByCountry($limit, $start, $countryIdArray)
-	{
-		//print_r($countryIdArray);
-        $this->db->limit($limit, $start);
-		if($countryIdArray)
-		{
-		$this->db->where_in('countryId',$countryIdArray);
-		}
-		$this->db->order_by('featured','desc');
-        $query = $this->db->get("university");
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $getAllUniversities[] = $row;
-            }
-            return $getAllUniversities;
-        }
-        return false;
-	}
-	
-	public function getSatisfaction($courseIds)
-	{
-	
-		$course_id = explode(',',$courseIds);
-		$this->db->select('*');
-		$this->db->from('nss');
-		$this->db->where_in('courseId', $course_id);
-		$query=$this->db->get();
-		return $satisfaction = $query->result_array();
-		
-	}
-	
-	public function getCourseFee($courseIds)
-	{
-	
-		$course_id = explode(',',$courseIds);
-		$this->db->select('*');
-		$this->db->from('course_fee');
-		$this->db->where_in('courseId', $course_id);
-		$query=$this->db->get();
-		return $satisfaction = $query->result_array();
-		
-		//echo "<pre>";print_r($satisfaction);exit;
-		
 	}
 }

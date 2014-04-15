@@ -20,7 +20,10 @@ class Welcome extends CI_Controller
 			$this->load->view('welcome', $data);
 		}
 	}
+	
+	
 }
 
 /* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* Location: ./application/controller
+s/welcome.php */

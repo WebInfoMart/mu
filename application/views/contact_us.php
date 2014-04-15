@@ -7,17 +7,20 @@
 	<div class="row">
 		<div class="span6">
 			<div class="well">
-				<blockquote>
-					<p class="text-info">Contact Us!</p>
-					<small>MeetUniv.Com - Registered Office</small>
-					E-11,<br>Greater Kailash Part 1<br>New Delhi
-				</blockquote>
+				
+					<p class="con-txt">Contact Us!</p>
+					<small class="small-font">MeetUniv.Com - Registered Office</small>
+					<span style="display:block;">E-11,</span><span style="display:block;">Greater Kailash Part 1</span><span style="display:block;"> New Delhi</span>
+					<br />
+					<p class="con-txt">USA Office!</p>
+					<span style="display:block;">201 N,</span><span style="display:block;">Serenity Hill Circle,</span><span style="display:block;"> Chapel Hill, NC, USA 27516 </span>
+				
 			</div>
 			
 			<br/><br/>
 		</div>
 		<div class="span6">
-			<h4>Reach Us! <!--Fill Up the Details!--></h4>
+			<h4 style="margin-top:0px;">Reach Us! <!--Fill Up the Details!--></h4>
 		  <form action="" method="post">
 			  <?php if(form_error('name')||form_error('email')||form_error('type')||form_error('message')){?>
 			  <div class="alert alert-error"  id="contact-error">

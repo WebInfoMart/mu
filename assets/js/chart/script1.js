@@ -1,5 +1,3 @@
-function test_chart()
-{
 var w = 120,
 	h = 110;
 
@@ -126,4 +124,4 @@ var legend = svg.append("g")
 	  .attr("font-size", "11px")
 	  .attr("fill", "#737373")
 	  .text(function(d) { return d; })
-	  ;}
+	  ;

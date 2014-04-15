@@ -17,7 +17,7 @@ class Quiz extends CI_Controller
 		if (!$this->tank_auth->is_logged_in()) {									
 			$this->session->set_userdata(array('last_url' => 'gifted'));
 			//echo $this->session->userdata('last_url');exit;
-			redirect('/auth/login');
+			redirect('/login');
 		}
 		
 		$data['title'] = "MeetUniv.Com : Psychometric Analysis";
@@ -101,7 +101,7 @@ class Quiz extends CI_Controller
 	function report()
 	{
 		if (!$this->tank_auth->is_logged_in()) {									
-			redirect('/auth/login');
+			redirect('/login');
 		}
 		$data['active'] = '';
 		$data['title'] = "MeetUniv.Com : Psychometric Analysis Report";
@@ -532,6 +532,14 @@ class Quiz extends CI_Controller
 		} 
 		
 		return  $value;
+	}
+	
+	function high_roi()
+	{
+		if (!$this->tank_auth->is_logged_in()) {									
+			redirect('/login');
+		}
+		$this->layout->view('quiz/high_roi',$data);
 	}
 	
 	

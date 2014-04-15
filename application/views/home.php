@@ -129,8 +129,8 @@
 </div>	  
 <!--model close-->	  
 	  <!--Slider-->
-      <div id="myCarousel" class="carousel slide">
-         <ol class="carousel-indicators">
+      <div itemscope itemtype="http://schema.org/Event" id="myCarousel" class="carousel slide">
+         <ol itemscope itemtype="http://schema.org/Event" class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -216,7 +216,7 @@
                      <article>
                         <div class="para-1">
                           <p> Choosing the right College is important to begin your successful career. We provide a listing of more than 1000  Colleges worldwide. </p>
-                           <button class="btn btn-small slider_bu" type="button" onclick="location.replace('<?php echo base_url('college')?>')">Take a Look</button>
+                           <button class="btn btn-small slider_bu" type="button" onclick="location.replace('<?php echo base_url('college-study-in-abroad')?>')">Take a Look</button>
                         </div>
                      </article>
                      <article>
@@ -234,7 +234,7 @@
 							  <?php }?>
                            </ul>
 						   <div class="pull-right" style="padding: 0px 20px;">
-							<a href="<?php echo base_url('college')?>" class="see-more"> see more</a>
+							<a href="<?php echo base_url('college-study-in-abroad')?>" class="see-more"> see more</a>
 						   </div>
                         </div>
                      </article>
@@ -244,7 +244,7 @@
 			<article class="item">
                <img src="<?php echo base_url()?>assets/img/connect_img.jpg">
                <div class="slider_content" id="career">
-                  <h2 class="connect"><img src="<?php echo base_url()?>assets/img/mu-connect.png"></h2>
+                  <h2 class="connect"><img itemprop="image" src="<?php echo base_url()?>assets/img/mu-connect.png"></h2>
                   <div id="connect_content" class="clearfix">
                      <article id="univ_connect" class="no_border">
                         <table class="table table-hover">
@@ -254,10 +254,10 @@
 						{?>   
 						   <tr>
                               <td id="<?php echo $connectshow->id?>" class="univ"><strong><?php echo substr($this->connectmodel->getUniversityNameById($connectshow->univId),0,20)."..";?></strong><br>
-                                 <small> <?php echo $connectshow->tagLine;?></small>
+                                 <small itemprop="name"> <?php echo $connectshow->tagLine;?></small>
                               </td>
                               <td>
-                                 <date class="homedate"><?php echo $connectshow->date?></date>
+                                 <date itemprop="startDate" content="<?php echo $connectshow->date?>" class="homedate"><?php echo $connectshow->date?></date>
                                  <div class="place"><?php echo $this->collegemodel->getUnivLocationById($connectshow->cityId,$connectshow->countryId);?></div>
                               </td>
                            </tr>
@@ -273,6 +273,9 @@
 				{
 				$univName=$this->connectmodel->getUniversityNameById($connect->univId);
 				$location=$this->collegemodel->getUnivLocationById($connect->cityId,$connect->countryId);
+				$rest = substr($connect->id, 1, +2); 
+				$c_value = $rest + $connect->counter;
+				$counterValue = floor($c_value/4);
 				?>
 			   <aside id="slide<?php echo $connect->id;?>" class="slider_content extra_block" style="z-index:888">
 					<div class="row">
@@ -300,7 +303,7 @@
 								</ul>
 								</div>
 								<button class="btn btn-mini btn-primary voilet" type="button" id="attending-<?php echo $counter;?>" onclick="showAttending(this.id);">I am Attending</button>
-								<p class="attending_count">Attending <a href="#">+<?php echo $connect->counter;?></a></p>
+								<p class="attending_count">Attending <a href="#">+<?php echo $counterValue;?></a></p>
 							</aside>
 						</div>
 					</div>
@@ -337,12 +340,14 @@
                   <h2 class="no_margin"><img src="<?php echo base_url()?>assets/img/search-courses.png"></h2>
                   <div id="cource_content" class="clearfix">
                      <p><i>Search our database of over 100,000 courses worldwide. Fill in the details below and click on the Start course search button to search for a specific course. </i></p>
-                     <aside id="s_search">
+                     <form method="post" action="<?php echo base_url();?>college/searchCollegeByCourse" name="search" id="search">
+					 <aside id="s_search">
                         <p  class="no_margin">
-                           <input type="text" placeholder="Search Course">
-                           <button class="btn" type="button">Search</button>
+                           <input type="text" id="collegeFilter" data-provide="typeahead" data-items="4" placeholder="Search Course" name="search" autocomplete="off">
+                           <button class="btn" type="submit">Search</button>
                         </p>
                      </aside>
+					 </form>
                      <article>
                         <h3>Recently Searched courses:</h3>
                         <p> Humanities, Social and Political Science, Veterinary Medicine, MBA Finance, Accountancy<br>
@@ -381,7 +386,7 @@
                         <p> Unable to decide which is the right path for you? Let us lend you a helping hand to choose the right career.
                         </p>
                      </article>
-                     <button class="btn sl_bn" type="button">Ask our counselor</button>
+                     <button class="btn sl_bn" type="button" onclick="window.location.href='<?php echo base_url('gifted')?>'">Gifted</button>
                   </div>
                </div>
             </article>
@@ -395,7 +400,7 @@
                         <div class="para">
                            <h3>Trial Tests</h3>
                            <p><i>To help you get the perfect score in exams, we have a series of trial tests. Challenge yourself!</i></p>
-                           <button class="btn btn-small slider_bu" type="button">See Test List</button>
+                           <button class="btn btn-small slider_bu" type="button" onclick="window.location.href='<?php echo base_url('ielts-preparation')?>'">See Test List</button>
                         </div>
                      </article>
                      <article>
@@ -403,7 +408,7 @@
                         <div class="para">
                            <h3>Options to purchase test material from multiple sources</h3>
                            <p><i>Need more material for practicing? We are providing you with various options to purchase test material.</i></p>
-                           <button class="btn btn-small slider_bu" type="button">More Info</button>
+                           <button class="btn btn-small slider_bu" type="button" onclick="window.location.href='<?php echo base_url('ielts_preparation')?>'">More Info</button>
                         </div>
                      </article>
 <!-- 
@@ -420,7 +425,20 @@
          </div>
          <!-- Carousel nav -->
          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a> <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> 
+		 
+		<meta itemprop="url" content="http://www.meetuniv.com">
+		<meta itemprop="description" content="2014 Abroad University Events & Abroad Education fairs in India : Meetuniv.com">
+		<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+		<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		<meta itemprop="postalCode" content="400058">
+		<meta itemprop="addressCountry" content="India">
+		<meta itemprop="addressRegion" content="Maharashtra">
+		<meta itemprop="addressLocality" content="Next to BMC Office,  Opposite Andheri Station, Andheri (West), Mumbai">
+		<meta itemprop="streetAddress" content="Business Point, 2nd Floor, Paliram Road, Off S.V. Road, Behind Brahmakumari Hospital,"></span></span></div>
+		 
+		 
       </div>
+	    </div>
       <!--End Slider-->
       
 	  <!--main-->
@@ -434,7 +452,7 @@
 				<div class="span8">
 					<div class="row main-row">
 						<div class="span4">
-							<div class="row">
+							<div class="row" onclick="window.location.href='<?php echo base_url('college-study-in-abroad')?>'" style="cursor:pointer;">
 							<div class="span1">
 								<i class="icon-comments-alt"></i>
 							</div>
@@ -443,12 +461,12 @@
 								<p>Not sure where to start from ?<br>
 									Confused start your search here:<br/><br/>
 								</p>
-								<p><a href="<?php echo base_url('college')?>">College search &rarr;</a></p>
+								<p><a href="<?php echo base_url('college-study-in-abroad')?>">College search &rarr;</a></p>
 							</div>
 							</div>
 						</div>
 						<div class="span4">
-							<div class="row">
+							<div class="row" onclick="window.location.href='<?php echo base_url('connect')?>'" style="cursor:pointer;">
 							<div class="span1">
 								<i class="icon-sitemap"></i>
 							</div>
@@ -464,7 +482,7 @@
 					</div>
 					<div class="row main-row">
 						<div class="span4">
-							<div class="row">
+							<div class="row" onclick="window.location.href='<?php echo base_url('ielts-preparation')?>'" style="cursor:pointer;">
 							<div class="span1">
 								<i class="icon-laptop"></i>
 							</div>
@@ -473,12 +491,12 @@
 								<p>Help in your application process<br>
 									Free Courseware for Exams.<br/><br/>
 								</p>
-								<p><a href="<?php echo base_url('contact-us')?>?type=4">IELTS - Academic / English &rarr;</a></p>
+								<p><a href="<?php echo base_url('ielts-preparation')?>">IELTS - Academic / English &rarr;</a></p>
 							</div>
 							</div>
 						</div>
 						<div class="span4">
-							<div class="row">
+							<div class="row" onclick="window.location.href='<?php echo base_url('gifted-intro')?>'" style="cursor:pointer;">
 							<div class="span1">
 								<i class="icon-magic"></i>
 							</div>
@@ -487,17 +505,20 @@
 								<p>Don't know which stream to choose?<br>
 									Confused Career choices?
 								</p>
-								<p><a href="<?php echo base_url('gifted')?>">I am Gifted &rarr;</a></p>
+								<p><a href="<?php echo base_url('gifted-intro')?>">I am Gifted &rarr;</a></p>
 							</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<aside class="span4" id="british_council" onclick="window.open('http://www.britishcouncil.in/why-the-uk')">
-					<h4>British Council</h4>
+				<!---<aside class="span4" id="british_council" onclick="window.open('http://www.britishcouncil.in/why-the-uk')">--->
+				<aside class="span4" id="british_council">
+					<?php echo $this->load->view('rotator/homeImgRotator');?>
+					<!--<h4>British Council</h4>
+					
 					<p>
 						The most trusted source of information about studying in the UK, in association with MeetUniv.com outlines the essential information for you to know & where to begin from.Single source , to keep you updated with the happenings in UK education.
-					</p>
+					</p>-->
 				</aside>
 			</div>
 		</span>
@@ -507,7 +528,7 @@
 					<div class="row">
 						<div class="span6">
 							<div></div>
-							<h3><i class="icon-fast-forward"></i> &nbsp; Want to get into Havard or MIT ?</h3>
+							<h3><i class="icon-fast-forward"></i> &nbsp; Want to get into Harvard or MIT ?</h3>
 							<h5>Let experts help you through the process.</h5>
 							<div class="pull-right">
 							<button class="btn btn-info" type="button" onclick="location.replace('<?php echo base_url('contact-us')?>?type=3')">GET EXPERT HELP NOW</button>
@@ -526,15 +547,15 @@
 						$articlerows = str_replace(" ","-",$articleTitle);
 						$art = rtrim($articlerows, "-"); 
 						?>
-						<p><a href="<?php echo base_url();?>learn/blog/read-<?php echo $art; ?>_<?php echo $article->id;?>.html" style="font-family:'Open Sans', sans-serif;font-size:12px;color:#333333;"><?php echo $articleTitle; 
+						<p><i class="icon-play-circle" style="color:green;font-size:12px"></i>&nbsp;<a href="<?php echo base_url();?>learn/blog/read-<?php echo $art; ?>-<?php echo $article->id;?>.html" style="font-family:'Open Sans', sans-serif;font-size:12px;color:#333333;"><?php echo $articleTitle; 
 						?></a></p>
 						<?php } ?>
 						<!--<p><a href="#"> Myths about College Scholarships</a></p>
 						<p><a href="#"> Key Steps in the Law Admission Process</a></p>
 						<p><a href="#"> List of Rolling Admissions Schools</a></p>
 						<p><a href="#"> The Basics of Financial Aid </a></p>
-						<p><a href="#">Information for Chinese Students</a></p>
-						<p><a href="#"> Information for Indian Students</a></p>-->
+						<p><a href="#">Information for Chinese Students</a></p>-->
+						<!--<p><a href="#"> Information for Indian Students</a></p>-->
 					</ul>
 				</div>
 			</div>
@@ -551,6 +572,88 @@
    <?php $this->load->view('layout/js');?>
 	
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.scrollbox.js"></script>
+	
+	<!---Added by Raghvendra for course search--->
+	<script src="<?php echo base_url();?>assets/js/bootstrap-dropdown.js"></script>
+	  <script src="<?php echo base_url();?>assets/js/bootstrap-typeahead.js"></script>
+	  <script>
+					$("[rel=tooltip]").tooltip({ placement: 'bottom'});
+					$(document).ready(function(){
+						
+						/*typehead*/
+						/* $.get('<?php echo base_url()?>college/cityJsonList',function(data){
+									console.log(data);
+								}); */
+						$('#search').submit(function(){
+							var c_name = $('#collegeFilter').val();
+							
+							//var courseName = c_name.replace("-","=");
+							
+							var courseName = c_name.replace(/\s+/g, '+');
+							//var courseName = c_name.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/\//g, "-");
+							window.location.href = "<?php echo base_url();?>college/searchCollegeByCourse/"+courseName;
+							return false;
+						});
+						$('#collegeFilter').typeahead({
+							source: function(query, process){
+								 //return $.get('<?php echo base_url()?>/college/courseJsonList',function(data){
+								 return $.get('<?php echo base_url()?>/assets/courses.json',function(data){
+									return process(data)
+								}); 
+							}
+						});
+						
+						/*end*/
+						$('.dropdown-toggle').dropdown();
+						$("#pagination a").click(function(){
+							var url = $(this).attr('href');
+							var temp = url.split('/');
+							
+							var data = {offset:temp[6]};
+							$.ajax({
+								type	:	'POST',
+								data	:	data,
+								url		:	url,
+								beforeSend: function(){
+									$("#collegeContent").css('opicity','0.4');
+								},
+								success: function(data){
+									$("#collegeContent").html(data);
+									$("#collegeContent").css('opicity','1');
+								},
+								
+							})
+							return false;
+						});
+					
+					});
+					
+					function searchCollegesByCourse()
+					{
+						var courseName = $("#collegeFilter").val();
+						//alert(courseName);
+						//if(courseName!='')
+						{
+						  url="<?php echo base_url();?>college/searchCollegeByCourse";
+							data = {courseName:$("#collegeFilter").val()};
+							 $.ajax({
+								type	:	'POST',
+								data	:	data,
+								url		:	url,
+								success: function(data){
+									//alert(data);
+									
+									//window.location.href="<?php echo base_url();?>college/c";
+									
+								},
+								
+							}) 
+						 
+						  //$("#locationFilter").val('');
+						}
+					}
+	</script>
+<!---end here---->
 	<script>
          $(document).ready(function(){
          	

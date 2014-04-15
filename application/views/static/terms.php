@@ -23,7 +23,7 @@
 
 		<p><strong>Changes To This Agreement</strong><br />We reserve the right, at our sole discretion, to modify or replace these Terms and Conditions by posting the updated terms on the Site. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms and Conditions.</p>
 		<p>Please review this Agreement periodically for changes. If you do not agree to any of this Agreement or any changes to this Agreement, do not use, access or continue to access the Site or discontinue any use of the Site immediately.</p>
-		<p>Published and generated with permission from <a href="http://termsfeed.com">www.TermsFeed.com</a>.</p>
+		<p>Published and generated with permission from TermsFeed.</p>
 
 		<p><strong>Contact Us</strong><br />If you have any questions about this Agreement, please contact us.</p>
 

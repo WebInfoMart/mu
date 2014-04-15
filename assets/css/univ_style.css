@@ -54,7 +54,7 @@ a#logo {
 	left:-32px;
 }
 nav#top_menu {
-	margin-left:280px;
+	margin-left:240px;
 	float:left;
 }
 nav#top_menu ul {
@@ -1968,6 +1968,7 @@ ul#notification li span {
 	padding:2px 2px;
 	font-size:10px;
 	height:15px;
+	float:left;
 }
 #attending .input-append, #attending .input-prepend {
 	margin-bottom:0;
@@ -2433,7 +2434,7 @@ img.arrow{ margin-top:100px; margin:100px 20px 0px;}
 
 .abt-matter{ clear: both;    margin: 0 auto;    overflow: hidden;    padding-top: 63px;    width: 721px;}
 
-.abt-banner{width:100%; height:192px; background:url(../images/banner-bg.jpg) repeat-x; margin-top:50px;}
+.abt-banner{width:100%; height:192px; background:url(../images/banner-bg.jpg) repeat-x; /*  margin-top:50px; */}
 
 .abt-matter h3{text-shadow: 0px 1px 2px #969696;margin-bottom: 0px;}
 
@@ -2785,7 +2786,7 @@ font-size: 23PX;
 
 .gifted-popup-ul li p{
 font-weight: bold;
-font-size: 13px;
+font-size: 12px;
 line-height: 17px;
 }
 
@@ -2808,7 +2809,7 @@ color: #0073d1;
 
 .yellow-bg{ background:#faf0ca; float:left; width:206px; height:94px;}
 .yellow-bg img{ float:left; margin-right:12px; margin-left:5px; margin-top:12px;}
-.yellow-bg p{ font-size:16px; color:#ff0000; padding-top:27px; float:left;}
+.yellow-bg p{ font-size:14px; color:#ff0000; padding-top:27px; float:left;}
 .yellow-bg span{float:right; font-size: 24px; font-weight: bold;   padding-right: 0px;    text-align: right; color:#ff0000;}
 
 .facilities{overflow:hidden;width:81px; text-align:center;margin-top:2px;background-color:#faf3fe;}
@@ -2848,7 +2849,7 @@ color: #0073d1;
 
 .caption-bar{ background:url(../images/course_images/caption-bg.png) repeat-x; height:54px; position:relative;}
 .caption-bar p.title{ color:#ffffff; font-size:22px;padding-left:148px; padding-top:13px;}
-.caption-bar img{ position:absolute; top:-8px; left:20px;}
+.caption-bar img{ position:absolute; top:0px; left:20px;}
 .box-content p span{ font-size:22px;color:#ffffff;}
 .box-content p{ color:#ffffff; padding-left:20px;padding-top:39px; font-size:14px; width:398px;}
 
@@ -2885,22 +2886,299 @@ color: #ffffff;
 /*added by raghvendra*/
 .edit-move-left{margin-left:-25px; padding-top: 4px;padding-bottom: 1px;}
 
-
 /*added for course individual page 24/01/2014*/
 
-ul.employment{list-style:none; margin:0; padding:0px 0px 10px;}
-ul.employment li{background:url(../images/bullet.jpg) no-repeat 10px 7px;  padding:5px 30px;border:1px solid #9abc32; border-width:0px 0 1px;}
+ul.employment{list-style:none; margin:0; padding:0px 0px 10px; font-size:13px;}
+ul.employment li{background:url(../images/course_bullet.jpg) no-repeat 10px 7px;  padding:5px 30px;border:1px solid #9abc32; border-width:0px 0 1px;}
 
 ul.employment li:first-child{border-top-width:1px}
 
-ul.employment li:nth-child(odd){background:url(../images/bullet.jpg) no-repeat 10px 7px #e4ecce;}
-h3.blue-text{color:#0066cc; font-style:italic; font-weight:normal; line-height:27px; padding-top:10px;}
+ul.employment li:nth-child(odd){background:url(../images/course_bullet.jpg) no-repeat 10px 7px #e4ecce;}
+h3.blue-text{color:#0066cc; font-style:italic; font-weight:normal; line-height:27px; padding-top:10px; font-size:17px;}
 p.votes{color:#373737; font-size:16px; font-weight:bold; padding-top:5px;}
 p.votes span{font-size:24px; color:#ff892a; display:block; padding-top:5px;}
-/* amit*/h3.employment{font-weight:normal; background:url(../images/title-star.jpg) no-repeat left; border-bottom:1px solid #cccccc; padding-left:35px; margin-bottom:10px; line-height:28px; margin-top:32px; padding-bottom:5px;}
+/* amit*/h3.employment{font-weight:normal; background:url(../images/title-star.jpg) no-repeat left; border-bottom:1px solid #cccccc; padding-left:35px; margin-bottom:10px; line-height:28px; margin-top:32px; padding-bottom:5px; font-size:20px;}
 .ratings-percent{ clear:both; overflow:hidden; }
 h4.red-font{ color:#dd322d; font-size:18px; padding-top:10px;}
 /* amit*/
 table.jobs tr td{border-bottom: 1px solid #cccccc; padding:5px 5px;}
 table.jobs tr:last-child td{border-bottom:0;}
 table.jobs tr:nth-child(even) td{background:#eaeaea;}
+
+/* about us page*/
+
+.banner-text{width:712px; margin:0 auto; text-align:center; overflow:hidden;}
+
+.banner-text h1{ color:#ffffff; font-size:30px; margin-top:35px;}
+
+.banner-text h2{  color:#ffffff; font-size:22px; line-height:31px;}
+
+.abt-bg{ background:#F4F6F5; padding-bottom:50px;}
+
+.abt-matter{ clear: both;    margin: 0 auto;    overflow: hidden;    padding-top: 63px;    width: 721px;}
+
+.abt-banner{width:100%; height:192px; background:url(../images/banner-bg.jpg) repeat-x; /* margin-top:57px; */} /*amit*/
+
+.abt-text{ width:381px;}
+
+.our-team{margin: auto;    text-align: center;    width: 526px}
+
+.our-team p{text-align:center;}
+
+.dreamers{ margin: auto;  width: 721px; text-align:left;}
+
+.dreamers h3{margin:20px 0!important;}
+
+.dreamers table{width:100%; }
+
+.dreamers table td{ text-align:center}
+
+.members{ margin: auto; width: 721px; text-align:left;}
+
+.abt-page{padding-bottom:30px;}
+
+.members h3{margin:20px 0 !important;}
+
+.members table{width:100%; }
+
+.members table td{ text-align:center}
+
+p{text-align:justify; margin:0; padding:5px 0;}
+
+p.name{color:#06696f; text-align:center;}
+
+p span{color:#023f5;}
+
+.border{width: 227px; margin: 0px auto; padding: 0px 20px; border-bottom:none; border-right:3px solid #f1f1f1;}
+
+.border-last-child{ border-right:0; width: 227px; margin: 0px auto; padding: 0px 20px; border-bottom:0;}
+
+/*.in{
+float: left;
+width: 61px;
+}
+.in p{
+background: url('../img/facebook.png') no-repeat;
+margin: 0px;
+padding: 12px 0px 0px 15px;
+height: 31px;
+}*/
+
+.facebook{
+margin: 2px 6px 2px 8px;
+float: left;
+width: 53px;
+text-align: center;
+}
+
+.facebook p{
+margin: 0px;
+padding: 12px 0px 0px 15px;
+background: url('../img/in.png') no-repeat;
+height: 25px;
+}
+.tweet{
+margin-top:2px;
+float: left;
+width: 79px;
+}
+
+.tweet p{
+padding: 13px 0px 4px 0px;
+text-align: center;
+background: url('../img/tweet.png') no-repeat;
+height: 22px;
+}
+
+.facebook span img{
+margin-top: 10px;
+}
+
+.advertisement h3{
+color: rgb(90, 90, 90);
+float:left;
+}
+.advert{
+background: url('../img/arrows.png')no-repeat;
+display: inline-block;
+width: 21px;
+height: 14px;
+margin-top: 7px;
+margin-left: 3px;
+}
+
+.advert-ul{
+list-style:none;
+clear:both;
+overflow:hidden;
+}
+
+.advert ul li{
+text-indent: -39px;
+}
+.middle{
+width: 240px;
+padding: 27px;
+}
+
+.first{
+width: 240px;
+padding: 27px;
+}
+/* end about us page*/
+
+/* contact page css start here */
+.con-txt{
+font-size:17.5px;
+line-height:0.6;
+font-weight:300px;
+color:#3a87ad;
+}
+.small-font{
+display: block;
+line-height: 20px;
+color: #999999;
+}
+
+.well{
+padding:10px !important;
+}
+
+/* added for ielts & pshycometric */
+
+.ielts-banner-row{ width:940px; margin:auto; overflow:hidden; margin-top:14px; background:#ebebeb;padding-bottom:37px;padding-top:40px; }
+.btn1{ color:#2490cf; font-size:11px !important; height:21px !important; width:85px !important; padding:0; text-align:center; margin-top:15px !important;}
+.ielts-banner{padding-left:17px;}
+
+.ielts-ielts{float:left; width:345px;  padding-left:15px;}
+.ielts-ielts p{color:#06696f;font-size:14px; margin-bottom:20px;}
+.ielts-ielts ul{ list-style:none;}
+.ielts-ielts ul li{font-size:18px;  background:url(../images/bullet-1.jpg) no-repeat; margin-bottom:15px; padding-left:30px}
+.ielts-ielts ul li.home{ background:url(../images/home-icon.jpg) no-repeat; }
+.ielts-ielts ul li.about{background:url(../images/about-icon.jpg) no-repeat; }
+.ielts-ielts ul li a{ text-decoration:none;color:#eb6c27;}
+
+.description{float:left; width:521px;}
+.content-container{ width:940px;margin:0 auto; padding-top:10px; }
+.episode-description{width:48%; background:#ededed; box-shadow: 0px 0px 3px #888888;}
+.episode-matter{background:#ffffff; height:273px;margin-left:2px;margin-bottom:2px;margin-right:2px;/*overflow-y: auto;*/}
+.episode-description h3{color:#124b87; font-weight:normal; margin:0 !important; padding-left:19px;}
+.episode-description p{ font-size:13px; margin-bottom:0;padding-left:19px; clear:both; padding-bottom:11px; padding-right:20px; text-align:justify;}
+.episode-description p span{color:#1ca4d7; font-size:16px;display:block; float:left; padding:11px 0;}
+.episode-description ul{ list-style:none; margin-left:19px !important;}
+.episode-description  ul li{ background:url(../images/pdf-icon.jpg) no-repeat left 5px; padding-left:16px;}
+.episode-description ul li p{color:2a2a2a; font-size:10px; padding:0; margin:0;}
+.episode-description  ul li a{ text-decoration:none;color:#1ca4d7;}
+.episode-description p.small{ font-size:12px;}
+.span5 img[alt="stgeorge"]{ margin-bottom:12px;}
+
+.left-div{width:55.5%; background:#ededed; box-shadow: 0px 0px 3px #888888; margin-bottom:30px;}
+.left-div h3{color:#124b87; font-weight:normal; margin:0 !important; padding-left:19px;}
+.left-div p{ font-size:13px; margin-bottom:0; clear:both; padding-bottom:11px; text-align:justify;}
+.left-div-matter{background:#ffffff; padding-bottom:20px; padding-top:18px; overflow:hidden;}
+.left-div-matter p{margin-left: 15px; margin-right:15px;}
+.left-div-matter p span{color:#1ca4d7;}
+.left-div-matter p.orange{color:#eb6c27; border-bottom:dashed 1px #025a00; padding-bottom:2px;}
+.left-div-matter input{ font-size:16px !important; color:#007f06;margin:0 !important; margin-right:10px !important;} 
+.ielts-gap{ padding-top:30px;}
+
+.grey-bar{ background:#4b4b4b;}
+.british-council{width:407px;}
+.british-council img[title="british"]{ margin-top:15px;}
+.british-council p{ line-height:24px;}
+
+.episode-description-form{width:100%; background:#ededed; box-shadow: 0px 0px 3px #888888;}
+.episode-matter-form{background:#ffffff; height:auto;margin-left:2px;margin-bottom:2px;margin-right:2px;padding:12px;}
+.episode-description-form h3{color:#124b87; font-weight:normal; margin:0 !important; padding-left:19px;}
+
+/*added by raghvendra*/
+.rounding-box{background: #fff;
+box-shadow: 1px 1px 15px #B9B2B2;
+border-radius: 4px;
+width: 207px;
+margin: 0 auto;
+padding: 43px;}
+/*end*/
+
+/*new page for individual college*/
+  .blue-circle{
+	  margin:10px 10px 0 0;
+	  background-color: #64A5C4;
+	  float: left;
+	  width: 32px;
+	height: 32px;
+	font-size: 0px;
+	line-height: 32px;
+	text-align: center;
+	float: left;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px
+	}
+.select-blue{
+background:url(../assets/images/featured_college_img/select-bg.jpg) no-repeat right #fff;
+height: 29px;
+border-color: #e3e3e3 !important;
+width: 200px;
+border: 1px solid;
+-moz-box-shadow: 1px 1px 2px #eee;
+-webkit-box-shadow: 1px 1px 2px #eee;
+box-shadow: 1px 1px 2px #eee;
+}
+
+.select-courseid
+{
+width: 201px;
+height: 29px;
+margin-bottom:0;
+padding-left: 6px;
+opacity: 0;
+filter: alpha(opacity=0);
+}
+
+input.input-key
+{
+float:left;
+border-radius:0;
+font-size:11px;
+color:#999999;
+}
+/* addition */
+.news-div{border-bottom:1px solid #cccccc; overflow:hidden; clear:both; margin-left:20px; padding-bottom:15px; margin-bottom:15px;}
+h5.blue-small{color:#64a5c3; font-size:13px; margin:0; line-height:11px;}
+h6.title-small{ font-size:11px; margin:0;}
+ul.ql{list-syle:none; margin:0; padding:0;}
+ul.ql li{border-bottom:1px solid #ccc; background:url(../images/featured_college_img/bullet-1.jpg) no-repeat left; padding:10px 22px; margin:0;}
+ul.ql li a{color:#64a5c3;}
+h3 img{margin-top:6px; margin-right:5px}
+.margin-bottom{ margin-bottom:20px;}
+/* addition ends*/
+
+input.search-key
+{
+color:#ffffff;
+background:#5590AB !important;
+float:left;
+border-radius:0;
+font-size: 12px;
+padding: 10px 20px 10px 20px;
+margin: 0px;
+border: 0px;
+height: 30px;
+line-height: 11px;
+font-weight: normal;
+-webkit-border-radius: 0px 3px 3px 0px;
+-moz-border-radius: 0px 3px 3px 0px;
+border-radius: 0px 3px 3px 0px;
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.course-id
+{
+color:#999999;
+padding-left:20px;
+padding-top:5px;
+}
+/*end here*/

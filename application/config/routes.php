@@ -39,10 +39,21 @@
 */
 
 $route['default_controller'] = "auth";
-$route['404_override'] = '';
+$route['404_override'] = 'error/page_missing';
 
 $route['(register|login|home|profile|profile_match|profile_externalInfo)']='auth/$1';
+$route['auth/login']= 'main/some';
+$route['pshycometricRegistration']='auth/pshycometricRegistration';
+$route['college-study-in-abroad'] = "college";
+$route['college/study-in-uk-universities'] = "college/studyInUk";
+$route['college/study-in-usa-universities'] = "college/studyInUsa";
+$route['college/popular-college'] = "college/popularCollege";
 $route['college/collegePagination/(:num)'] = "college/collegePagination/$1";
+$route['college/UkCollegePagination/(:num)'] = "college/UkCollegePagination/$1";
+$route['college/UsaCollegePagination/(:num)'] = "college/UsaCollegePagination/$1";
+$route['college/popularCollegePagination/(:num)'] = "college/popularCollegePagination/$1";
+$route['college/searchCollegeByCourse/(:any)'] = "college/searchCollegeByCourse/$1";
+$route['college/searchCollegePagination/(:any)'] = "college/searchCollegePagination/$1";
 $route['college/filterByLocation/(:num)'] = "college/filterByLocation/$1";
 $route['college/(:any)/(:any)'] = "college/individualCollege/$1/$2";
 $route['course/(:any)/(:any)/(:any)/(:any)'] = "course/individualCourse/$1/$2/$3/$4";
@@ -52,12 +63,16 @@ $route['privacy-policy'] = "static_controller/privacy_policy";
 $route['about-us'] = "static_controller/about_us";
 $route['contact-us'] = "static_controller/contact_us";
 $route['terms'] = "static_controller/terms";
+$route['gifted-intro'] = "static_controller/pshycometric";
+$route['ielts-preparation'] = "static_controller/ielts_preparation";
 $route['gifted'] = "quiz";
-
 $route['gifted/report']='quiz/report';
 $route['gifted/reportapi']='quiz/reportapi';
 $route['gifted/api']='quiz/api';
 $route['gifted/reportpdf']='quiz/reportpdf';
+$route['gifted/high-roi']='quiz/high_roi';
+$route['admin']='admin/event';
+$route['admin']='admin/data_upload';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

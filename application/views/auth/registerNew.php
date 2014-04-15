@@ -173,10 +173,10 @@
             </article>
 			
             <article class="span5 r_col_sing">
-               <h4>Or, Sign up with</h4>
+               <h4>Or, Log In with</h4>
                <img src="<?php echo base_url();?>assets/img/facebook_big.png" onclick="fblogin();" style="cursor:pointer">
                <h2>Search many of <br>
-                  colleges and there <br>
+                  colleges and their <br>
                   information as Per your <br>
                   Requirments..
                </h2>

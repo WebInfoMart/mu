@@ -13,10 +13,9 @@ class Psychometric
 		$password = $this->ci->input->get('pass');
 		$name = $this->ci->input->get('name');
 		$email = $this->ci->input->get('email');
-		
+		//echo $name;exit;
 		$data = $this->ci->db->get_where('source',array('userName'=>$username,'password'=>$password));
-		//print_r($data);exit;
-		//echo $data->row()->id;exit;
+		//echo $data->row()->userName;exit;
 		if($data->num_rows())
 		{
 			$source = $data->row()->id;
@@ -29,11 +28,11 @@ class Psychometric
 	{
 		//echo $source;exit;
 		$email_activation = $this->ci->config->item('email_activation', 'tank_auth');
-		//echo $email_activation;exit;
 		$result = $this->ci->db->get_where('users',array('email'=>$email));
+		//echo $result->row()->fullname;exit;
 		if($result->num_rows())
 		{
-		//echo $result->row()->fullname;exit;
+		//echo $result->row()->id;//exit;
 		$data['login_by_email'] = $this->ci->config->item('login_by_email', 'tank_auth');
 		/* $this->ci->tank_auth->login(
 						$email,

@@ -1977,7 +1977,6 @@
               <input type="hidden" id="currentQuestion" value="1"/>  
 			  <span id="serialize_output"></span>
 			  <!--<a class=" btn1 btn btn-primary" style="margin-top:0 !important" onclick="prev()"><< Prev</a>-->
-			  <button class="btn btn-primary" id="tour-btn" style="margin-top:0 !important">Quick Tour</button>
 			  <span class="alert alert-danger bs-alert-old-docs offset3" id="error" style="display:none">
 			    Please choose one of the options.
 			  </span>

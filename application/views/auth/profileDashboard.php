@@ -38,7 +38,7 @@
                      </p>-->
                      <br>
                      <img src="<?php echo base_url();?>assets/img/profile_statues.png">
-                     <p>Profile Status</p>
+                     <p style="text-align:center;">Profile Status</p>
                      <ul id="profile_status" class="inline">
                         <li>Info<span>100%</span></li>
                         <li>Edu Info<span>60%</span></li>
@@ -111,7 +111,7 @@
                            </div>
                      </section>
                      <aside id="dashboard_sidebar" class="span3">
-                        <h5 class="profile_name" onclick="location.href='video.html'"><?php echo $userData['fullname']?> <!--<img src="<?php echo base_url();?>assets/img/man.jpg" alt="..." class="img-circle" style="width:45px; height:45px;">--></h5>
+                        <h5 class="profile_name"><?php echo $userData['fullname']?> <!--<img src="<?php echo base_url();?>assets/img/man.jpg" alt="..." class="img-circle" style="width:45px; height:45px;">--></h5>
                         <!--<ul id="notification" class="unstyled">
                            <li><img src="<?php echo base_url();?>assets/img/arrow-bottom.png"></li>
                            <li><a href="#"><img src="<?php echo base_url();?>assets/img/bell.png"></a><span>6</span></li>

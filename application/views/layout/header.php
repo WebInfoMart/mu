@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+	<!---<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />--->
    <head>
       <title><?php echo $title?></title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <meta name="description" content="<?php echo $description;?>">
-	  <meta name="keywords" content="<?php echo $keywords;?>">
-	  <meta name="charset" content="UTF-8">
-	  <meta name="robots" content="index, follow">
-	  <meta name="googlebot" content="index, follow">
-	  <meta http-equiv="content-language" content="EN">
-	  <meta name="copyright" content="Copyright © 2013 meetuniv.com ">
-	  <meta name="rating" content="general">
-	  <meta name="distribution" content="Global">
-	  <meta name="revisit-after" content="30 days">
+		<?php if(!empty($individualCollege)){?>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<?php } ?>
+		<meta name="description" content="<?php echo $description?>" />
+		<?php if(!empty($canonical)){ ?>
+		<link rel="canonical" href="<?php echo $canonical ?>" />
+		<?php }else{ ?>
+		<link rel="canonical" href="http://meetuniv.com" />
+		<?php } ?>
+		<meta name="DC.title" content="study abroad scholarships" />
+		<meta name="geo.region" content="IN-DL" />
+		<meta name="geo.placename" content="New Delhi" />
+		<meta name="geo.position" content="28.635308;77.22496" />
+		<meta name="ICBM" content="28.635308, 77.22496" />
+		<meta name="copyright" content=" copyright © 2014 - meetuniv.com" />
+		<meta name="author" content="meetuniv.com" />
+		<meta name="subject" content="study abroad scholarships" />
+		<meta name="rating" content="general" />
+		<meta name="GOOGLEBOT" content="Index, Follow" />
+		<meta name="robots" content="all" />
+		<meta name="robots" content="index, follow" />
       <!-- Bootstrap -->
       <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.png" />
       <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -31,6 +42,16 @@
       <script src="<?php echo base_url();?>assets/js/modernizr-2.6.2.min.js"></script>
    </head>
    <body>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40054769-1', 'meetuniv.com');
+  ga('send', 'pageview');
+
+</script>
       <!--code by webinfomart-->
       <!--header-->
       <div id="gap"></div>
@@ -40,12 +61,13 @@
             <a href="<?php echo base_url()?>" id="logo"><img src="<?php echo base_url();?>assets/img/new_logo.png" alt="Meet Univ"></a>
             <nav role="navigation" id="top_menu">
                <ul>
-                  <li <?php if($active=='college'){ ?>class="active"<?php } ?>><a href="<?php echo base_url('college');?>">Colleges</a></li>
+                  <li <?php if($active=='college'){ ?>class="active"<?php } ?>><a href="<?php echo base_url('college-study-in-abroad');?>">Colleges</a></li>
                   <li <?php if($active=='connect'){ ?>class="active"<?php } ?>><a href="<?php echo base_url('connect');?>">Connect</a></li>
                   <!--<li><a href="#">Courses</a></li>
                   <li><a href="#">Councel</a></li>-->
                   <li><a href="<?php echo base_url('learn/edurator');?>">Learn</a></li>
-                  <!--<li><a href="#">Blog</a></li>-->
+                  <li <?php if($active=='ielts-preparation'){ ?>class="active"<?php } ?>><a href="<?php echo base_url('ielts-preparation');?>">TestPrep</a></li>
+                  <li <?php if($active=='gifted'){ ?>class="active"<?php } ?>><a href="<?php echo base_url('gifted-intro');?>">Gifted</a></li>
                </ul>
             </nav>
 			<?php if(isset($userId)){?>

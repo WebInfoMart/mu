@@ -71,7 +71,7 @@ var login={
 /**************************facebook login code***************************/
 window.fbAsyncInit = function() {
         FB.init({
-          appId: '175932012590484',         // appId: '499639700115508',
+          appId: '573246749399495',         // appId: '499639700115508',
           cookie: true,
           xfbml: true,
           oauth: true
@@ -86,7 +86,7 @@ window.fbAsyncInit = function() {
       (function(d){
       var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
       js = d.createElement('script'); js.id = id; js.async = true;
-	  js.src = "//connect.facebook.net/en_US/all.js#appId=175932012590484&amp;xfbml=1";
+	  js.src = "//connect.facebook.net/en_US/all.js#appId=573246749399495&amp;xfbml=1";
       d.getElementsByTagName('head')[0].appendChild(js);
     }(document));
 	

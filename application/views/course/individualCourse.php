@@ -24,8 +24,6 @@
 				</div>
 			</div>
 		</div>
-		
-
 		<div class = "row">
 			<div class = "span12">
 				<h3 class="employment">Employment & Accreditation</h3>
@@ -59,16 +57,16 @@
 					<div class="span10" style="background:none repeat scroll 0% 0% #cccccc; width:145px;float:right; margin-top:25px">
 					  <h2 style="padding:0 11px;"> £<?php echo $salaryData['7']['video'];?> </h2>
 					</div>
-					<div class="span9" style="font-family:Arial,Helvetica,sans-serif; font-size:15px;">
+					<div class="span9" style="font-family:Arial,Helvetica,sans-serif; font-size:14px;">
 					Typical salary range: £<?php echo $salaryData['7']['video'];?> - £<?php echo $salaryData['6']['video'];?>
 					</div>
-					<div class="span9" style="font-family:Arial,Helvetica,sans-serif; font-size:15px;font-weight:bold;">
+					<div class="span9" style="font-family:Arial,Helvetica,sans-serif; font-size:14px;font-weight:bold;">
 					Average salary across the UK after taking a similar course
 					</div>
-					<div class="span9" style="font-family:Arial,Helvetica,sans-serif;font-size:15px;">
+					<div class="span9" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;">
 					£<?php echo $salaryData['7']['video'];?> after six months (salary range: £<?php echo $salaryData['3']['video'];?> - £<?php echo $salaryData['5']['video'];?>)
 					</div>
-					<div class="span9" style="font-family:Arial,Helvetica,sans-serif;font-size:15px;">
+					<div class="span9" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;">
 					£<?php echo $salaryData['1']['video'];?> after 40 months (salary range: £<?php echo $salaryData['0']['video'];?> - £<?php echo $salaryData['2']['video'];?>)
 					</div>
 				</div>
@@ -173,80 +171,80 @@
 					
 					<table border="0" class="jobs">
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;font-weight:bold;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;font-weight:bold;">
 								Job
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;font-weight:bold;">%</td>
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;font-weight:bold;">%</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Business and public service associate professionals
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[0]['order']?>%
 								</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Administrative occupations
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[1]['order']?>%
 								</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Sales occupations
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[2]['order']?>%
 								</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Business, research and administrative professionals
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[3]['order']?>%
 								</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Customer service occupations
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[4]['order']?>%
 								</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Managers, directors and senior officials
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[5]['order']?>%
 								</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Information technology and telecommunications professionals
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[6]['order']?>%
 								</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Teaching and educational professionals
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[7]['order']?>%
 								</td>
 							</tr>
 							<tr>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:100%; font-size:14px;">
 								Skilled trades occupations
 								</td>
-								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:15px;">
+								<td style="font-family:Arial,Helvetica,sans-serif;width:20%; font-size:14px;">
 								<?php echo $commonData[8]['order']?>%
 								</td>
 							</tr>
@@ -436,7 +434,7 @@
 			var data = google.visualization.arrayToDataTable(dataArray);
 
 			var options = {
-				chartArea: { left: 28, height: "80%", width: "65%" },            colors: [],            fontSize: 12,	        vAxis: {minValue:0, maxValue:100},            width: 450,            height: 180        };            options.colors.push('#CC99CC');            options.colors.push('#FFCC00');            options.colors.push('#660066');        var chart = new google.visualization.ColumnChart(document.getElementById('chart_column_58f8607f0bd94c92b76144a4a8c215e1'));        chart.draw(data, options);    }</script>                            <script type="text/javascript">                google.load("visualization", "1", { packages: ["corechart"] });                google.setOnLoadCallback(drawChart);                function drawChart() {                    var dataArray = [['Key', 'Value']];                        dataArray.push(['1st class degree', 20]);                        dataArray.push(['Upper 2nd class degree', 50]);                        dataArray.push(['Lower 2nd class degree', 30]);                        dataArray.push(['Other honours / pass without honours', 0]);                        dataArray.push(['Ordinary degree', 0]);                        dataArray.push(['Degree that is not subject to classification', 0]);            var data = google.visualization.arrayToDataTable(dataArray);            var options = {                chartArea: { top: 8, width: "100%", height: 214 },                tooltip: { text: 'value'},                pieSliceText: 'value',                colors: [],                fontSize: 12,                legend: { alignment: "center" },	            width: 310,                height: 130            };                options.colors.push('#006db4');                options.colors.push('#dd322d');
+				chartArea: { left: 50, height: "80%", width: "60%" },            colors: [],            fontSize: 12,	        vAxis: {minValue:0, maxValue:100},            width: 450,            height: 180        };            options.colors.push('#CC99CC');            options.colors.push('#FFCC00');            options.colors.push('#660066');        var chart = new google.visualization.ColumnChart(document.getElementById('chart_column_58f8607f0bd94c92b76144a4a8c215e1'));        chart.draw(data, options);    }</script>                            <script type="text/javascript">                google.load("visualization", "1", { packages: ["corechart"] });                google.setOnLoadCallback(drawChart);                function drawChart() {                    var dataArray = [['Key', 'Value']];                        dataArray.push(['1st class degree', 20]);                        dataArray.push(['Upper 2nd class degree', 50]);                        dataArray.push(['Lower 2nd class degree', 30]);                        dataArray.push(['Other honours / pass without honours', 0]);                        dataArray.push(['Ordinary degree', 0]);                        dataArray.push(['Degree that is not subject to classification', 0]);            var data = google.visualization.arrayToDataTable(dataArray);            var options = {                chartArea: { top: 8, width: "100%", height: 214 },                tooltip: { text: 'value'},                pieSliceText: 'value',                colors: [],                fontSize: 12,                legend: { alignment: "center" },	            width: 310,                height: 130            };                options.colors.push('#006db4');                options.colors.push('#dd322d');
 					options.colors.push('#CC99CC');
 					options.colors.push('#FFCC00');
 					options.colors.push('#660066');
@@ -538,7 +536,7 @@
 
 				</script>
 				
-	<!---On click change toggle image--->
+					<!---On click change toggle image--->
 	
 		<script src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js" type="text/javascript"></script>
 			<script>
@@ -576,6 +574,7 @@
 			  });
 			});
 			</script>
+				
 			</div>
 		</div>
     </div>   

@@ -10,15 +10,16 @@ class Connect extends CI_Controller
 		$this->load->model('connectmodel');
 		$this->load->model('collegemodel');
 		$this->load->library("pagination");
+		$this->load->library("curl_event");
 		$this->load->model('tank_auth/users');
 		$this->ci->load->config('tank_auth', TRUE);
 		$this->ci->load->config('email', TRUE);
 	}
 	function index() {
-		
 		$data['active'] = 'connect';
-		$data['title'] = "2014 Abroad University Events & Abroad Education fairs in India : Meetuniv.com";
-		$data['description'] = "MeetUniv connects you Upcoming 2014 Abroad university Events & Abroad education fairs in india of top Uk Colleges, Abroad University,course details,admissions,Abroad scholarships,visa & more.";
+		$data['title'] = "Upcoming University Events | Education Fairs in India | MeetUniv";
+		$data['description'] = "Check out the upcoming events calendar and education fairs 2014, for Indian Students to meet top abroad universities of UK, Singapore, USA and Dubai.";
+		$data['canonical'] = "http://meetuniv.com/connect";
 		$data['keywords'] = "UK university events ,Meet UK Universities events, Abroad University events in india,Spot Admission & scholarships, indian scholarships for studying abroad,Abroad Education Fairs in india,uk university education fair, Meet top Abroad Universities,2014 UK University Fair,study abroad,List of Scholarships for International Students,Study in Uk";
 		$this->layout->view('connect/connect',$data);
     }
@@ -82,6 +83,10 @@ class Connect extends CI_Controller
 					'type'	=> $this->input->post('type')
 					);
 		echo $data['type'];
+		
+		//$this->connectmodel->getCurl($this->input->post());
+		$this->curl_event->event_user_registration($data);
+		
 		$data['connect'] = $this->connectmodel->getConnectDetailsForEmail($this->input->post('connectId'));
 		if($data['type']=='sms')
 		{

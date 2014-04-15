@@ -3,12 +3,17 @@
 									<p class="text-right">Showing <?php echo count($results)?>/<?php echo $countResults;?> <i class="icon-circle-arrow-right"></i></p>
 								</div>
 							</div>
+							<?php echo $this->load->view('rotator/connectImgRotator');?><br />
 					<?php
 					$counter=1;
 					foreach($results as $connect)
 					{
+						
 						$univName=$this->connectmodel->getUniversityNameById($connect->univId);
 						$location=$this->collegemodel->getUnivLocationById($connect->cityId,$connect->countryId);
+						$rest = substr($connect->cityId, 1, +2); 
+						$c_value = $rest + $connect->counter;
+						$counterValue = floor($c_value/4);
 					?>
 							<div class="row connect-listing">
 								<article class="span6">
@@ -31,13 +36,13 @@
 												<div class="btn-group">
 												<button class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown">Get Details <span class="caret"></span></button>
 												<ul class="dropdown-menu">
-												  <li><a href="javascript:void(0)" onclick='ConnectMU("<?php echo $connect->id;?>","<?php echo $univName;?>","<?php echo $connect->tagLine;?>","<?php echo $connect->date;?>","<?php echo $location;?>");'><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
+												  <li><a href="javascript:void(0)" onclick="ConnectMU('<?php echo $connect->id;?>','<?php echo trim($univName);?>','<?php echo trim($connect->tagLine);?>','<?php echo trim($connect->date);?>','<?php echo trim($location);?>')"><i class="icon-mobile-phone"></i>&nbsp;&nbsp;SMS</a></li>
 												  <li><a href="#"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;E-Mail</a></li>
 												</ul>
 												</div>
 												<button class="btn btn-mini btn-primary voilet" type="button" id="attending-<?php echo $counter;?>" onclick="showAttending(this.id);">I am Attending</button>
-												Attending <a href="#" id="attendCountTxt-<?php echo $counter;?>">+<?php echo $connect->counter;?></a>
-												<input type="hidden" id="attendCount-<?php echo $counter;?>" value="<?php echo $connect->counter;?>"/>
+												Attending <a href="#" id="attendCountTxt-<?php echo $counter;?>">+<?php echo $counterValue;?></a>
+												<input type="hidden" id="attendCount-<?php echo $counter;?>" value="<?php echo $counterValue;?>"/>
 												
 											</aside>
 										</div>

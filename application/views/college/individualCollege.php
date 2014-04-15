@@ -13,10 +13,10 @@
         
           <div class="span12 box-shadow college-list">
             
-            <div class="left box-content">
+            <div class="left box-content" <?php if($universityData[0]['id']==804){?>style="background:url('<?php echo base_url();?>assets/img/detail-bg_new.jpg')"<?php } ?>>
            
               <div class="caption-bar">
-                <p class="title"> <?php echo $universityData[0]['univName'];?> </p>
+                <p class="title" style="width:460px;"> <?php echo $universityData[0]['univName'];?> </p>
                 <!-- <img src="assets/images/logo.jpg" />-->
 				 <?php 
 				  if($universityData[0]['logo'])
@@ -82,7 +82,7 @@
             
                 <div class="intake-date" >
                   <p> Intake</p>
-                  <p class="big-font">Sep 2013</p>
+                  <p class="big-font">Jan/Sept</p>
                 </div>
                   <div class="scholarship" >
                   <p>Scholarship</p>
@@ -99,7 +99,7 @@
                 <div class="accomodation" >
                   <p>ACCOMODATION<br /><span><?php echo ($universityDetail['accomodation'])?$universityDetail['accomodation']:'N/A';?></span></p>
                 </div>
-                 <div class="acceptance-criteria" style="margin-top:283px;";>
+                 <div class="clg-acceptance-criteria">
                   <p class="title"> Acceptance Criteria</p>
                   <p class="sub-title" > post graduate <br /><span> 65% in xII</span></p>
                   <p class="sub-title" >undergraduate <br /><span>60% in UG</span></p>
@@ -129,7 +129,7 @@
 								 </div>
                                  <div class="tab-pane" id="home">
                                     <h5>Majors &amp; Degrees</h5>
-									<?php $this->load->view('layout/js');?>
+									
 									<table class="table">
 									 <tr class="success">
                                           <td> Degrees Offered</td>
@@ -139,11 +139,8 @@
 									 <?php 
 									 $tempraryHeader = '';
 									 $counter=1;
-									 $satisfactionId = '';
 									 foreach($courseDetail as $course)
 									 {
-									 //echo "<pre>";
-									 //print_r($course);
 									 if(!empty($course->level2))
 									 {
 										$levelName = $this->collegemodel->getCourseLevelName($course->level2);
@@ -183,11 +180,12 @@
 									 
 									 ?>
 									 <tr class="course-<?php echo $counter;?>" <?php echo ($counter>10)?'style="display:none;"':'';?>>
-									 <?php $courseName = str_replace(array(',', '(', ')', '"', '\'', '-'), array('', '', '', '', '', ''),$course->name);?>
-										<td><a href="<?php echo base_url();?>course/<?php echo str_replace(" ","-",$universityData[0]['univName'])."/".$universityData[0]['id']."/".str_replace(" ","-",$courseName)."/".urlencode($course->courseId)?>"><?php echo $course->name;?></a></td>
-									
-										<td id="satisfactionValue_<?php echo $course->courseId; ?>">%</td>
+									  <?php $courseName = str_replace(array(',', '(', ')', '"', '\'', '-'), array('', '', '', '', '', ''),$course->name);?>
+										<td><a href="<?php echo base_url();?>course/<?php echo str_replace(" ","-",$universityData[0]['univName'])."/".$universityData[0]['id']."/".str_replace(" ","-",$courseName)."/".$course->courseId;?>"><?php echo $course->name;?></a></td>
+										
+										<td id="satisfactionValue_<?php echo $course->courseId; ?>"></td>
 										<td id="courseFee_<?php echo $course->courseId; ?>"></td>
+                                          <td></td>
 									 </tr>
 									 <?php 
 									 $satisfactionId = $satisfactionId.$course->courseId.',';
@@ -218,8 +216,8 @@
 									   <strong>Contact Information:</strong><br>
                                        <?php echo (isset($universityDetail['contacts'])&&$universityDetail['contacts'])?$universityDetail['contacts']:'N/A';?> 
 									   <br>
-									   <strong>College Address:</strong><br>
-                                       <?php echo (isset($universityDetail['faxContacts'])&&$universityDetail['faxContacts'])?$universityDetail['faxContacts']:'N/A';?> 
+									  <!-- <strong>College Address:</strong><br>
+                                       <?php echo (isset($universityDetail['faxContacts'])&&$universityDetail['faxContacts'])?$universityDetail['faxContacts']:'N/A';?> -->
                                     </address>
                                     <!--<address>
                                        <strong>Director of Recruitment</strong><br>
@@ -231,8 +229,10 @@
 								</div>
 							</div>
 							<div class="span4">
-							<a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="Northumbria University Event in India" alt="Northumbria University Event in India" src="<?php echo base_url();?>assets/img/ad/nu300.jpg"></a><br/><br/>
-							<a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="University of East London Event in India" alt="University of East London Event in India" src="<?php echo base_url();?>assets/img/ad/uel300.jpg"></a>
+							<?php echo $this->load->view('rotator/univDetailImgRotator');?><br /><br />
+							<!--<a href="http://meetuniv.com/Meet-Best-UK-Universities-Directly.php?src=clgind&campaign=0" target="_blank"><img src="<?php echo base_url();?>assets/img/ad/bcfeb.jpg" title="Meet Best UK Universities Directly" alt="Meet Best UK Universities Directly" style="margin-left:25px"></a>-->
+							<!--<a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="Northumbria University Event in India" alt="Northumbria University Event in India" src="<?php echo base_url();?>assets/img/ad/nu300.jpg"></a><br/><br/>
+							<a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="University of East London Event in India" alt="University of East London Event in India" src="<?php echo base_url();?>assets/img/ad/uel300.jpg"></a>-->
 						   </div>
 						</div>
                         <!--<div class="span9">
@@ -245,7 +245,7 @@
          </div>
          <!--end main-->
 		 
-		 
+		 <?php $this->load->view('layout/js')?>
 		 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 		 <script>
          $(document).ready(function(){
@@ -375,4 +375,3 @@
 		}); 
 			
 	</script>
-	  

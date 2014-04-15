@@ -44,13 +44,14 @@
 | The $active_record variables lets you determine whether or not to load
 | the active record class
 */
+
 $active_group = 'alternate';
 $active_record = TRUE;
 
 $db['alternate']['hostname'] = 'localhost';
-$db['alternate']['username'] = 'root';
-$db['alternate']['password'] = '';
-$db['alternate']['database'] = 'mu_video';
+$db['alternate']['username'] = 'meetuniv_video';
+$db['alternate']['password'] = 'video2013!';
+$db['alternate']['database'] = 'meetuniv_video';
 $db['alternate']['dbdriver'] = 'mysql';
 $db['alternate']['dbprefix'] = '';
 $db['alternate']['pconnect'] = TRUE;
@@ -63,14 +64,13 @@ $db['alternate']['swap_pre'] = '';
 $db['alternate']['autoinit'] = TRUE;
 $db['alternate']['stricton'] = FALSE;
 
-
 $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'mu_beta';
+$db['default']['username'] = 'meetuniv_lms';
+$db['default']['password'] = 'deepaklms2013!';
+$db['default']['database'] = 'meetuniv_muver1beta0409';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -82,8 +82,6 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
-
 
 
 /* End of file database.php */

@@ -8,7 +8,10 @@ class About_us extends CI_Controller
 		$this->load->library('layout');
 	}
 	function index()
-	{
-		$this->layout->view('static/about_us');
+	{		
+		$data['title'] = "Courses in UK, USA, Singapore, Dubai| MeetUniv";
+		$data['description'] = "14, scholarships, course details, abroad university events in India.";
+		$data['keywords'] = "";
+		$this->layout->view('static/about_us',$data);
 	}
 }

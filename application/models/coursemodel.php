@@ -109,5 +109,22 @@ class Coursemodel extends CI_Model
 		return $query->result_array();
 	}
 	
+	public function getCounterValue($courseId)
+	{
+		$this->db->select('*');
+		$this->db->from('courses');
+		$this->db->where_in('courseId', $courseId);
+		$query=$this->db->get();
+		return $countPage = $query->result_array();
 		
+	}
+	
+	public function countCourses($count, $courseId)
+	{
+		$query = $this->db->query("UPDATE courses SET page_count='".$count."' WHERE courseId='".$courseId."'");
+		
+	}
+	
+	
+	
 }

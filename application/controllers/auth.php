@@ -16,6 +16,7 @@ class Auth extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->library('security');
 		$this->load->library('tank_auth');
+		$this->load->library('curl');
 		$this->load->library('layout');
 
 		$this->lang->load('tank_auth');
@@ -26,10 +27,10 @@ class Auth extends CI_Controller
 
 	function index()
 	{
-		$data['active'] = '';
-		$data['title'] = "Meet top Abroad universities for spot admission & scholarships : MeetUniv";
-		$data['description'] = "Meet top Abroad universities at our university events in India.Search Meetuniv.com for Abroad Colleges,University,course details,admissions,scholarships,visa at Upcoming 2014 Abroad university Events & education fairs in india.";
-		$data['keywords'] = "Meet UK Universities,Abroad University events in india,Spot Admission & scholarships,Meet top UK Universities,indian scholarships for studying abroad, Abroad Education Fairs in india,2014 UK University Fair,List of Scholarships for International Students,Top study abroad scholarships";
+		$data['active']='';
+		$data['title'] = "Study Abroad| MBA Courses in UK, USA, Singapore, Dubai| MeetUniv";
+		$data['description'] = "MeetUniv.com provides best opportunity for overseas education, spot admission 2014, scholarships, course details, abroad university events in India.";
+		$data['keywords'] = "";
 		
 		$data['connect']=$this->connectmodel->getAllConnects(4,0);
 		$data['featuredCollges'] = $this->collegemodel->getFeaturedColleges();
@@ -82,10 +83,16 @@ class Auth extends CI_Controller
 	
 						$data['site_name'] = $this->config->item('website_name', 'tank_auth');
 	
+						
+	
 						if ($email_activation) {									// send "activate" email
 							$data['activation_period'] = $this->config->item('email_activation_expire', 'tank_auth') / 3600;
 	
 							$this->_send_email('activate', $data['email'], $data);
+							/*******sending data to staging leadmentor*******/
+							$this->curl->user_registration($data);
+							
+							/*******end of curl code*******/
 	
 							unset($data['password']); // Clear password (just for any case)
 	
@@ -113,18 +120,128 @@ class Auth extends CI_Controller
 					}
 				} */
 			
-			$data['active'] = '';
 			$data['use_username'] = $use_username;
 			$data['title'] = "Join MeetUniv.com to know University events in india, Spot Admission & scholarships, & more";
-			$data['description'] = "Meet top Abroad Universities to know more about Abroad University events & Abroad Education Fairs in india,  Shortlist the ones which offer Spot Admission & scholarships. ";
-			$data['keywords'] = "Study Overseas,Meet UK Universities,2014 UK University Fair,Spot Admission & scholarships, IELTS,,GMAT,Abroad University events in india,Top study abroad scholarships,Meet top UK Universities,indian scholarships for studying abroad,Video Lectures, Articles,Education Fairs in india,";
+			$data['description'] = "Meet top Abroad Universities to know more about Abroad University events & Abroad Education Fairs in india,  Shortlist the ones which offer Spot Admission & scholarships.";
+			$data['keywords'] = "Study Overseas,Meet UK Universities,2014 UK University Fair,Spot Admission & scholarships, IELTS,,GMAT,Abroad University events in india,Top study abroad scholarships,Meet top UK Universities,indian scholarships for studying abroad,Video Lectures, Articles,Education Fairs in india";
 			$this->layout->view('auth/registerNew',$data);
 		}
 	}
+	
+	function pshycometricRegistration()
+	{
+		
+		if ($this->tank_auth->is_logged_in()) {									// logged in
+			redirect('home');
+
+		} 
+		else
+		{
+			$use_username = $this->config->item('use_username', 'tank_auth');
+			//if($_POST){print_r($_POST);exit;}
+			if ($use_username) {
+					$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|min_length['.$this->config->item('username_min_length', 'tank_auth').']|max_length['.$this->config->item('username_max_length', 'tank_auth').']|alpha_dash');
+				}
+				$this->form_validation->set_rules('fullname', 'Fullname', 'trim|required|xss_clean');
+				$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
+				$this->form_validation->set_rules('mobile', 'Mobile', 'trim|integer|required|xss_clean');
+				$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|min_length['.$this->config->item('password_min_length', 'tank_auth').']|max_length['.$this->config->item('password_max_length', 'tank_auth').']|alpha_dash');
+				$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|xss_clean|matches[password]');
+	
+				/* $captcha_registration	= $this->config->item('captcha_registration', 'tank_auth');
+				$use_recaptcha			= $this->config->item('use_recaptcha', 'tank_auth');
+				if ($captcha_registration) {
+					if ($use_recaptcha) {
+						$this->form_validation->set_rules('recaptcha_response_field', 'Confirmation Code', 'trim|xss_clean|required|callback__check_recaptcha');
+					} else {
+						$this->form_validation->set_rules('captcha', 'Confirmation Code', 'trim|xss_clean|required|callback__check_captcha');
+					}
+				} */
+				$data['errors'] = array();
+	
+				$email_activation = $this->config->item('email_activation', 'tank_auth');
+				if ($this->form_validation->run()) {								// validation ok
+					if (!is_null($data = $this->tank_auth->create_user(
+							$use_username ? $this->form_validation->set_value('username') : '',
+							$this->form_validation->set_value('fullname'),
+							$this->form_validation->set_value('email'),
+							$this->form_validation->set_value('mobile'),
+							$this->form_validation->set_value('password'),
+							$email_activation))) {									// success
+	
+						$data['site_name'] = $this->config->item('website_name', 'tank_auth');
+						//print_r($data);exit;
+						
+	
+						if ($email_activation) {
+						// send "activate" email
+							$data['activation_period'] = $this->config->item('email_activation_expire', 'tank_auth') / 3600;
+							//echo "<pre>";print_r($data);exit;
+							$this->_send_email('activate', $data['email'], $data);
+							
+							/*******sending data to staging leadmentor*******/
+							/* $random_code=rand(10000,99999); 
+							$url="http://leadmentor.in/lead/enter";
+							$data = array('name'=>$data['fullname'],'email'=>$data['email'],'phone'=>$data['mobile'],'status'=>'','city'=>'','source'=>'MU SIGNUP','lookupCity'=>'','obdId'=>'','obdTime'=>'','campaign'=>'','randomCode'=>$random_code,'leads_sub'=>'');
+							//print_r($data);exit;
+							 $options = Array(
+										CURLOPT_RETURNTRANSFER => TRUE,  // Setting cURL's option to return the webpage data
+										CURLOPT_FOLLOWLOCATION => TRUE,  // Setting cURL to follow 'location' HTTP headers
+										CURLOPT_AUTOREFERER => TRUE, // Automatically set the referer where following 'location' HTTP headers
+										CURLOPT_CONNECTTIMEOUT => 120,   // Setting the amount of time (in seconds) before the request times out
+										CURLOPT_TIMEOUT => 120,  // Setting the maximum amount of time for cURL to execute queries
+										CURLOPT_MAXREDIRS => 10, // Setting the maximum number of redirections to follow
+										CURLOPT_USERAGENT => "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1a2pre) Gecko/2008073000 Shredder/3.0a2pre ThunderBrowse/3.2.1.8",  // Setting the useragent
+										CURLOPT_URL => $url, // Setting cURL's URL option with the $url variable passed into the function
+										CURLOPT_POST => count($data), //count post values
+										CURLOPT_POSTFIELDS => $data, //count post values
+									);
+							 
+							$ch = curl_init();  // Initialising cURL 
+							curl_setopt_array($ch, $options);   // Setting cURL's options using the previously assigned array data in $options
+							$data = curl_exec($ch); // Executing the cURL request and assigning the returned data to the $data variable
+							 curl_close($ch);     // Closing cURL  */
+							
+							/*******end of curl code*******/
+							unset($data['password']); // Clear password (just for any case)
+	
+							$this->_show_message($this->lang->line('auth_message_registration_completed_1'),'register');
+	
+						} else {
+							if ($this->config->item('email_account_details', 'tank_auth')) {	// send "welcome" email
+	
+								$this->_send_email('welcome', $data['email'], $data);
+							}
+							unset($data['password']); // Clear password (just for any case)
+	
+							$this->_show_message($this->lang->line('auth_message_registration_completed_2').' '.anchor('/auth/login/', 'Login'));
+						}
+					} else {
+						$errors = $this->tank_auth->get_error_message();
+						
+						foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
+					}
+				}
+				/* if ($captcha_registration) {
+					if ($use_recaptcha) {
+						$data['recaptcha_html'] = $this->_create_recaptcha();
+					} else {
+						$data['captcha_html'] = $this->_create_captcha();
+					}
+				} */
+			
+			$data['use_username'] = $use_username;
+			$data['title'] = "Join MeetUniv.com to know University events in india, Spot Admission & scholarships, & more";
+			$data['description'] = "Meet top Abroad Universities to know more about Abroad University events & Abroad Education Fairs in india,  Shortlist the ones which offer Spot Admission & scholarships.";
+			$data['keywords'] = "Study Overseas,Meet UK Universities,2014 UK University Fair,Spot Admission & scholarships, IELTS,,GMAT,Abroad University events in india,Top study abroad scholarships,Meet top UK Universities,indian scholarships for studying abroad,Video Lectures, Articles,Education Fairs in india";
+			$this->layout->view('static/pshycometric',$data);
+		}
+	}
+	
 	function home()
 	{
 		if (!$this->tank_auth->is_logged_in()) {									
-			redirect('/auth/login');
+			redirect('/login');
 		}
 		$data['title'] = "Meet top Abroad universities for spot admission & scholarships : MeetUniv";
 		$data['description'] = "Meet top Abroad universities at our university events in India.Search Meetuniv.com for Abroad Colleges,University,course details,admissions,scholarships,visa at Upcoming 2014 Abroad university Events & education fairs in india.";
@@ -143,7 +260,6 @@ class Auth extends CI_Controller
 	 */
 	function login()
 	{
-		$data['active'] = '';
 		$data['title'] = "Login to Meet top UK Universities  & university events in india.";
 		$data['description'] = "Want to Meet top UK Universities offering Spot Admission & scholarships with courses of your choice. Get connected for 2014 UK University Fair & Education Fairs in india";
 		$data['keywords'] = "Study Abroad, Meet UK Universities,IELTS,GMAT,University events in india,Spot Admission & scholarships,Meet top UK Universities,indian scholarships for studying abroad,Video Lectures, Articles,Education Fairs in india,2014 UK University Fair,Top study abroad scholarships";
@@ -199,7 +315,7 @@ class Auth extends CI_Controller
 					redirect('profile');
 					}
 					else
-					{redirect('home');}
+					{						if($this->session->userdata('last_url'))						{							$page = $this->session->userdata('last_url');							$this->session->unset_userdata('last_url');							redirect($page);						}						redirect('home');					}
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
@@ -412,7 +528,7 @@ class Auth extends CI_Controller
 	function send_again()
 	{
 		if (!$this->tank_auth->is_logged_in(FALSE)) {							// not logged in or activated
-			redirect('/auth/login/');
+			redirect('/login/');
 
 		} else {
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
@@ -471,7 +587,62 @@ class Auth extends CI_Controller
 	 *
 	 * @return void
 	 */
-	function forgot_password()
+	 
+	 function forgot_password()
+
+	{
+
+		if ($this->tank_auth->is_logged_in()) {									// logged in
+
+			redirect('');
+
+
+
+		} elseif ($this->tank_auth->is_logged_in(FALSE)) {						// logged in, not activated
+
+			redirect('/auth/send_again/');
+
+
+
+		} else {
+			
+			$data['errors'] = array();
+
+											
+
+				if (!is_null($data = $this->tank_auth->forgot_password(
+
+						$_POST['email']))) {
+
+
+
+					$data['site_name'] = $this->config->item('website_name', 'tank_auth');
+
+
+
+					// Send email with password activation link
+
+					$this->_send_email('forgot_password', $_POST['email'], $data);
+
+					
+
+					//$this->_show_message($this->lang->line('auth_message_new_password_sent'));
+					//echo $this->lang->line('auth_message_new_password_sent');exit;
+					echo "reset password link sent!";exit;
+
+				} else {
+
+					$errors = $this->tank_auth->get_error_message();
+
+					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
+
+				}
+
+		}
+
+	}
+	 
+	/* function forgot_password()
 	{
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('');
@@ -502,7 +673,7 @@ class Auth extends CI_Controller
 			}
 			$this->load->view('auth/forgot_password_form', $data);
 		}
-	}
+	} */
 
 	/**
 	 * Replace user password (forgotten) with a new one (set by user).
@@ -512,6 +683,42 @@ class Auth extends CI_Controller
 	 * @return void
 	 */
 	function reset_password()
+	{
+		$user_id		= $this->uri->segment(3);
+		$new_pass_key	= $this->uri->segment(4);
+		//echo $new_pass_key;exit;
+		$this->form_validation->set_rules('new_password', 'New Password', 'trim|required|xss_clean|min_length['.$this->config->item('password_min_length', 'tank_auth').']|max_length['.$this->config->item('password_max_length', 'tank_auth').']|alpha_dash');
+		$this->form_validation->set_rules('confirm_new_password', 'Confirm new Password', 'trim|required|xss_clean|matches[new_password]');
+		
+		$data['errors'] = array();
+		if ($this->form_validation->run()) {								// validation ok
+		
+			if (!is_null($data = $this->tank_auth->reset_password(
+					$_POST['user_id'], $_POST['new_pass_key'],
+					$_POST['new_password']))) {	// success
+				$data['site_name'] = $this->config->item('website_name', 'tank_auth');
+				// Send email with new password
+				$this->_send_email('reset_password', $data['email'], $data);
+				//echo $this->lang->line('auth_message_new_password_activated');exit;
+				echo "successfully changed!";exit;
+			} else {														// fail
+				//$this->_show_message($this->lang->line('auth_message_new_password_failed'));
+			}
+		} else {
+			// Try to activate user by password key (if not activated yet)
+			if ($this->config->item('email_activation', 'tank_auth')) {
+				$this->tank_auth->activate_user($user_id, $new_pass_key, FALSE);
+			}
+
+			if (!$this->tank_auth->can_reset_password($user_id, $new_pass_key)) {
+				$this->_show_message($this->lang->line('auth_message_new_password_failed'));
+			}
+		}
+		$data['forget_password'] = true;
+		$this->layout->view('auth/login', $data);
+	}
+	
+	/* reset_password()
 	{
 		$user_id		= $this->uri->segment(3);
 		$new_pass_key	= $this->uri->segment(4);
@@ -530,10 +737,11 @@ class Auth extends CI_Controller
 
 				// Send email with new password
 				$this->_send_email('reset_password', $data['email'], $data);
-
+				echo "sdfsd";exit;
 				$this->_show_message($this->lang->line('auth_message_new_password_activated').' '.anchor('/auth/login/', 'Login'));
 
 			} else {														// fail
+			echo "sdfsd";exit;
 				$this->_show_message($this->lang->line('auth_message_new_password_failed'));
 			}
 		} else {
@@ -546,8 +754,9 @@ class Auth extends CI_Controller
 				$this->_show_message($this->lang->line('auth_message_new_password_failed'));
 			}
 		}
-		$this->load->view('auth/reset_password_form', $data);
-	}
+		$data['forget_password'] = true;
+		$this->layout->view('auth/login', $data);
+	} */
 
 	/**
 	 * Change user password
@@ -557,7 +766,7 @@ class Auth extends CI_Controller
 	function change_password()
 	{
 		if (!$this->tank_auth->is_logged_in()) {								// not logged in or not activated
-			redirect('/auth/login/');
+			redirect('/login/');
 
 		} else {
 			$this->form_validation->set_rules('old_password', 'Old Password', 'trim|required|xss_clean');
@@ -589,7 +798,7 @@ class Auth extends CI_Controller
 	function change_email()
 	{
 		if (!$this->tank_auth->is_logged_in()) {								// not logged in or not activated
-			redirect('/auth/login/');
+			redirect('/login/');
 
 		} else {
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
@@ -648,7 +857,7 @@ class Auth extends CI_Controller
 	function unregister()
 	{
 		if (!$this->tank_auth->is_logged_in()) {								// not logged in or not activated
-			redirect('/auth/login/');
+			redirect('/login/');
 
 		} else {
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
@@ -678,7 +887,7 @@ class Auth extends CI_Controller
 	function _show_message($message,$page='')
 	{
 		$this->session->set_flashdata('message', $message);
-		redirect('/auth/'.$page);
+		redirect('/'.$page);
 	}
 
 	/**
@@ -901,12 +1110,11 @@ class Auth extends CI_Controller
 		}
 		else													// not logged in or non activated	
 		{
-		redirect('/auth/login/');
+		redirect('/login/');
 		}
 	} */
 	function profile()
 	{
-		$data['active'] = '';
 		$data['title'] = "MeetUniv.Com : Complete Your Profile - Step One";
 		$data['description'] = "Provide your personal information with MeetUniv.com";
 		$data['keywords'] = "Meet UK Universities,Study in UK,Study in UK universities,Study MBA in UK,Colleges in UK,International students,Universities &  colleges in UK,Higher education in UK,Best universities in UK ,List of Top 10 colleges & universities,IELTS-GMAT-TOEFL,Universities events,Engineering colleges in UK ,Postgraduate study,Scholarships,Executive MBA in UK,Education Fairs,Spot Admission,University Visits,Courses,Test Preparation";
@@ -932,7 +1140,7 @@ class Auth extends CI_Controller
 		}
 		else													// not logged in or non activated	
 		{
-		redirect('/auth/login/');
+		redirect('/login/');
 		}
 	}
 	function profile_match()								//function of profile  match of user

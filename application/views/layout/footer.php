@@ -23,10 +23,10 @@
 						  <h5>College<br>
 							 Search
 						  </h5>
-						  <li><a href="<?php echo base_url('college')?>"> College Search</a></li>
-						  <li><a href="<?php echo base_url('college')?>"> Colleges by Country</a></li>
-						  <li><a href="<?php echo base_url('college')?>"> Popular College</a></li>
-						  <li><a href="<?php echo base_url('college')?>"> Popular Countries </a></li>
+						  <li><a href="<?php echo base_url('college-study-in-abroad')?>"> College Search</a></li>
+						  <li><a href="<?php echo base_url('college-study-in-abroad')?>"> Colleges by Country</a></li>
+						  <li><a href="<?php echo base_url('college/popular-college')?>"> Popular College</a></li>
+						  <!--<li><a href="<?php echo base_url('college')?>"> Popular Countries </a></li>-->
 					   </ul>
 					</div>
 					<div class="span2">
@@ -34,8 +34,8 @@
 						  <h5> Country<br>
 							 Search
 						  </h5>
-						  <li><a href="<?php echo base_url('college')?>"> Study In UK</a></li>
-						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Study In USA</a></li>
+						  <li><a href="<?php echo base_url('college/study-in-uk-universities')?>"> Study In UK</a></li>
+						  <li><a href="<?php echo base_url('college/study-in-usa-universities')?>"> Study In USA</a></li>
 						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Study In Singapore</a></li>
 						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Study In Dubai</a></li>
 					   </ul>
@@ -66,8 +66,8 @@
 						<ul class="nav nav-list">
 						  <h5>Coaching<br/><br/>
 						  </h5>
-						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> IELTS Video Tutorials</a></li>
-						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Career Stream Chooser</a></li>
+						  <li><a href="<?php echo base_url('learn/edurator/browse-ieltspreparation-videos-1-date.html')?>"> IELTS Video Tutorials</a></li>
+						  <li><a href="<?php echo base_url('gifted-intro')?>"> Career Stream Chooser</a></li>
 						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Expert Advice</a></li>
 						  <li><a href="<?php echo base_url('contact-us')?>?type=4"> Business Games </a></li>
 					   </ul>
@@ -90,9 +90,9 @@
 					<div class="row">
 						<div class="span4">
 							<ul class="inline footer_icons">
-  								<li><a href="https://www.facebook.com/Meetuniv"><i class="icon-facebook-sign"></i></a></li>
-								<li><a href="https://twitter.com/MeetUniv"><i class="icon-twitter-sign"></i></a></li>
-								<li><a href="http://www.youtube.com/MeetUniv"><i class="icon-youtube-sign"></i></a></li>
+  								<li><a href="https://www.facebook.com/Meetuniv" target="_blank"><i class="icon-facebook-sign"></i></a></li>
+								<li><a href="https://twitter.com/MeetUniv" target="_blank"><i class="icon-twitter-sign"></i></a></li>
+								<li><a href="http://www.youtube.com/MeetUniv" target="_blank"><i class="icon-youtube-sign"></i></a></li>
   							</ul>
   						</div>
   						<div class="span8">

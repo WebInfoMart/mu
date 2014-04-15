@@ -3,7 +3,8 @@
  <span  id="sendSmsForm">
     <div class="modal-header">
             <button class="close" data-dismiss="modal" style="padding-right:12px;">×</button>
-            <h3 id="eventName" style="padding-left:14px;">Event Name</h3>
+            <h3 id="universityName" style="padding-left:14px;">Event Name</h3>
+            <h5 id="eventName" style="padding-left:14px;">Event Type</h5>
     </div>
 <div class="modal-body">
     <div class="row-fluid">
@@ -15,22 +16,24 @@
 					  <img alt="300x200" style="width: 220px;height: 100px; margin-left:20px;" src="<?php echo base_url();?>assets/img/popup_event_image1.png">
 					</div>
 					<div class="caption" style="padding:0px 9px;">
-					  <h4 id="universityName" style="color:#373;">Project A</h4>
-					  <p><a class="btn btn-primary btn-mini" href="#"><i class="icon-plus-sign"></i> Add College</a></p>
+					  <!--<h4 id="universityName" style="color:#373;">Project A</h4>
+					  <p><a class="btn btn-primary btn-mini" href="#"><i class="icon-plus-sign"></i> Add College</a></p>-->
 					  <p id="eventLocation" class="edit-move-left">
 						<i class="icon icon-calendar"></i> <span id="eventDate">Date</span>
-						</p><p class="edit-move-left" style="padding-top:3px;padding-bottom:6px;"><i class="icon icon-map-marker"></i> <span id="eventPlace">Place, Country</span>
+						</p>
+						<p class="edit-move-left" style="padding-top:3px;padding-bottom:6px;margin-left:3px">
+						<i class="icon icon-map-marker" style="padding:0px"></i> <span id="eventPlace">Place, Country</span>
 					  </p>
 					</div>
 					<div class="modal-footer" style="text-align: left">
-					  <div class="progress progress-striped active" style="background: #ddd">
+					  <!--<div class="progress progress-striped active" style="background: #ddd">
 						<div class="bar" style="width: 60%;"></div>
 					  </div>
 					  <div class="row-fluid">
 						<div class="span4"><b>60%</b><br/><small>FUNDED</small></div>
 						<div class="span4"><b>$400</b><br/><small>PLEDGED</small></div>
 						<div class="span4"><b>18</b><br/><small>DAYS</small></div>
-					  </div>
+					  </div>-->
 					</div>
             </div>
             </div>
@@ -133,8 +136,7 @@
             <article id="college_listing" class="page">
                <ul class="breadcrumb univ_breadcrumb">
                   <li><a href="<?php echo base_url()?>">Home</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
-                  <li><a href="<?php echo base_url('connect')?>">Connect Search</a> <span class="divider"><i class=" icon-arrow-right"></i></span></li>
-                  <li class="active">Search Result</li>
+                  <li>Connect Search</li>
                </ul>
                <div class="clearfix"></div>
                <div class="clearfix"></div>
@@ -175,11 +177,11 @@
 							<li id="allLocation"><a href="#">All Cities</a></li>
 							</ul>
 						</div>
-						<div class="tab_spine clearfix">
+						<!--<div class="tab_spine clearfix">
 							<h4>College Type</h4>
 							<ul class="unstyled">
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Foundation</a></li>
-							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">West Virginia</a></li>
+							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Undergraduate</a></li>
 							</ul>
 						</div>
 						<div class="tab_spine clearfix">
@@ -209,7 +211,7 @@
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Sept 2013</a></li>
 							<li><i class="icon-remove-sign icon-class-red"></i><a href="#">Jan 2014</a></li>
 							</ul>
-						</div>
+						</div>-->
                      </section>
 					 <div class="span6" id="connectPagination">
 							
@@ -218,7 +220,11 @@
 					 <article class="span3">
                       <article><div class="calendar_test" style="padding: 30px 0px;"></div> </article>
                       <!--<article><a target="_blank" href="http://meetuniv.com/Study-In-UK-Top-Universities.php?campaign=0&src=home" style="text-decoration:none;text-align:centre"><img title="Northumbria University Event in India" alt="Northumbria University Event in India" src="<?php echo base_url();?>assets/img/ad/nu600.jpg"></a></article>-->
-					  <article><a target="_blank" href="http://bit.do/hpbannernew" style="text-decoration:none;text-align:centre"><img title="British Council Survey" alt="British Council Survey" src="<?php echo base_url();?>assets/img/ad/bcsurvey.jpg"></a></article>
+					  <article>
+					  <!--<a target="_blank" href="http://bit.do/hpbannernew" style="text-decoration:none;text-align:centre"><img title="British Council Survey" alt="British Council Survey" src="<?php echo base_url();?>assets/img/ad/bcsurvey.jpg"></a>
+					  <a target="_blank" href="http://meetuniv.com/Study-In-Uk-Meet-Sixty-Universities.php" style="text-decoration:none;text-align:centre"><img title="British Council Events" alt="British Council Events" src="<?php echo base_url();?>assets/img/ad/bcevent.jpg"></a>-->
+					  <a target="_blank" href="http://meetuniv.com/course/Northumbria-University/597/Applied-Sport-and-Exercise-Science/21FSES-N-ASE1" style="text-decoration:none;text-align:centre"><img title="Unistat verified Course Stats" alt="Unistat verified Course Stats" src="<?php echo base_url();?>assets/img/ad/stats.jpg"></a>
+					  </article>
 					</article><br/><br/>
                   </div>
 				  </article>
@@ -251,11 +257,11 @@
 				data	:	{offset:'6'},
 				url		:	"<?php echo base_url('connect/connectPagination')?>",
 				beforeSend: function(){
-					$("#connectPagination").css('opicity','0.4');
+					$("#connectPagination").css('opacity','0.4');
 				},
 				success: function(data){
 					$("#connectPagination").html(data);
-					$("#connectPagination").css('opicity','1');
+					$("#connectPagination").css('opacity','1');
 				},
 				
 			});
@@ -273,12 +279,12 @@
 					data	:	data,
 					url		:	url,
 					beforeSend: function(){
-								$("#connectPagination").css('opicity','0.4');
+								$("#connectPagination").css('opacity','0.4');
 							},
 							success: function(data){
 								//alert(data);
 								$("#connectPagination").html(data);
-								$("#connectPagination").css('opicity','1');
+								$("#connectPagination").css('opacity','1');
 								$(".short").removeClass('active');
 								$("#shortDesti").addClass('active');
 								$("#shortUnivValue").val('0');
@@ -302,12 +308,12 @@
 				data	:	data,
 				url		:	url,
 				beforeSend: function(){
-							$("#connectPagination").css('opicity','0.4');
+							$("#connectPagination").css('opacity','0.4');
 						},
 						success: function(data){
 							//alert(data);
 							$("#connectPagination").html(data);
-							$("#connectPagination").css('opicity','1');
+							$("#connectPagination").css('opacity','1');
 							$(".short").removeClass('active');
 							$("#shortFeature").addClass('active');
 							$("#shortUnivValue").val('0');
@@ -331,12 +337,12 @@
 					data	:	data,
 					url		:	url,
 					beforeSend: function(){
-								$("#connectPagination").css('opicity','0.4');
+								$("#connectPagination").css('opacity','0.4');
 							},
 							success: function(data){
 								//alert(data);
 								$("#connectPagination").html(data);
-								$("#connectPagination").css('opicity','1');
+								$("#connectPagination").css('opacity','1');
 								$(".short").removeClass('active');
 								$("#shortDate").addClass('active');
 								$("#shortUnivValue").val('0');
@@ -358,12 +364,12 @@
 					data	:	data,
 					url		:	url,
 					beforeSend: function(){
-								$("#connectPagination").css('opicity','0.4');
+								$("#connectPagination").css('opacity','0.4');
 							},
 							success: function(data){
 								//alert(data);
 								$("#connectPagination").html(data);
-								$("#connectPagination").css('opicity','1');
+								$("#connectPagination").css('opacity','1');
 								$(".short").removeClass('active');
 								$("#shortUniv").addClass('active');
 								$("#shortUnivValue").val('1');
@@ -384,10 +390,12 @@
 		}
 		function ConnectMU(connectId,univName,eventName,eventDate,eventPlace)
 		{
+		//alert(univName);
 			$("#universityName").text(univName);
 			$("#eventName").html(eventName);
 			$("#eventDate").html(eventDate);
 			$("#eventPlace").html(eventPlace);
+			//$("#address").html(address);
 			$("#connectId").val(connectId);
 			$('#registrationForm').hide();
 			$('#sendSmsForm').show();
@@ -398,6 +406,7 @@
 			
 			url="<?php echo base_url('connect/attendEvent')?>";
 			var fullname = $("#smsfullname").val();
+			//alert('aaa');
 			var email = $("#smsemail").val();
 			var phone = $("#smsphone").val();
 			var connectId = $("#connectId").val();
@@ -533,12 +542,12 @@
 					data	:	data,
 					url		:	url,
 					beforeSend: function(){
-						$("#connectPagination").css('opicity','0.4');
+						$("#connectPagination").css('opacity','0.4');
 					},
 					success: function(data){
 						//alert(data);
 						$("#connectPagination").html(data);
-						$("#connectPagination").css('opicity','1');
+						$("#connectPagination").css('opacity','1');
 					},
 					
 				}) 
@@ -563,12 +572,12 @@
 			data	:	data,
 			url		:	url,
 			beforeSend: function(){
-						$("#connectPagination").css('opicity','0.4');
+						$("#connectPagination").css('opacity','0.4');
 					},
 					success: function(data){
 						//alert(data);
 						$("#connectPagination").html(data);
-						$("#connectPagination").css('opicity','1');
+						$("#connectPagination").css('opacity','1');
 					},
 			
 		  }) 
