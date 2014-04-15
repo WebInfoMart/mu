@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2014-01-04 12:39:27
+<?php /* Smarty version 2.6.20, created on 2013-10-10 09:11:41
          compiled from article-read.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'replace', 'article-read.tpl', 17, false),array('function', 'smarty_fewchars', 'article-read.tpl', 116, false),)), $this); ?>

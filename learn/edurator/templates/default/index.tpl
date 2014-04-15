@@ -1,153 +1,182 @@
 {include file='header.tpl' p="index"} 
-<div class="video-banner-row">
-        <div class="left video-banner span7">
-            <!-- <img src="http://meetuniv.com/assets/images/univ-banner2.jpg" /> -->
+<div id="wrapper">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span8">
+		<div id="primary">
            
-            <div id="v1">
-                {if $display_preroll_ad == true}
-					<div id="preroll_placeholder">
-						<div class="preroll_countdown">
-							{$lang.preroll_ads_timeleft} <span class="preroll_timeleft">{$preroll_ad_data.timeleft_start}</span>
-						</div>
-						{$preroll_ad_data.code}
-					</div>
-				{else}
-					{include file="player.tpl" page="index"}
+        <div id="pm-featured" class="border-radius3">
+        <h2>{$lang.featured}: {$voth_title}</h2>
+        {if $display_preroll_ad == true}
+        	<div id="preroll_placeholder">
+        		<div class="preroll_countdown">
+	        		{$lang.preroll_ads_timeleft} <span class="preroll_timeleft">{$preroll_ad_data.timeleft_start}</span>
+				</div>
+        		{$preroll_ad_data.code}
+        	</div>
+        {else}
+			{include file="player.tpl" page="index"}
+		{/if}
+        </div>
+
+        {if $total_playingnow > 0}
+        <div id="pm-wn">
+        <h2>{$lang.vbwrn}</h2>
+          <div class="btn-group btn-group-sort opac5 pm-slide-control">
+          <button class="btn btn-mini" id="pm-slide-prev" class="prev"><img src="{$smarty.const._URL}/templates/{$template_dir}/img/arr-l.png" width="10" height="11" alt="{$lang.prev}"></button>
+          <button class="btn btn-mini" id="pm-slide-next" class="next"><img src="{$smarty.const._URL}/templates/{$template_dir}/img/arr-r.png" width="10" height="11" alt="{$lang.next}"></button>
+          </div>
+            <div id="pm-slide">
+            <!-- Carousel items -->
+            <ul class="pm-ul-wn-videos clearfix" id="pm-ul-wn-videos">
+			{foreach from=$playingnow key=k item=video_data}
+			  <li>
+				<div class="pm-li-wn-videos">
+				<span class="pm-video-thumb pm-thumb-145 pm-thumb-top border-radius2">
+				<a href="{$video_data.video_href}" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="{$video_data.thumb_img_url}" alt="{$video_data.attr_alt}" width="145"><span class="vertical-align"></span></span></a>
+				</span>
+				<h3 dir="ltr"><a href="{$video_data.video_href}" class="pm-title-link">{$video_data.video_title}</a></h3>
+				</div>
+			  </li>
+			{/foreach}
+            </ul>
+        </div>
+        </div><!-- #pm-wn -->
+        <hr />
+        <div class="clear-fix"></div>
+        {/if}
+
+        <div class="element-videos">
+        <div class="btn-group btn-group-sort opac5">
+        <button class="btn btn-small" id="list"><i class="icon-th"></i> </button>
+        <button class="btn btn-small" id="grid"><i class="icon-th-list"></i> </button>
+        </div>
+        <h2>{$lang.new_videos}</h2>    
+        <ul class="pm-ul-browse-videos thumbnails" id="pm-grid">
+		{foreach from=$new_videos key=k item=video_data}
+		  <li>
+			<div class="pm-li-video">
+			    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+			    <span class="pm-video-li-thumb-info">
+			    {if $video_data.yt_length != 0}<span class="pm-label-duration border-radius3 opac7">{$video_data.duration}</span>{/if}
+			    {if $video_data.mark_new}<span class="label label-new">{$lang._new}</span>{/if}
+					{if $video_data.mark_popular}<span class="label label-pop">{$lang._popular}</span>{/if}
+				</span>
+                <a href="{$video_data.video_href}" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="{$video_data.thumb_img_url}" alt="{$video_data.attr_alt}" width="145"><span class="vertical-align"></span></span></a>
+			    </span>
+			    
+			    <h3 dir="ltr"><a href="{$video_data.video_href}" class="pm-title-link" title="{$video_data.attr_alt}">{$video_data.video_title}</a></h3>
+			    <div class="pm-video-attr">
+			        <span class="pm-video-attr-author">{$lang.articles_by} <a href="{$video_data.author_profile_href}">{$video_data.author_name}</a></span>
+			        <span class="pm-video-attr-since"><small>{$lang.added} <time datetime="{$video_data.html5_datetime}" title="{$video_data.full_datetime}">{$video_data.time_since_added} {$lang.ago}</time></small></span>
+			        <span class="pm-video-attr-numbers"><small>{$video_data.views_compact} {$lang.views} / {$video_data.likes_compact} {$lang._likes}</small></span>
+				</div>
+			    <p class="pm-video-attr-desc">{$video_data.excerpt}</p>
+				{if $video_data.featured}
+			    <span class="pm-video-li-info">
+			        <span class="label label-featured">{$lang._feat}</span>
+			    </span>
 				{/if}
-            </div>
-            <!--<div id="v2" >
-               <img src="http://meetuniv.com/assets/images/video2.jpg" />
-            </div>
-            <div id="v3">
-            <img src="http://meetuniv.com/assets/images/video3.jpg" />  
-			
-            </div>-->
-            
-        </div>
-		<div class="pull-left right-text">
-			<h5> {$lang.featured}: {$voth_title}</h5>
-			<p> {$voth_description}</p>
-			<ul>
-				<li><a href="#"><img src="http://localhost/mu/learn/edurator/templates/default/images/arrow-bullet.jpg">Watch Videos</a></li>
-				<li><a href="#"><img src="http://localhost/mu/learn/edurator/templates/default/images/arrow.jpg">More Lorem</a></li>
-				<li><a href="#"><img src="http://localhost/mu/learn/edurator/templates/default/images/arrow.jpg">More Lorem & Ipsum</a></li>
-			</ul>
-		</div>
-	  <!--<div class="video-ielts">
-			<ul>
-				<li class="home "><a href="javascript:void(0);" onclick="showv1()" class="choosed">Lorem</a></li>
-				<li class="about"><a href="javascript:void(0);" onclick="showv2()">Lorem</a></li>
-				<li><a href="javascript:void(0);" onclick="showv3()">Lorem</a></li>
-			</ul>
-	  </div>-->
-          
-        </div>
-		<!-- contents starts-->
-		<div class="container">
-			<div class="row">
-				<div class="span12">
-					<div class="advertisement">
-						
-							<div class="span4" style="border-right: 1px solid #ccc;margin-left: 12px;">
-								<div class="first">
-									<h3 style="clear:both; overflow:hidden; margin-bottom:16px;">SHARE THIS !</h3>
-									<div style="margin-top: 19px;clear:both">
-										<div class="in"><p style="margin:0">516</p>
-										<span><img src="http://localhost/mu/learn/edurator/admin/img/share.png" style="margin-top:5px;" ></span>
-										</div>
-										<div class="facebook"><p style="margin:0">16</p>
-										<span><img src="http://localhost/mu/learn/edurator/admin/img/flike.png" style="margin-top:10px"></span>
-										</div>
-										<div class="tweet"><p style="margin:0">17</p>
-										<span><img src="http://localhost/mu/learn/edurator/admin/img/flike.png" style="margin-top:10px"></span>
-										</div>
-									
-									</div>
-								
-								
-								</div>
-							</div>
-							
-							<div class="span4" style="border-right: 1px solid #ccc;margin-left: 12px;">
-								<div class="middle">
-								<h3>Lorium Ipsum</h3>
-								<div class="advert"></div>
-								<p style="clear:both;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
-								</p>
-								</div>
-							</div>
-							
-							<div class="span4" style="border-right: 0px solid #ccc;margin-left: 12px;">
-								<div class="middle">
-								<h3>Articles</h3>
-								<div class="advert"></div>
-								<ul class="advert-ul">
-									<li>Article1</li>
-									<li>Article2</li>
-									<li>Article3</li>
-								</ul>
-								</div>
-							</div>
-						
-					
-					</div>
-					
-				</div>
-		   </div>
-		   
-		   <div class="row">
-				<div class="span12">
-				
-					<div class="sample-videos">
-						<h4>Watch Free Sample Videos</h4>
-						<!--tabs start-->
-				<section id="tabs">
-				
-        <div class="columns">
-			<ul id="tab" class="nav nav-tabs">
-				{foreach from=$categories key=k item=cat}
-					<!--{assign var='parentId' value=$cat.parent_id}-->
-					
-						<li><a href="#cat_{$cat.id}" data-toggle="tab">{$cat.name}</a></li>
-					
-				{/foreach}
-				<!--<li class="active"><a href="#english" data-toggle="tab">English</a></li>
-				<li><a href="#examprep" data-toggle="tab">ExamPrep</a></li>
-				<li><a href="#fun" data-toggle="tab">Fun</a></li>
-				<li><a href="#collegeready" data-toggle="tab">College Ready</a></li>
-				<li><a href="#new" data-toggle="tab">New</a></li>-->
-				<!--<li id="more"><a href="#more" data-toggle="tab">More<img src="http://meetuniv.com/assets/images/more-arrow.png"></a>-->
-					<ul  class="level2">
-						<li id="level2"><a href="#"> level2 link1</a>
-							<ul class="level3">
-								<li><a href="link1">level3 link1</a> </li>
-								<li><a href="link1">level3 link1</a> </li>
-								<li><a href="link1">level3 link1</a> </li>
-								<li><a href="link1">level3 link1</a> </li>
-							</ul>
-						</li>
-						<li><a href="#">level2 link2</a></li>
-						<li><a href="#">level2 link3</a></li>
-						<li><a href="#">level2 link4</a></li>
-					</ul>
-				</li>
-			</ul>
-			
-			<div id="myTabContent" class="tab-content">
-			{$html}
-				
-				
 			</div>
-			
-    </section>
-				<!-- tabs end-->
-										
-						
-					</div>
-					
+		  </li>
+		{foreachelse}
+			{$lang.top_videos_msg2}
+		{/foreach}
+        </ul>
+        </div><!-- .element-videos -->
+        
+        <div class="clearfix"></div>
+		</div><!-- #primary -->
+        </div><!-- #content -->
+
+        <div class="span4" id="secondary">
+        {if $ad_5 != ''}
+		<div class="widget">
+        	<div class="pm-ad-zone" align="center">{$ad_5}</div>
+        </div>
+        {/if}
+
+        <div class="widget">
+            <div class="btn-group btn-group-sort opac6 pm-slide-control">
+            <button class="btn btn-mini" id="pm-slide-top-prev" class="prev"><img src="{$smarty.const._URL}/templates/{$template_dir}/img/arr-l.png" width="10" height="11" alt="{$lang.prev}"></button>
+            <button class="btn btn-mini" id="pm-slide-top-next" class="next"><img src="{$smarty.const._URL}/templates/{$template_dir}/img/arr-r.png" width="10" height="11" alt="{$lang.next}"></button>
+            </div>
+            <h4>{$lang.top_m_videos}</h4>
+            <ul class="pm-ul-top-videos" id="pm-ul-top-videos">
+			{foreach from=$top_videos key=k item=video_data}
+			  <li>
+				<div class="pm-li-top-videos">
+				<span class="pm-video-thumb pm-thumb-106 pm-thumb-top border-radius2">
+				<span class="pm-video-li-thumb-info">
+				{if $video_data.yt_length != 0}<span class="pm-label-duration border-radius3 opac7">{$video_data.duration}</span>{/if}
+				</span>
+				<a href="{$video_data.video_href}" class="pm-thumb-fix pm-thumb-106"><span class="pm-thumb-fix-clip"><img src="{$video_data.thumb_img_url}" alt="{$video_data.attr_alt}" width="106"><span class="vertical-align"></span></span></a>
+				</span>
+				<h3 dir="ltr"><a href="{$video_data.video_href}" class="pm-title-link">{$video_data.video_title}</a></h3>
+				<span class="pm-video-attr-numbers"><small>{$video_data.views_compact} Views</small></span>
 				</div>
-		   </div>
-	   </div>
-        <!-- contents ends ->
-      {include file='footer.tpl' p="index"} 
-      
+			  </li>
+			{/foreach}
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        
+		<div class="widget">
+		<h4>{$lang._categories}</h4>
+		<ul class="pm-browse-ul-subcats">
+			{list_categories}
+        </ul>
+        </div>
+        
+        {if ($show_tags == 1) && (count($tags) > 0)}
+		<div class="widget">
+		<h4>{$lang.tags}</h4>
+            {foreach from=$tags item=tag key=k}
+                {$tag.href}
+            {/foreach}
+        </div>
+        {/if}
+        
+        {if $show_stats == 1}
+        <div class="widget">
+        <h4>{$lang.site_stats}</h4>
+        <ul class="pm-stats-data">
+        	<li><a href="{$smarty.const._URL}/memberlist.{$smarty.const._FEXT}?do=online">{$lang.online_users}</a> <span class="pm-stats-count">{$stats.online_users}</span></li>
+            <li><a href="{$smarty.const._URL}/memberlist.{$smarty.const._FEXT}">{$lang.total_users}</a> <span class="pm-stats-count">{$stats.users}</span></li>
+            <li>{$lang.total_videos} <span class="pm-stats-count">{$stats.videos}</span></li>
+        	<li>{$lang.videos_added_lw} <span class="pm-stats-count">{$stats.videos_last_week}</span></li>
+        </ul>
+	</div>
+        {/if}
+        
+        {if $smarty.const._MOD_ARTICLE == 1}
+        <div class="widget">
+			<h4>{$lang.articles_latest}</h4>
+            <ul class="pm-ul-home-articles" id="pm-ul-home-articles">
+            {foreach from=$articles item=article key=id}
+            <li {if $article.featured == '1'}class="sticky-article"{/if}>
+            <article>
+            {if $article.meta.post_thumb_show != ''}
+            <div class="pm-article-thumb">
+            	<a href="{$article.link}" class="pm-title-link" title="{$article.title}"><img src="{$smarty.const._ARTICLE_ATTACH_DIR}/{$article.meta.post_thumb_show}" align="left" width="55" height="55" border="0" alt="{$article.title}"></a>
+            </div>
+            {/if}
+            <h6 dir="ltr" class="ellipsis"><a href="{$article.link|replace:'edurator/articles/':'blog/'}" class="pm-title-link" title="{$article.title}">{smarty_fewchars s=$article.title length=92}</a></h6>
+            <p class="pm-article-preview">
+                {if $article.meta.post_thumb_show == ''}
+                	<div class="minDesc">{smarty_fewchars s=$article.excerpt length=130}</div>
+                {else}
+                	<div class="minDesc">{smarty_fewchars s=$article.excerpt length=100}</div>
+                {/if}
+            </p>
+            </article>
+            </li>
+            {/foreach}
+            </ul>
+        </div><!-- .widget -->
+        {/if}
+		</div><!-- #secondary -->
+        </div><!-- #sidebar -->
+      </div><!-- .row-fluid -->
+    </div><!-- .container-fluid -->
+{include file='footer.tpl' p="index"} 

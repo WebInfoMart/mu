@@ -1380,7 +1380,7 @@ function art_make_link($type = 'article', $args = array())
 				}
 				
 				$url .= 'articles/read-';
-				$url .= $title .'_'. $args['id'];
+				$url .= $title .'-'. $args['id'];/*Changed from _ to - 21022014 - Debal*/
 				$url .= '.'. _FEXT;
 				
 				if (strpos($url, '-video_') !== false)

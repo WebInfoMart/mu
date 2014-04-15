@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2014-01-04 05:03:18
+<?php /* Smarty version 2.6.20, created on 2014-04-15 11:12:56
          compiled from footer.tpl */ ?>
 <a id="back-top" class="hidden-phone hidden-tablet" title="<?php echo $this->_tpl_vars['lang']['top']; ?>
 ">
@@ -38,10 +38,10 @@
 						  <h5>College<br>
 							 Search
 						  </h5>
-						  <li><a href="http://meetuniv.com/college"> College Search</a></li>
-						  <li><a href="http://meetuniv.com/college"> Colleges by Country</a></li>
-						  <li><a href="http://meetuniv.com/college"> Popular College</a></li>
-						  <li><a href="http://meetuniv.com/college"> Popular Countries </a></li>
+						  <li><a href="http://meetuniv.com/college-study-in-abroad"> College Search</a></li>
+						  <li><a href="http://meetuniv.com/college-study-in-abroad"> Colleges by Country</a></li>
+						  <li><a href="http://meetuniv.com/college/popular-college"> Popular College</a></li>
+						  <!---<li><a href="http://meetuniv.com/college"> Popular Countries </a></li>-->
 					   </ul>
 					</div>
 					<div class="span2">
@@ -49,8 +49,8 @@
 						  <h5> Country<br>
 							 Search
 						  </h5>
-						  <li><a href="http://meetuniv.com/college"> Study In UK</a></li>
-						  <li><a href="http://meetuniv.com/contact-us?type=4"> Study In USA</a></li>
+						  <li><a href="http://meetuniv.com/college/study-in-uk-universities"> Study In UK</a></li>
+						  <li><a href="http://meetuniv.com/college/study-in-usa-universities"> Study In USA</a></li>
 						  <li><a href="http://meetuniv.com/contact-us?type=4"> Study In Singapore</a></li>
 						  <li><a href="http://meetuniv.com/contact-us?type=4"> Study In Dubai</a></li>
 					   </ul>
@@ -81,8 +81,8 @@
 						<ul class="nav nav-list">
 						  <h5>Coaching<br><br>
 						  </h5>
-						  <li><a href="http://meetuniv.com/contact-us?type=4"> IELTS Video Tutorials</a></li>
-						  <li><a href="http://meetuniv.com/contact-us?type=4"> Career Stream Chooser</a></li>
+						  <li><a href="http://www.meetuniv.com/learn/edurator/browse-ieltspreparation-videos-1-date.html"> IELTS Video Tutorials</a></li>
+						  <li><a href="http://meetuniv.com/gifted-intro"> Career Stream Chooser</a></li>
 						  <li><a href="http://meetuniv.com/contact-us?type=4"> Expert Advice</a></li>
 						  <li><a href="http://meetuniv.com/contact-us?type=4"> Business Games </a></li>
 					   </ul>

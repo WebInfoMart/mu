@@ -116,4 +116,13 @@ class Collegemodel extends CI_Model
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+	
+	function getLatestArticle()
+
+	{
+		$query = $this->db_forum->query("SELECT * FROM art_articles ORDER BY id DESC LIMIT 0, 5");
+
+		return $query->result();
+
+	}
 }

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2014-02-04 08:29:41
+<?php /* Smarty version 2.6.20, created on 2014-04-15 11:21:01
          compiled from header.tpl */ ?>
 ﻿<!DOCTYPE html>
 <!--[if IE 7 | IE 8]>
@@ -17,15 +17,31 @@
 <meta name="robots" content="noindex,nofollow">
 <META NAME="GOOGLEBOT" CONTENT="NOINDEX, NOFOLLOW">
 <?php endif; ?>
-<meta name="title" content="<?php echo $this->_tpl_vars['meta_title']; ?>
-" />
-<meta name="keywords" content="<?php echo $this->_tpl_vars['meta_keywords']; ?>
-" />
+<!---<meta name="title" content="<?php echo $this->_tpl_vars['meta_title']; ?>
+" />--->
+<!--<meta name="keywords" content="<?php echo $this->_tpl_vars['meta_keywords']; ?>
+" />-->
 <meta name="description" content="<?php echo $this->_tpl_vars['meta_description']; ?>
 " />
 <link rel="shortcut icon" href="<?php echo @_URL; ?>
 /<?php echo @_UPFOLDER; ?>
 /favicon.ico">
+
+<!--added by raghvendra--->
+<link rel="canonical" href="http://localhost/mu/learn/edurator" />
+<meta name="DC.title" content="study abroad scholarships" />
+<meta name="geo.region" content="IN-DL" />
+<meta name="geo.placename" content="New Delhi" />
+<meta name="geo.position" content="28.635308;77.22496" />
+<meta name="ICBM" content="28.635308, 77.22496" />
+<meta name="copyright" content=" copyright © 2014 - meetuniv.com" />
+<meta name="author" content="meetuniv.com" />
+<meta name="subject" content="study abroad scholarships" />
+<meta name="rating" content="general" />
+<meta name="GOOGLEBOT" content="Index, Follow" />
+<meta name="robots" content="all" />
+<meta name="robots" content="index, follow" />
+<!--end here--->
 <?php if ($this->_tpl_vars['rss'] == "video-category"): ?>
 <link rel="alternate" type="application/rss+xml" title="<?php echo $this->_tpl_vars['meta_title']; ?>
 " href="<?php echo @_URL; ?>
@@ -80,16 +96,15 @@
 <![endif]-->
 
 <!--MAIN-->
-      <link rel="shortcut icon" href="http://meetuniv.com/assets/img/favicon.png">
-      <link href="http://meetuniv.com/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
-      <link href="http://meetuniv.com/assets/css/univ_style.css" rel="stylesheet" media="screen">
-	  <link media="screen" rel="stylesheet" href="http://localhost/mu/learn/edurator/templates/default/css/univ_style.css">
-      <link href="http://meetuniv.com/assets/css/font-awesome.css" rel="stylesheet" media="screen">
-	  <link href="http://meetuniv.com/assets/css/bootstrap_calendar.css" rel="stylesheet" media="screen">
-      <link href="http://meetuniv.com/assets/css/select2.css" rel="stylesheet" media="screen">
+      <link rel="shortcut icon" href="http://localhost/mu/assets/img/favicon.png">
+      <link href="http://localhost/mu/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <link href="http://localhost/mu/assets/css/univ_style.css" rel="stylesheet" media="screen">
+      <link href="http://localhost/mu/assets/css/font-awesome.css" rel="stylesheet" media="screen">
+	  <link href="http://localhost/mu/assets/css/bootstrap_calendar.css" rel="stylesheet" media="screen">
+      <link href="http://localhost/mu/assets/css/select2.css" rel="stylesheet" media="screen">
       <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
       <link href="http://fonts.googleapis.com/css?family=Ledger" rel="stylesheet" type="text/css">
-	  <link rel="stylesheet" type="text/css" href="http://meetuniv.com/assets/css/demo.css">
+	  <link rel="stylesheet" type="text/css" href="http://localhost/mu/assets/css/demo.css">
 <!--ENDS HERE MAIN-->
 
 <script type="text/javascript">
@@ -200,17 +215,30 @@
    <header role="banner">
          <div class="row container">
             <h1>Meet Univ</h1>
-            <a href="http://meetuniv.com/" id="logo"><img src="http://meetuniv.com/assets/img/new_logo.png" alt="Meet Univ"></a>
+            <a href="http://localhost/mu/" id="logo"><img src="http://localhost/mu/assets/img/new_logo.png" alt="Meet Univ"></a>
             <nav role="navigation" id="top_menu">
                <ul>
-                  <li><a href="http://meetuniv.com/college">Colleges</a></li>
-                  <li><a href="http://meetuniv.com/connect">Connect</a></li>
+                  <li><a href="http://localhost/mu/college-study-in-abroad">Colleges</a></li>
+                  <li><a href="http://localhost/mu/connect">Connect</a></li>
                   <!--<li><a href="#">Courses</a></li>
                   <li><a href="#">Councel</a></li>-->
-                  <li><a href="http://meetuniv.com/learn/edurator">Learn</a></li>
-                  <!--<li><a href="#">Blog</a></li>-->
+                  <li><a href="http://localhost/mu/learn/edurator">Learn</a></li>
+                  <li><a href="http://localhost/mu/ielts-preparation">TestPrep</a></li>
+				  <li><a href="http://localhost/mu/gifted-intro">Gifted</a></li>
                </ul>
-            </nav>			
+            </nav>	
+			<?php if (isset ( $this->_tpl_vars['user_id'] )): ?>
+			<div class="btn-group pull-right" style="margin-top:13px">
+				<a class="btn btn-small" href="http://localhost/mu/auth/profileDashboard" style="background: #0073d1;color: white;"><?php echo $this->_tpl_vars['user_name']; ?>
+</a>
+				<a class="btn btn-small" href="http://localhost/mu/auth/logout">LOG OUT</a>	
+       		</div>
+			<?php else: ?>
+			<div class="btn-group pull-right" style="margin-top:13px">
+				<a class="btn btn-small" href="http://localhost/mu/login">LOG IN</a>
+				<a class="btn btn-small" href="http://localhost/mu/register">SIGN UP</a>	
+       		</div>
+			<?php endif; ?>
          </div>
       </header>
 

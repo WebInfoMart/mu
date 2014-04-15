@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2014-01-04 05:03:18
+<?php /* Smarty version 2.6.20, created on 2014-04-15 11:12:56
          compiled from player.tpl */ ?>
 <?php if ($this->_tpl_vars['video_data']['restricted'] == '1' && ! $this->_tpl_vars['logged_in']): ?>
 <div class="restricted-video border-radius4">

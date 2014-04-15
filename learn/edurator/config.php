@@ -31,8 +31,8 @@ $db_pass = '';
 $db_host = 'localhost';
 
 // Full URL without any trailing slash (e.g http://www.example.com)
-define('_URL', 'http://localhost/mu/learn/edurator');	
-define('_URLARTICLE', 'http://localhost/mu/learn/blog');	///PATH FOR ARTICLE
+define('_URL', 'http://www.meetuniv.com/learn/edurator');	
+define('_URLARTICLE', 'http://www.meetuniv.com/learn/blog');	///PATH FOR ARTICLE
 
 //-- Customer ID --//
 // Replace "YOUR_CUSTOMER_ID" below with the assigned "Customer ID".

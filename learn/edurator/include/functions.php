@@ -94,6 +94,7 @@ function smarty_fewchars($params, &$smarty)
 
 function load_categories($args = array())
 {
+//print_r($args);//exit;
 	global $_video_categories, $_article_categories;
 	
 	$defaults = array('db_table' => 'pm_categories',
@@ -118,11 +119,13 @@ function load_categories($args = array())
 	{
 		$columns = 'id, '.$columns;
 	}
-	
+	$dblink = mysql_connect("localhost", "root", "");
+	mysql_select_db("mu_video",$dblink);
 	$sql = "SELECT $columns FROM $db_table 
 			ORDER BY $order_by $sort";
 	
-	$result = mysql_query($sql);
+	$result = mysql_query($sql)or die(mysql_error());
+	//print_r($result);
 	if ( ! $result)
 	{
 		return false;
@@ -153,7 +156,7 @@ function load_categories($args = array())
 	{
 		$_article_categories = $categories;
 	}
-	
+	//print_r($categories);exit;
 	return $categories;
 }
 
@@ -380,147 +383,6 @@ function list_categories_display_item($item, &$all_children, $level = 0, $option
 	return $output;
 }
 
-/*******Custom function added by deepak ******/
-
-
-function test_categories($parent = 0, $selected = 0, $args = array())
-{
-	$output = '';
-	
-	$defaults = array(
-		'db_table' => 'pm_categories',
-		'selected' => 0, 
-		'order_by' => 'position',
-		'sort' => 'ASC',
-		'selected_grandfather' => 0, 
-		'spacer' => "\t",
-		'max_levels' => 1,
-		'ul_wrapper' => true
-	);
-	
-	$options = array_merge($defaults, $args);
-	$options['selected'] = ( ! is_object($selected)) ? $selected : 0;
-	extract($options);
-	
-	$parents = $parent_ids = $children = array();
-	$categories = load_categories($options);
-	
-	foreach ($categories as $c_id => $c)
-	{
-		if ($c['parent_id'] == 0)
-		{
-			$parents[] = $c;
-			$parent_ids[] = $c['id'];
-		}
-		else
-		{
-			$children[$c['parent_id']][] = $c;
-		}
-	}
-
-	// find "grandfather" of selected child category
-	if (count($parent_ids) > 0 && $selected > 0 && ( ! in_array($selected, $parent_ids)))
-	{
-		$options['selected_grandfather'] = $selected;
-
-		$counter = 0;
-		$exit_limit = count($parent_ids) * 3;
-		while (( ! in_array($options['selected_grandfather'], $parent_ids)) && $counter < $exit_limit)
-		{
-			$find = $options['selected_grandfather'];
-			foreach ($children as $pid => $children_arr)
-			{
-				$found = false;
-			
-				if (count($children_arr) > 0)
-				{
-					foreach ($children_arr as $k => $child)
-					{
-						if ($child['id'] == $find)
-						{
-							$found = true;
-							$options['selected_grandfather'] = $child['parent_id'];
-							break;
-						}
-					}
-					if ($found)
-					{
-						break;
-					}
-				}
-			}
-			
-			$counter++;
-		}
-	}
-	return $parents;
-	foreach ($parents as $k => $p)
-	{
-		$options['expand_items'] = ($options['selected_grandfather'] == $p['id']) ? true : false;
-		$output .= list_categories_display_item($p, $children, 0, $options);
-	}
-
-	if (count($children) > 0 && $options['max_levels'] == 0)
-	{
-		foreach ($children as $parent_id => $orphans)
-		{
-			foreach ($orphans as $k => $orphan)
-			{
-				$orphan['parent_id'] = 0;
-				$output .= list_categories_display_item($orphan, $empty, 0, $options);
-			}
-		}
-	}
-	
-	//	wrapper
-	if ($ul_wrapper)
-	{
-		return "<ul id='ul_categories'>\n".$output."\n</ul>";
-	}
-	
-	return $output;
-}
-function list_sub($parent = 0) 
-{ 
-	if (empty($parent))
-	{
-		return '';
-	}
-
-	$subcategories = '';
-	$url = '';
-	
-	$categories = load_categories();
-	$subcate = array();
-	$i=0;
-	foreach ($categories as $c_id => $c)
-	{
-	//echo "<pre>";print_r($c);
-		if ($c['parent_id'] == $parent)
-		{
-			$subcate[$i++] = $c;
-		}
-	}
-	return $subcate;
-}
-
-function getCategory(){
-	$result = mysql_query("SELECT * FROM `pm_categories` WHERE parent_id=0");
-	//$result = mysql_query("SELECT * FROM `pm_categories`");
-    $rows = array();
-    while($row = mysql_fetch_array($result)) {
-        $rows[] = $row;
-		$parent[] = $row['id'];
-    }
-    //echo "<pre>";print_r($parent);exit;
-	return $rows;
-	
-}
-
-/******End*****/
-
-
-
 function list_categories($parent = 0, $selected = 0, $args = array()) // deprecated: $parent 
 {
 	$output = '';
@@ -539,20 +401,23 @@ function list_categories($parent = 0, $selected = 0, $args = array()) // depreca
 	$options = array_merge($defaults, $args);
 	$options['selected'] = ( ! is_object($selected)) ? $selected : 0;
 	extract($options);
+	//print_r($options);exit;
 	
 	$parents = $parent_ids = $children = array();
 	$categories = load_categories($options);
-	
-	foreach ($categories as $c_id => $c)
-	{
-		if ($c['parent_id'] == 0)
+	//print_r($categories);exit;
+	if(!empty($categories)){
+		foreach ($categories as $c_id => $c)
 		{
-			$parents[] = $c;
-			$parent_ids[] = $c['id'];
-		}
-		else
-		{
-			$children[$c['parent_id']][] = $c;
+			if ($c['parent_id'] == 0)
+			{
+				$parents[] = $c;
+				$parent_ids[] = $c['id'];
+			}
+			else
+			{
+				$children[$c['parent_id']][] = $c;
+			}
 		}
 	}
 
@@ -1157,19 +1022,9 @@ function update_view_count($video_id, $current_view_count = '', $mark_watched = 
 	}
 	return $updated;
 }
-function get_video_list_new($orderby = '', $sort = '', $start = 0, $limit = 5, $category_id = 0, $video_ids = array(), $uniq_ids = array()) 
-{
-	echo "orderby".$orderby."short".$sort."start".$start."limit".$limit."category id:".$category_id;exit;
-	
-	$sql = "SELECT * FROM pm_videos 
-			 WHERE added <= '". time() ."'";
-
-			 
-}
 
 function get_video_list($orderby = '', $sort = '', $start = 0, $limit = 5, $category_id = 0, $video_ids = array(), $uniq_ids = array()) 
 {
-	//echo "orderby".$orderby."short".$sort."start".$start."limit".$limit."category id:".$category_id;exit;
 	$sql = "SELECT * FROM pm_videos 
 			 WHERE added <= '". time() ."'";
 
@@ -4987,5 +4842,23 @@ function apply_theme_customizations()
 	
 	$smarty->assign('theme_customizations', '');
 	return true;
+}
+
+function getMuBetaUserId(){
+	session_start();
+	$cisess_cookie = $_COOKIE['ci_session'];
+     $cisess_cookie = stripslashes($cisess_cookie);
+     $cisess_cookie = unserialize($cisess_cookie);
+     $cisess_session_id = $cisess_cookie['session_id'];
+	 $cisess_user_id = $cisess_cookie['user_id'];
+	//echo "SELECT * FROM users WHERE id=".$cisess_user_id;exit;
+	if($cisess_user_id){
+		$sql_statement = "SELECT * FROM users WHERE id=".$cisess_user_id;
+		$dblink = mysql_connect("localhost", "meetuniv_lms", "deepaklms2013!");
+		mysql_select_db("meetuniv_muver1beta0409",$dblink);
+		$qry = mysql_query($sql_statement,$dblink);
+		$sqlQuery = mysql_fetch_array($qry);
+		return $sqlQuery; 
+	}
 }
 ?>
